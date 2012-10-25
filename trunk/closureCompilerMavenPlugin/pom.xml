@@ -2,15 +2,40 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.sandwormz</groupId>
+	<groupId>com.sandwormz.maven.closure</groupId>
 	<artifactId>closure-compiler-maven-plugin</artifactId>
 	<version>0.0.2-SNAPSHOT</version>
 	<packaging>maven-plugin</packaging>
-    
+
+	<name>Maven Closure Plugin</name>
+	<description>A simple plugin for compiling javascript using the maven closure plugin</description>
+	<url></url>
+
 	<properties>
 		<maven.version>3.0.4</maven.version>
 		<closure-compiler.version>r2180</closure-compiler.version>
 	</properties>
+
+
+	<licenses>
+		<license>
+			<name>The BSD 3-Clause License</name>
+			<url>http://opensource.org/licenses/BSD-3-Clause</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<scm>
+		<url>https://closure-compiler-maven-plugin.googlecode.com/svn/trunk/</url>
+	</scm>
+
+	<developers>
+		<developer>
+			<id>hamneggs@gmail.com</id>
+			<name>mason bryant</name>
+			<email>hamneggs@gmail.com</email>
+		</developer>
+	</developers>
 
 	<dependencies>
 		<dependency>
@@ -56,6 +81,19 @@
 					</links>
 					<reportOutputDirectory>${basedir}/apidocs</reportOutputDirectory>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>

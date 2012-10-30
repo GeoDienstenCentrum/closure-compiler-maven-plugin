@@ -11,6 +11,7 @@ import org.apache.maven.plugin.MojoFailureException;
 import org.apache.maven.plugin.logging.Log;
 
 import com.google.common.base.Charsets;
+import com.google.common.base.Preconditions;
 import com.google.common.io.Files;
 import com.google.javascript.jscomp.CompilationLevel;
 import com.google.javascript.jscomp.Compiler;
@@ -81,13 +82,14 @@ public class ClosureCompilerMojo extends AbstractMojo {
      * @parameter
      * @required
      */
-    private List<CompliationMojo> compilations;
+    private List<Compilation> compilations;
 
     @Override
     public void execute() throws MojoExecutionException, MojoFailureException {
         Log log = getLog();
+        Preconditions.checkNotNull(this.compilations);
 
-        for (CompliationMojo compilation : this.compilations) {
+        for (Compilation compilation : this.compilations) {
 
             List<SourceFile> externs =
                     getSourceFiles(compilation.getExternFiles());
@@ -155,6 +157,23 @@ public class ClosureCompilerMojo extends AbstractMojo {
     }
 
     /**
+     * @return the compilations
+     */
+    public List<Compilation> getCompilations() {
+        return this.compilations;
+    }
+
+    /**
+     * @param compilations
+     *            the compilations to set
+     */
+    public void setCompilations(final List<Compilation> compilations) {
+        Preconditions.checkNotNull(compilations,
+                "The compilations may not be null.");
+        this.compilations = compilations;
+    }
+
+    /**
      * Returns a list of SourceFiles if given a list of relative or absolute
      * file names. Directories are traversed recursively.
      * 
@@ -162,6 +181,7 @@ public class ClosureCompilerMojo extends AbstractMojo {
      * @return
      */
     private List<SourceFile> getSourceFiles(final List<String> filePaths) {
+        Preconditions.checkNotNull(filePaths, "Filepaths are required.");
 
         List<SourceFile> externs = new LinkedList<SourceFile>();
         for (String filepath : filePaths) {
@@ -179,6 +199,8 @@ public class ClosureCompilerMojo extends AbstractMojo {
      * @return
      */
     private List<SourceFile> sourcefileFromFile(final File file) {
+        Preconditions.checkNotNull(file, "The file may not be null.");
+        Preconditions.checkArgument(file.exists(), "The file must exist.");
         List<SourceFile> sourceFiles = new LinkedList<SourceFile>();
         if (file.isDirectory()) {
             for (File child : file.listFiles()) {

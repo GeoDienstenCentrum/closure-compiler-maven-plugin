@@ -9,7 +9,7 @@ import java.util.List;
  * @author mbryant
  * 
  */
-public class CompliationMojo {
+public class Compilation {
 
     /**
      * Optional options for this compilation

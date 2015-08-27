@@ -1,0 +1,48 @@
+# Example configuration
+
+```xml
+<plugin>
+    <groupId>com.sandwormz</groupId>
+    <artifactId>closure-compiler-maven-plugin</artifactId>
+    <version>0.0.2-SNAPSHOT</version>
+    <executions>
+        <execution>
+            <goals>
+                <goal>compile</goal>
+            </goals>
+        </execution>
+    </executions>
+    <configuration>
+        <compilations>
+            <compilation>
+                <compilationLevel>WHITESPACE_ONLY</compilationLevel>
+                <compilerOptions>
+                   <prettyPrint>true</prettyPrint>
+                   <lineBreak>true</lineBreak>
+                   <runtimeTypeCheck>true</runtimeTypeCheck>
+                </compilerOptions>
+                <externFiles />
+                <sourceFiles>
+                    <param>${basedir}/src/main/web/js/_header.js</param>
+                    <param>${basedir}/src/main/web/js/asserts.js</param>
+                    <param>${basedir}/src/main/web/js/logger.js</param>
+                </sourceFiles>
+                <outputFile>${basedir}/src/main/web/devtools-all.js</outputFile>
+            </compilation>
+            <compilation>
+                <compilationLevel>ADVANCED_OPTIMIZATIONS</compilationLevel>
+                <compilerOptions>
+                    <prettyPrint>true</prettyPrint>
+                </compilerOptions>
+                <externFiles></externFiles>
+                <sourceFiles>
+                    <param>${basedir}/src/main/web/js/_header.js</param>
+                    <param>${basedir}/src/main/web/js/asserts.js</param>
+                    <param>${basedir}/src/main/web/js/logger.js</param>
+                </sourceFiles>
+                <outputFile>${project.build.outputDirectory}/static/js/devtools.js</outputFile>
+            </compilation>
+        </compilations>
+    </configuration>
+</plugin>
+```

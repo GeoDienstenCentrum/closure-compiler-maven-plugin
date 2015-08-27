@@ -14,7 +14,7 @@ public class Compilation {
     /**
      * Optional options for this compilation
      *
-     * @parameter property="CompilerOptions"
+     * @parameter property="compilerOptions"
      */
     private CompilerOptionsMojo compilerOptions = new CompilerOptionsMojo();
 
@@ -37,8 +37,7 @@ public class Compilation {
     private List<String> sourceFiles;
 
     /**
-     * @parameter expression=
-     * "${project.build.directory}/${project.artifactId}-${project.version}/js/${project.artifactId}.js"
+     * @parameter expression="${project.build.directory}/${project.artifactId}-${project.version}/js/${project.artifactId}.js"
      * @required
      */
     private File outputFile;

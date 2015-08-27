@@ -43,16 +43,14 @@ public class CompilerOptionsMojo {
 
     /**
      * @param guard
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#addWarningsGuard(com.google.javascript.jscomp.WarningsGuard)
+     * @see com.google.javascript.jscomp.CompilerOptions#addWarningsGuard(com.google.javascript.jscomp.WarningsGuard)
      */
     public void addWarningsGuard(final WarningsGuard guard) {
         this.compilerOptions.addWarningsGuard(guard);
     }
 
     /**
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#assumeClosuresOnlyCaptureReferences()
+     * @see com.google.javascript.jscomp.CompilerOptions#assumeClosuresOnlyCaptureReferences()
      */
     public boolean assumeClosuresOnlyCaptureReferences() {
         return this.compilerOptions.assumeClosuresOnlyCaptureReferences();
@@ -66,16 +64,14 @@ public class CompilerOptionsMojo {
     }
 
     /**
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#disableRuntimeTypeCheck()
+     * @see com.google.javascript.jscomp.CompilerOptions#disableRuntimeTypeCheck()
      */
     public void disableRuntimeTypeCheck() {
         this.compilerOptions.disableRuntimeTypeCheck();
     }
 
     /**
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#enableRuntimeTypeCheck(java.lang.String)
+     * @see com.google.javascript.jscomp.CompilerOptions#enableRuntimeTypeCheck(java.lang.String)
      */
     public void enableRuntimeTypeCheck(final String logFunction) {
         this.compilerOptions.enableRuntimeTypeCheck(logFunction);

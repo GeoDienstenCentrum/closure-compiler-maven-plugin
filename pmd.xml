@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd version="5.3.2" timestamp="2015-08-27T15:26:25.177">
+<file name="/home/mark/workspace/closure-compiler-maven-plugin/src/main/java/nl/geodienstencentrum/maven/plugin/closure/compiler/ClosureCompilerMojo.java">
+<violation beginline="28" endline="162" begincolumn="8" endcolumn="1" rule="CyclomaticComplexity" ruleset="Code Size" package="nl.geodienstencentrum.maven.plugin.closure.compiler" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/codesize.html#CyclomaticComplexity" priority="3">
+The class 'ClosureCompilerMojo' has a Cyclomatic Complexity of 4 (Highest = 11).
+</violation>
+<violation beginline="28" endline="162" begincolumn="8" endcolumn="1" rule="ModifiedCyclomaticComplexity" ruleset="Code Size" package="nl.geodienstencentrum.maven.plugin.closure.compiler" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/codesize.html#ModifiedCyclomaticComplexity" priority="3">
+The class 'ClosureCompilerMojo' has a Modified Cyclomatic Complexity of 4 (Highest = 11).
+</violation>
+<violation beginline="28" endline="162" begincolumn="8" endcolumn="1" rule="StdCyclomaticComplexity" ruleset="Code Size" package="nl.geodienstencentrum.maven.plugin.closure.compiler" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/codesize.html#StdCyclomaticComplexity" priority="3">
+The class 'ClosureCompilerMojo' has a Standard Cyclomatic Complexity of 4 (Highest = 11).
+</violation>
+<violation beginline="36" endline="42" begincolumn="30" endcolumn="66" rule="DataflowAnomalyAnalysis" ruleset="Controversial" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="compilation" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/controversial.html#DataflowAnomalyAnalysis" priority="5">
+Found 'UR'-anomaly for variable 'compilation' (lines '36'-'42').
+</violation>
+<violation beginline="36" endline="48" begincolumn="17" endcolumn="64" rule="DataflowAnomalyAnalysis" ruleset="Controversial" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="sourceFile" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/controversial.html#DataflowAnomalyAnalysis" priority="5">
+Found 'UR'-anomaly for variable 'sourceFile' (lines '36'-'48').
+</violation>
+<violation beginline="36" endline="105" begincolumn="12" endcolumn="5" rule="CyclomaticComplexity" ruleset="Code Size" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/codesize.html#CyclomaticComplexity" priority="3">
+The method 'execute' has a Cyclomatic Complexity of 11.
+</violation>
+<violation beginline="36" endline="105" begincolumn="12" endcolumn="5" rule="ModifiedCyclomaticComplexity" ruleset="Code Size" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/codesize.html#ModifiedCyclomaticComplexity" priority="3">
+The method 'execute' has a Modified Cyclomatic Complexity of 11.
+</violation>
+<violation beginline="36" endline="105" begincolumn="12" endcolumn="5" rule="StdCyclomaticComplexity" ruleset="Code Size" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/codesize.html#StdCyclomaticComplexity" priority="3">
+The method 'execute' has a Standard Cyclomatic Complexity of 11.
+</violation>
+<violation beginline="36" endline="105" begincolumn="12" endcolumn="5" rule="NPathComplexity" ruleset="Code Size" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/codesize.html#NPathComplexity" priority="3">
+The method execute() has an NPath complexity of 769
+</violation>
+<violation beginline="37" endline="105" begincolumn="13" endcolumn="26" rule="DataflowAnomalyAnalysis" ruleset="Controversial" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="log" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/controversial.html#DataflowAnomalyAnalysis" priority="5">
+Found 'DU'-anomaly for variable 'log' (lines '37'-'105').
+</violation>
+<violation beginline="37" endline="37" begincolumn="9" endcolumn="26" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="log" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
+Local variable 'log' could be declared final
+</violation>
+<violation beginline="40" endline="40" begincolumn="14" endcolumn="36" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="compilation" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
+Local variable 'compilation' could be declared final
+</violation>
+<violation beginline="42" endline="43" begincolumn="13" endcolumn="66" rule="PrematureDeclaration" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="externs" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/optimizations.html#PrematureDeclaration" priority="3">
+Avoid declaring a variable if it is unreferenced before a possible exit point.
+</violation>
+<violation beginline="42" endline="105" begincolumn="30" endcolumn="66" rule="DataflowAnomalyAnalysis" ruleset="Controversial" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="externs" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/controversial.html#DataflowAnomalyAnalysis" priority="5">
+Found 'DU'-anomaly for variable 'externs' (lines '42'-'105').
+</violation>
+<violation beginline="42" endline="43" begincolumn="13" endcolumn="66" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="externs" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
+Local variable 'externs' could be declared final
+</violation>
+<violation beginline="44" endline="45" begincolumn="13" endcolumn="66" rule="PrematureDeclaration" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="source" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/optimizations.html#PrematureDeclaration" priority="3">
+Avoid declaring a variable if it is unreferenced before a possible exit point.
+</violation>
+<violation beginline="44" endline="105" begincolumn="30" endcolumn="66" rule="DataflowAnomalyAnalysis" ruleset="Controversial" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="source" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/controversial.html#DataflowAnomalyAnalysis" priority="5">
+Found 'DU'-anomaly for variable 'source' (lines '44'-'105').
+</violation>
+<violation beginline="44" endline="45" begincolumn="13" endcolumn="66" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="source" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
+Local variable 'source' could be declared final
+</violation>
+<violation beginline="47" endline="47" begincolumn="18" endcolumn="34" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="sourceFile" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
+Local variable 'sourceFile' could be declared final
+</violation>
+<violation beginline="48" endline="48" begincolumn="17" endcolumn="24" rule="GuardLogStatement" ruleset="Jakarta Commons Logging" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/logging-jakarta-commons.html#GuardLogStatement" priority="2">
+There is log block not surrounded by if
+</violation>
+<violation beginline="48" endline="48" begincolumn="17" endcolumn="24" rule="GuardLogStatementJavaUtil" ruleset="Java Logging" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/logging-java.html#GuardLogStatementJavaUtil" priority="2">
+There is log block not surrounded by if
+</violation>
+<violation beginline="50" endline="50" begincolumn="18" endcolumn="34" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="sourceFile" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
+Local variable 'sourceFile' could be declared final
+</violation>
+<violation beginline="51" endline="51" begincolumn="17" endcolumn="24" rule="GuardLogStatement" ruleset="Jakarta Commons Logging" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/logging-jakarta-commons.html#GuardLogStatement" priority="2">
+There is log block not surrounded by if
+</violation>
+<violation beginline="51" endline="51" begincolumn="17" endcolumn="24" rule="GuardLogStatementJavaUtil" ruleset="Java Logging" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/logging-java.html#GuardLogStatementJavaUtil" priority="2">
+There is log block not surrounded by if
+</violation>
+<violation beginline="54" endline="54" begincolumn="13" endcolumn="20" rule="GuardLogStatement" ruleset="Jakarta Commons Logging" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/logging-jakarta-commons.html#GuardLogStatement" priority="2">
+There is log block not surrounded by if
+</violation>
+<violation beginline="54" endline="54" begincolumn="13" endcolumn="20" rule="GuardLogStatementJavaUtil" ruleset="Java Logging" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/logging-java.html#GuardLogStatementJavaUtil" priority="2">
+There is log block not surrounded by if
+</violation>
+<violation beginline="55" endline="55" begincolumn="13" endcolumn="20" rule="GuardLogStatement" ruleset="Jakarta Commons Logging" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/logging-jakarta-commons.html#GuardLogStatement" priority="2">
+There is log block not surrounded by if
+</violation>
+<violation beginline="55" endline="55" begincolumn="13" endcolumn="20" rule="GuardLogStatementJavaUtil" ruleset="Java Logging" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/logging-java.html#GuardLogStatementJavaUtil" priority="2">
+There is log block not surrounded by if
+</violation>
+<violation beginline="58" endline="60" begincolumn="17" endcolumn="55" rule="DataflowAnomalyAnalysis" ruleset="Controversial" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="compilationLevel" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/controversial.html#DataflowAnomalyAnalysis" priority="5">
+Found 'DD'-anomaly for variable 'compilationLevel' (lines '58'-'60').
+</violation>
+<violation beginline="60" endline="105" begincolumn="17" endcolumn="55" rule="DataflowAnomalyAnalysis" ruleset="Controversial" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="compilationLevel" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/controversial.html#DataflowAnomalyAnalysis" priority="5">
+Found 'DU'-anomaly for variable 'compilationLevel' (lines '60'-'105').
+</violation>
+<violation beginline="71" endline="71" begincolumn="35" endcolumn="55" rule="AvoidInstantiatingObjectsInLoops" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/optimizations.html#AvoidInstantiatingObjectsInLoops" priority="3">
+Avoid instantiating new objects inside loops
+</violation>
+<violation beginline="73" endline="73" begincolumn="13" endcolumn="20" rule="GuardLogStatement" ruleset="Jakarta Commons Logging" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/logging-jakarta-commons.html#GuardLogStatement" priority="2">
+There is log block not surrounded by if
+</violation>
+<violation beginline="73" endline="73" begincolumn="13" endcolumn="20" rule="GuardLogStatementJavaUtil" ruleset="Java Logging" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/logging-java.html#GuardLogStatementJavaUtil" priority="2">
+There is log block not surrounded by if
+</violation>
+<violation beginline="77" endline="77" begincolumn="33" endcolumn="46" rule="AvoidInstantiatingObjectsInLoops" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/optimizations.html#AvoidInstantiatingObjectsInLoops" priority="3">
+Avoid instantiating new objects inside loops
+</violation>
+<violation beginline="77" endline="77" begincolumn="13" endcolumn="46" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="compiler" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
+Local variable 'compiler' could be declared final
+</violation>
+<violation beginline="78" endline="78" begincolumn="13" endcolumn="78" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="result" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
+Local variable 'result' could be declared final
+</violation>
+<violation beginline="81" endline="81" begincolumn="18" endcolumn="32" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="warning" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
+Local variable 'warning' could be declared final
+</violation>
+<violation beginline="85" endline="85" begincolumn="18" endcolumn="30" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="error" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
+Local variable 'error' could be declared final
+</violation>
+<violation beginline="101" endline="102" begincolumn="25" endcolumn="76" rule="ConfusingTernary" ruleset="Design" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/design.html#ConfusingTernary" priority="3">
+Avoid if (x != y) ..; else ..;
+</violation>
+<violation beginline="130" endline="135" begincolumn="18" endcolumn="42" rule="DataflowAnomalyAnalysis" ruleset="Controversial" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="getSourceFiles" variable="filepath" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/controversial.html#DataflowAnomalyAnalysis" priority="5">
+Found 'UR'-anomaly for variable 'filepath' (lines '130'-'135').
+</violation>
+<violation beginline="133" endline="133" begincolumn="9" endcolumn="53" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="getSourceFiles" variable="externs" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
+Local variable 'externs' could be declared final
+</violation>
+<violation beginline="134" endline="134" begincolumn="14" endcolumn="28" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="getSourceFiles" variable="filepath" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
+Local variable 'filepath' could be declared final
+</violation>
+<violation beginline="135" endline="135" begincolumn="25" endcolumn="42" rule="AvoidInstantiatingObjectsInLoops" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="getSourceFiles" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/optimizations.html#AvoidInstantiatingObjectsInLoops" priority="3">
+Avoid instantiating new objects inside loops
+</violation>
+<violation beginline="135" endline="135" begincolumn="13" endcolumn="42" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="getSourceFiles" variable="file" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
+Local variable 'file' could be declared final
+</violation>
+<violation beginline="148" endline="154" begincolumn="17" endcolumn="61" rule="DataflowAnomalyAnalysis" ruleset="Controversial" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="sourcefileFromFile" variable="child" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/controversial.html#DataflowAnomalyAnalysis" priority="5">
+Found 'UR'-anomaly for variable 'child' (lines '148'-'154').
+</violation>
+<violation beginline="151" endline="151" begincolumn="9" endcolumn="57" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="sourcefileFromFile" variable="sourceFiles" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
+Local variable 'sourceFiles' could be declared final
+</violation>
+<violation beginline="153" endline="153" begincolumn="18" endcolumn="27" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="sourcefileFromFile" variable="child" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
+Local variable 'child' could be declared final
+</violation>
+</file>
+<file name="/home/mark/workspace/closure-compiler-maven-plugin/src/main/java/nl/geodienstencentrum/maven/plugin/closure/compiler/Compilation.java">
+<violation beginline="19" endline="19" begincolumn="33" endcolumn="47" rule="BeanMembersShouldSerialize" ruleset="JavaBeans" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="Compilation" variable="compilerOptions" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/javabeans.html#BeanMembersShouldSerialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+</file>
+<file name="/home/mark/workspace/closure-compiler-maven-plugin/src/main/java/nl/geodienstencentrum/maven/plugin/closure/compiler/CompilerOptionsMojo.java">
+<violation beginline="1" endline="1877" begincolumn="1" endcolumn="2" rule="ExcessivePublicCount" ruleset="Code Size" package="nl.geodienstencentrum.maven.plugin.closure.compiler" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/codesize.html#ExcessivePublicCount" priority="3">
+This class has a bunch of public methods and attributes
+</violation>
+<violation beginline="40" endline="1877" begincolumn="8" endcolumn="1" rule="ExcessiveClassLength" ruleset="Code Size" package="nl.geodienstencentrum.maven.plugin.closure.compiler" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/codesize.html#ExcessiveClassLength" priority="3">
+Avoid really long classes.
+</violation>
+<violation beginline="40" endline="1877" begincolumn="34" endcolumn="1" rule="TooManyMethods" ruleset="Code Size" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/codesize.html#TooManyMethods" priority="3">
+This class has too many methods, consider refactoring it.
+</violation>
+<violation beginline="120" endline="122" begincolumn="12" endcolumn="5" rule="BooleanGetMethodName" ruleset="Naming" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="getInferTypes" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/naming.html#BooleanGetMethodName" priority="4">
+A getX() method which returns a boolean should be named isX()
+</violation>
+</file>
+</pmd>

@@ -21,7 +21,7 @@ import com.google.javascript.jscomp.Result;
 import com.google.javascript.jscomp.SourceFile;
 
 /**
- * 
+ *
  * @phase generate-sources
  * @goal compile
  */
@@ -130,7 +130,7 @@ public class ClosureCompilerMojo extends AbstractMojo {
     private List<SourceFile> getSourceFiles(final List<String> filePaths) {
         Preconditions.checkNotNull(filePaths, "Filepaths are required.");
 
-        List<SourceFile> externs = new LinkedList<>();
+        List<SourceFile> externs = new LinkedList<SourceFile>();
         for (String filepath : filePaths) {
             File file = new File(filepath);
             externs.addAll(sourcefileFromFile(file));
@@ -148,7 +148,7 @@ public class ClosureCompilerMojo extends AbstractMojo {
     private List<SourceFile> sourcefileFromFile(final File file) {
         Preconditions.checkNotNull(file, "The file may not be null.");
         Preconditions.checkArgument(file.exists(), "The file must exist.");
-        List<SourceFile> sourceFiles = new LinkedList<>();
+        List<SourceFile> sourceFiles = new LinkedList<SourceFile>();
         if (file.isDirectory()) {
             for (File child : file.listFiles()) {
                 sourceFiles.addAll(sourcefileFromFile(child));

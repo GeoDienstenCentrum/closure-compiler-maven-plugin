@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pmd version="5.3.2" timestamp="2015-08-27T15:26:25.177">
-<file name="/home/mark/workspace/closure-compiler-maven-plugin/src/main/java/nl/geodienstencentrum/maven/plugin/closure/compiler/ClosureCompilerMojo.java">
+<pmd version="5.3.2" timestamp="2015-08-27T20:43:19.908">
+<file name="/home/mprins/workspace/closure-compiler-maven-plugin/target/checkout/src/main/java/nl/geodienstencentrum/maven/plugin/closure/compiler/ClosureCompilerMojo.java">
 <violation beginline="28" endline="162" begincolumn="8" endcolumn="1" rule="CyclomaticComplexity" ruleset="Code Size" package="nl.geodienstencentrum.maven.plugin.closure.compiler" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/codesize.html#CyclomaticComplexity" priority="3">
 The class 'ClosureCompilerMojo' has a Cyclomatic Complexity of 4 (Highest = 11).
 </violation>
@@ -143,12 +143,12 @@ Local variable 'sourceFiles' could be declared final
 Local variable 'child' could be declared final
 </violation>
 </file>
-<file name="/home/mark/workspace/closure-compiler-maven-plugin/src/main/java/nl/geodienstencentrum/maven/plugin/closure/compiler/Compilation.java">
+<file name="/home/mprins/workspace/closure-compiler-maven-plugin/target/checkout/src/main/java/nl/geodienstencentrum/maven/plugin/closure/compiler/Compilation.java">
 <violation beginline="19" endline="19" begincolumn="33" endcolumn="47" rule="BeanMembersShouldSerialize" ruleset="JavaBeans" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="Compilation" variable="compilerOptions" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/javabeans.html#BeanMembersShouldSerialize" priority="3">
 Found non-transient, non-static member. Please mark as transient or provide accessors.
 </violation>
 </file>
-<file name="/home/mark/workspace/closure-compiler-maven-plugin/src/main/java/nl/geodienstencentrum/maven/plugin/closure/compiler/CompilerOptionsMojo.java">
+<file name="/home/mprins/workspace/closure-compiler-maven-plugin/target/checkout/src/main/java/nl/geodienstencentrum/maven/plugin/closure/compiler/CompilerOptionsMojo.java">
 <violation beginline="1" endline="1877" begincolumn="1" endcolumn="2" rule="ExcessivePublicCount" ruleset="Code Size" package="nl.geodienstencentrum.maven.plugin.closure.compiler" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/codesize.html#ExcessivePublicCount" priority="3">
 This class has a bunch of public methods and attributes
 </violation>

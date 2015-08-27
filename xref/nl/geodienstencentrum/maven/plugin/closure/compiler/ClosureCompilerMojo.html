@@ -29,7 +29,7 @@
 <a class="jxr_linenumber" name="L21" href="#L21">21</a>  <strong class="jxr_keyword">import</strong> com.google.javascript.jscomp.SourceFile;
 <a class="jxr_linenumber" name="L22" href="#L22">22</a>  
 <a class="jxr_linenumber" name="L23" href="#L23">23</a>  <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L24" href="#L24">24</a>  <em class="jxr_javadoccomment"> * </em>
+<a class="jxr_linenumber" name="L24" href="#L24">24</a>  <em class="jxr_javadoccomment"> *</em>
 <a class="jxr_linenumber" name="L25" href="#L25">25</a>  <em class="jxr_javadoccomment"> * @phase generate-sources</em>
 <a class="jxr_linenumber" name="L26" href="#L26">26</a>  <em class="jxr_javadoccomment"> * @goal compile</em>
 <a class="jxr_linenumber" name="L27" href="#L27">27</a>  <em class="jxr_javadoccomment"> */</em>
@@ -138,7 +138,7 @@
 <a class="jxr_linenumber" name="L130" href="#L130">130</a>     <strong class="jxr_keyword">private</strong> List&lt;SourceFile&gt; getSourceFiles(<strong class="jxr_keyword">final</strong> List&lt;String&gt; filePaths) {
 <a class="jxr_linenumber" name="L131" href="#L131">131</a>         Preconditions.checkNotNull(filePaths, <span class="jxr_string">"Filepaths are required."</span>);
 <a class="jxr_linenumber" name="L132" href="#L132">132</a> 
-<a class="jxr_linenumber" name="L133" href="#L133">133</a>         List&lt;SourceFile&gt; externs = <strong class="jxr_keyword">new</strong> LinkedList&lt;&gt;();
+<a class="jxr_linenumber" name="L133" href="#L133">133</a>         List&lt;SourceFile&gt; externs = <strong class="jxr_keyword">new</strong> LinkedList&lt;SourceFile&gt;();
 <a class="jxr_linenumber" name="L134" href="#L134">134</a>         <strong class="jxr_keyword">for</strong> (String filepath : filePaths) {
 <a class="jxr_linenumber" name="L135" href="#L135">135</a>             File file = <strong class="jxr_keyword">new</strong> File(filepath);
 <a class="jxr_linenumber" name="L136" href="#L136">136</a>             externs.addAll(sourcefileFromFile(file));
@@ -156,7 +156,7 @@
 <a class="jxr_linenumber" name="L148" href="#L148">148</a>     <strong class="jxr_keyword">private</strong> List&lt;SourceFile&gt; sourcefileFromFile(<strong class="jxr_keyword">final</strong> File file) {
 <a class="jxr_linenumber" name="L149" href="#L149">149</a>         Preconditions.checkNotNull(file, <span class="jxr_string">"The file may not be null."</span>);
 <a class="jxr_linenumber" name="L150" href="#L150">150</a>         Preconditions.checkArgument(file.exists(), <span class="jxr_string">"The file must exist."</span>);
-<a class="jxr_linenumber" name="L151" href="#L151">151</a>         List&lt;SourceFile&gt; sourceFiles = <strong class="jxr_keyword">new</strong> LinkedList&lt;&gt;();
+<a class="jxr_linenumber" name="L151" href="#L151">151</a>         List&lt;SourceFile&gt; sourceFiles = <strong class="jxr_keyword">new</strong> LinkedList&lt;SourceFile&gt;();
 <a class="jxr_linenumber" name="L152" href="#L152">152</a>         <strong class="jxr_keyword">if</strong> (file.isDirectory()) {
 <a class="jxr_linenumber" name="L153" href="#L153">153</a>             <strong class="jxr_keyword">for</strong> (File child : file.listFiles()) {
 <a class="jxr_linenumber" name="L154" href="#L154">154</a>                 sourceFiles.addAll(sourcefileFromFile(child));

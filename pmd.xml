@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pmd version="5.3.2" timestamp="2015-08-27T20:43:19.908">
+<pmd version="5.3.2" timestamp="2015-08-27T21:58:00.780">
 <file name="/home/mprins/workspace/closure-compiler-maven-plugin/target/checkout/src/main/java/nl/geodienstencentrum/maven/plugin/closure/compiler/ClosureCompilerMojo.java">
 <violation beginline="28" endline="162" begincolumn="8" endcolumn="1" rule="CyclomaticComplexity" ruleset="Code Size" package="nl.geodienstencentrum.maven.plugin.closure.compiler" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/codesize.html#CyclomaticComplexity" priority="3">
 The class 'ClosureCompilerMojo' has a Cyclomatic Complexity of 4 (Highest = 11).
@@ -121,7 +121,7 @@ Avoid if (x != y) ..; else ..;
 <violation beginline="130" endline="135" begincolumn="18" endcolumn="42" rule="DataflowAnomalyAnalysis" ruleset="Controversial" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="getSourceFiles" variable="filepath" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/controversial.html#DataflowAnomalyAnalysis" priority="5">
 Found 'UR'-anomaly for variable 'filepath' (lines '130'-'135').
 </violation>
-<violation beginline="133" endline="133" begincolumn="9" endcolumn="53" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="getSourceFiles" variable="externs" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
+<violation beginline="133" endline="133" begincolumn="9" endcolumn="63" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="getSourceFiles" variable="externs" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
 Local variable 'externs' could be declared final
 </violation>
 <violation beginline="134" endline="134" begincolumn="14" endcolumn="28" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="getSourceFiles" variable="filepath" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
@@ -136,7 +136,7 @@ Local variable 'file' could be declared final
 <violation beginline="148" endline="154" begincolumn="17" endcolumn="61" rule="DataflowAnomalyAnalysis" ruleset="Controversial" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="sourcefileFromFile" variable="child" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/controversial.html#DataflowAnomalyAnalysis" priority="5">
 Found 'UR'-anomaly for variable 'child' (lines '148'-'154').
 </violation>
-<violation beginline="151" endline="151" begincolumn="9" endcolumn="57" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="sourcefileFromFile" variable="sourceFiles" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
+<violation beginline="151" endline="151" begincolumn="9" endcolumn="67" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="sourcefileFromFile" variable="sourceFiles" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
 Local variable 'sourceFiles' could be declared final
 </violation>
 <violation beginline="153" endline="153" begincolumn="18" endcolumn="27" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="sourcefileFromFile" variable="child" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">

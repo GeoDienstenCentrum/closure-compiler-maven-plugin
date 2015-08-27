@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Copyright 2015 Mark Prins, GeoDienstenCentrum.
+	Copyright 2012-2014 Mason Bryant
+
+    See the README.md file distributed with this work for additional information
+	regarding copyright ownership.
+
+    Licensed under the BSD 3-Clause License (the "License");
+    You may obtain a copy of the License at: http://opensource.org/licenses/BSD-3-Clause
+-->
+<project xmlns="http://maven.apache.org/DECORATION/1.3.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/DECORATION/1.3.0 http://maven.apache.org/xsd/decoration-1.3.0.xsd"
+	name="${project.name} ${project.version}">
+	<publishDate position="left" format="dd-MMMM-yyyy" />
+	<version position="left" />
+	<skin>
+		<groupId>org.apache.maven.skins</groupId>
+		<artifactId>maven-fluido-skin</artifactId>
+		<version>1.3.1</version>
+	</skin>
+	<bannerLeft>
+		<name>${project.organization.name}</name>
+		<src>images/logo.png</src>
+		<href>${project.organization.url}</href>
+	</bannerLeft>
+	<bannerRight>
+		<name>${project.name}</name>
+		<href>${project.url}</href>
+	</bannerRight>
+	<body>
+		<head>
+			<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+			<link rel="icon" href="favicon.ico" type="image/x-icon" />
+			<link rel="meta" title="DOAP"
+				href="${project.url}/doap_${project.artifactId}.rdf" type="application/rdf+xml" />
+		</head>
+		<links>
+			<item name="Issues dashboard" href="${project.issueManagement.url}" />
+		</links>
+		<menu name="Information">
+			<item name="Home" href="/index.html" />
+			<item name="Usage" href="/plugin-info.html" />
+			<item name="FAQ" href="/faq.html" />
+			<item name="Release notes" href="/releasenotes.html" />
+			<item name="Developer Notes" href="/development.html" />
+		</menu>
+		<menu ref="parent" />
+		<menu ref="modules" />
+		<menu ref="reports" />
+	</body>
+	<poweredBy>
+		<logo href="https://travis-ci.org/GeoDienstenCentrum/${project.artifactId}"
+			img="https://travis-ci.org/GeoDienstenCentrum/${project.artifactId}.svg?branch=master"
+			name="Travis-CI Build status (master branch)" />
+		<logo href="https://ci.appveyor.com/project/mprins/${project.artifactId}"
+			img="https://ci.appveyor.com/api/projects/status/qxc604b7o0rwxsel?svg=true"
+              name="AppVeyor-CI Build status (master branch)" />
+
+        <!-- logo href="https://coveralls.io/github/GeoDienstenCentrum/${project.artifactId}?branch=master"
+			img="https://coveralls.io/repos/github/GeoDienstenCentrum/${project.artifactId}/badge.svg?branch=master"
+            name="Coverage status (master branch)" / -->
+              <!-- logo href="https://maven-badges.herokuapp.com/maven-central/${project.groupId}/${project.artifactId}/"
+			img="https://maven-badges.herokuapp.com/maven-central/${project.groupId}/${project.artifactId}/badge.svg"
+            name="Maven Central" / -->
+	</poweredBy>
+</project>

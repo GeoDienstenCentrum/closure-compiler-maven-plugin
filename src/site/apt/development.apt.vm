@@ -1,0 +1,74 @@
+	 -----
+	 Development
+	 -----
+	 mprins
+	 -----
+	 27 aug 2015
+	 -----
+
+Development
+
+%{toc|section=1|fromDepth=2|toDepth=2}
+
+* {Building from source}
+
+  * Check out the sourcecode
+
++----+
+git checkout ${project.scm.url} ${project.artifactId}
++----+
+
+  * build using Maven
+
++----+
+cd ${project.artifactId}
+mvn install
++----+
+
+  []
+
+* {Updating dependencies}
+
+  Use the following commands to check for dependency (and plugin) updates:
+
+  run:
+
++----+
+mvn -U org.codehaus.mojo:versions-maven-plugin:2.2:display-dependency-updates
++----+
+
+  to check for plugin updates and run:
+
++----+
+mvn -U org.codehaus.mojo:versions-maven-plugin:2.2:display-plugin-updates -Prelease,travis-ci
++----+
+
+  to check for plugin updates.
+
+* {Creating a Release}
+
+  Assuming the requirements for pushing to the OSRRH repository are set up,
+  eg. account, gpg signature,... use the following commands:
+
++----+
+mvn -Prelease clean release:clean release:prepare
+mvn -Prelease release:perform
++----+
+
+  Note that the nexus-staging-maven-plugin will throw an exception
+  <<<Unhandled: Missing staging repository: nlgeodienstencentrum-...>>>
+  because we're deploying straight away.
+
+  Then deploy the site to github:
+
++----+
+cd target/checkout
+mvn site-deploy -Dgithub.username=<username> -Dgithub.password=<password>
++----+
+
+  Update and push the release notes to reflect the new release cycle.
+
++----+
+cd ../..
+mvn release:clean clean
++----+

@@ -1,0 +1,38 @@
+	 -----
+	 Release notes
+	 -----
+	 mprins
+	 -----
+	 27 aug 2015
+	 -----
+
+~~ reference: http://maven.apache.org/doxia/references/apt-format.html
+
+
+${project.name} ${project.version} Release Notes
+
+  These are the release notes for ${project.name} version ${project.version}.
+
+%{toc|section=1|fromDepth=2|toDepth=2}
+
+* ${project.version} Release Notes
+
+  A complete list of issues can be seen in the tracker
+  {{{${project.issueManagement.url}?q=milestone%3A${project.version}+is%3Aclosed}milestone ${project.version} }}.
+
+  This release features Closure Compiler version ${project.properties.get("closure-compiler.version")}.
+  Please check the {{{/${project.artifactId}/dependencies.html#provided}full dependencies}}
+  to find out about the (transitive) dependencies included for this release.
+
+** New
+
+   * Initial release under the nl.geodienstencentrum.maven groupId
+
+  []
+
+
+** Enhancements and Fixes
+
+  * Update Closure compiler to ${project.properties.get("closure-compiler.version")}
+
+ []

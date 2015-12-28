@@ -4,7 +4,7 @@ init:
 
 clone_folder: C:\projects\closure-compiler-maven-plugin
 
-shallow_clone: true
+shallow_clone: false
 
 version: "{build} ({branch})"
 
@@ -24,7 +24,7 @@ build: off
 
 test_script:
   - cd C:\projects\closure-compiler-maven-plugin
-  - mvn -e -fae -B -DWatchMojoTestSleeptime=90000 -Dfailsafe.useFile=false -T2 clean test verify
+  - mvn -e -fae -B -Dfailsafe.useFile=false -T2 clean test verify
 
 environment:
   MVN_VERSION: 3.3.1

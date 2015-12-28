@@ -5,6 +5,18 @@ sudo: false
 matrix:
   fast_finish: true
 
+install:
+  # install without any testing to get dependencies in place
+  - mvn install -U -Dmaven.test.skip=true -B -V -fae -T2
+
+script:
+  # execute unit and integration tests
+  - mvn -e -fae -B -Dfailsafe.useFile=false -T2 clean test verify
+
+after_success:
+  # generate code coverage report
+  # - mvn -B -e -fae -Ptravis-ci clean verify jacoco:report coveralls:report
+
 jdk:
   - openjdk7
   - oraclejdk7

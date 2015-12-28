@@ -1,5 +1,6 @@
 package nl.geodienstencentrum.maven.plugin.closure.compiler;
 
+import com.google.common.base.Preconditions;
 import static com.google.javascript.jscomp.CompilerOptions.*;
 import static com.google.javascript.jscomp.SourceMap.*;
 
@@ -17,10 +18,13 @@ import com.google.javascript.jscomp.CompilerPass;
 import com.google.javascript.jscomp.ComposeWarningsGuard;
 import com.google.javascript.jscomp.CssRenamingMap;
 import com.google.javascript.jscomp.CustomPassExecutionTime;
+
 import com.google.javascript.jscomp.DependencyOptions;
 import com.google.javascript.jscomp.DiagnosticGroup;
+import com.google.javascript.jscomp.DiagnosticGroups;
 import com.google.javascript.jscomp.ErrorFormat;
 import com.google.javascript.jscomp.ErrorHandler;
+import com.google.javascript.jscomp.Instrumentation;
 import com.google.javascript.jscomp.MessageBundle;
 import com.google.javascript.jscomp.PropertyRenamingPolicy;
 import com.google.javascript.jscomp.RenamingMap;
@@ -44,28 +48,84 @@ public class CompilerOptionsMojo {
      */
     private final CompilerOptions compilerOptions = new CompilerOptions();
 
+    public void setMaxFunctionSizeAfterInlining(int funAstSize) {
+        compilerOptions.setMaxFunctionSizeAfterInlining(funAstSize);
+    }
+
+    public void setRemoveUnusedConstructorProperties(boolean removeUnusedConstructorProperties) {
+        compilerOptions.setRemoveUnusedConstructorProperties(removeUnusedConstructorProperties);
+    }
+
+    public void setPolymerPass(boolean polymerPass) {
+        this.compilerOptions.setPolymerPass(polymerPass);
+    }
+
+    public void setDartPass(boolean dartPass) {
+        this.compilerOptions.setDartPass(dartPass);
+    }
+
+    public void setJ2clPass(boolean j2clPass) {
+        this.compilerOptions.setJ2clPass(j2clPass);
+    }
+
+    public void setChecksOnly(boolean checksOnly) {
+        this.compilerOptions.setChecksOnly(checksOnly);
+    }
+
+    public void setInstrumentationTemplateFile(String filename) {
+        this.compilerOptions.setInstrumentationTemplateFile(filename);
+    }
+
+    public void setPreserveTypeAnnotations(boolean preserveTypeAnnotations) {
+        this.compilerOptions.setPreserveTypeAnnotations(preserveTypeAnnotations);
+    }
+
+    public void setSkipNonTranspilationPasses(boolean skipNonTranspilationPasses) {
+        this.compilerOptions.setSkipNonTranspilationPasses(skipNonTranspilationPasses);
+    }
+
+    public void setEnvironment(Environment environment) {
+        this.compilerOptions.setEnvironment(environment);
+    }
+
+    /**
+     * @deprecated no longer a compiler option
+     */
+    @Deprecated
     public void setAggressiveVarCheck(CheckLevel level) {
-        compilerOptions.setAggressiveVarCheck(level);
+        // compilerOptions.setAggressiveVarCheck(level);
     }
 
     public void setReportMissingOverride(CheckLevel level) {
         compilerOptions.setReportMissingOverride(level);
     }
 
+    /**
+     * @deprecated use {@link #setWarningLevel(com.google.javascript.jscomp.DiagnosticGroup, com.google.javascript.jscomp.CheckLevel)
+     */
+    @Deprecated
     public void setCheckRequires(CheckLevel level) {
-        compilerOptions.setCheckRequires(level);
+        this.setWarningLevel(DiagnosticGroups.MISSING_REQUIRE, level);
     }
 
+    /**
+     * @deprecated use {@link #setWarningLevel(com.google.javascript.jscomp.DiagnosticGroup, com.google.javascript.jscomp.CheckLevel)
+     */
+    @Deprecated
     public void setCheckProvides(CheckLevel level) {
-        compilerOptions.setCheckProvides(level);
+        this.setWarningLevel(DiagnosticGroups.MISSING_PROVIDE, level);
     }
 
     public void setCheckGlobalNamesLevel(CheckLevel level) {
         compilerOptions.setCheckGlobalNamesLevel(level);
     }
 
+    /**
+     * @deprecated use {@link #setWarningLevel(com.google.javascript.jscomp.DiagnosticGroup, com.google.javascript.jscomp.CheckLevel)
+     */
+    @Deprecated
     public void setBrokenClosureRequiresLevel(CheckLevel level) {
-        compilerOptions.setBrokenClosureRequiresLevel(level);
+        this.setWarningLevel(DiagnosticGroups.MISSING_REQUIRE, level);
     }
 
     public void setCheckGlobalThisLevel(CheckLevel level) {
@@ -80,24 +140,42 @@ public class CompilerOptionsMojo {
         compilerOptions.setCheckEventfulObjectDisposalPolicy(policy);
     }
 
+    /**
+     * @deprecated no longer a compiler option
+     */
+    @Deprecated
     public void setCheckMissingReturn(CheckLevel level) {
-        compilerOptions.setCheckMissingReturn(level);
+        //compilerOptions.setCheckMissingReturn(level);
     }
 
+    /**
+     * @deprecated no longer a compiler option
+     */
+    @Deprecated
     public void setAliasableGlobals(String names) {
-        compilerOptions.setAliasableGlobals(names);
+        //compilerOptions.setAliasableGlobals(names);
     }
 
+    /**
+     * @deprecated no longer a compiler option
+     */
+    @Deprecated
     public void setUnaliasableGlobals(String names) {
-        compilerOptions.setUnaliasableGlobals(names);
+        //compilerOptions.setUnaliasableGlobals(names);
     }
 
     public void setCollapseObjectLiterals(boolean enabled) {
         compilerOptions.setCollapseObjectLiterals(enabled);
     }
 
+    /**
+     *
+     * @deprecated no longer a compiler option
+     *
+     */
+    @Deprecated
     public void setSpecializeInitialModule(boolean enabled) {
-        compilerOptions.setSpecializeInitialModule(enabled);
+        //compilerOptions.setSpecializeInitialModule(enabled);
     }
 
     public void setReplaceMessagesWithChromeI18n(boolean replaceMessagesWithChromeI18n, String tcProjectId) {
@@ -184,16 +262,25 @@ public class CompilerOptionsMojo {
         compilerOptions.setRenamingPolicy(newVariablePolicy, newPropertyPolicy);
     }
 
+    /**
+     * @deprecated no longer a compiler option
+     */
+    @Deprecated
     public void setPropertyAffinity(boolean useAffinity) {
-        compilerOptions.setPropertyAffinity(useAffinity);
+        // compilerOptions.setPropertyAffinity(useAffinity);
     }
 
     public void setShadowVariables(boolean shadow) {
         compilerOptions.setShadowVariables(shadow);
     }
 
+    /**
+     * @deprecated no longer a compiler option
+     * @param collapse
+     */
+    @Deprecated
     public void setCollapsePropertiesOnExternTypes(boolean collapse) {
-        compilerOptions.setCollapsePropertiesOnExternTypes(collapse);
+        // compilerOptions.setCollapsePropertiesOnExternTypes(collapse);
     }
 
     public void setProcessObjectPropertyString(boolean process) {
@@ -244,8 +331,12 @@ public class CompilerOptionsMojo {
         compilerOptions.setRemoveClosureAsserts(remove);
     }
 
+    /**
+     * @deprecated no longer a compiler option
+     */
+    @Deprecated
     public void setNameAnonymousFunctionsOnly(boolean value) {
-        compilerOptions.setNameAnonymousFunctionsOnly(value);
+        //compilerOptions.setNameAnonymousFunctionsOnly(value);
     }
 
     public void setColorizeErrorOutput(boolean colorizeErrorOutput) {
@@ -256,8 +347,12 @@ public class CompilerOptionsMojo {
         compilerOptions.setChainCalls(value);
     }
 
+    /**
+     * @deprecated no longer a compiler option
+     */
+    @Deprecated
     public void setAcceptConstKeyword(boolean value) {
-        compilerOptions.setAcceptConstKeyword(value);
+        // compilerOptions.setAcceptConstKeyword(value);
     }
 
     public void enableRuntimeTypeCheck(String logFunction) {
@@ -327,8 +422,14 @@ public class CompilerOptionsMojo {
         compilerOptions.setLanguageIn(languageIn);
     }
 
+    /**
+     *
+     * @param looseTypes
+     * @deprecated no longer a compiler option
+     */
+    @Deprecated
     public void setLooseTypes(boolean looseTypes) {
-        compilerOptions.setLooseTypes(looseTypes);
+        //compilerOptions.setLooseTypes(looseTypes);
     }
 
     public void setAliasTransformationHandler(AliasTransformationHandler changes) {
@@ -367,12 +468,20 @@ public class CompilerOptionsMojo {
         compilerOptions.setIdeMode(ideMode);
     }
 
+    /**
+     * @deprecated no longer a compiler option
+     */
+    @Deprecated
     public void setSaveDataStructures(boolean save) {
-        compilerOptions.setSaveDataStructures(save);
+//        compilerOptions.setSaveDataStructures(save);
     }
 
+    /**
+     * @deprecated no longer a compiler option
+     */
+    @Deprecated
     public void setSkipAllPasses(boolean skipAllPasses) {
-        compilerOptions.setSkipAllPasses(skipAllPasses);
+        //   compilerOptions.setSkipAllPasses(skipAllPasses);
     }
 
     public void setCheckDeterminism(boolean checkDeterminism) {
@@ -406,8 +515,12 @@ public class CompilerOptionsMojo {
         compilerOptions.setCheckMissingGetCssNameBlacklist(blackList);
     }
 
+    /**
+     * @deprecated no longer a compiler option
+     */
+    @Deprecated
     public void setAggressiveRenaming(boolean aggressive) {
-        compilerOptions.setAggressiveRenaming(aggressive);
+        // compilerOptions.setAggressiveRenaming(aggressive);
     }
 
     public void setFoldConstants(boolean foldConstants) {
@@ -494,16 +607,24 @@ public class CompilerOptionsMojo {
         compilerOptions.setRemoveUnusedLocalVars(removeUnusedLocalVars);
     }
 
+    /**
+     * @deprecated no longer a compiler option
+     */
+    @Deprecated
     public void setAliasExternals(boolean aliasExternals) {
-        compilerOptions.setAliasExternals(aliasExternals);
+        //compilerOptions.setAliasExternals(aliasExternals);
     }
 
     public void setCollapseVariableDeclarations(boolean enabled) {
         compilerOptions.setCollapseVariableDeclarations(enabled);
     }
 
+    /**
+     * @deprecated no longer a compiler option
+     */
+    @Deprecated
     public void setGroupVariableDeclarations(boolean enabled) {
-        compilerOptions.setGroupVariableDeclarations(enabled);
+        //compilerOptions.setGroupVariableDeclarations(enabled);
     }
 
     public void setCollapseAnonymousFunctions(boolean enabled) {
@@ -582,8 +703,12 @@ public class CompilerOptionsMojo {
         compilerOptions.setRenamePrefixNamespace(renamePrefixNamespace);
     }
 
+    /**
+     * @deprecated no longer a compiler option
+     */
+    @Deprecated
     public void setAliasKeywords(boolean aliasKeywords) {
-        compilerOptions.setAliasKeywords(aliasKeywords);
+        //  compilerOptions.setAliasKeywords(aliasKeywords);
     }
 
     public void setCollapseProperties(boolean collapseProperties) {
@@ -686,8 +811,16 @@ public class CompilerOptionsMojo {
         compilerOptions.setStripTypePrefixes(stripTypePrefixes);
     }
 
+    /**
+     * @deprecated no longer a compiler option
+     */
+    @Deprecated
     public void setCustomPasses(Multimap<CustomPassExecutionTime, CompilerPass> customPasses) {
-        compilerOptions.setCustomPasses(customPasses);
+        // compilerOptions.setCustomPasses(customPasses);
+    }
+
+    public void addCustomPass(CustomPassExecutionTime time, CompilerPass customPass) {
+        compilerOptions.addCustomPass(time, customPass);
     }
 
     public void setMarkNoSideEffectCalls(boolean markNoSideEffectCalls) {
@@ -706,7 +839,7 @@ public class CompilerOptionsMojo {
         compilerOptions.setMoveFunctionDeclarations(moveFunctionDeclarations);
     }
 
-    public void setInstrumentationTemplate(String instrumentationTemplate) {
+    public void setInstrumentationTemplate(Instrumentation instrumentationTemplate) {
         compilerOptions.setInstrumentationTemplate(instrumentationTemplate);
     }
 
@@ -802,8 +935,12 @@ public class CompilerOptionsMojo {
         compilerOptions.setCommonJSModulePathPrefix(commonJSModulePathPrefix);
     }
 
+    /**
+     * @deprecated no longer a compiler option
+     */
+    @Deprecated
     public void setInstrumentMemoryAllocations(boolean instrumentMemoryAllocations) {
-        compilerOptions.setInstrumentMemoryAllocations(instrumentMemoryAllocations);
+        // compilerOptions.setInstrumentMemoryAllocations(instrumentMemoryAllocations);
     }
 
     public void setInstrumentForCoverage(boolean instrumentForCoverage) {

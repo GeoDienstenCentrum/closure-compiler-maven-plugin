@@ -4,10 +4,10 @@ import java.io.File;
 import java.util.List;
 
 /**
- * Created: Oct 15, 2012 12:18:11 PM
+ * Describe a compilation cycle.
  *
  * @author mbryant
- *
+ * @author mprins
  */
 public class Compilation {
 

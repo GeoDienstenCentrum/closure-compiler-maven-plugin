@@ -81,7 +81,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven-libs.version>3.0.5</maven-libs.version>
-        <closure-compiler.version>r2180</closure-compiler.version>
+        <closure-compiler.version>v20140407</closure-compiler.version>
     </properties>
     <dependencies>
         <dependency>

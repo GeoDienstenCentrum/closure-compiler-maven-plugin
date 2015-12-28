@@ -1,19 +1,18 @@
 package nl.geodienstencentrum.maven.plugin.closure.compiler;
 
+import static com.google.javascript.jscomp.CompilerOptions.*;
+import static com.google.javascript.jscomp.SourceMap.*;
+
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 import com.google.common.collect.Multimap;
 import com.google.javascript.jscomp.AnonymousFunctionNamingPolicy;
+import com.google.javascript.jscomp.CheckEventfulObjectDisposal;
 import com.google.javascript.jscomp.CheckLevel;
 import com.google.javascript.jscomp.CodingConvention;
 import com.google.javascript.jscomp.CompilerOptions;
-import com.google.javascript.jscomp.CompilerOptions.AliasTransformationHandler;
-import com.google.javascript.jscomp.CompilerOptions.LanguageMode;
-import com.google.javascript.jscomp.CompilerOptions.Reach;
-import com.google.javascript.jscomp.CompilerOptions.TracerMode;
-import com.google.javascript.jscomp.CompilerOptions.TweakProcessing;
 import com.google.javascript.jscomp.CompilerPass;
 import com.google.javascript.jscomp.ComposeWarningsGuard;
 import com.google.javascript.jscomp.CssRenamingMap;
@@ -24,1854 +23,796 @@ import com.google.javascript.jscomp.ErrorFormat;
 import com.google.javascript.jscomp.ErrorHandler;
 import com.google.javascript.jscomp.MessageBundle;
 import com.google.javascript.jscomp.PropertyRenamingPolicy;
-import com.google.javascript.jscomp.SourceMap.DetailLevel;
-import com.google.javascript.jscomp.SourceMap.Format;
-import com.google.javascript.jscomp.SourceMap.LocationMapping;
+import com.google.javascript.jscomp.RenamingMap;
+import com.google.javascript.jscomp.VariableMap;
 import com.google.javascript.jscomp.VariableRenamingPolicy;
 import com.google.javascript.jscomp.WarningsGuard;
-import com.google.javascript.rhino.Node;
 
 /**
- * Created: Oct 15, 2012 7:08:55 PM
+ * options for a compilation. This is a wrapper around a
+ * {@link com.google.javascript.jscomp.CompilerOptions} .
  *
- * @author mbryant
  *
+ * @author mprins
+ *
+ * @see com.google.javascript.jscomp.CompilerOptions
  */
 public class CompilerOptionsMojo {
 
-    private CompilerOptions compilerOptions = new CompilerOptions();
-
-    /**
-     * @param guard
-     * @see com.google.javascript.jscomp.CompilerOptions#addWarningsGuard(com.google.javascript.jscomp.WarningsGuard)
-     */
-    public void addWarningsGuard(final WarningsGuard guard) {
-        this.compilerOptions.addWarningsGuard(guard);
-    }
-
-    /**
-     * @see com.google.javascript.jscomp.CompilerOptions#assumeClosuresOnlyCaptureReferences()
-     */
-    public boolean assumeClosuresOnlyCaptureReferences() {
-        return this.compilerOptions.assumeClosuresOnlyCaptureReferences();
-    }
-
-    /**
-     * @see com.google.javascript.jscomp.CompilerOptions#assumeStrictThis()
-     */
-    public boolean assumeStrictThis() {
-        return this.compilerOptions.assumeStrictThis();
-    }
-
-    /**
-     * @see com.google.javascript.jscomp.CompilerOptions#disableRuntimeTypeCheck()
-     */
-    public void disableRuntimeTypeCheck() {
-        this.compilerOptions.disableRuntimeTypeCheck();
-    }
-
-    /**
-     * @see com.google.javascript.jscomp.CompilerOptions#enableRuntimeTypeCheck(java.lang.String)
-     */
-    public void enableRuntimeTypeCheck(final String logFunction) {
-        this.compilerOptions.enableRuntimeTypeCheck(logFunction);
-    }
-
-    /**
-     * @see java.lang.Object#equals(java.lang.Object)
-     */
-    @Override
-    public boolean equals(final Object obj) {
-        return this.compilerOptions.equals(obj);
-    }
-
     /**
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#getAliasTransformationHandler()
+     * wrapped CompilerOptions.
      */
-    public AliasTransformationHandler getAliasTransformationHandler() {
-        return this.compilerOptions.getAliasTransformationHandler();
-    }
-
-    /**
-     * @see com.google.javascript.jscomp.CompilerOptions#getCodingConvention()
-     */
-    public CodingConvention getCodingConvention() {
-        return this.compilerOptions.getCodingConvention();
-    }
-
-    /**
-     * @return the compilerOptions
-     */
-    public CompilerOptions getCompilerOptions() {
-        return this.compilerOptions;
-    }
+    private final CompilerOptions compilerOptions = new CompilerOptions();
 
-    /**
-     * @see com.google.javascript.jscomp.CompilerOptions#getDefineReplacements()
-     */
-    public Map<String, Node> getDefineReplacements() {
-        return this.compilerOptions.getDefineReplacements();
+    public void setAggressiveVarCheck(CheckLevel level) {
+        compilerOptions.setAggressiveVarCheck(level);
     }
 
-    /**
-     * @see com.google.javascript.jscomp.CompilerOptions#getInferTypes()
-     */
-    public boolean getInferTypes() {
-        return this.compilerOptions.getInferTypes();
+    public void setReportMissingOverride(CheckLevel level) {
+        compilerOptions.setReportMissingOverride(level);
     }
 
-    /**
-     * @see com.google.javascript.jscomp.CompilerOptions#getLanguageIn()
-     */
-    public LanguageMode getLanguageIn() {
-        return this.compilerOptions.getLanguageIn();
+    public void setCheckRequires(CheckLevel level) {
+        compilerOptions.setCheckRequires(level);
     }
 
-    /**
-     * @see com.google.javascript.jscomp.CompilerOptions#getLanguageOut()
-     */
-    public LanguageMode getLanguageOut() {
-        return this.compilerOptions.getLanguageOut();
+    public void setCheckProvides(CheckLevel level) {
+        compilerOptions.setCheckProvides(level);
     }
 
-    /**
-     * @see com.google.javascript.jscomp.CompilerOptions#getTracerMode()
-     */
-    public TracerMode getTracerMode() {
-        return this.compilerOptions.getTracerMode();
+    public void setCheckGlobalNamesLevel(CheckLevel level) {
+        compilerOptions.setCheckGlobalNamesLevel(level);
     }
 
-    /**
-     * @see com.google.javascript.jscomp.CompilerOptions#getTweakProcessing()
-     */
-    public TweakProcessing getTweakProcessing() {
-        return this.compilerOptions.getTweakProcessing();
+    public void setBrokenClosureRequiresLevel(CheckLevel level) {
+        compilerOptions.setBrokenClosureRequiresLevel(level);
     }
 
-    /**
-     * @see com.google.javascript.jscomp.CompilerOptions#getTweakReplacements()
-     */
-    public Map<String, Node> getTweakReplacements() {
-        return this.compilerOptions.getTweakReplacements();
+    public void setCheckGlobalThisLevel(CheckLevel level) {
+        compilerOptions.setCheckGlobalThisLevel(level);
     }
 
-    /**
-     * @see java.lang.Object#hashCode()
-     */
-    @Override
-    public int hashCode() {
-        return this.compilerOptions.hashCode();
+    public void setCheckMissingGetCssNameLevel(CheckLevel level) {
+        compilerOptions.setCheckMissingGetCssNameLevel(level);
     }
 
-    /**
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#isExternExportsEnabled()
-     */
-    public boolean isExternExportsEnabled() {
-        return this.compilerOptions.isExternExportsEnabled();
+    public void setCheckEventfulObjectDisposalPolicy(CheckEventfulObjectDisposal.DisposalCheckingPolicy policy) {
+        compilerOptions.setCheckEventfulObjectDisposalPolicy(policy);
     }
 
-    /**
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#isRemoveUnusedClassProperties()
-     */
-    public boolean isRemoveUnusedClassProperties() {
-        return this.compilerOptions.isRemoveUnusedClassProperties();
+    public void setCheckMissingReturn(CheckLevel level) {
+        compilerOptions.setCheckMissingReturn(level);
     }
 
-    /**
-     * @see com.google.javascript.jscomp.CompilerOptions#resetWarningsGuard()
-     */
-    public void resetWarningsGuard() {
-        this.compilerOptions.resetWarningsGuard();
+    public void setAliasableGlobals(String names) {
+        compilerOptions.setAliasableGlobals(names);
     }
 
-    /**
-     * @param value
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setAcceptConstKeyword(boolean)
-     */
-    public void setAcceptConstKeyword(final boolean value) {
-        this.compilerOptions.setAcceptConstKeyword(value);
+    public void setUnaliasableGlobals(String names) {
+        compilerOptions.setUnaliasableGlobals(names);
     }
 
-    /**
-     * @param level
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setAggressiveVarCheck(com.google.javascript.jscomp.CheckLevel)
-     */
-    public void setAggressiveVarCheck(final CheckLevel level) {
-        this.compilerOptions.setAggressiveVarCheck(level);
+    public void setCollapseObjectLiterals(boolean enabled) {
+        compilerOptions.setCollapseObjectLiterals(enabled);
     }
 
-    /**
-     * @param names
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setAliasableGlobals(java.lang.String)
-     */
-    public void setAliasableGlobals(final String names) {
-        this.compilerOptions.setAliasableGlobals(names);
+    public void setSpecializeInitialModule(boolean enabled) {
+        compilerOptions.setSpecializeInitialModule(enabled);
     }
 
-    /**
-     * @param aliasableStrings
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setAliasableStrings(java.util.Set)
-     */
-    public void setAliasableStrings(final Set<String> aliasableStrings) {
-        this.compilerOptions.setAliasableStrings(aliasableStrings);
+    public void setReplaceMessagesWithChromeI18n(boolean replaceMessagesWithChromeI18n, String tcProjectId) {
+        compilerOptions.setReplaceMessagesWithChromeI18n(replaceMessagesWithChromeI18n, tcProjectId);
     }
 
-    /**
-     * @param aliasAllStrings
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setAliasAllStrings(boolean)
-     */
-    public void setAliasAllStrings(final boolean aliasAllStrings) {
-        this.compilerOptions.setAliasAllStrings(aliasAllStrings);
+    public void setAppNameStr(String appNameStr) {
+        compilerOptions.setAppNameStr(appNameStr);
     }
 
-    /**
-     * @param aliasExternals
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setAliasExternals(boolean)
-     */
-    public void setAliasExternals(final boolean aliasExternals) {
-        this.compilerOptions.setAliasExternals(aliasExternals);
+    public void setPreferSingleQuotes(boolean enabled) {
+        compilerOptions.setPreferSingleQuotes(enabled);
     }
 
-    /**
-     * @param aliasKeywords
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setAliasKeywords(boolean)
-     */
-    public void setAliasKeywords(final boolean aliasKeywords) {
-        this.compilerOptions.setAliasKeywords(aliasKeywords);
+    public void setTrustedStrings(boolean yes) {
+        compilerOptions.setTrustedStrings(yes);
     }
 
-    /**
-     * @param aliasStringsBlacklist
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setAliasStringsBlacklist(java.lang.String)
-     */
-    public void setAliasStringsBlacklist(final String aliasStringsBlacklist) {
-        this.compilerOptions.setAliasStringsBlacklist(aliasStringsBlacklist);
+    public void setReportPath(String reportPath) {
+        compilerOptions.setReportPath(reportPath);
     }
 
-    /**
-     * @param changes
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setAliasTransformationHandler(com.google.javascript.jscomp.CompilerOptions.AliasTransformationHandler)
-     */
-    public void setAliasTransformationHandler(
-            final AliasTransformationHandler changes) {
-        this.compilerOptions.setAliasTransformationHandler(changes);
+    public void setTracerMode(TracerMode mode) {
+        compilerOptions.setTracerMode(mode);
     }
 
-    /**
-     * @param ambiguateProperties
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setAmbiguateProperties(boolean)
-     */
-    public void setAmbiguateProperties(final boolean ambiguateProperties) {
-        this.compilerOptions.setAmbiguateProperties(ambiguateProperties);
+    public void setNameReferenceReportPath(String filePath) {
+        compilerOptions.setNameReferenceReportPath(filePath);
     }
 
-    /**
-     * @param anonymousFunctionNaming
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setAnonymousFunctionNaming(com.google.javascript.jscomp.AnonymousFunctionNamingPolicy)
-     */
-    public void setAnonymousFunctionNaming(
-            final AnonymousFunctionNamingPolicy anonymousFunctionNaming) {
-        this.compilerOptions
-                .setAnonymousFunctionNaming(anonymousFunctionNaming);
+    public void setNameReferenceGraphPath(String filePath) {
+        compilerOptions.setNameReferenceGraphPath(filePath);
     }
 
-    /**
-     * @param appNameStr
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setAppNameStr(java.lang.String)
-     */
-    public void setAppNameStr(final String appNameStr) {
-        this.compilerOptions.setAppNameStr(appNameStr);
+    public void setProtectHiddenSideEffects(boolean enable) {
+        compilerOptions.setProtectHiddenSideEffects(enable);
     }
 
-    /**
-     * @param enable
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setAssumeClosuresOnlyCaptureReferences(boolean)
-     */
-    public void setAssumeClosuresOnlyCaptureReferences(final boolean enable) {
-        this.compilerOptions.setAssumeClosuresOnlyCaptureReferences(enable);
+    public void setRemoveUnusedClassProperties(boolean removeUnusedClassProperties) {
+        compilerOptions.setRemoveUnusedClassProperties(removeUnusedClassProperties);
     }
 
-    /**
-     * @param enable
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setAssumeStrictThis(boolean)
-     */
-    public void setAssumeStrictThis(final boolean enable) {
-        this.compilerOptions.setAssumeStrictThis(enable);
+    public void setDefineToBooleanLiteral(String defineName, boolean value) {
+        compilerOptions.setDefineToBooleanLiteral(defineName, value);
     }
 
-    /**
-     * @param level
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setBrokenClosureRequiresLevel(com.google.javascript.jscomp.CheckLevel)
-     */
-    public void setBrokenClosureRequiresLevel(final CheckLevel level) {
-        this.compilerOptions.setBrokenClosureRequiresLevel(level);
+    public void setDefineToStringLiteral(String defineName, String value) {
+        compilerOptions.setDefineToStringLiteral(defineName, value);
     }
 
-    /**
-     * @param value
-     * @see com.google.javascript.jscomp.CompilerOptions#setChainCalls(boolean)
-     */
-    public void setChainCalls(final boolean value) {
-        this.compilerOptions.setChainCalls(value);
+    public void setDefineToNumberLiteral(String defineName, int value) {
+        compilerOptions.setDefineToNumberLiteral(defineName, value);
     }
 
-    /**
-     * @param check
-     * @see com.google.javascript.jscomp.CompilerOptions#setCheckCaja(boolean)
-     */
-    public void setCheckCaja(final boolean check) {
-        this.compilerOptions.setCheckCaja(check);
+    public void setDefineToDoubleLiteral(String defineName, double value) {
+        compilerOptions.setDefineToDoubleLiteral(defineName, value);
     }
 
-    /**
-     * @param checkControlStructures
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setCheckControlStructures(boolean)
-     */
-    public void setCheckControlStructures(final boolean checkControlStructures) {
-        this.compilerOptions.setCheckControlStructures(checkControlStructures);
+    public void setTweakToBooleanLiteral(String tweakId, boolean value) {
+        compilerOptions.setTweakToBooleanLiteral(tweakId, value);
     }
 
-    /**
-     * @param level
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setCheckGlobalNamesLevel(com.google.javascript.jscomp.CheckLevel)
-     */
-    public void setCheckGlobalNamesLevel(final CheckLevel level) {
-        this.compilerOptions.setCheckGlobalNamesLevel(level);
+    public void setTweakToStringLiteral(String tweakId, String value) {
+        compilerOptions.setTweakToStringLiteral(tweakId, value);
     }
 
-    /**
-     * @param level
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setCheckGlobalThisLevel(com.google.javascript.jscomp.CheckLevel)
-     */
-    public void setCheckGlobalThisLevel(final CheckLevel level) {
-        this.compilerOptions.setCheckGlobalThisLevel(level);
+    public void setTweakToNumberLiteral(String tweakId, int value) {
+        compilerOptions.setTweakToNumberLiteral(tweakId, value);
     }
 
-    /**
-     * @param blackList
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setCheckMissingGetCssNameBlacklist(java.lang.String)
-     */
-    public void setCheckMissingGetCssNameBlacklist(final String blackList) {
-        this.compilerOptions.setCheckMissingGetCssNameBlacklist(blackList);
+    public void setTweakToDoubleLiteral(String tweakId, double value) {
+        compilerOptions.setTweakToDoubleLiteral(tweakId, value);
     }
 
-    /**
-     * @param level
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setCheckMissingGetCssNameLevel(com.google.javascript.jscomp.CheckLevel)
-     */
-    public void setCheckMissingGetCssNameLevel(final CheckLevel level) {
-        this.compilerOptions.setCheckMissingGetCssNameLevel(level);
+    public void setWarningLevel(DiagnosticGroup type, CheckLevel level) {
+        compilerOptions.setWarningLevel(type, level);
     }
 
-    /**
-     * @param level
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setCheckMissingReturn(com.google.javascript.jscomp.CheckLevel)
-     */
-    public void setCheckMissingReturn(final CheckLevel level) {
-        this.compilerOptions.setCheckMissingReturn(level);
+    public void addWarningsGuard(WarningsGuard guard) {
+        compilerOptions.addWarningsGuard(guard);
     }
 
-    /**
-     * @param level
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setCheckProvides(com.google.javascript.jscomp.CheckLevel)
-     */
-    public void setCheckProvides(final CheckLevel level) {
-        this.compilerOptions.setCheckProvides(level);
+    public void setRenamingPolicy(VariableRenamingPolicy newVariablePolicy, PropertyRenamingPolicy newPropertyPolicy) {
+        compilerOptions.setRenamingPolicy(newVariablePolicy, newPropertyPolicy);
     }
 
-    /**
-     * @param level
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setCheckRequires(com.google.javascript.jscomp.CheckLevel)
-     */
-    public void setCheckRequires(final CheckLevel level) {
-        this.compilerOptions.setCheckRequires(level);
+    public void setPropertyAffinity(boolean useAffinity) {
+        compilerOptions.setPropertyAffinity(useAffinity);
     }
 
-    /**
-     * @param checkSuspiciousCode
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setCheckSuspiciousCode(boolean)
-     */
-    public void setCheckSuspiciousCode(final boolean checkSuspiciousCode) {
-        this.compilerOptions.setCheckSuspiciousCode(checkSuspiciousCode);
+    public void setShadowVariables(boolean shadow) {
+        compilerOptions.setShadowVariables(shadow);
     }
 
-    /**
-     * @param checkSymbols
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setCheckSymbols(boolean)
-     */
-    public void setCheckSymbols(final boolean checkSymbols) {
-        this.compilerOptions.setCheckSymbols(checkSymbols);
+    public void setCollapsePropertiesOnExternTypes(boolean collapse) {
+        compilerOptions.setCollapsePropertiesOnExternTypes(collapse);
     }
 
-    /**
-     * @param checkTypes
-     * @see com.google.javascript.jscomp.CompilerOptions#setCheckTypes(boolean)
-     */
-    public void setCheckTypes(final boolean checkTypes) {
-        this.compilerOptions.setCheckTypes(checkTypes);
+    public void setProcessObjectPropertyString(boolean process) {
+        compilerOptions.setProcessObjectPropertyString(process);
     }
 
-    /**
-     * @param level
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setCheckUnreachableCode(com.google.javascript.jscomp.CheckLevel)
-     */
-    public void setCheckUnreachableCode(final CheckLevel level) {
-        this.compilerOptions.setCheckUnreachableCode(level);
+    public void setReplaceIdGenerators(boolean replaceIdGenerators) {
+        compilerOptions.setReplaceIdGenerators(replaceIdGenerators);
     }
 
-    /**
-     * @param closurePass
-     * @see com.google.javascript.jscomp.CompilerOptions#setClosurePass(boolean)
-     */
-    public void setClosurePass(final boolean closurePass) {
-        this.compilerOptions.setClosurePass(closurePass);
+    public void setIdGenerators(Set<String> idGenerators) {
+        compilerOptions.setIdGenerators(idGenerators);
     }
 
-    /**
-     * @param coalesceVariableNames
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setCoalesceVariableNames(boolean)
-     */
-    public void setCoalesceVariableNames(final boolean coalesceVariableNames) {
-        this.compilerOptions.setCoalesceVariableNames(coalesceVariableNames);
+    public void setIdGenerators(Map<String, RenamingMap> idGenerators) {
+        compilerOptions.setIdGenerators(idGenerators);
     }
 
-    /**
-     * @param codingConvention
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setCodingConvention(com.google.javascript.jscomp.CodingConvention)
-     */
-    public void setCodingConvention(final CodingConvention codingConvention) {
-        this.compilerOptions.setCodingConvention(codingConvention);
+    public void setIdGeneratorsMap(String previousMappings) {
+        compilerOptions.setIdGeneratorsMap(previousMappings);
     }
 
-    /**
-     * @param enabled
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setCollapseAnonymousFunctions(boolean)
-     */
-    public void setCollapseAnonymousFunctions(final boolean enabled) {
-        this.compilerOptions.setCollapseAnonymousFunctions(enabled);
+    public void setInlineFunctions(Reach reach) {
+        compilerOptions.setInlineFunctions(reach);
     }
 
-    /**
-     * @param enabled
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setCollapseObjectLiterals(boolean)
-     */
-    public void setCollapseObjectLiterals(final boolean enabled) {
-        this.compilerOptions.setCollapseObjectLiterals(enabled);
+    public void setInlineVariables(Reach reach) {
+        compilerOptions.setInlineVariables(reach);
     }
 
-    /**
-     * @param collapseProperties
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setCollapseProperties(boolean)
-     */
-    public void setCollapseProperties(final boolean collapseProperties) {
-        this.compilerOptions.setCollapseProperties(collapseProperties);
+    public void setInlineProperties(boolean enable) {
+        compilerOptions.setInlineProperties(enable);
     }
 
-    /**
-     * @param collapse
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setCollapsePropertiesOnExternTypes(boolean)
-     */
-    public void setCollapsePropertiesOnExternTypes(final boolean collapse) {
-        this.compilerOptions.setCollapsePropertiesOnExternTypes(collapse);
+    public void setRemoveUnusedVariables(Reach reach) {
+        compilerOptions.setRemoveUnusedVariables(reach);
     }
 
-    /**
-     * @param enabled
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setCollapseVariableDeclarations(boolean)
-     */
-    public void setCollapseVariableDeclarations(final boolean enabled) {
-        this.compilerOptions.setCollapseVariableDeclarations(enabled);
+    public void setReplaceStringsConfiguration(String placeholderToken, List<String> functionDescriptors) {
+        compilerOptions.setReplaceStringsConfiguration(placeholderToken, functionDescriptors);
     }
 
-    /**
-     * @param colorizeErrorOutput
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setColorizeErrorOutput(boolean)
-     */
-    public void setColorizeErrorOutput(final boolean colorizeErrorOutput) {
-        this.compilerOptions.setColorizeErrorOutput(colorizeErrorOutput);
+    public void setRemoveAbstractMethods(boolean remove) {
+        compilerOptions.setRemoveAbstractMethods(remove);
     }
 
-    /**
-     * @param commonJSModulePathPrefix
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setCommonJSModulePathPrefix(java.lang.String)
-     */
-    public void setCommonJSModulePathPrefix(
-            final String commonJSModulePathPrefix) {
-        this.compilerOptions
-                .setCommonJSModulePathPrefix(commonJSModulePathPrefix);
+    public void setRemoveClosureAsserts(boolean remove) {
+        compilerOptions.setRemoveClosureAsserts(remove);
     }
 
-    /**
-     * @param compilerOptions the compilerOptions to set
-     */
-    public void setCompilerOptions(final CompilerOptions compilerOptions) {
-        this.compilerOptions = compilerOptions;
+    public void setNameAnonymousFunctionsOnly(boolean value) {
+        compilerOptions.setNameAnonymousFunctionsOnly(value);
     }
 
-    /**
-     * @param computeFunctionSideEffects
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setComputeFunctionSideEffects(boolean)
-     */
-    public void setComputeFunctionSideEffects(
-            final boolean computeFunctionSideEffects) {
-        this.compilerOptions
-                .setComputeFunctionSideEffects(computeFunctionSideEffects);
+    public void setColorizeErrorOutput(boolean colorizeErrorOutput) {
+        compilerOptions.setColorizeErrorOutput(colorizeErrorOutput);
     }
 
-    /**
-     * @param convertToDottedProperties
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setConvertToDottedProperties(boolean)
-     */
-    public void setConvertToDottedProperties(
-            final boolean convertToDottedProperties) {
-        this.compilerOptions
-                .setConvertToDottedProperties(convertToDottedProperties);
+    public void setChainCalls(boolean value) {
+        compilerOptions.setChainCalls(value);
     }
 
-    /**
-     * @param crossModuleCodeMotion
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setCrossModuleCodeMotion(boolean)
-     */
-    public void setCrossModuleCodeMotion(final boolean crossModuleCodeMotion) {
-        this.compilerOptions.setCrossModuleCodeMotion(crossModuleCodeMotion);
+    public void setAcceptConstKeyword(boolean value) {
+        compilerOptions.setAcceptConstKeyword(value);
     }
 
-    /**
-     * @param crossModuleMethodMotion
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setCrossModuleMethodMotion(boolean)
-     */
-    public void setCrossModuleMethodMotion(final boolean crossModuleMethodMotion) {
-        this.compilerOptions
-                .setCrossModuleMethodMotion(crossModuleMethodMotion);
+    public void enableRuntimeTypeCheck(String logFunction) {
+        compilerOptions.enableRuntimeTypeCheck(logFunction);
     }
 
-    /**
-     * @param cssRenamingMap
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setCssRenamingMap(com.google.javascript.jscomp.CssRenamingMap)
-     */
-    public void setCssRenamingMap(final CssRenamingMap cssRenamingMap) {
-        this.compilerOptions.setCssRenamingMap(cssRenamingMap);
+    public void setGenerateExports(boolean generateExports) {
+        compilerOptions.setGenerateExports(generateExports);
     }
 
-    /**
-     * @param customPasses
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setCustomPasses(com.google.common.collect.Multimap)
-     */
-    public void setCustomPasses(
-            final Multimap<CustomPassExecutionTime, CompilerPass> customPasses) {
-        this.compilerOptions.setCustomPasses(customPasses);
+    public void setExportLocalPropertyDefinitions(boolean export) {
+        compilerOptions.setExportLocalPropertyDefinitions(export);
     }
 
-    /**
-     * @param deadAssignmentElimination
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setDeadAssignmentElimination(boolean)
-     */
-    public void setDeadAssignmentElimination(
-            final boolean deadAssignmentElimination) {
-        this.compilerOptions
-                .setDeadAssignmentElimination(deadAssignmentElimination);
+    public void setAngularPass(boolean angularPass) {
+        compilerOptions.setAngularPass(angularPass);
     }
 
-    /**
-     * @param debugFunctionSideEffectsPath
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setDebugFunctionSideEffectsPath(java.lang.String)
-     */
-    public void setDebugFunctionSideEffectsPath(
-            final String debugFunctionSideEffectsPath) {
-        this.compilerOptions
-                .setDebugFunctionSideEffectsPath(debugFunctionSideEffectsPath);
+    public void setCodingConvention(CodingConvention codingConvention) {
+        compilerOptions.setCodingConvention(codingConvention);
     }
 
-    /**
-     * @param defineReplacements
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setDefineReplacements(java.util.Map)
-     */
-    public void setDefineReplacements(
-            final Map<String, Object> defineReplacements) {
-        this.compilerOptions.setDefineReplacements(defineReplacements);
+    public void setDependencyOptions(DependencyOptions options) {
+        compilerOptions.setDependencyOptions(options);
     }
 
-    /**
-     * @param defineName
-     * @param value
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setDefineToBooleanLiteral(java.lang.String,
-     * boolean)
-     */
-    public void setDefineToBooleanLiteral(final String defineName,
-            final boolean value) {
-        this.compilerOptions.setDefineToBooleanLiteral(defineName, value);
+    public void setManageClosureDependencies(boolean newVal) {
+        compilerOptions.setManageClosureDependencies(newVal);
     }
 
-    /**
-     * @param defineName
-     * @param value
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setDefineToDoubleLiteral(java.lang.String,
-     * double)
-     */
-    public void setDefineToDoubleLiteral(final String defineName,
-            final double value) {
-        this.compilerOptions.setDefineToDoubleLiteral(defineName, value);
+    public void setManageClosureDependencies(List<String> entryPoints) {
+        compilerOptions.setManageClosureDependencies(entryPoints);
     }
 
-    /**
-     * @param defineName
-     * @param value
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setDefineToNumberLiteral(java.lang.String,
-     * int)
-     */
-    public void setDefineToNumberLiteral(final String defineName,
-            final int value) {
-        this.compilerOptions.setDefineToNumberLiteral(defineName, value);
+    public void setSummaryDetailLevel(int summaryDetailLevel) {
+        compilerOptions.setSummaryDetailLevel(summaryDetailLevel);
     }
 
-    /**
-     * @param defineName
-     * @param value
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setDefineToStringLiteral(java.lang.String,
-     * java.lang.String)
-     */
-    public void setDefineToStringLiteral(final String defineName,
-            final String value) {
-        this.compilerOptions.setDefineToStringLiteral(defineName, value);
+    public void enableExternExports(boolean enabled) {
+        compilerOptions.enableExternExports(enabled);
     }
 
-    /**
-     * @param options
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setDependencyOptions(com.google.javascript.jscomp.DependencyOptions)
-     */
-    public void setDependencyOptions(final DependencyOptions options) {
-        this.compilerOptions.setDependencyOptions(options);
+    public void setExtraAnnotationNames(Iterable<String> extraAnnotationNames) {
+        compilerOptions.setExtraAnnotationNames(extraAnnotationNames);
     }
 
-    /**
-     * @param devirtualizePrototypeMethods
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setDevirtualizePrototypeMethods(boolean)
-     */
-    public void setDevirtualizePrototypeMethods(
-            final boolean devirtualizePrototypeMethods) {
-        this.compilerOptions
-                .setDevirtualizePrototypeMethods(devirtualizePrototypeMethods);
+    public void setOutputCharset(String charsetName) {
+        compilerOptions.setOutputCharset(charsetName);
     }
 
-    /**
-     * @param disambiguateProperties
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setDisambiguateProperties(boolean)
-     */
-    public void setDisambiguateProperties(final boolean disambiguateProperties) {
-        this.compilerOptions.setDisambiguateProperties(disambiguateProperties);
+    public void setTweakProcessing(TweakProcessing tweakProcessing) {
+        compilerOptions.setTweakProcessing(tweakProcessing);
     }
 
-    /**
-     * @param errorFormat
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setErrorFormat(com.google.javascript.jscomp.ErrorFormat)
-     */
-    public void setErrorFormat(final ErrorFormat errorFormat) {
-        this.compilerOptions.setErrorFormat(errorFormat);
+    public void setLanguageIn(LanguageMode languageIn) {
+        compilerOptions.setLanguageIn(languageIn);
     }
 
-    /**
-     * @param handler
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setErrorHandler(com.google.javascript.jscomp.ErrorHandler)
-     */
-    public void setErrorHandler(final ErrorHandler handler) {
-        this.compilerOptions.setErrorHandler(handler);
+    public void setLooseTypes(boolean looseTypes) {
+        compilerOptions.setLooseTypes(looseTypes);
     }
 
-    /**
-     * @param exportTestFunctions
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setExportTestFunctions(boolean)
-     */
-    public void setExportTestFunctions(final boolean exportTestFunctions) {
-        this.compilerOptions.setExportTestFunctions(exportTestFunctions);
+    public void setAliasTransformationHandler(AliasTransformationHandler changes) {
+        compilerOptions.setAliasTransformationHandler(changes);
     }
 
-    /**
-     * @param externExports
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setExternExports(boolean)
-     */
-    public void setExternExports(final boolean externExports) {
-        this.compilerOptions.setExternExports(externExports);
+    public void setErrorHandler(ErrorHandler handler) {
+        compilerOptions.setErrorHandler(handler);
     }
 
-    /**
-     * @param externExportsPath
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setExternExportsPath(java.lang.String)
-     */
-    public void setExternExportsPath(final String externExportsPath) {
-        this.compilerOptions.setExternExportsPath(externExportsPath);
+    public void setInferTypes(boolean enable) {
+        compilerOptions.setInferTypes(enable);
     }
 
-    /**
-     * @param extraAnnotationNames
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setExtraAnnotationNames(java.util.Set)
-     */
-    public void setExtraAnnotationNames(final Set<String> extraAnnotationNames) {
-        this.compilerOptions.setExtraAnnotationNames(extraAnnotationNames);
+    public void setNewTypeInference(boolean enable) {
+        compilerOptions.setNewTypeInference(enable);
     }
 
-    /**
-     * @param enabled
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setExtractPrototypeMemberDeclarations(boolean)
-     */
-    public void setExtractPrototypeMemberDeclarations(final boolean enabled) {
-        this.compilerOptions.setExtractPrototypeMemberDeclarations(enabled);
+    public void setAssumeStrictThis(boolean enable) {
+        compilerOptions.setAssumeStrictThis(enable);
     }
 
-    /**
-     * @param enabled
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setFlowSensitiveInlineVariables(boolean)
-     */
-    public void setFlowSensitiveInlineVariables(final boolean enabled) {
-        this.compilerOptions.setFlowSensitiveInlineVariables(enabled);
+    public void setAssumeClosuresOnlyCaptureReferences(boolean enable) {
+        compilerOptions.setAssumeClosuresOnlyCaptureReferences(enable);
     }
 
-    /**
-     * @param foldConstants
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setFoldConstants(boolean)
-     */
-    public void setFoldConstants(final boolean foldConstants) {
-        this.compilerOptions.setFoldConstants(foldConstants);
+    public void setPropertyInvalidationErrors(Map<String, CheckLevel> propertyInvalidationErrors) {
+        compilerOptions.setPropertyInvalidationErrors(propertyInvalidationErrors);
     }
 
-    /**
-     * @param gatherCssNames
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setGatherCssNames(boolean)
-     */
-    public void setGatherCssNames(final boolean gatherCssNames) {
-        this.compilerOptions.setGatherCssNames(gatherCssNames);
+    public void setLanguageOut(LanguageMode languageOut) {
+        compilerOptions.setLanguageOut(languageOut);
     }
 
-    /**
-     * @param generateExports
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setGenerateExports(boolean)
-     */
-    public void setGenerateExports(final boolean generateExports) {
-        this.compilerOptions.setGenerateExports(generateExports);
+    public void setIdeMode(boolean ideMode) {
+        compilerOptions.setIdeMode(ideMode);
     }
 
-    /**
-     * @param generatePseudoNames
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setGeneratePseudoNames(boolean)
-     */
-    public void setGeneratePseudoNames(final boolean generatePseudoNames) {
-        this.compilerOptions.setGeneratePseudoNames(generatePseudoNames);
+    public void setSaveDataStructures(boolean save) {
+        compilerOptions.setSaveDataStructures(save);
     }
 
-    /**
-     * @param enabled
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setGroupVariableDeclarations(boolean)
-     */
-    public void setGroupVariableDeclarations(final boolean enabled) {
-        this.compilerOptions.setGroupVariableDeclarations(enabled);
+    public void setSkipAllPasses(boolean skipAllPasses) {
+        compilerOptions.setSkipAllPasses(skipAllPasses);
     }
 
-    /**
-     * @param ideMode
-     * @see com.google.javascript.jscomp.CompilerOptions#setIdeMode(boolean)
-     */
-    public void setIdeMode(final boolean ideMode) {
-        this.compilerOptions.setIdeMode(ideMode);
+    public void setCheckDeterminism(boolean checkDeterminism) {
+        compilerOptions.setCheckDeterminism(checkDeterminism);
     }
 
-    /**
-     * @param idGenerators
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setIdGenerators(java.util.Set)
-     */
-    public void setIdGenerators(final Set<String> idGenerators) {
-        this.compilerOptions.setIdGenerators(idGenerators);
+    public void setMessageBundle(MessageBundle messageBundle) {
+        compilerOptions.setMessageBundle(messageBundle);
     }
 
-    /**
-     * @param enabled
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setIgnoreCajaProperties(boolean)
-     */
-    public void setIgnoreCajaProperties(final boolean enabled) {
-        this.compilerOptions.setIgnoreCajaProperties(enabled);
+    public void setCheckSymbols(boolean checkSymbols) {
+        compilerOptions.setCheckSymbols(checkSymbols);
     }
 
-    /**
-     * @param enable
-     * @see com.google.javascript.jscomp.CompilerOptions#setInferTypes(boolean)
-     */
-    public void setInferTypes(final boolean enable) {
-        this.compilerOptions.setInferTypes(enable);
+    public void setCheckSuspiciousCode(boolean checkSuspiciousCode) {
+        compilerOptions.setCheckSuspiciousCode(checkSuspiciousCode);
     }
 
-    /**
-     * @param inlineConstantVars
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setInlineConstantVars(boolean)
-     */
-    public void setInlineConstantVars(final boolean inlineConstantVars) {
-        this.compilerOptions.setInlineConstantVars(inlineConstantVars);
+    public void setCheckControlStructures(boolean checkControlStructures) {
+        compilerOptions.setCheckControlStructures(checkControlStructures);
     }
 
-    /**
-     * @param inlineFunctions
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setInlineFunctions(boolean)
-     */
-    public void setInlineFunctions(final boolean inlineFunctions) {
-        this.compilerOptions.setInlineFunctions(inlineFunctions);
+    public void setCheckTypes(boolean checkTypes) {
+        compilerOptions.setCheckTypes(checkTypes);
     }
 
-    /**
-     * @param reach
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setInlineFunctions(com.google.javascript.jscomp.CompilerOptions.Reach)
-     */
-    public void setInlineFunctions(final Reach reach) {
-        this.compilerOptions.setInlineFunctions(reach);
+    public void setCheckMissingGetCssNameBlacklist(String blackList) {
+        compilerOptions.setCheckMissingGetCssNameBlacklist(blackList);
     }
 
-    /**
-     * @param inlineGetters
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setInlineGetters(boolean)
-     */
-    public void setInlineGetters(final boolean inlineGetters) {
-        this.compilerOptions.setInlineGetters(inlineGetters);
+    public void setAggressiveRenaming(boolean aggressive) {
+        compilerOptions.setAggressiveRenaming(aggressive);
     }
 
-    /**
-     * @param inlineLocalFunctions
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setInlineLocalFunctions(boolean)
-     */
-    public void setInlineLocalFunctions(final boolean inlineLocalFunctions) {
-        this.compilerOptions.setInlineLocalFunctions(inlineLocalFunctions);
+    public void setFoldConstants(boolean foldConstants) {
+        compilerOptions.setFoldConstants(foldConstants);
     }
 
-    /**
-     * @param inlineLocalVariables
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setInlineLocalVariables(boolean)
-     */
-    public void setInlineLocalVariables(final boolean inlineLocalVariables) {
-        this.compilerOptions.setInlineLocalVariables(inlineLocalVariables);
+    public void setDeadAssignmentElimination(boolean deadAssignmentElimination) {
+        compilerOptions.setDeadAssignmentElimination(deadAssignmentElimination);
     }
 
-    /**
-     * @param enable
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setInlineProperties(boolean)
-     */
-    public void setInlineProperties(final boolean enable) {
-        this.compilerOptions.setInlineProperties(enable);
+    public void setInlineConstantVars(boolean inlineConstantVars) {
+        compilerOptions.setInlineConstantVars(inlineConstantVars);
     }
 
-    /**
-     * @param inlineVariables
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setInlineVariables(boolean)
-     */
-    public void setInlineVariables(final boolean inlineVariables) {
-        this.compilerOptions.setInlineVariables(inlineVariables);
+    public void setInlineFunctions(boolean inlineFunctions) {
+        compilerOptions.setInlineFunctions(inlineFunctions);
     }
 
-    /**
-     * @param reach
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setInlineVariables(com.google.javascript.jscomp.CompilerOptions.Reach)
-     */
-    public void setInlineVariables(final Reach reach) {
-        this.compilerOptions.setInlineVariables(reach);
+    public void setInlineLocalFunctions(boolean inlineLocalFunctions) {
+        compilerOptions.setInlineLocalFunctions(inlineLocalFunctions);
     }
 
-    /**
-     * @param inputDelimiter
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setInputDelimiter(java.lang.String)
-     */
-    public void setInputDelimiter(final String inputDelimiter) {
-        this.compilerOptions.setInputDelimiter(inputDelimiter);
+    public void setCrossModuleCodeMotion(boolean crossModuleCodeMotion) {
+        compilerOptions.setCrossModuleCodeMotion(crossModuleCodeMotion);
     }
 
-    /**
-     * @param inputPropertyMapSerialized
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setInputPropertyMapSerialized(byte[])
-     */
-    public void setInputPropertyMapSerialized(
-            final byte[] inputPropertyMapSerialized) {
-        this.compilerOptions
-                .setInputPropertyMapSerialized(inputPropertyMapSerialized);
+    public void setParentModuleCanSeeSymbolsDeclaredInChildren(boolean parentModuleCanSeeSymbolsDeclaredInChildren) {
+        compilerOptions.setParentModuleCanSeeSymbolsDeclaredInChildren(parentModuleCanSeeSymbolsDeclaredInChildren);
     }
 
-    /**
-     * @param inputVariableMapSerialized
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setInputVariableMapSerialized(byte[])
-     */
-    public void setInputVariableMapSerialized(
-            final byte[] inputVariableMapSerialized) {
-        this.compilerOptions
-                .setInputVariableMapSerialized(inputVariableMapSerialized);
+    public void setCoalesceVariableNames(boolean coalesceVariableNames) {
+        compilerOptions.setCoalesceVariableNames(coalesceVariableNames);
     }
 
-    /**
-     * @param instrumentationTemplate
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setInstrumentationTemplate(java.lang.String)
-     */
-    public void setInstrumentationTemplate(final String instrumentationTemplate) {
-        this.compilerOptions
-                .setInstrumentationTemplate(instrumentationTemplate);
+    public void setCrossModuleMethodMotion(boolean crossModuleMethodMotion) {
+        compilerOptions.setCrossModuleMethodMotion(crossModuleMethodMotion);
     }
 
-    /**
-     * @param labelRenaming
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setLabelRenaming(boolean)
-     */
-    public void setLabelRenaming(final boolean labelRenaming) {
-        this.compilerOptions.setLabelRenaming(labelRenaming);
+    public void setInlineGetters(boolean inlineGetters) {
+        compilerOptions.setInlineGetters(inlineGetters);
     }
 
-    /**
-     * @param languageIn
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setLanguageIn(com.google.javascript.jscomp.CompilerOptions.LanguageMode)
-     */
-    public void setLanguageIn(final LanguageMode languageIn) {
-        this.compilerOptions.setLanguageIn(languageIn);
+    public void setInlineVariables(boolean inlineVariables) {
+        compilerOptions.setInlineVariables(inlineVariables);
     }
 
-    /**
-     * @param languageOut
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setLanguageOut(com.google.javascript.jscomp.CompilerOptions.LanguageMode)
-     */
-    public void setLanguageOut(final LanguageMode languageOut) {
-        this.compilerOptions.setLanguageOut(languageOut);
+    public void setInlineLocalVariables(boolean inlineLocalVariables) {
+        compilerOptions.setInlineLocalVariables(inlineLocalVariables);
     }
 
-    /**
-     * @param lineBreak
-     * @see com.google.javascript.jscomp.CompilerOptions#setLineBreak(boolean)
-     */
-    public void setLineBreak(final boolean lineBreak) {
-        this.compilerOptions.setLineBreak(lineBreak);
+    public void setFlowSensitiveInlineVariables(boolean enabled) {
+        compilerOptions.setFlowSensitiveInlineVariables(enabled);
     }
 
-    /**
-     * @param lineLengthThreshold
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setLineLengthThreshold(int)
-     */
-    public void setLineLengthThreshold(final int lineLengthThreshold) {
-        this.compilerOptions.setLineLengthThreshold(lineLengthThreshold);
+    public void setSmartNameRemoval(boolean smartNameRemoval) {
+        compilerOptions.setSmartNameRemoval(smartNameRemoval);
     }
 
-    /**
-     * @param locale
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setLocale(java.lang.String)
-     */
-    public void setLocale(final String locale) {
-        this.compilerOptions.setLocale(locale);
+    public void setExtraSmartNameRemoval(boolean smartNameRemoval) {
+        compilerOptions.setExtraSmartNameRemoval(smartNameRemoval);
     }
 
-    /**
-     * @param looseTypes
-     * @see com.google.javascript.jscomp.CompilerOptions#setLooseTypes(boolean)
-     */
-    public void setLooseTypes(final boolean looseTypes) {
-        this.compilerOptions.setLooseTypes(looseTypes);
+    public void setRemoveDeadCode(boolean removeDeadCode) {
+        compilerOptions.setRemoveDeadCode(removeDeadCode);
     }
 
-    /**
-     * @param newVal
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setManageClosureDependencies(boolean)
-     */
-    public void setManageClosureDependencies(final boolean newVal) {
-        this.compilerOptions.setManageClosureDependencies(newVal);
+    public void setExtractPrototypeMemberDeclarations(boolean enabled) {
+        compilerOptions.setExtractPrototypeMemberDeclarations(enabled);
     }
 
-    /**
-     * @param entryPoints
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setManageClosureDependencies(java.util.List)
-     */
-    public void setManageClosureDependencies(final List<String> entryPoints) {
-        this.compilerOptions.setManageClosureDependencies(entryPoints);
+    public void setRemoveUnusedPrototypeProperties(boolean enabled) {
+        compilerOptions.setRemoveUnusedPrototypeProperties(enabled);
     }
 
-    /**
-     * @param markAsCompiled
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setMarkAsCompiled(boolean)
-     */
-    public void setMarkAsCompiled(final boolean markAsCompiled) {
-        this.compilerOptions.setMarkAsCompiled(markAsCompiled);
+    public void setRemoveUnusedPrototypePropertiesInExterns(boolean enabled) {
+        compilerOptions.setRemoveUnusedPrototypePropertiesInExterns(enabled);
     }
 
-    /**
-     * @param markNoSideEffectCalls
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setMarkNoSideEffectCalls(boolean)
-     */
-    public void setMarkNoSideEffectCalls(final boolean markNoSideEffectCalls) {
-        this.compilerOptions.setMarkNoSideEffectCalls(markNoSideEffectCalls);
+    public void setRemoveUnusedVars(boolean removeUnusedVars) {
+        compilerOptions.setRemoveUnusedVars(removeUnusedVars);
     }
 
-    /**
-     * @param messageBundle
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setMessageBundle(com.google.javascript.jscomp.MessageBundle)
-     */
-    public void setMessageBundle(final MessageBundle messageBundle) {
-        this.compilerOptions.setMessageBundle(messageBundle);
+    public void setRemoveUnusedLocalVars(boolean removeUnusedLocalVars) {
+        compilerOptions.setRemoveUnusedLocalVars(removeUnusedLocalVars);
     }
 
-    /**
-     * @param moveFunctionDeclarations
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setMoveFunctionDeclarations(boolean)
-     */
-    public void setMoveFunctionDeclarations(
-            final boolean moveFunctionDeclarations) {
-        this.compilerOptions
-                .setMoveFunctionDeclarations(moveFunctionDeclarations);
+    public void setAliasExternals(boolean aliasExternals) {
+        compilerOptions.setAliasExternals(aliasExternals);
     }
 
-    /**
-     * @param value
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setNameAnonymousFunctionsOnly(boolean)
-     */
-    public void setNameAnonymousFunctionsOnly(final boolean value) {
-        this.compilerOptions.setNameAnonymousFunctionsOnly(value);
+    public void setCollapseVariableDeclarations(boolean enabled) {
+        compilerOptions.setCollapseVariableDeclarations(enabled);
     }
 
-    /**
-     * @param filePath
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setNameReferenceGraphPath(java.lang.String)
-     */
-    public void setNameReferenceGraphPath(final String filePath) {
-        this.compilerOptions.setNameReferenceGraphPath(filePath);
+    public void setGroupVariableDeclarations(boolean enabled) {
+        compilerOptions.setGroupVariableDeclarations(enabled);
     }
 
-    /**
-     * @param filePath
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setNameReferenceReportPath(java.lang.String)
-     */
-    public void setNameReferenceReportPath(final String filePath) {
-        this.compilerOptions.setNameReferenceReportPath(filePath);
+    public void setCollapseAnonymousFunctions(boolean enabled) {
+        compilerOptions.setCollapseAnonymousFunctions(enabled);
     }
 
-    /**
-     * @param optimizeArgumentsArray
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setOptimizeArgumentsArray(boolean)
-     */
-    public void setOptimizeArgumentsArray(final boolean optimizeArgumentsArray) {
-        this.compilerOptions.setOptimizeArgumentsArray(optimizeArgumentsArray);
+    public void setAliasableStrings(Set<String> aliasableStrings) {
+        compilerOptions.setAliasableStrings(aliasableStrings);
     }
 
-    /**
-     * @param optimizeCalls
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setOptimizeCalls(boolean)
-     */
-    public void setOptimizeCalls(final boolean optimizeCalls) {
-        this.compilerOptions.setOptimizeCalls(optimizeCalls);
+    public void setAliasStringsBlacklist(String aliasStringsBlacklist) {
+        compilerOptions.setAliasStringsBlacklist(aliasStringsBlacklist);
     }
 
-    /**
-     * @param optimizeParameters
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setOptimizeParameters(boolean)
-     */
-    public void setOptimizeParameters(final boolean optimizeParameters) {
-        this.compilerOptions.setOptimizeParameters(optimizeParameters);
+    public void setAliasAllStrings(boolean aliasAllStrings) {
+        compilerOptions.setAliasAllStrings(aliasAllStrings);
     }
 
-    /**
-     * @param optimizeReturns
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setOptimizeReturns(boolean)
-     */
-    public void setOptimizeReturns(final boolean optimizeReturns) {
-        this.compilerOptions.setOptimizeReturns(optimizeReturns);
+    public void setOutputJsStringUsage(boolean outputJsStringUsage) {
+        compilerOptions.setOutputJsStringUsage(outputJsStringUsage);
     }
 
-    /**
-     * @param charsetName
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setOutputCharset(java.lang.String)
-     */
-    public void setOutputCharset(final String charsetName) {
-        this.compilerOptions.setOutputCharset(charsetName);
+    public void setConvertToDottedProperties(boolean convertToDottedProperties) {
+        compilerOptions.setConvertToDottedProperties(convertToDottedProperties);
     }
 
-    /**
-     * @param outputJsStringUsage
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setOutputJsStringUsage(boolean)
-     */
-    public void setOutputJsStringUsage(final boolean outputJsStringUsage) {
-        this.compilerOptions.setOutputJsStringUsage(outputJsStringUsage);
+    public void setRewriteFunctionExpressions(boolean rewriteFunctionExpressions) {
+        compilerOptions.setRewriteFunctionExpressions(rewriteFunctionExpressions);
     }
 
-    /**
-     * @param lineBreakAtEnd
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setPreferLineBreakAtEndOfFile(boolean)
-     */
-    public void setPreferLineBreakAtEndOfFile(final boolean lineBreakAtEnd) {
-        this.compilerOptions.setPreferLineBreakAtEndOfFile(lineBreakAtEnd);
+    public void setOptimizeParameters(boolean optimizeParameters) {
+        compilerOptions.setOptimizeParameters(optimizeParameters);
     }
 
-    /**
-     * @param prettyPrint
-     * @see com.google.javascript.jscomp.CompilerOptions#setPrettyPrint(boolean)
-     */
-    public void setPrettyPrint(final boolean prettyPrint) {
-        this.compilerOptions.setPrettyPrint(prettyPrint);
+    public void setOptimizeReturns(boolean optimizeReturns) {
+        compilerOptions.setOptimizeReturns(optimizeReturns);
     }
 
-    /**
-     * @param printInputDelimiter
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setPrintInputDelimiter(boolean)
-     */
-    public void setPrintInputDelimiter(final boolean printInputDelimiter) {
-        this.compilerOptions.setPrintInputDelimiter(printInputDelimiter);
+    public void setOptimizeCalls(boolean optimizeCalls) {
+        compilerOptions.setOptimizeCalls(optimizeCalls);
     }
 
-    /**
-     * @param processCommonJSModules
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setProcessCommonJSModules(boolean)
-     */
-    public void setProcessCommonJSModules(final boolean processCommonJSModules) {
-        this.compilerOptions.setProcessCommonJSModules(processCommonJSModules);
+    public void setOptimizeArgumentsArray(boolean optimizeArgumentsArray) {
+        compilerOptions.setOptimizeArgumentsArray(optimizeArgumentsArray);
     }
 
-    /**
-     * @param process
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setProcessObjectPropertyString(boolean)
-     */
-    public void setProcessObjectPropertyString(final boolean process) {
-        this.compilerOptions.setProcessObjectPropertyString(process);
+    public void setVariableRenaming(VariableRenamingPolicy variableRenaming) {
+        compilerOptions.setVariableRenaming(variableRenaming);
     }
 
-    /**
-     * @param useAffinity
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setPropertyAffinity(boolean)
-     */
-    public void setPropertyAffinity(final boolean useAffinity) {
-        this.compilerOptions.setPropertyAffinity(useAffinity);
+    public void setPropertyRenaming(PropertyRenamingPolicy propertyRenaming) {
+        compilerOptions.setPropertyRenaming(propertyRenaming);
     }
 
-    /**
-     * @param propertyInvalidationErrors
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setPropertyInvalidationErrors(java.util.Map)
-     */
-    public void setPropertyInvalidationErrors(
-            final Map<String, CheckLevel> propertyInvalidationErrors) {
-        this.compilerOptions
-                .setPropertyInvalidationErrors(propertyInvalidationErrors);
+    public void setLabelRenaming(boolean labelRenaming) {
+        compilerOptions.setLabelRenaming(labelRenaming);
     }
 
-    /**
-     * @param propertyRenaming
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setPropertyRenaming(com.google.javascript.jscomp.PropertyRenamingPolicy)
-     */
-    public void setPropertyRenaming(
-            final PropertyRenamingPolicy propertyRenaming) {
-        this.compilerOptions.setPropertyRenaming(propertyRenaming);
+    public void setReserveRawExports(boolean reserveRawExports) {
+        compilerOptions.setReserveRawExports(reserveRawExports);
     }
 
-    /**
-     * @param enable
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setProtectHiddenSideEffects(boolean)
-     */
-    public void setProtectHiddenSideEffects(final boolean enable) {
-        this.compilerOptions.setProtectHiddenSideEffects(enable);
+    public void setPreferStableNames(boolean preferStableNames) {
+        compilerOptions.setPreferStableNames(preferStableNames);
     }
 
-    /**
-     * @param recordFunctionInformation
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setRecordFunctionInformation(boolean)
-     */
-    public void setRecordFunctionInformation(
-            final boolean recordFunctionInformation) {
-        this.compilerOptions
-                .setRecordFunctionInformation(recordFunctionInformation);
+    public void setGeneratePseudoNames(boolean generatePseudoNames) {
+        compilerOptions.setGeneratePseudoNames(generatePseudoNames);
     }
 
-    /**
-     * @param remove
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setRemoveAbstractMethods(boolean)
-     */
-    public void setRemoveAbstractMethods(final boolean remove) {
-        this.compilerOptions.setRemoveAbstractMethods(remove);
+    public void setRenamePrefix(String renamePrefix) {
+        compilerOptions.setRenamePrefix(renamePrefix);
     }
 
-    /**
-     * @param remove
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setRemoveClosureAsserts(boolean)
-     */
-    public void setRemoveClosureAsserts(final boolean remove) {
-        this.compilerOptions.setRemoveClosureAsserts(remove);
+    public void setRenamePrefixNamespace(String renamePrefixNamespace) {
+        compilerOptions.setRenamePrefixNamespace(renamePrefixNamespace);
     }
 
-    /**
-     * @param removeDeadCode
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setRemoveDeadCode(boolean)
-     */
-    public void setRemoveDeadCode(final boolean removeDeadCode) {
-        this.compilerOptions.setRemoveDeadCode(removeDeadCode);
+    public void setAliasKeywords(boolean aliasKeywords) {
+        compilerOptions.setAliasKeywords(aliasKeywords);
     }
 
-    /**
-     * @param removeTryCatchFinally
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setRemoveTryCatchFinally(boolean)
-     */
-    public void setRemoveTryCatchFinally(final boolean removeTryCatchFinally) {
-        this.compilerOptions.setRemoveTryCatchFinally(removeTryCatchFinally);
+    public void setCollapseProperties(boolean collapseProperties) {
+        compilerOptions.setCollapseProperties(collapseProperties);
     }
 
-    /**
-     * @param removeUnusedClassProperties
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setRemoveUnusedClassProperties(boolean)
-     */
-    public void setRemoveUnusedClassProperties(
-            final boolean removeUnusedClassProperties) {
-        this.compilerOptions
-                .setRemoveUnusedClassProperties(removeUnusedClassProperties);
+    public void setDevirtualizePrototypeMethods(boolean devirtualizePrototypeMethods) {
+        compilerOptions.setDevirtualizePrototypeMethods(devirtualizePrototypeMethods);
     }
 
-    /**
-     * @param removeUnusedLocalVars
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setRemoveUnusedLocalVars(boolean)
-     */
-    public void setRemoveUnusedLocalVars(final boolean removeUnusedLocalVars) {
-        this.compilerOptions.setRemoveUnusedLocalVars(removeUnusedLocalVars);
+    public void setComputeFunctionSideEffects(boolean computeFunctionSideEffects) {
+        compilerOptions.setComputeFunctionSideEffects(computeFunctionSideEffects);
     }
 
-    /**
-     * @param enabled
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setRemoveUnusedPrototypeProperties(boolean)
-     */
-    public void setRemoveUnusedPrototypeProperties(final boolean enabled) {
-        this.compilerOptions.setRemoveUnusedPrototypeProperties(enabled);
+    public void setDebugFunctionSideEffectsPath(String debugFunctionSideEffectsPath) {
+        compilerOptions.setDebugFunctionSideEffectsPath(debugFunctionSideEffectsPath);
     }
 
-    /**
-     * @param enabled
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setRemoveUnusedPrototypePropertiesInExterns(boolean)
-     */
-    public void setRemoveUnusedPrototypePropertiesInExterns(
-            final boolean enabled) {
-        this.compilerOptions
-                .setRemoveUnusedPrototypePropertiesInExterns(enabled);
+    public void setDisambiguatePrivateProperties(boolean value) {
+        compilerOptions.setDisambiguatePrivateProperties(value);
     }
 
-    /**
-     * @param reach
-     * @deprecated
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setRemoveUnusedVariable(com.google.javascript.jscomp.CompilerOptions.Reach)
-     */
-    @Deprecated
-    public void setRemoveUnusedVariable(final Reach reach) {
-        this.compilerOptions.setRemoveUnusedVariable(reach);
+    public void setDisambiguateProperties(boolean disambiguateProperties) {
+        compilerOptions.setDisambiguateProperties(disambiguateProperties);
     }
 
-    /**
-     * @param reach
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setRemoveUnusedVariables(com.google.javascript.jscomp.CompilerOptions.Reach)
-     */
-    public void setRemoveUnusedVariables(final Reach reach) {
-        this.compilerOptions.setRemoveUnusedVariables(reach);
+    public void setAmbiguateProperties(boolean ambiguateProperties) {
+        compilerOptions.setAmbiguateProperties(ambiguateProperties);
     }
 
-    /**
-     * @param removeUnusedVars
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setRemoveUnusedVars(boolean)
-     */
-    public void setRemoveUnusedVars(final boolean removeUnusedVars) {
-        this.compilerOptions.setRemoveUnusedVars(removeUnusedVars);
+    public void setAnonymousFunctionNaming(AnonymousFunctionNamingPolicy anonymousFunctionNaming) {
+        compilerOptions.setAnonymousFunctionNaming(anonymousFunctionNaming);
     }
 
-    /**
-     * @param renamePrefix
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setRenamePrefix(java.lang.String)
-     */
-    public void setRenamePrefix(final String renamePrefix) {
-        this.compilerOptions.setRenamePrefix(renamePrefix);
+    public void setInputAnonymousFunctionNamingMap(VariableMap inputMap) {
+        compilerOptions.setInputAnonymousFunctionNamingMap(inputMap);
     }
 
-    /**
-     * @param renamePrefixNamespace
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setRenamePrefixNamespace(java.lang.String)
-     */
-    public void setRenamePrefixNamespace(final String renamePrefixNamespace) {
-        this.compilerOptions.setRenamePrefixNamespace(renamePrefixNamespace);
+    public void setInputVariableMap(VariableMap inputVariableMap) {
+        compilerOptions.setInputVariableMap(inputVariableMap);
     }
 
-    /**
-     * @param newVariablePolicy
-     * @param newPropertyPolicy
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setRenamingPolicy(com.google.javascript.jscomp.VariableRenamingPolicy,
-     * com.google.javascript.jscomp.PropertyRenamingPolicy)
-     */
-    public void setRenamingPolicy(
-            final VariableRenamingPolicy newVariablePolicy,
-            final PropertyRenamingPolicy newPropertyPolicy) {
-        this.compilerOptions.setRenamingPolicy(newVariablePolicy,
-                newPropertyPolicy);
+    public void setInputPropertyMap(VariableMap inputPropertyMap) {
+        compilerOptions.setInputPropertyMap(inputPropertyMap);
     }
 
-    /**
-     * @param replaceIdGenerators
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setReplaceIdGenerators(boolean)
-     */
-    public void setReplaceIdGenerators(final boolean replaceIdGenerators) {
-        this.compilerOptions.setReplaceIdGenerators(replaceIdGenerators);
+    public void setExportTestFunctions(boolean exportTestFunctions) {
+        compilerOptions.setExportTestFunctions(exportTestFunctions);
     }
 
-    /**
-     * @param replaceMessagesWithChromeI18n
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setReplaceMessagesWithChromeI18n(boolean)
-     */
-    public void setReplaceMessagesWithChromeI18n(
-            final boolean replaceMessagesWithChromeI18n) {
-        this.compilerOptions
-                .setReplaceMessagesWithChromeI18n(replaceMessagesWithChromeI18n);
+    public void setRuntimeTypeCheck(boolean runtimeTypeCheck) {
+        compilerOptions.setRuntimeTypeCheck(runtimeTypeCheck);
     }
 
-    /**
-     * @param placeholderToken
-     * @param functionDescriptors
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setReplaceStringsConfiguration(java.lang.String,
-     * java.util.List)
-     */
-    public void setReplaceStringsConfiguration(final String placeholderToken,
-            final List<String> functionDescriptors) {
-        this.compilerOptions.setReplaceStringsConfiguration(placeholderToken,
-                functionDescriptors);
+    public void setRuntimeTypeCheckLogFunction(String runtimeTypeCheckLogFunction) {
+        compilerOptions.setRuntimeTypeCheckLogFunction(runtimeTypeCheckLogFunction);
     }
 
-    /**
-     * @param replaceStringsFunctionDescriptions
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setReplaceStringsFunctionDescriptions(java.util.List)
-     */
-    public void setReplaceStringsFunctionDescriptions(
-            final List<String> replaceStringsFunctionDescriptions) {
-        this.compilerOptions
-                .setReplaceStringsFunctionDescriptions(replaceStringsFunctionDescriptions);
+    public void setSyntheticBlockStartMarker(String syntheticBlockStartMarker) {
+        compilerOptions.setSyntheticBlockStartMarker(syntheticBlockStartMarker);
     }
 
-    /**
-     * @param replaceStringsPlaceholderToken
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setReplaceStringsPlaceholderToken(java.lang.String)
-     */
-    public void setReplaceStringsPlaceholderToken(
-            final String replaceStringsPlaceholderToken) {
-        this.compilerOptions
-                .setReplaceStringsPlaceholderToken(replaceStringsPlaceholderToken);
+    public void setSyntheticBlockEndMarker(String syntheticBlockEndMarker) {
+        compilerOptions.setSyntheticBlockEndMarker(syntheticBlockEndMarker);
     }
 
-    /**
-     * @param replaceStringsReservedStrings
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setReplaceStringsReservedStrings(java.util.Set)
-     */
-    public void setReplaceStringsReservedStrings(
-            final Set<String> replaceStringsReservedStrings) {
-        this.compilerOptions
-                .setReplaceStringsReservedStrings(replaceStringsReservedStrings);
+    public void setLocale(String locale) {
+        compilerOptions.setLocale(locale);
     }
 
-    /**
-     * @param level
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setReportMissingOverride(com.google.javascript.jscomp.CheckLevel)
-     */
-    public void setReportMissingOverride(final CheckLevel level) {
-        this.compilerOptions.setReportMissingOverride(level);
+    public void setMarkAsCompiled(boolean markAsCompiled) {
+        compilerOptions.setMarkAsCompiled(markAsCompiled);
     }
 
-    /**
-     * @param reportPath
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setReportPath(java.lang.String)
-     */
-    public void setReportPath(final String reportPath) {
-        this.compilerOptions.setReportPath(reportPath);
+    public void setClosurePass(boolean closurePass) {
+        compilerOptions.setClosurePass(closurePass);
     }
 
-    /**
-     * @param level
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setReportUnknownTypes(com.google.javascript.jscomp.CheckLevel)
-     */
-    public void setReportUnknownTypes(final CheckLevel level) {
-        this.compilerOptions.setReportUnknownTypes(level);
+    public void setPreserveGoogRequires(boolean preserveGoogRequires) {
+        compilerOptions.setPreserveGoogRequires(preserveGoogRequires);
     }
 
-    /**
-     * @param reserveRawExports
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setReserveRawExports(boolean)
-     */
-    public void setReserveRawExports(final boolean reserveRawExports) {
-        this.compilerOptions.setReserveRawExports(reserveRawExports);
+    public void setGatherCssNames(boolean gatherCssNames) {
+        compilerOptions.setGatherCssNames(gatherCssNames);
     }
 
-    /**
-     * @param rewriteFunctionExpressions
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setRewriteFunctionExpressions(boolean)
-     */
-    public void setRewriteFunctionExpressions(
-            final boolean rewriteFunctionExpressions) {
-        this.compilerOptions
-                .setRewriteFunctionExpressions(rewriteFunctionExpressions);
+    public void setStripTypes(Set<String> stripTypes) {
+        compilerOptions.setStripTypes(stripTypes);
     }
 
-    /**
-     * @param rewrite
-     * @deprecated
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setRewriteNewDateGoogNow(boolean)
-     */
-    @Deprecated
-    public void setRewriteNewDateGoogNow(final boolean rewrite) {
-        this.compilerOptions.setRewriteNewDateGoogNow(rewrite);
+    public void setStripNameSuffixes(Set<String> stripNameSuffixes) {
+        compilerOptions.setStripNameSuffixes(stripNameSuffixes);
     }
 
-    /**
-     * @param runtimeTypeCheck
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setRuntimeTypeCheck(boolean)
-     */
-    public void setRuntimeTypeCheck(final boolean runtimeTypeCheck) {
-        this.compilerOptions.setRuntimeTypeCheck(runtimeTypeCheck);
+    public void setStripNamePrefixes(Set<String> stripNamePrefixes) {
+        compilerOptions.setStripNamePrefixes(stripNamePrefixes);
     }
 
-    /**
-     * @param runtimeTypeCheckLogFunction
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setRuntimeTypeCheckLogFunction(java.lang.String)
-     */
-    public void setRuntimeTypeCheckLogFunction(
-            final String runtimeTypeCheckLogFunction) {
-        this.compilerOptions
-                .setRuntimeTypeCheckLogFunction(runtimeTypeCheckLogFunction);
+    public void setStripTypePrefixes(Set<String> stripTypePrefixes) {
+        compilerOptions.setStripTypePrefixes(stripTypePrefixes);
     }
 
-    /**
-     * @param save
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setSaveDataStructures(boolean)
-     */
-    public void setSaveDataStructures(final boolean save) {
-        this.compilerOptions.setSaveDataStructures(save);
+    public void setCustomPasses(Multimap<CustomPassExecutionTime, CompilerPass> customPasses) {
+        compilerOptions.setCustomPasses(customPasses);
     }
 
-    /**
-     * @param shadow
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setShadowVariables(boolean)
-     */
-    public void setShadowVariables(final boolean shadow) {
-        this.compilerOptions.setShadowVariables(shadow);
+    public void setMarkNoSideEffectCalls(boolean markNoSideEffectCalls) {
+        compilerOptions.setMarkNoSideEffectCalls(markNoSideEffectCalls);
     }
 
-    /**
-     * @param skipAllPasses
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setSkipAllPasses(boolean)
-     */
-    public void setSkipAllPasses(final boolean skipAllPasses) {
-        this.compilerOptions.setSkipAllPasses(skipAllPasses);
+    public void setDefineReplacements(Map<String, Object> defineReplacements) {
+        compilerOptions.setDefineReplacements(defineReplacements);
     }
 
-    /**
-     * @param smartNameRemoval
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setSmartNameRemoval(boolean)
-     */
-    public void setSmartNameRemoval(final boolean smartNameRemoval) {
-        this.compilerOptions.setSmartNameRemoval(smartNameRemoval);
+    public void setTweakReplacements(Map<String, Object> tweakReplacements) {
+        compilerOptions.setTweakReplacements(tweakReplacements);
     }
 
-    /**
-     * @param sourceMapDetailLevel
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setSourceMapDetailLevel(com.google.javascript.jscomp.SourceMap.DetailLevel)
-     */
-    public void setSourceMapDetailLevel(final DetailLevel sourceMapDetailLevel) {
-        this.compilerOptions.setSourceMapDetailLevel(sourceMapDetailLevel);
+    public void setMoveFunctionDeclarations(boolean moveFunctionDeclarations) {
+        compilerOptions.setMoveFunctionDeclarations(moveFunctionDeclarations);
     }
 
-    /**
-     * @param sourceMapFormat
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setSourceMapFormat(com.google.javascript.jscomp.SourceMap.Format)
-     */
-    public void setSourceMapFormat(final Format sourceMapFormat) {
-        this.compilerOptions.setSourceMapFormat(sourceMapFormat);
+    public void setInstrumentationTemplate(String instrumentationTemplate) {
+        compilerOptions.setInstrumentationTemplate(instrumentationTemplate);
     }
 
-    /**
-     * @param sourceMapLocationMappings
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setSourceMapLocationMappings(java.util.List)
-     */
-    public void setSourceMapLocationMappings(
-            final List<LocationMapping> sourceMapLocationMappings) {
-        this.compilerOptions
-                .setSourceMapLocationMappings(sourceMapLocationMappings);
+    public void setRecordFunctionInformation(boolean recordFunctionInformation) {
+        compilerOptions.setRecordFunctionInformation(recordFunctionInformation);
     }
 
-    /**
-     * @param sourceMapOutputPath
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setSourceMapOutputPath(java.lang.String)
-     */
-    public void setSourceMapOutputPath(final String sourceMapOutputPath) {
-        this.compilerOptions.setSourceMapOutputPath(sourceMapOutputPath);
+    public void setCssRenamingMap(CssRenamingMap cssRenamingMap) {
+        compilerOptions.setCssRenamingMap(cssRenamingMap);
     }
 
-    /**
-     * @param enabled
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setSpecializeInitialModule(boolean)
-     */
-    public void setSpecializeInitialModule(final boolean enabled) {
-        this.compilerOptions.setSpecializeInitialModule(enabled);
+    public void setCssRenamingWhitelist(Set<String> whitelist) {
+        compilerOptions.setCssRenamingWhitelist(whitelist);
     }
 
-    /**
-     * @param stripNamePrefixes
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setStripNamePrefixes(java.util.Set)
-     */
-    public void setStripNamePrefixes(final Set<String> stripNamePrefixes) {
-        this.compilerOptions.setStripNamePrefixes(stripNamePrefixes);
+    public void setReplaceStringsFunctionDescriptions(List<String> replaceStringsFunctionDescriptions) {
+        compilerOptions.setReplaceStringsFunctionDescriptions(replaceStringsFunctionDescriptions);
     }
 
-    /**
-     * @param stripNameSuffixes
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setStripNameSuffixes(java.util.Set)
-     */
-    public void setStripNameSuffixes(final Set<String> stripNameSuffixes) {
-        this.compilerOptions.setStripNameSuffixes(stripNameSuffixes);
+    public void setReplaceStringsPlaceholderToken(String replaceStringsPlaceholderToken) {
+        compilerOptions.setReplaceStringsPlaceholderToken(replaceStringsPlaceholderToken);
     }
 
-    /**
-     * @param stripTypePrefixes
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setStripTypePrefixes(java.util.Set)
-     */
-    public void setStripTypePrefixes(final Set<String> stripTypePrefixes) {
-        this.compilerOptions.setStripTypePrefixes(stripTypePrefixes);
+    public void setReplaceStringsReservedStrings(Set<String> replaceStringsReservedStrings) {
+        compilerOptions.setReplaceStringsReservedStrings(replaceStringsReservedStrings);
     }
 
-    /**
-     * @param stripTypes
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setStripTypes(java.util.Set)
-     */
-    public void setStripTypes(final Set<String> stripTypes) {
-        this.compilerOptions.setStripTypes(stripTypes);
+    public void setReplaceStringsInputMap(VariableMap serializedMap) {
+        compilerOptions.setReplaceStringsInputMap(serializedMap);
     }
 
-    /**
-     * @param summaryDetailLevel
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setSummaryDetailLevel(int)
-     */
-    public void setSummaryDetailLevel(final int summaryDetailLevel) {
-        this.compilerOptions.setSummaryDetailLevel(summaryDetailLevel);
+    public void setPrettyPrint(boolean prettyPrint) {
+        compilerOptions.setPrettyPrint(prettyPrint);
     }
 
-    /**
-     * @param syntheticBlockEndMarker
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setSyntheticBlockEndMarker(java.lang.String)
-     */
-    public void setSyntheticBlockEndMarker(final String syntheticBlockEndMarker) {
-        this.compilerOptions
-                .setSyntheticBlockEndMarker(syntheticBlockEndMarker);
+    public void setLineBreak(boolean lineBreak) {
+        compilerOptions.setLineBreak(lineBreak);
     }
 
-    /**
-     * @param syntheticBlockStartMarker
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setSyntheticBlockStartMarker(java.lang.String)
-     */
-    public void setSyntheticBlockStartMarker(
-            final String syntheticBlockStartMarker) {
-        this.compilerOptions
-                .setSyntheticBlockStartMarker(syntheticBlockStartMarker);
+    public void setPreferLineBreakAtEndOfFile(boolean lineBreakAtEnd) {
+        compilerOptions.setPreferLineBreakAtEndOfFile(lineBreakAtEnd);
     }
 
-    /**
-     * @param tighten
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setTightenTypes(boolean)
-     */
-    public void setTightenTypes(final boolean tighten) {
-        this.compilerOptions.setTightenTypes(tighten);
+    public void setPrintInputDelimiter(boolean printInputDelimiter) {
+        compilerOptions.setPrintInputDelimiter(printInputDelimiter);
     }
 
-    /**
-     * @param tracer
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setTracer(com.google.javascript.jscomp.CompilerOptions.TracerMode)
-     */
-    public void setTracer(final TracerMode tracer) {
-        this.compilerOptions.setTracer(tracer);
+    public void setInputDelimiter(String inputDelimiter) {
+        compilerOptions.setInputDelimiter(inputDelimiter);
     }
 
-    /**
-     * @param mode
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setTracerMode(com.google.javascript.jscomp.CompilerOptions.TracerMode)
-     */
-    public void setTracerMode(final TracerMode mode) {
-        this.compilerOptions.setTracerMode(mode);
+    public void setErrorFormat(ErrorFormat errorFormat) {
+        compilerOptions.setErrorFormat(errorFormat);
     }
 
-    /**
-     * @param transformAMDToCJSModules
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setTransformAMDToCJSModules(boolean)
-     */
-    public void setTransformAMDToCJSModules(
-            final boolean transformAMDToCJSModules) {
-        this.compilerOptions
-                .setTransformAMDToCJSModules(transformAMDToCJSModules);
+    public void setWarningsGuard(ComposeWarningsGuard warningsGuard) {
+        compilerOptions.setWarningsGuard(warningsGuard);
     }
 
-    /**
-     * @param tweakProcessing
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setTweakProcessing(com.google.javascript.jscomp.CompilerOptions.TweakProcessing)
-     */
-    public void setTweakProcessing(final TweakProcessing tweakProcessing) {
-        this.compilerOptions.setTweakProcessing(tweakProcessing);
+    public void setLineLengthThreshold(int lineLengthThreshold) {
+        compilerOptions.setLineLengthThreshold(lineLengthThreshold);
     }
 
-    /**
-     * @param tweakReplacements
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setTweakReplacements(java.util.Map)
-     */
-    public void setTweakReplacements(final Map<String, Object> tweakReplacements) {
-        this.compilerOptions.setTweakReplacements(tweakReplacements);
+    public void setExternExports(boolean externExports) {
+        compilerOptions.setExternExports(externExports);
     }
 
-    /**
-     * @param tweakId
-     * @param value
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setTweakToBooleanLiteral(java.lang.String,
-     * boolean)
-     */
-    public void setTweakToBooleanLiteral(final String tweakId,
-            final boolean value) {
-        this.compilerOptions.setTweakToBooleanLiteral(tweakId, value);
+    public void setExternExportsPath(String externExportsPath) {
+        compilerOptions.setExternExportsPath(externExportsPath);
     }
 
-    /**
-     * @param tweakId
-     * @param value
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setTweakToDoubleLiteral(java.lang.String,
-     * double)
-     */
-    public void setTweakToDoubleLiteral(final String tweakId, final double value) {
-        this.compilerOptions.setTweakToDoubleLiteral(tweakId, value);
+    public void setSourceMapOutputPath(String sourceMapOutputPath) {
+        compilerOptions.setSourceMapOutputPath(sourceMapOutputPath);
     }
 
-    /**
-     * @param tweakId
-     * @param value
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setTweakToNumberLiteral(java.lang.String,
-     * int)
-     */
-    public void setTweakToNumberLiteral(final String tweakId, final int value) {
-        this.compilerOptions.setTweakToNumberLiteral(tweakId, value);
+    public void setSourceMapDetailLevel(DetailLevel sourceMapDetailLevel) {
+        compilerOptions.setSourceMapDetailLevel(sourceMapDetailLevel);
     }
 
-    /**
-     * @param tweakId
-     * @param value
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setTweakToStringLiteral(java.lang.String,
-     * java.lang.String)
-     */
-    public void setTweakToStringLiteral(final String tweakId, final String value) {
-        this.compilerOptions.setTweakToStringLiteral(tweakId, value);
+    public void setSourceMapFormat(Format sourceMapFormat) {
+        compilerOptions.setSourceMapFormat(sourceMapFormat);
     }
 
-    /**
-     * @param names
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setUnaliasableGlobals(java.lang.String)
-     */
-    public void setUnaliasableGlobals(final String names) {
-        this.compilerOptions.setUnaliasableGlobals(names);
+    public void setSourceMapLocationMappings(List<LocationMapping> sourceMapLocationMappings) {
+        compilerOptions.setSourceMapLocationMappings(sourceMapLocationMappings);
     }
 
-    /**
-     * @param variableRenaming
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setVariableRenaming(com.google.javascript.jscomp.VariableRenamingPolicy)
-     */
-    public void setVariableRenaming(
-            final VariableRenamingPolicy variableRenaming) {
-        this.compilerOptions.setVariableRenaming(variableRenaming);
+    public void setTransformAMDToCJSModules(boolean transformAMDToCJSModules) {
+        compilerOptions.setTransformAMDToCJSModules(transformAMDToCJSModules);
     }
 
-    /**
-     * @param type
-     * @param level
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setWarningLevel(com.google.javascript.jscomp.DiagnosticGroup,
-     * com.google.javascript.jscomp.CheckLevel)
-     */
-    public void setWarningLevel(final DiagnosticGroup type,
-            final CheckLevel level) {
-        this.compilerOptions.setWarningLevel(type, level);
+    public void setProcessCommonJSModules(boolean processCommonJSModules) {
+        compilerOptions.setProcessCommonJSModules(processCommonJSModules);
     }
 
-    /**
-     * @param warningsGuard
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#setWarningsGuard(com.google.javascript.jscomp.ComposeWarningsGuard)
-     */
-    public void setWarningsGuard(final ComposeWarningsGuard warningsGuard) {
-        this.compilerOptions.setWarningsGuard(warningsGuard);
+    public void setCommonJSModulePathPrefix(String commonJSModulePathPrefix) {
+        compilerOptions.setCommonJSModulePathPrefix(commonJSModulePathPrefix);
     }
 
-    /**
-     * @see
-     * com.google.javascript.jscomp.CompilerOptions#shouldColorizeErrorOutput()
-     */
-    public boolean shouldColorizeErrorOutput() {
-        return this.compilerOptions.shouldColorizeErrorOutput();
+    public void setInstrumentMemoryAllocations(boolean instrumentMemoryAllocations) {
+        compilerOptions.setInstrumentMemoryAllocations(instrumentMemoryAllocations);
     }
 
-    /**
-     * @see com.google.javascript.jscomp.CompilerOptions#skipAllCompilerPasses()
-     */
-    public void skipAllCompilerPasses() {
-        this.compilerOptions.skipAllCompilerPasses();
+    public void setInstrumentForCoverage(boolean instrumentForCoverage) {
+        compilerOptions.setInstrumentForCoverage(instrumentForCoverage);
     }
 
     /**
+     * @return string representation of the wrapped
+     * {@link com.google.javascript.jscomp.CompilerOptions}.
+     *
      * @see java.lang.Object#toString()
+     * @see com.google.javascript.jscomp.CompilerOptions#toString()
      */
     @Override
     public String toString() {
         return this.compilerOptions.toString();
     }
 
+    public CompilerOptions getCompilerOptions() {
+        return this.compilerOptions;
+    }
 }

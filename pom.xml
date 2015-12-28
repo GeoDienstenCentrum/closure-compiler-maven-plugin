@@ -81,6 +81,11 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven-libs.version>3.3.9</maven-libs.version>
         <closure-compiler.version>v20140407</closure-compiler.version>
+        <debug>true</debug>
+        <github.username />
+        <github.password />
+        <github.site.dryRun>false</github.site.dryRun>
+        <skipUnitTests>false</skipUnitTests>
     </properties>
     <dependencies>
         <dependency>
@@ -93,6 +98,24 @@
             <artifactId>closure-compiler</artifactId>
             <version>${closure-compiler.version}</version>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven.shared</groupId>
+            <artifactId>maven-verifier</artifactId>
+            <version>1.6</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven.plugin-tools</groupId>
+            <artifactId>maven-plugin-annotations</artifactId>
+            <version>3.4</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
     <build>
         <pluginManagement>
@@ -101,6 +124,11 @@
                     <groupId>ru.concerteza.buildnumber</groupId>
                     <artifactId>maven-jgit-buildnumber-plugin</artifactId>
                     <version>1.2.10</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>2.7</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -173,6 +201,11 @@
                     <version>2.19</version>
                 </plugin>
                 <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-failsafe-plugin</artifactId>
+                    <version>2.19</version>
+                </plugin>
+                <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>findbugs-maven-plugin</artifactId>
                     <version>3.0.3</version>
@@ -214,6 +247,13 @@
                 </plugin>
             </plugins>
         </pluginManagement>
+        <resources />
+        <testResources>
+            <testResource>
+                <directory>src/test/projects</directory>
+                <filtering>true</filtering>
+            </testResource>
+        </testResources>
         <plugins>
             <plugin>
                 <groupId>ru.concerteza.buildnumber</groupId>
@@ -227,6 +267,21 @@
                         <phase>prepare-package</phase>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <useDefaultDelimiters>false</useDefaultDelimiters>
+                    <delimiters>
+                        <!-- delimiter>${*}</delimiter -->
+                        <delimiter>@</delimiter>
+                    </delimiters>
+                    <nonFilteredFileExtensions>
+                        <nonFilteredFileExtension>js</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>expected</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>html</nonFilteredFileExtension>
+                    </nonFilteredFileExtensions>
+                </configuration>
             </plugin>
             <plugin>
                 <artifactId>maven-plugin-plugin</artifactId>
@@ -275,6 +330,39 @@
                     </archive>
                 </configuration>
             </plugin>
+            <plugin>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <failIfNoTests>true</failIfNoTests>
+                    <includes>
+                        <include>**/*IntegrationTest.java</include>
+                    </includes>
+                    <argLine>${failsafeArgLine}</argLine>
+                    <skipTests>${skip.integration.tests}</skipTests>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <systemPropertyVariables />
+                    <failIfNoTests>false</failIfNoTests>
+                    <excludes>
+                        <exclude>**/*IntegrationTest.java</exclude>
+                    </excludes>
+                    <reuseForks>false</reuseForks>
+                    <argLine>${surefireArgLine}</argLine>
+                    <skipTests>${skipUnitTests}</skipTests>
+                </configuration>
+            </plugin>
+
             <plugin>
                 <artifactId>maven-site-plugin</artifactId>
                 <dependencies>

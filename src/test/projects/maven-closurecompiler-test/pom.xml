@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    Copyright 2015-2016 Mark Prins, GeoDienstenCentrum
+
+	Licensed under the Apache License, Version 2.0 (the "License");
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at
+
+	http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>nl.geodienstencentrum.maven.test</groupId>
+    <artifactId>maven-closurecompiler-test</artifactId>
+    <packaging>war</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <prerequisites>
+        <maven>3.1</maven>
+    </prerequisites>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <build>
+        <defaultGoal>compile</defaultGoal>
+        <plugins>
+            <plugin>
+                <groupId>nl.geodienstencentrum.maven</groupId>
+                <artifactId>closure-compiler-maven-plugin</artifactId>
+                <version>@project.version@</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <compilations>
+                        <compilation>
+                            <compilationLevel>WHITESPACE_ONLY</compilationLevel>
+                            <compilerOptions>
+                                <prettyPrint>true</prettyPrint>
+                                <lineBreak>true</lineBreak>
+                                <runtimeTypeCheck>true</runtimeTypeCheck>
+                            </compilerOptions>
+                            <externFiles />
+                            <sourceFiles>
+                                <param>${basedir}/src/main/js/_header.js</param>
+                                <param>${basedir}/src/main/js/asserts.js</param>
+                                <param>${basedir}/src/main/js/logger.js</param>
+                                <param>${basedir}/src/main/js/_footer.js</param>
+                            </sourceFiles>
+                            <outputFile>${basedir}/target/${project.build.finalName}/static/tools.debug.js</outputFile>
+                        </compilation>
+                        <compilation>
+                            <compilationLevel>ADVANCED_OPTIMIZATIONS</compilationLevel>
+                            <compilerOptions>
+                                <prettyPrint>true</prettyPrint>
+                            </compilerOptions>
+                            <externFiles></externFiles>
+                            <sourceFiles>
+                                <param>${basedir}/src/main/js/_header.js</param>
+                                <param>${basedir}/src/main/js/asserts.js</param>
+                                <param>${basedir}/src/main/js/logger.js</param>
+                                <param>${basedir}/src/main/js/_footer.js</param>
+                            </sourceFiles>
+                            <outputFile>${basedir}/target/${project.build.finalName}/static/tools.min.js</outputFile>
+                        </compilation>
+                    </compilations>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.5</version>
+                <configuration>
+                    <archive>
+                        <manifestEntries>
+                            <url>${project.url}</url>
+                            <release>${project.version}</release>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

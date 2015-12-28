@@ -1,5 +1,7 @@
 package nl.geodienstencentrum.maven.plugin.closure.compiler;
 
+import static org.apache.maven.plugins.annotations.LifecyclePhase.COMPILE;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.LinkedList;
@@ -19,17 +21,18 @@ import com.google.javascript.jscomp.CompilerOptions;
 import com.google.javascript.jscomp.JSError;
 import com.google.javascript.jscomp.Result;
 import com.google.javascript.jscomp.SourceFile;
+import org.apache.maven.plugins.annotations.Mojo;
+import org.apache.maven.plugins.annotations.Parameter;
 
 /**
- *
- * @phase generate-sources
- * @goal compile
  */
+@Mojo(name = "compile", defaultPhase = COMPILE)
 public class ClosureCompilerMojo extends AbstractMojo {
 
     /**
-     * @parameter @required
+     * the list of compilations.
      */
+    @Parameter(required = true)
     private List<Compilation> compilations;
 
     @Override
@@ -104,21 +107,21 @@ public class ClosureCompilerMojo extends AbstractMojo {
         }
     }
 
-    /**
-     * @return the compilations
-     */
-    public List<Compilation> getCompilations() {
-        return this.compilations;
-    }
-
-    /**
-     * @param compilations the compilations to set
-     */
-    public void setCompilations(final List<Compilation> compilations) {
-        Preconditions.checkNotNull(compilations,
-                "The compilations may not be null.");
-        this.compilations = compilations;
-    }
+//    /**
+//     * @return the compilations
+//     */
+//    public List<Compilation> getCompilations() {
+//        return this.compilations;
+//    }
+//
+//    /**
+//     * @param compilations the compilations to set
+//     */
+//    public void setCompilations(final List<Compilation> compilations) {
+//        Preconditions.checkNotNull(compilations,
+//                "The compilations may not be null.");
+//        this.compilations = compilations;
+//    }
 
     /**
      * Returns a list of SourceFiles if given a list of relative or absolute

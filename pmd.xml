@@ -1,165 +1,831 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pmd version="5.3.2" timestamp="2015-08-27T21:58:00.780">
+<pmd version="5.3.5" timestamp="2015-12-28T21:41:16.054">
 <file name="/home/mprins/workspace/closure-compiler-maven-plugin/target/checkout/src/main/java/nl/geodienstencentrum/maven/plugin/closure/compiler/ClosureCompilerMojo.java">
-<violation beginline="28" endline="162" begincolumn="8" endcolumn="1" rule="CyclomaticComplexity" ruleset="Code Size" package="nl.geodienstencentrum.maven.plugin.closure.compiler" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/codesize.html#CyclomaticComplexity" priority="3">
-The class 'ClosureCompilerMojo' has a Cyclomatic Complexity of 4 (Highest = 11).
+<violation beginline="30" endline="147" begincolumn="8" endcolumn="1" rule="CyclomaticComplexity" ruleset="Code Size" package="nl.geodienstencentrum.maven.plugin.closure.compiler" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/codesize.html#CyclomaticComplexity" priority="3">
+The class 'ClosureCompilerMojo' has a Cyclomatic Complexity of 6 (Highest = 11).
 </violation>
-<violation beginline="28" endline="162" begincolumn="8" endcolumn="1" rule="ModifiedCyclomaticComplexity" ruleset="Code Size" package="nl.geodienstencentrum.maven.plugin.closure.compiler" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/codesize.html#ModifiedCyclomaticComplexity" priority="3">
-The class 'ClosureCompilerMojo' has a Modified Cyclomatic Complexity of 4 (Highest = 11).
+<violation beginline="30" endline="147" begincolumn="8" endcolumn="1" rule="ModifiedCyclomaticComplexity" ruleset="Code Size" package="nl.geodienstencentrum.maven.plugin.closure.compiler" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/codesize.html#ModifiedCyclomaticComplexity" priority="3">
+The class 'ClosureCompilerMojo' has a Modified Cyclomatic Complexity of 6 (Highest = 11).
 </violation>
-<violation beginline="28" endline="162" begincolumn="8" endcolumn="1" rule="StdCyclomaticComplexity" ruleset="Code Size" package="nl.geodienstencentrum.maven.plugin.closure.compiler" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/codesize.html#StdCyclomaticComplexity" priority="3">
-The class 'ClosureCompilerMojo' has a Standard Cyclomatic Complexity of 4 (Highest = 11).
+<violation beginline="30" endline="147" begincolumn="8" endcolumn="1" rule="StdCyclomaticComplexity" ruleset="Code Size" package="nl.geodienstencentrum.maven.plugin.closure.compiler" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/codesize.html#StdCyclomaticComplexity" priority="3">
+The class 'ClosureCompilerMojo' has a Standard Cyclomatic Complexity of 6 (Highest = 11).
 </violation>
-<violation beginline="36" endline="42" begincolumn="30" endcolumn="66" rule="DataflowAnomalyAnalysis" ruleset="Controversial" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="compilation" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/controversial.html#DataflowAnomalyAnalysis" priority="5">
-Found 'UR'-anomaly for variable 'compilation' (lines '36'-'42').
+<violation beginline="36" endline="36" begincolumn="31" endcolumn="42" rule="BeanMembersShouldSerialize" ruleset="JavaBeans" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" variable="compilations" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/javabeans.html#BeanMembersShouldSerialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
 </violation>
-<violation beginline="36" endline="48" begincolumn="17" endcolumn="64" rule="DataflowAnomalyAnalysis" ruleset="Controversial" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="sourceFile" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/controversial.html#DataflowAnomalyAnalysis" priority="5">
-Found 'UR'-anomaly for variable 'sourceFile' (lines '36'-'48').
+<violation beginline="39" endline="44" begincolumn="30" endcolumn="66" rule="DataflowAnomalyAnalysis" ruleset="Controversial" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="compilation" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/controversial.html#DataflowAnomalyAnalysis" priority="5">
+Found 'UR'-anomaly for variable 'compilation' (lines '39'-'44').
 </violation>
-<violation beginline="36" endline="105" begincolumn="12" endcolumn="5" rule="CyclomaticComplexity" ruleset="Code Size" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/codesize.html#CyclomaticComplexity" priority="3">
+<violation beginline="39" endline="50" begincolumn="17" endcolumn="64" rule="DataflowAnomalyAnalysis" ruleset="Controversial" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="sourceFile" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/controversial.html#DataflowAnomalyAnalysis" priority="5">
+Found 'UR'-anomaly for variable 'sourceFile' (lines '39'-'50').
+</violation>
+<violation beginline="39" endline="106" begincolumn="12" endcolumn="5" rule="CyclomaticComplexity" ruleset="Code Size" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/codesize.html#CyclomaticComplexity" priority="3">
 The method 'execute' has a Cyclomatic Complexity of 11.
 </violation>
-<violation beginline="36" endline="105" begincolumn="12" endcolumn="5" rule="ModifiedCyclomaticComplexity" ruleset="Code Size" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/codesize.html#ModifiedCyclomaticComplexity" priority="3">
+<violation beginline="39" endline="106" begincolumn="12" endcolumn="5" rule="ModifiedCyclomaticComplexity" ruleset="Code Size" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/codesize.html#ModifiedCyclomaticComplexity" priority="3">
 The method 'execute' has a Modified Cyclomatic Complexity of 11.
 </violation>
-<violation beginline="36" endline="105" begincolumn="12" endcolumn="5" rule="StdCyclomaticComplexity" ruleset="Code Size" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/codesize.html#StdCyclomaticComplexity" priority="3">
+<violation beginline="39" endline="106" begincolumn="12" endcolumn="5" rule="StdCyclomaticComplexity" ruleset="Code Size" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/codesize.html#StdCyclomaticComplexity" priority="3">
 The method 'execute' has a Standard Cyclomatic Complexity of 11.
 </violation>
-<violation beginline="36" endline="105" begincolumn="12" endcolumn="5" rule="NPathComplexity" ruleset="Code Size" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/codesize.html#NPathComplexity" priority="3">
+<violation beginline="39" endline="106" begincolumn="12" endcolumn="5" rule="NPathComplexity" ruleset="Code Size" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/codesize.html#NPathComplexity" priority="3">
 The method execute() has an NPath complexity of 769
 </violation>
-<violation beginline="37" endline="105" begincolumn="13" endcolumn="26" rule="DataflowAnomalyAnalysis" ruleset="Controversial" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="log" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/controversial.html#DataflowAnomalyAnalysis" priority="5">
-Found 'DU'-anomaly for variable 'log' (lines '37'-'105').
+<violation beginline="40" endline="106" begincolumn="13" endcolumn="26" rule="DataflowAnomalyAnalysis" ruleset="Controversial" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="log" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/controversial.html#DataflowAnomalyAnalysis" priority="5">
+Found 'DU'-anomaly for variable 'log' (lines '40'-'106').
 </violation>
-<violation beginline="37" endline="37" begincolumn="9" endcolumn="26" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="log" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
+<violation beginline="40" endline="40" begincolumn="9" endcolumn="26" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="log" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
 Local variable 'log' could be declared final
 </violation>
-<violation beginline="40" endline="40" begincolumn="14" endcolumn="36" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="compilation" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
+<violation beginline="43" endline="43" begincolumn="14" endcolumn="36" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="compilation" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
 Local variable 'compilation' could be declared final
 </violation>
-<violation beginline="42" endline="43" begincolumn="13" endcolumn="66" rule="PrematureDeclaration" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="externs" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/optimizations.html#PrematureDeclaration" priority="3">
+<violation beginline="44" endline="45" begincolumn="13" endcolumn="66" rule="PrematureDeclaration" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="externs" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#PrematureDeclaration" priority="3">
 Avoid declaring a variable if it is unreferenced before a possible exit point.
 </violation>
-<violation beginline="42" endline="105" begincolumn="30" endcolumn="66" rule="DataflowAnomalyAnalysis" ruleset="Controversial" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="externs" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/controversial.html#DataflowAnomalyAnalysis" priority="5">
-Found 'DU'-anomaly for variable 'externs' (lines '42'-'105').
+<violation beginline="44" endline="106" begincolumn="30" endcolumn="66" rule="DataflowAnomalyAnalysis" ruleset="Controversial" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="externs" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/controversial.html#DataflowAnomalyAnalysis" priority="5">
+Found 'DU'-anomaly for variable 'externs' (lines '44'-'106').
 </violation>
-<violation beginline="42" endline="43" begincolumn="13" endcolumn="66" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="externs" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
+<violation beginline="44" endline="45" begincolumn="13" endcolumn="66" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="externs" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
 Local variable 'externs' could be declared final
 </violation>
-<violation beginline="44" endline="45" begincolumn="13" endcolumn="66" rule="PrematureDeclaration" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="source" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/optimizations.html#PrematureDeclaration" priority="3">
+<violation beginline="46" endline="47" begincolumn="13" endcolumn="66" rule="PrematureDeclaration" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="source" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#PrematureDeclaration" priority="3">
 Avoid declaring a variable if it is unreferenced before a possible exit point.
 </violation>
-<violation beginline="44" endline="105" begincolumn="30" endcolumn="66" rule="DataflowAnomalyAnalysis" ruleset="Controversial" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="source" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/controversial.html#DataflowAnomalyAnalysis" priority="5">
-Found 'DU'-anomaly for variable 'source' (lines '44'-'105').
+<violation beginline="46" endline="106" begincolumn="30" endcolumn="66" rule="DataflowAnomalyAnalysis" ruleset="Controversial" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="source" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/controversial.html#DataflowAnomalyAnalysis" priority="5">
+Found 'DU'-anomaly for variable 'source' (lines '46'-'106').
 </violation>
-<violation beginline="44" endline="45" begincolumn="13" endcolumn="66" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="source" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
+<violation beginline="46" endline="47" begincolumn="13" endcolumn="66" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="source" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
 Local variable 'source' could be declared final
 </violation>
-<violation beginline="47" endline="47" begincolumn="18" endcolumn="34" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="sourceFile" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
+<violation beginline="49" endline="49" begincolumn="18" endcolumn="34" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="sourceFile" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
 Local variable 'sourceFile' could be declared final
 </violation>
-<violation beginline="48" endline="48" begincolumn="17" endcolumn="24" rule="GuardLogStatement" ruleset="Jakarta Commons Logging" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/logging-jakarta-commons.html#GuardLogStatement" priority="2">
+<violation beginline="50" endline="50" begincolumn="17" endcolumn="24" rule="GuardLogStatement" ruleset="Jakarta Commons Logging" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/logging-jakarta-commons.html#GuardLogStatement" priority="2">
 There is log block not surrounded by if
 </violation>
-<violation beginline="48" endline="48" begincolumn="17" endcolumn="24" rule="GuardLogStatementJavaUtil" ruleset="Java Logging" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/logging-java.html#GuardLogStatementJavaUtil" priority="2">
+<violation beginline="50" endline="50" begincolumn="17" endcolumn="24" rule="GuardLogStatementJavaUtil" ruleset="Java Logging" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/logging-java.html#GuardLogStatementJavaUtil" priority="2">
 There is log block not surrounded by if
 </violation>
-<violation beginline="50" endline="50" begincolumn="18" endcolumn="34" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="sourceFile" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
+<violation beginline="52" endline="52" begincolumn="18" endcolumn="34" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="sourceFile" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
 Local variable 'sourceFile' could be declared final
 </violation>
-<violation beginline="51" endline="51" begincolumn="17" endcolumn="24" rule="GuardLogStatement" ruleset="Jakarta Commons Logging" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/logging-jakarta-commons.html#GuardLogStatement" priority="2">
+<violation beginline="53" endline="53" begincolumn="17" endcolumn="24" rule="GuardLogStatement" ruleset="Jakarta Commons Logging" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/logging-jakarta-commons.html#GuardLogStatement" priority="2">
 There is log block not surrounded by if
 </violation>
-<violation beginline="51" endline="51" begincolumn="17" endcolumn="24" rule="GuardLogStatementJavaUtil" ruleset="Java Logging" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/logging-java.html#GuardLogStatementJavaUtil" priority="2">
+<violation beginline="53" endline="53" begincolumn="17" endcolumn="24" rule="GuardLogStatementJavaUtil" ruleset="Java Logging" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/logging-java.html#GuardLogStatementJavaUtil" priority="2">
 There is log block not surrounded by if
 </violation>
-<violation beginline="54" endline="54" begincolumn="13" endcolumn="20" rule="GuardLogStatement" ruleset="Jakarta Commons Logging" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/logging-jakarta-commons.html#GuardLogStatement" priority="2">
+<violation beginline="56" endline="56" begincolumn="13" endcolumn="20" rule="GuardLogStatement" ruleset="Jakarta Commons Logging" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/logging-jakarta-commons.html#GuardLogStatement" priority="2">
 There is log block not surrounded by if
 </violation>
-<violation beginline="54" endline="54" begincolumn="13" endcolumn="20" rule="GuardLogStatementJavaUtil" ruleset="Java Logging" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/logging-java.html#GuardLogStatementJavaUtil" priority="2">
+<violation beginline="56" endline="56" begincolumn="13" endcolumn="20" rule="GuardLogStatementJavaUtil" ruleset="Java Logging" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/logging-java.html#GuardLogStatementJavaUtil" priority="2">
 There is log block not surrounded by if
 </violation>
-<violation beginline="55" endline="55" begincolumn="13" endcolumn="20" rule="GuardLogStatement" ruleset="Jakarta Commons Logging" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/logging-jakarta-commons.html#GuardLogStatement" priority="2">
+<violation beginline="57" endline="57" begincolumn="13" endcolumn="20" rule="GuardLogStatement" ruleset="Jakarta Commons Logging" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/logging-jakarta-commons.html#GuardLogStatement" priority="2">
 There is log block not surrounded by if
 </violation>
-<violation beginline="55" endline="55" begincolumn="13" endcolumn="20" rule="GuardLogStatementJavaUtil" ruleset="Java Logging" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/logging-java.html#GuardLogStatementJavaUtil" priority="2">
+<violation beginline="57" endline="57" begincolumn="13" endcolumn="20" rule="GuardLogStatementJavaUtil" ruleset="Java Logging" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/logging-java.html#GuardLogStatementJavaUtil" priority="2">
 There is log block not surrounded by if
 </violation>
-<violation beginline="58" endline="60" begincolumn="17" endcolumn="55" rule="DataflowAnomalyAnalysis" ruleset="Controversial" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="compilationLevel" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/controversial.html#DataflowAnomalyAnalysis" priority="5">
-Found 'DD'-anomaly for variable 'compilationLevel' (lines '58'-'60').
+<violation beginline="60" endline="62" begincolumn="17" endcolumn="55" rule="DataflowAnomalyAnalysis" ruleset="Controversial" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="compilationLevel" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/controversial.html#DataflowAnomalyAnalysis" priority="5">
+Found 'DD'-anomaly for variable 'compilationLevel' (lines '60'-'62').
 </violation>
-<violation beginline="60" endline="105" begincolumn="17" endcolumn="55" rule="DataflowAnomalyAnalysis" ruleset="Controversial" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="compilationLevel" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/controversial.html#DataflowAnomalyAnalysis" priority="5">
-Found 'DU'-anomaly for variable 'compilationLevel' (lines '60'-'105').
+<violation beginline="62" endline="106" begincolumn="17" endcolumn="55" rule="DataflowAnomalyAnalysis" ruleset="Controversial" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="compilationLevel" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/controversial.html#DataflowAnomalyAnalysis" priority="5">
+Found 'DU'-anomaly for variable 'compilationLevel' (lines '62'-'106').
 </violation>
-<violation beginline="71" endline="71" begincolumn="35" endcolumn="55" rule="AvoidInstantiatingObjectsInLoops" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/optimizations.html#AvoidInstantiatingObjectsInLoops" priority="3">
+<violation beginline="73" endline="73" begincolumn="35" endcolumn="55" rule="AvoidInstantiatingObjectsInLoops" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#AvoidInstantiatingObjectsInLoops" priority="3">
 Avoid instantiating new objects inside loops
 </violation>
-<violation beginline="73" endline="73" begincolumn="13" endcolumn="20" rule="GuardLogStatement" ruleset="Jakarta Commons Logging" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/logging-jakarta-commons.html#GuardLogStatement" priority="2">
+<violation beginline="75" endline="75" begincolumn="13" endcolumn="21" rule="GuardLogStatement" ruleset="Jakarta Commons Logging" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/logging-jakarta-commons.html#GuardLogStatement" priority="2">
 There is log block not surrounded by if
 </violation>
-<violation beginline="73" endline="73" begincolumn="13" endcolumn="20" rule="GuardLogStatementJavaUtil" ruleset="Java Logging" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/logging-java.html#GuardLogStatementJavaUtil" priority="2">
-There is log block not surrounded by if
+<violation beginline="75" endline="75" begincolumn="13" endcolumn="21" rule="GuardDebugLogging" ruleset="Jakarta Commons Logging" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/logging-jakarta-commons.html#GuardDebugLogging" priority="3">
+debug logging that involves string concatenation should be guarded with isDebugEnabled() checks
 </violation>
-<violation beginline="77" endline="77" begincolumn="33" endcolumn="46" rule="AvoidInstantiatingObjectsInLoops" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/optimizations.html#AvoidInstantiatingObjectsInLoops" priority="3">
+<violation beginline="79" endline="79" begincolumn="33" endcolumn="46" rule="AvoidInstantiatingObjectsInLoops" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#AvoidInstantiatingObjectsInLoops" priority="3">
 Avoid instantiating new objects inside loops
 </violation>
-<violation beginline="77" endline="77" begincolumn="13" endcolumn="46" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="compiler" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
+<violation beginline="79" endline="79" begincolumn="13" endcolumn="46" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="compiler" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
 Local variable 'compiler' could be declared final
 </violation>
-<violation beginline="78" endline="78" begincolumn="13" endcolumn="78" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="result" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
+<violation beginline="80" endline="80" begincolumn="13" endcolumn="78" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="result" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
 Local variable 'result' could be declared final
 </violation>
-<violation beginline="81" endline="81" begincolumn="18" endcolumn="32" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="warning" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
+<violation beginline="82" endline="82" begincolumn="18" endcolumn="32" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="warning" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
 Local variable 'warning' could be declared final
 </violation>
-<violation beginline="85" endline="85" begincolumn="18" endcolumn="30" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="error" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
+<violation beginline="86" endline="86" begincolumn="18" endcolumn="30" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" variable="error" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
 Local variable 'error' could be declared final
 </violation>
-<violation beginline="101" endline="102" begincolumn="25" endcolumn="76" rule="ConfusingTernary" ruleset="Design" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/design.html#ConfusingTernary" priority="3">
+<violation beginline="102" endline="103" begincolumn="25" endcolumn="76" rule="ConfusingTernary" ruleset="Design" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="execute" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/design.html#ConfusingTernary" priority="3">
 Avoid if (x != y) ..; else ..;
 </violation>
-<violation beginline="130" endline="135" begincolumn="18" endcolumn="42" rule="DataflowAnomalyAnalysis" ruleset="Controversial" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="getSourceFiles" variable="filepath" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/controversial.html#DataflowAnomalyAnalysis" priority="5">
-Found 'UR'-anomaly for variable 'filepath' (lines '130'-'135').
+<violation beginline="115" endline="120" begincolumn="18" endcolumn="42" rule="DataflowAnomalyAnalysis" ruleset="Controversial" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="getSourceFiles" variable="filepath" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/controversial.html#DataflowAnomalyAnalysis" priority="5">
+Found 'UR'-anomaly for variable 'filepath' (lines '115'-'120').
 </violation>
-<violation beginline="133" endline="133" begincolumn="9" endcolumn="63" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="getSourceFiles" variable="externs" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
+<violation beginline="118" endline="118" begincolumn="9" endcolumn="53" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="getSourceFiles" variable="externs" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
 Local variable 'externs' could be declared final
 </violation>
-<violation beginline="134" endline="134" begincolumn="14" endcolumn="28" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="getSourceFiles" variable="filepath" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
+<violation beginline="119" endline="119" begincolumn="14" endcolumn="28" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="getSourceFiles" variable="filepath" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
 Local variable 'filepath' could be declared final
 </violation>
-<violation beginline="135" endline="135" begincolumn="25" endcolumn="42" rule="AvoidInstantiatingObjectsInLoops" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="getSourceFiles" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/optimizations.html#AvoidInstantiatingObjectsInLoops" priority="3">
+<violation beginline="120" endline="120" begincolumn="25" endcolumn="42" rule="AvoidInstantiatingObjectsInLoops" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="getSourceFiles" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#AvoidInstantiatingObjectsInLoops" priority="3">
 Avoid instantiating new objects inside loops
 </violation>
-<violation beginline="135" endline="135" begincolumn="13" endcolumn="42" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="getSourceFiles" variable="file" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
+<violation beginline="120" endline="120" begincolumn="13" endcolumn="42" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="getSourceFiles" variable="file" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
 Local variable 'file' could be declared final
 </violation>
-<violation beginline="148" endline="154" begincolumn="17" endcolumn="61" rule="DataflowAnomalyAnalysis" ruleset="Controversial" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="sourcefileFromFile" variable="child" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/controversial.html#DataflowAnomalyAnalysis" priority="5">
-Found 'UR'-anomaly for variable 'child' (lines '148'-'154').
+<violation beginline="133" endline="139" begincolumn="17" endcolumn="61" rule="DataflowAnomalyAnalysis" ruleset="Controversial" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="sourcefileFromFile" variable="child" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/controversial.html#DataflowAnomalyAnalysis" priority="5">
+Found 'UR'-anomaly for variable 'child' (lines '133'-'139').
 </violation>
-<violation beginline="151" endline="151" begincolumn="9" endcolumn="67" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="sourcefileFromFile" variable="sourceFiles" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
+<violation beginline="136" endline="136" begincolumn="9" endcolumn="57" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="sourcefileFromFile" variable="sourceFiles" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
 Local variable 'sourceFiles' could be declared final
 </violation>
-<violation beginline="153" endline="153" begincolumn="18" endcolumn="27" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="sourcefileFromFile" variable="child" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
+<violation beginline="138" endline="138" begincolumn="18" endcolumn="27" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" method="sourcefileFromFile" variable="child" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
 Local variable 'child' could be declared final
 </violation>
 </file>
 <file name="/home/mprins/workspace/closure-compiler-maven-plugin/target/checkout/src/main/java/nl/geodienstencentrum/maven/plugin/closure/compiler/Compilation.java">
-<violation beginline="19" endline="19" begincolumn="33" endcolumn="47" rule="BeanMembersShouldSerialize" ruleset="JavaBeans" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="Compilation" variable="compilerOptions" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/javabeans.html#BeanMembersShouldSerialize" priority="3">
+<violation beginline="19" endline="19" begincolumn="33" endcolumn="47" rule="BeanMembersShouldSerialize" ruleset="JavaBeans" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="Compilation" variable="compilerOptions" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/javabeans.html#BeanMembersShouldSerialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="19" endline="19" begincolumn="33" endcolumn="47" rule="ImmutableField" ruleset="Design" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="Compilation" variable="compilerOptions" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/design.html#ImmutableField" priority="3">
+Private field 'compilerOptions' could be made final; it is only initialized in the declaration or constructor.
+</violation>
+<violation beginline="26" endline="26" begincolumn="20" endcolumn="35" rule="BeanMembersShouldSerialize" ruleset="JavaBeans" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="Compilation" variable="compilationLevel" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/javabeans.html#BeanMembersShouldSerialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="32" endline="32" begincolumn="26" endcolumn="36" rule="BeanMembersShouldSerialize" ruleset="JavaBeans" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="Compilation" variable="externFiles" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/javabeans.html#BeanMembersShouldSerialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="38" endline="38" begincolumn="26" endcolumn="36" rule="BeanMembersShouldSerialize" ruleset="JavaBeans" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="Compilation" variable="sourceFiles" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/javabeans.html#BeanMembersShouldSerialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="44" endline="44" begincolumn="18" endcolumn="27" rule="BeanMembersShouldSerialize" ruleset="JavaBeans" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="Compilation" variable="outputFile" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/javabeans.html#BeanMembersShouldSerialize" priority="3">
 Found non-transient, non-static member. Please mark as transient or provide accessors.
 </violation>
 </file>
 <file name="/home/mprins/workspace/closure-compiler-maven-plugin/target/checkout/src/main/java/nl/geodienstencentrum/maven/plugin/closure/compiler/CompilerOptionsMojo.java">
-<violation beginline="1" endline="1877" begincolumn="1" endcolumn="2" rule="ExcessivePublicCount" ruleset="Code Size" package="nl.geodienstencentrum.maven.plugin.closure.compiler" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/codesize.html#ExcessivePublicCount" priority="3">
+<violation beginline="1" endline="969" begincolumn="1" endcolumn="2" rule="GodClass" ruleset="Design" package="nl.geodienstencentrum.maven.plugin.closure.compiler" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/design.html#GodClass" priority="3">
+Possible God class (WMC=203, ATFD=170, TCC=0.0)
+</violation>
+<violation beginline="1" endline="969" begincolumn="1" endcolumn="2" rule="ExcessivePublicCount" ruleset="Code Size" package="nl.geodienstencentrum.maven.plugin.closure.compiler" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/codesize.html#ExcessivePublicCount" priority="3">
 This class has a bunch of public methods and attributes
 </violation>
-<violation beginline="40" endline="1877" begincolumn="8" endcolumn="1" rule="ExcessiveClassLength" ruleset="Code Size" package="nl.geodienstencentrum.maven.plugin.closure.compiler" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/codesize.html#ExcessiveClassLength" priority="3">
-Avoid really long classes.
+<violation beginline="3" endline="3" begincolumn="1" endcolumn="44" rule="UnusedImports" ruleset="Type Resolution" package="nl.geodienstencentrum.maven.plugin.closure.compiler" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/typeresolution.html#UnusedImports" priority="4">
+Avoid unused imports such as 'com.google.common.base.Preconditions'
 </violation>
-<violation beginline="40" endline="1877" begincolumn="34" endcolumn="1" rule="TooManyMethods" ruleset="Code Size" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/codesize.html#TooManyMethods" priority="3">
-This class has too many methods, consider refactoring it.
+<violation beginline="4" endline="4" begincolumn="1" endcolumn="61" rule="UnusedImports" ruleset="Type Resolution" package="nl.geodienstencentrum.maven.plugin.closure.compiler" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/typeresolution.html#UnusedImports" priority="4">
+Avoid unused imports such as 'com.google.javascript.jscomp.CompilerOptions'
 </violation>
-<violation beginline="120" endline="122" begincolumn="12" endcolumn="5" rule="BooleanGetMethodName" ruleset="Naming" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="getInferTypes" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/naming.html#BooleanGetMethodName" priority="4">
-A getX() method which returns a boolean should be named isX()
+<violation beginline="5" endline="5" begincolumn="1" endcolumn="55" rule="UnusedImports" ruleset="Type Resolution" package="nl.geodienstencentrum.maven.plugin.closure.compiler" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/typeresolution.html#UnusedImports" priority="4">
+Avoid unused imports such as 'com.google.javascript.jscomp.SourceMap'
+</violation>
+<violation beginline="51" endline="51" begincolumn="49" endcolumn="62" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setMaxFunctionSizeAfterInlining" variable="funAstSize" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'funAstSize' is not assigned and could be declared final
+</violation>
+<violation beginline="55" endline="55" begincolumn="54" endcolumn="94" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setRemoveUnusedConstructorProperties" variable="removeUnusedConstructorProperties" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'removeUnusedConstructorProperties' is not assigned and could be declared final
+</violation>
+<violation beginline="59" endline="59" begincolumn="32" endcolumn="50" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setPolymerPass" variable="polymerPass" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'polymerPass' is not assigned and could be declared final
+</violation>
+<violation beginline="63" endline="63" begincolumn="29" endcolumn="44" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setDartPass" variable="dartPass" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'dartPass' is not assigned and could be declared final
+</violation>
+<violation beginline="67" endline="67" begincolumn="29" endcolumn="44" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setJ2clPass" variable="j2clPass" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'j2clPass' is not assigned and could be declared final
+</violation>
+<violation beginline="71" endline="71" begincolumn="31" endcolumn="48" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setChecksOnly" variable="checksOnly" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'checksOnly' is not assigned and could be declared final
+</violation>
+<violation beginline="75" endline="75" begincolumn="48" endcolumn="62" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setInstrumentationTemplateFile" variable="filename" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'filename' is not assigned and could be declared final
+</violation>
+<violation beginline="79" endline="79" begincolumn="44" endcolumn="74" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setPreserveTypeAnnotations" variable="preserveTypeAnnotations" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'preserveTypeAnnotations' is not assigned and could be declared final
+</violation>
+<violation beginline="83" endline="83" begincolumn="47" endcolumn="80" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setSkipNonTranspilationPasses" variable="skipNonTranspilationPasses" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'skipNonTranspilationPasses' is not assigned and could be declared final
+</violation>
+<violation beginline="87" endline="87" begincolumn="32" endcolumn="54" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setEnvironment" variable="environment" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'environment' is not assigned and could be declared final
+</violation>
+<violation beginline="95" endline="95" begincolumn="39" endcolumn="54" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setAggressiveVarCheck" variable="level" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'level' is not assigned and could be declared final
+</violation>
+<violation beginline="99" endline="99" begincolumn="42" endcolumn="57" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setReportMissingOverride" variable="level" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'level' is not assigned and could be declared final
+</violation>
+<violation beginline="107" endline="107" begincolumn="34" endcolumn="49" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setCheckRequires" variable="level" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'level' is not assigned and could be declared final
+</violation>
+<violation beginline="115" endline="115" begincolumn="34" endcolumn="49" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setCheckProvides" variable="level" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'level' is not assigned and could be declared final
+</violation>
+<violation beginline="119" endline="119" begincolumn="42" endcolumn="57" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setCheckGlobalNamesLevel" variable="level" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'level' is not assigned and could be declared final
+</violation>
+<violation beginline="127" endline="127" begincolumn="47" endcolumn="62" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setBrokenClosureRequiresLevel" variable="level" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'level' is not assigned and could be declared final
+</violation>
+<violation beginline="131" endline="131" begincolumn="41" endcolumn="56" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setCheckGlobalThisLevel" variable="level" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'level' is not assigned and could be declared final
+</violation>
+<violation beginline="135" endline="135" begincolumn="48" endcolumn="63" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setCheckMissingGetCssNameLevel" variable="level" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'level' is not assigned and could be declared final
+</violation>
+<violation beginline="139" endline="139" begincolumn="54" endcolumn="110" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setCheckEventfulObjectDisposalPolicy" variable="policy" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'policy' is not assigned and could be declared final
+</violation>
+<violation beginline="147" endline="147" begincolumn="39" endcolumn="54" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setCheckMissingReturn" variable="level" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'level' is not assigned and could be declared final
+</violation>
+<violation beginline="155" endline="155" begincolumn="37" endcolumn="48" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setAliasableGlobals" variable="names" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'names' is not assigned and could be declared final
+</violation>
+<violation beginline="163" endline="163" begincolumn="39" endcolumn="50" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setUnaliasableGlobals" variable="names" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'names' is not assigned and could be declared final
+</violation>
+<violation beginline="167" endline="167" begincolumn="43" endcolumn="57" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setCollapseObjectLiterals" variable="enabled" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'enabled' is not assigned and could be declared final
+</violation>
+<violation beginline="177" endline="177" begincolumn="44" endcolumn="58" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setSpecializeInitialModule" variable="enabled" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'enabled' is not assigned and could be declared final
+</violation>
+<violation beginline="181" endline="181" begincolumn="50" endcolumn="86" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setReplaceMessagesWithChromeI18n" variable="replaceMessagesWithChromeI18n" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'replaceMessagesWithChromeI18n' is not assigned and could be declared final
+</violation>
+<violation beginline="181" endline="181" begincolumn="89" endcolumn="106" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setReplaceMessagesWithChromeI18n" variable="tcProjectId" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'tcProjectId' is not assigned and could be declared final
+</violation>
+<violation beginline="185" endline="185" begincolumn="31" endcolumn="47" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setAppNameStr" variable="appNameStr" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'appNameStr' is not assigned and could be declared final
+</violation>
+<violation beginline="189" endline="189" begincolumn="39" endcolumn="53" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setPreferSingleQuotes" variable="enabled" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'enabled' is not assigned and could be declared final
+</violation>
+<violation beginline="193" endline="193" begincolumn="35" endcolumn="45" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setTrustedStrings" variable="yes" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'yes' is not assigned and could be declared final
+</violation>
+<violation beginline="197" endline="197" begincolumn="31" endcolumn="47" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setReportPath" variable="reportPath" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'reportPath' is not assigned and could be declared final
+</violation>
+<violation beginline="201" endline="201" begincolumn="31" endcolumn="45" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setTracerMode" variable="mode" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'mode' is not assigned and could be declared final
+</violation>
+<violation beginline="205" endline="205" begincolumn="44" endcolumn="58" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setNameReferenceReportPath" variable="filePath" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'filePath' is not assigned and could be declared final
+</violation>
+<violation beginline="209" endline="209" begincolumn="43" endcolumn="57" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setNameReferenceGraphPath" variable="filePath" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'filePath' is not assigned and could be declared final
+</violation>
+<violation beginline="213" endline="213" begincolumn="45" endcolumn="58" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setProtectHiddenSideEffects" variable="enable" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'enable' is not assigned and could be declared final
+</violation>
+<violation beginline="217" endline="217" begincolumn="48" endcolumn="82" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setRemoveUnusedClassProperties" variable="removeUnusedClassProperties" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'removeUnusedClassProperties' is not assigned and could be declared final
+</violation>
+<violation beginline="221" endline="221" begincolumn="43" endcolumn="59" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setDefineToBooleanLiteral" variable="defineName" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'defineName' is not assigned and could be declared final
+</violation>
+<violation beginline="221" endline="221" begincolumn="62" endcolumn="74" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setDefineToBooleanLiteral" variable="value" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'value' is not assigned and could be declared final
+</violation>
+<violation beginline="225" endline="225" begincolumn="42" endcolumn="58" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setDefineToStringLiteral" variable="defineName" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'defineName' is not assigned and could be declared final
+</violation>
+<violation beginline="225" endline="225" begincolumn="61" endcolumn="72" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setDefineToStringLiteral" variable="value" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'value' is not assigned and could be declared final
+</violation>
+<violation beginline="229" endline="229" begincolumn="42" endcolumn="58" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setDefineToNumberLiteral" variable="defineName" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'defineName' is not assigned and could be declared final
+</violation>
+<violation beginline="229" endline="229" begincolumn="61" endcolumn="69" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setDefineToNumberLiteral" variable="value" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'value' is not assigned and could be declared final
+</violation>
+<violation beginline="233" endline="233" begincolumn="42" endcolumn="58" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setDefineToDoubleLiteral" variable="defineName" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'defineName' is not assigned and could be declared final
+</violation>
+<violation beginline="233" endline="233" begincolumn="61" endcolumn="72" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setDefineToDoubleLiteral" variable="value" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'value' is not assigned and could be declared final
+</violation>
+<violation beginline="237" endline="237" begincolumn="42" endcolumn="55" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setTweakToBooleanLiteral" variable="tweakId" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'tweakId' is not assigned and could be declared final
+</violation>
+<violation beginline="237" endline="237" begincolumn="58" endcolumn="70" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setTweakToBooleanLiteral" variable="value" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'value' is not assigned and could be declared final
+</violation>
+<violation beginline="241" endline="241" begincolumn="41" endcolumn="54" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setTweakToStringLiteral" variable="tweakId" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'tweakId' is not assigned and could be declared final
+</violation>
+<violation beginline="241" endline="241" begincolumn="57" endcolumn="68" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setTweakToStringLiteral" variable="value" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'value' is not assigned and could be declared final
+</violation>
+<violation beginline="245" endline="245" begincolumn="41" endcolumn="54" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setTweakToNumberLiteral" variable="tweakId" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'tweakId' is not assigned and could be declared final
+</violation>
+<violation beginline="245" endline="245" begincolumn="57" endcolumn="65" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setTweakToNumberLiteral" variable="value" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'value' is not assigned and could be declared final
+</violation>
+<violation beginline="249" endline="249" begincolumn="41" endcolumn="54" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setTweakToDoubleLiteral" variable="tweakId" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'tweakId' is not assigned and could be declared final
+</violation>
+<violation beginline="249" endline="249" begincolumn="57" endcolumn="68" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setTweakToDoubleLiteral" variable="value" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'value' is not assigned and could be declared final
+</violation>
+<violation beginline="253" endline="253" begincolumn="55" endcolumn="70" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setWarningLevel" variable="level" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'level' is not assigned and could be declared final
+</violation>
+<violation beginline="253" endline="253" begincolumn="33" endcolumn="52" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setWarningLevel" variable="type" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'type' is not assigned and could be declared final
+</violation>
+<violation beginline="257" endline="257" begincolumn="34" endcolumn="52" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="addWarningsGuard" variable="guard" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'guard' is not assigned and could be declared final
+</violation>
+<violation beginline="261" endline="261" begincolumn="77" endcolumn="116" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setRenamingPolicy" variable="newPropertyPolicy" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'newPropertyPolicy' is not assigned and could be declared final
+</violation>
+<violation beginline="261" endline="261" begincolumn="35" endcolumn="74" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setRenamingPolicy" variable="newVariablePolicy" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'newVariablePolicy' is not assigned and could be declared final
+</violation>
+<violation beginline="269" endline="269" begincolumn="37" endcolumn="55" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setPropertyAffinity" variable="useAffinity" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'useAffinity' is not assigned and could be declared final
+</violation>
+<violation beginline="273" endline="273" begincolumn="36" endcolumn="49" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setShadowVariables" variable="shadow" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'shadow' is not assigned and could be declared final
+</violation>
+<violation beginline="282" endline="282" begincolumn="52" endcolumn="67" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setCollapsePropertiesOnExternTypes" variable="collapse" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'collapse' is not assigned and could be declared final
+</violation>
+<violation beginline="286" endline="286" begincolumn="48" endcolumn="62" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setProcessObjectPropertyString" variable="process" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'process' is not assigned and could be declared final
+</violation>
+<violation beginline="290" endline="290" begincolumn="40" endcolumn="66" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setReplaceIdGenerators" variable="replaceIdGenerators" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'replaceIdGenerators' is not assigned and could be declared final
+</violation>
+<violation beginline="294" endline="294" begincolumn="33" endcolumn="56" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setIdGenerators" variable="idGenerators" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'idGenerators' is not assigned and could be declared final
+</violation>
+<violation beginline="298" endline="298" begincolumn="33" endcolumn="69" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setIdGenerators" variable="idGenerators" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'idGenerators' is not assigned and could be declared final
+</violation>
+<violation beginline="302" endline="302" begincolumn="36" endcolumn="58" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setIdGeneratorsMap" variable="previousMappings" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'previousMappings' is not assigned and could be declared final
+</violation>
+<violation beginline="306" endline="306" begincolumn="36" endcolumn="46" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setInlineFunctions" variable="reach" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'reach' is not assigned and could be declared final
+</violation>
+<violation beginline="310" endline="310" begincolumn="36" endcolumn="46" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setInlineVariables" variable="reach" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'reach' is not assigned and could be declared final
+</violation>
+<violation beginline="314" endline="314" begincolumn="37" endcolumn="50" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setInlineProperties" variable="enable" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'enable' is not assigned and could be declared final
+</violation>
+<violation beginline="318" endline="318" begincolumn="42" endcolumn="52" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setRemoveUnusedVariables" variable="reach" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'reach' is not assigned and could be declared final
+</violation>
+<violation beginline="322" endline="322" begincolumn="73" endcolumn="104" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setReplaceStringsConfiguration" variable="functionDescriptors" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'functionDescriptors' is not assigned and could be declared final
+</violation>
+<violation beginline="322" endline="322" begincolumn="48" endcolumn="70" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setReplaceStringsConfiguration" variable="placeholderToken" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'placeholderToken' is not assigned and could be declared final
+</violation>
+<violation beginline="326" endline="326" begincolumn="42" endcolumn="55" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setRemoveAbstractMethods" variable="remove" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'remove' is not assigned and could be declared final
+</violation>
+<violation beginline="330" endline="330" begincolumn="41" endcolumn="54" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setRemoveClosureAsserts" variable="remove" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'remove' is not assigned and could be declared final
+</violation>
+<violation beginline="338" endline="338" begincolumn="47" endcolumn="59" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setNameAnonymousFunctionsOnly" variable="value" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'value' is not assigned and could be declared final
+</violation>
+<violation beginline="342" endline="342" begincolumn="40" endcolumn="66" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setColorizeErrorOutput" variable="colorizeErrorOutput" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'colorizeErrorOutput' is not assigned and could be declared final
+</violation>
+<violation beginline="346" endline="346" begincolumn="31" endcolumn="43" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setChainCalls" variable="value" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'value' is not assigned and could be declared final
+</violation>
+<violation beginline="354" endline="354" begincolumn="39" endcolumn="51" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setAcceptConstKeyword" variable="value" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'value' is not assigned and could be declared final
+</violation>
+<violation beginline="358" endline="358" begincolumn="40" endcolumn="57" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="enableRuntimeTypeCheck" variable="logFunction" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'logFunction' is not assigned and could be declared final
+</violation>
+<violation beginline="362" endline="362" begincolumn="36" endcolumn="58" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setGenerateExports" variable="generateExports" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'generateExports' is not assigned and could be declared final
+</violation>
+<violation beginline="366" endline="366" begincolumn="51" endcolumn="64" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setExportLocalPropertyDefinitions" variable="export" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'export' is not assigned and could be declared final
+</violation>
+<violation beginline="370" endline="370" begincolumn="32" endcolumn="50" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setAngularPass" variable="angularPass" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'angularPass' is not assigned and could be declared final
+</violation>
+<violation beginline="374" endline="374" begincolumn="37" endcolumn="69" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setCodingConvention" variable="codingConvention" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'codingConvention' is not assigned and could be declared final
+</violation>
+<violation beginline="378" endline="378" begincolumn="38" endcolumn="62" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setDependencyOptions" variable="options" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'options' is not assigned and could be declared final
+</violation>
+<violation beginline="382" endline="382" begincolumn="46" endcolumn="59" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setManageClosureDependencies" variable="newVal" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'newVal' is not assigned and could be declared final
+</violation>
+<violation beginline="386" endline="386" begincolumn="46" endcolumn="69" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setManageClosureDependencies" variable="entryPoints" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'entryPoints' is not assigned and could be declared final
+</violation>
+<violation beginline="390" endline="390" begincolumn="39" endcolumn="60" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setSummaryDetailLevel" variable="summaryDetailLevel" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'summaryDetailLevel' is not assigned and could be declared final
+</violation>
+<violation beginline="400" endline="400" begincolumn="37" endcolumn="51" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="enableExternExports" variable="enabled" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'enabled' is not assigned and could be declared final
+</violation>
+<violation beginline="405" endline="405" begincolumn="34" endcolumn="48" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setExternExports" variable="enabled" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'enabled' is not assigned and could be declared final
+</violation>
+<violation beginline="409" endline="409" begincolumn="41" endcolumn="77" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setExtraAnnotationNames" variable="extraAnnotationNames" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'extraAnnotationNames' is not assigned and could be declared final
+</violation>
+<violation beginline="413" endline="413" begincolumn="34" endcolumn="51" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setOutputCharset" variable="charsetName" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'charsetName' is not assigned and could be declared final
+</violation>
+<violation beginline="417" endline="417" begincolumn="36" endcolumn="66" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setTweakProcessing" variable="tweakProcessing" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'tweakProcessing' is not assigned and could be declared final
+</violation>
+<violation beginline="421" endline="421" begincolumn="31" endcolumn="53" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setLanguageIn" variable="languageIn" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'languageIn' is not assigned and could be declared final
+</violation>
+<violation beginline="431" endline="431" begincolumn="31" endcolumn="48" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setLooseTypes" variable="looseTypes" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'looseTypes' is not assigned and could be declared final
+</violation>
+<violation beginline="435" endline="435" begincolumn="47" endcolumn="80" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setAliasTransformationHandler" variable="changes" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'changes' is not assigned and could be declared final
+</violation>
+<violation beginline="439" endline="439" begincolumn="33" endcolumn="52" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setErrorHandler" variable="handler" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'handler' is not assigned and could be declared final
+</violation>
+<violation beginline="443" endline="443" begincolumn="31" endcolumn="44" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setInferTypes" variable="enable" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'enable' is not assigned and could be declared final
+</violation>
+<violation beginline="447" endline="447" begincolumn="37" endcolumn="50" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setNewTypeInference" variable="enable" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'enable' is not assigned and could be declared final
+</violation>
+<violation beginline="451" endline="451" begincolumn="37" endcolumn="50" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setAssumeStrictThis" variable="enable" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'enable' is not assigned and could be declared final
+</violation>
+<violation beginline="455" endline="455" begincolumn="56" endcolumn="69" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setAssumeClosuresOnlyCaptureReferences" variable="enable" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'enable' is not assigned and could be declared final
+</violation>
+<violation beginline="459" endline="459" begincolumn="47" endcolumn="96" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setPropertyInvalidationErrors" variable="propertyInvalidationErrors" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'propertyInvalidationErrors' is not assigned and could be declared final
+</violation>
+<violation beginline="463" endline="463" begincolumn="32" endcolumn="55" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setLanguageOut" variable="languageOut" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'languageOut' is not assigned and could be declared final
+</violation>
+<violation beginline="467" endline="467" begincolumn="28" endcolumn="42" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setIdeMode" variable="ideMode" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'ideMode' is not assigned and could be declared final
+</violation>
+<violation beginline="475" endline="475" begincolumn="39" endcolumn="50" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setSaveDataStructures" variable="save" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'save' is not assigned and could be declared final
+</violation>
+<violation beginline="483" endline="483" begincolumn="34" endcolumn="54" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setSkipAllPasses" variable="skipAllPasses" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'skipAllPasses' is not assigned and could be declared final
+</violation>
+<violation beginline="487" endline="487" begincolumn="37" endcolumn="60" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setCheckDeterminism" variable="checkDeterminism" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'checkDeterminism' is not assigned and could be declared final
+</violation>
+<violation beginline="491" endline="491" begincolumn="34" endcolumn="60" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setMessageBundle" variable="messageBundle" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'messageBundle' is not assigned and could be declared final
+</violation>
+<violation beginline="495" endline="495" begincolumn="33" endcolumn="52" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setCheckSymbols" variable="checkSymbols" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'checkSymbols' is not assigned and could be declared final
+</violation>
+<violation beginline="499" endline="499" begincolumn="40" endcolumn="66" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setCheckSuspiciousCode" variable="checkSuspiciousCode" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'checkSuspiciousCode' is not assigned and could be declared final
+</violation>
+<violation beginline="507" endline="508" begincolumn="75" endcolumn="5" rule="UncommentedEmptyMethodBody" ruleset="Design" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setCheckControlStructures" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/design.html#UncommentedEmptyMethodBody" priority="3">
+Document empty method body
+</violation>
+<violation beginline="507" endline="507" begincolumn="43" endcolumn="72" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setCheckControlStructures" variable="checkControlStructures" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'checkControlStructures' is not assigned and could be declared final
+</violation>
+<violation beginline="510" endline="510" begincolumn="31" endcolumn="48" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setCheckTypes" variable="checkTypes" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'checkTypes' is not assigned and could be declared final
+</violation>
+<violation beginline="514" endline="514" begincolumn="52" endcolumn="67" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setCheckMissingGetCssNameBlacklist" variable="blackList" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'blackList' is not assigned and could be declared final
+</violation>
+<violation beginline="522" endline="522" begincolumn="39" endcolumn="56" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setAggressiveRenaming" variable="aggressive" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'aggressive' is not assigned and could be declared final
+</violation>
+<violation beginline="526" endline="526" begincolumn="34" endcolumn="54" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setFoldConstants" variable="foldConstants" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'foldConstants' is not assigned and could be declared final
+</violation>
+<violation beginline="530" endline="530" begincolumn="46" endcolumn="78" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setDeadAssignmentElimination" variable="deadAssignmentElimination" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'deadAssignmentElimination' is not assigned and could be declared final
+</violation>
+<violation beginline="534" endline="534" begincolumn="39" endcolumn="64" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setInlineConstantVars" variable="inlineConstantVars" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'inlineConstantVars' is not assigned and could be declared final
+</violation>
+<violation beginline="538" endline="538" begincolumn="36" endcolumn="58" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setInlineFunctions" variable="inlineFunctions" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'inlineFunctions' is not assigned and could be declared final
+</violation>
+<violation beginline="542" endline="542" begincolumn="41" endcolumn="68" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setInlineLocalFunctions" variable="inlineLocalFunctions" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'inlineLocalFunctions' is not assigned and could be declared final
+</violation>
+<violation beginline="546" endline="546" begincolumn="42" endcolumn="70" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setCrossModuleCodeMotion" variable="crossModuleCodeMotion" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'crossModuleCodeMotion' is not assigned and could be declared final
+</violation>
+<violation beginline="550" endline="550" begincolumn="64" endcolumn="114" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setParentModuleCanSeeSymbolsDeclaredInChildren" variable="parentModuleCanSeeSymbolsDeclaredInChildren" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'parentModuleCanSeeSymbolsDeclaredInChildren' is not assigned and could be declared final
+</violation>
+<violation beginline="554" endline="554" begincolumn="42" endcolumn="70" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setCoalesceVariableNames" variable="coalesceVariableNames" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'coalesceVariableNames' is not assigned and could be declared final
+</violation>
+<violation beginline="558" endline="558" begincolumn="44" endcolumn="74" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setCrossModuleMethodMotion" variable="crossModuleMethodMotion" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'crossModuleMethodMotion' is not assigned and could be declared final
+</violation>
+<violation beginline="562" endline="562" begincolumn="34" endcolumn="54" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setInlineGetters" variable="inlineGetters" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'inlineGetters' is not assigned and could be declared final
+</violation>
+<violation beginline="566" endline="566" begincolumn="36" endcolumn="58" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setInlineVariables" variable="inlineVariables" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'inlineVariables' is not assigned and could be declared final
+</violation>
+<violation beginline="570" endline="570" begincolumn="41" endcolumn="68" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setInlineLocalVariables" variable="inlineLocalVariables" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'inlineLocalVariables' is not assigned and could be declared final
+</violation>
+<violation beginline="574" endline="574" begincolumn="49" endcolumn="63" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setFlowSensitiveInlineVariables" variable="enabled" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'enabled' is not assigned and could be declared final
+</violation>
+<violation beginline="578" endline="578" begincolumn="37" endcolumn="60" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setSmartNameRemoval" variable="smartNameRemoval" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'smartNameRemoval' is not assigned and could be declared final
+</violation>
+<violation beginline="582" endline="582" begincolumn="42" endcolumn="65" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setExtraSmartNameRemoval" variable="smartNameRemoval" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'smartNameRemoval' is not assigned and could be declared final
+</violation>
+<violation beginline="586" endline="586" begincolumn="35" endcolumn="56" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setRemoveDeadCode" variable="removeDeadCode" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'removeDeadCode' is not assigned and could be declared final
+</violation>
+<violation beginline="590" endline="590" begincolumn="55" endcolumn="69" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setExtractPrototypeMemberDeclarations" variable="enabled" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'enabled' is not assigned and could be declared final
+</violation>
+<violation beginline="594" endline="594" begincolumn="52" endcolumn="66" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setRemoveUnusedPrototypeProperties" variable="enabled" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'enabled' is not assigned and could be declared final
+</violation>
+<violation beginline="598" endline="598" begincolumn="61" endcolumn="75" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setRemoveUnusedPrototypePropertiesInExterns" variable="enabled" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'enabled' is not assigned and could be declared final
+</violation>
+<violation beginline="602" endline="602" begincolumn="37" endcolumn="60" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setRemoveUnusedVars" variable="removeUnusedVars" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'removeUnusedVars' is not assigned and could be declared final
+</violation>
+<violation beginline="606" endline="606" begincolumn="42" endcolumn="70" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setRemoveUnusedLocalVars" variable="removeUnusedLocalVars" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'removeUnusedLocalVars' is not assigned and could be declared final
+</violation>
+<violation beginline="614" endline="614" begincolumn="35" endcolumn="56" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setAliasExternals" variable="aliasExternals" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'aliasExternals' is not assigned and could be declared final
+</violation>
+<violation beginline="618" endline="618" begincolumn="49" endcolumn="63" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setCollapseVariableDeclarations" variable="enabled" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'enabled' is not assigned and could be declared final
+</violation>
+<violation beginline="626" endline="626" begincolumn="46" endcolumn="60" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setGroupVariableDeclarations" variable="enabled" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'enabled' is not assigned and could be declared final
+</violation>
+<violation beginline="630" endline="630" begincolumn="47" endcolumn="61" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setCollapseAnonymousFunctions" variable="enabled" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'enabled' is not assigned and could be declared final
+</violation>
+<violation beginline="634" endline="634" begincolumn="37" endcolumn="64" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setAliasableStrings" variable="aliasableStrings" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'aliasableStrings' is not assigned and could be declared final
+</violation>
+<violation beginline="638" endline="638" begincolumn="42" endcolumn="69" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setAliasStringsBlacklist" variable="aliasStringsBlacklist" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'aliasStringsBlacklist' is not assigned and could be declared final
+</violation>
+<violation beginline="642" endline="642" begincolumn="36" endcolumn="58" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setAliasAllStrings" variable="aliasAllStrings" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'aliasAllStrings' is not assigned and could be declared final
+</violation>
+<violation beginline="646" endline="646" begincolumn="40" endcolumn="66" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setOutputJsStringUsage" variable="outputJsStringUsage" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'outputJsStringUsage' is not assigned and could be declared final
+</violation>
+<violation beginline="650" endline="650" begincolumn="46" endcolumn="78" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setConvertToDottedProperties" variable="convertToDottedProperties" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'convertToDottedProperties' is not assigned and could be declared final
+</violation>
+<violation beginline="654" endline="654" begincolumn="47" endcolumn="80" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setRewriteFunctionExpressions" variable="rewriteFunctionExpressions" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'rewriteFunctionExpressions' is not assigned and could be declared final
+</violation>
+<violation beginline="658" endline="658" begincolumn="39" endcolumn="64" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setOptimizeParameters" variable="optimizeParameters" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'optimizeParameters' is not assigned and could be declared final
+</violation>
+<violation beginline="662" endline="662" begincolumn="36" endcolumn="58" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setOptimizeReturns" variable="optimizeReturns" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'optimizeReturns' is not assigned and could be declared final
+</violation>
+<violation beginline="666" endline="666" begincolumn="34" endcolumn="54" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setOptimizeCalls" variable="optimizeCalls" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'optimizeCalls' is not assigned and could be declared final
+</violation>
+<violation beginline="670" endline="670" begincolumn="43" endcolumn="72" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setOptimizeArgumentsArray" variable="optimizeArgumentsArray" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'optimizeArgumentsArray' is not assigned and could be declared final
+</violation>
+<violation beginline="674" endline="674" begincolumn="37" endcolumn="75" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setVariableRenaming" variable="variableRenaming" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'variableRenaming' is not assigned and could be declared final
+</violation>
+<violation beginline="678" endline="678" begincolumn="37" endcolumn="75" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setPropertyRenaming" variable="propertyRenaming" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'propertyRenaming' is not assigned and could be declared final
+</violation>
+<violation beginline="682" endline="682" begincolumn="34" endcolumn="54" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setLabelRenaming" variable="labelRenaming" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'labelRenaming' is not assigned and could be declared final
+</violation>
+<violation beginline="686" endline="686" begincolumn="38" endcolumn="62" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setReserveRawExports" variable="reserveRawExports" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'reserveRawExports' is not assigned and could be declared final
+</violation>
+<violation beginline="690" endline="690" begincolumn="38" endcolumn="62" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setPreferStableNames" variable="preferStableNames" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'preferStableNames' is not assigned and could be declared final
+</violation>
+<violation beginline="694" endline="694" begincolumn="40" endcolumn="66" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setGeneratePseudoNames" variable="generatePseudoNames" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'generatePseudoNames' is not assigned and could be declared final
+</violation>
+<violation beginline="698" endline="698" begincolumn="33" endcolumn="51" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setRenamePrefix" variable="renamePrefix" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'renamePrefix' is not assigned and could be declared final
+</violation>
+<violation beginline="702" endline="702" begincolumn="42" endcolumn="69" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setRenamePrefixNamespace" variable="renamePrefixNamespace" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'renamePrefixNamespace' is not assigned and could be declared final
+</violation>
+<violation beginline="710" endline="710" begincolumn="34" endcolumn="54" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setAliasKeywords" variable="aliasKeywords" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'aliasKeywords' is not assigned and could be declared final
+</violation>
+<violation beginline="714" endline="714" begincolumn="39" endcolumn="64" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setCollapseProperties" variable="collapseProperties" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'collapseProperties' is not assigned and could be declared final
+</violation>
+<violation beginline="718" endline="718" begincolumn="49" endcolumn="84" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setDevirtualizePrototypeMethods" variable="devirtualizePrototypeMethods" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'devirtualizePrototypeMethods' is not assigned and could be declared final
+</violation>
+<violation beginline="722" endline="722" begincolumn="47" endcolumn="80" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setComputeFunctionSideEffects" variable="computeFunctionSideEffects" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'computeFunctionSideEffects' is not assigned and could be declared final
+</violation>
+<violation beginline="726" endline="726" begincolumn="49" endcolumn="83" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setDebugFunctionSideEffectsPath" variable="debugFunctionSideEffectsPath" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'debugFunctionSideEffectsPath' is not assigned and could be declared final
+</violation>
+<violation beginline="730" endline="730" begincolumn="50" endcolumn="62" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setDisambiguatePrivateProperties" variable="value" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'value' is not assigned and could be declared final
+</violation>
+<violation beginline="734" endline="734" begincolumn="43" endcolumn="72" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setDisambiguateProperties" variable="disambiguateProperties" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'disambiguateProperties' is not assigned and could be declared final
+</violation>
+<violation beginline="738" endline="738" begincolumn="40" endcolumn="66" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setAmbiguateProperties" variable="ambiguateProperties" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'ambiguateProperties' is not assigned and could be declared final
+</violation>
+<violation beginline="742" endline="742" begincolumn="44" endcolumn="96" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setAnonymousFunctionNaming" variable="anonymousFunctionNaming" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'anonymousFunctionNaming' is not assigned and could be declared final
+</violation>
+<violation beginline="746" endline="746" begincolumn="52" endcolumn="71" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setInputAnonymousFunctionNamingMap" variable="inputMap" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'inputMap' is not assigned and could be declared final
+</violation>
+<violation beginline="750" endline="750" begincolumn="37" endcolumn="64" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setInputVariableMap" variable="inputVariableMap" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'inputVariableMap' is not assigned and could be declared final
+</violation>
+<violation beginline="754" endline="754" begincolumn="37" endcolumn="64" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setInputPropertyMap" variable="inputPropertyMap" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'inputPropertyMap' is not assigned and could be declared final
+</violation>
+<violation beginline="758" endline="758" begincolumn="40" endcolumn="66" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setExportTestFunctions" variable="exportTestFunctions" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'exportTestFunctions' is not assigned and could be declared final
+</violation>
+<violation beginline="762" endline="762" begincolumn="37" endcolumn="60" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setRuntimeTypeCheck" variable="runtimeTypeCheck" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'runtimeTypeCheck' is not assigned and could be declared final
+</violation>
+<violation beginline="766" endline="766" begincolumn="48" endcolumn="81" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setRuntimeTypeCheckLogFunction" variable="runtimeTypeCheckLogFunction" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'runtimeTypeCheckLogFunction' is not assigned and could be declared final
+</violation>
+<violation beginline="770" endline="770" begincolumn="46" endcolumn="77" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setSyntheticBlockStartMarker" variable="syntheticBlockStartMarker" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'syntheticBlockStartMarker' is not assigned and could be declared final
+</violation>
+<violation beginline="774" endline="774" begincolumn="44" endcolumn="73" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setSyntheticBlockEndMarker" variable="syntheticBlockEndMarker" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'syntheticBlockEndMarker' is not assigned and could be declared final
+</violation>
+<violation beginline="778" endline="778" begincolumn="27" endcolumn="39" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setLocale" variable="locale" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'locale' is not assigned and could be declared final
+</violation>
+<violation beginline="782" endline="782" begincolumn="35" endcolumn="56" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setMarkAsCompiled" variable="markAsCompiled" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'markAsCompiled' is not assigned and could be declared final
+</violation>
+<violation beginline="786" endline="786" begincolumn="32" endcolumn="50" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setClosurePass" variable="closurePass" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'closurePass' is not assigned and could be declared final
+</violation>
+<violation beginline="790" endline="790" begincolumn="41" endcolumn="68" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setPreserveGoogRequires" variable="preserveGoogRequires" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'preserveGoogRequires' is not assigned and could be declared final
+</violation>
+<violation beginline="794" endline="794" begincolumn="35" endcolumn="56" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setGatherCssNames" variable="gatherCssNames" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'gatherCssNames' is not assigned and could be declared final
+</violation>
+<violation beginline="798" endline="798" begincolumn="31" endcolumn="52" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setStripTypes" variable="stripTypes" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'stripTypes' is not assigned and could be declared final
+</violation>
+<violation beginline="802" endline="802" begincolumn="38" endcolumn="66" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setStripNameSuffixes" variable="stripNameSuffixes" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'stripNameSuffixes' is not assigned and could be declared final
+</violation>
+<violation beginline="806" endline="806" begincolumn="38" endcolumn="66" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setStripNamePrefixes" variable="stripNamePrefixes" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'stripNamePrefixes' is not assigned and could be declared final
+</violation>
+<violation beginline="810" endline="810" begincolumn="38" endcolumn="66" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setStripTypePrefixes" variable="stripTypePrefixes" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'stripTypePrefixes' is not assigned and could be declared final
+</violation>
+<violation beginline="818" endline="818" begincolumn="33" endcolumn="92" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setCustomPasses" variable="customPasses" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'customPasses' is not assigned and could be declared final
+</violation>
+<violation beginline="822" endline="822" begincolumn="61" endcolumn="83" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="addCustomPass" variable="customPass" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'customPass' is not assigned and could be declared final
+</violation>
+<violation beginline="822" endline="822" begincolumn="31" endcolumn="58" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="addCustomPass" variable="time" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'time' is not assigned and could be declared final
+</violation>
+<violation beginline="826" endline="826" begincolumn="42" endcolumn="70" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setMarkNoSideEffectCalls" variable="markNoSideEffectCalls" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'markNoSideEffectCalls' is not assigned and could be declared final
+</violation>
+<violation beginline="830" endline="830" begincolumn="39" endcolumn="76" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setDefineReplacements" variable="defineReplacements" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'defineReplacements' is not assigned and could be declared final
+</violation>
+<violation beginline="834" endline="834" begincolumn="38" endcolumn="74" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setTweakReplacements" variable="tweakReplacements" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'tweakReplacements' is not assigned and could be declared final
+</violation>
+<violation beginline="838" endline="838" begincolumn="45" endcolumn="76" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setMoveFunctionDeclarations" variable="moveFunctionDeclarations" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'moveFunctionDeclarations' is not assigned and could be declared final
+</violation>
+<violation beginline="842" endline="842" begincolumn="44" endcolumn="82" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setInstrumentationTemplate" variable="instrumentationTemplate" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'instrumentationTemplate' is not assigned and could be declared final
+</violation>
+<violation beginline="846" endline="846" begincolumn="46" endcolumn="78" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setRecordFunctionInformation" variable="recordFunctionInformation" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'recordFunctionInformation' is not assigned and could be declared final
+</violation>
+<violation beginline="850" endline="850" begincolumn="35" endcolumn="63" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setCssRenamingMap" variable="cssRenamingMap" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'cssRenamingMap' is not assigned and could be declared final
+</violation>
+<violation beginline="854" endline="854" begincolumn="41" endcolumn="61" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setCssRenamingWhitelist" variable="whitelist" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'whitelist' is not assigned and could be declared final
+</violation>
+<violation beginline="858" endline="858" begincolumn="55" endcolumn="101" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setReplaceStringsFunctionDescriptions" variable="replaceStringsFunctionDescriptions" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'replaceStringsFunctionDescriptions' is not assigned and could be declared final
+</violation>
+<violation beginline="862" endline="862" begincolumn="51" endcolumn="87" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setReplaceStringsPlaceholderToken" variable="replaceStringsPlaceholderToken" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'replaceStringsPlaceholderToken' is not assigned and could be declared final
+</violation>
+<violation beginline="866" endline="866" begincolumn="50" endcolumn="90" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setReplaceStringsReservedStrings" variable="replaceStringsReservedStrings" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'replaceStringsReservedStrings' is not assigned and could be declared final
+</violation>
+<violation beginline="870" endline="870" begincolumn="43" endcolumn="67" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setReplaceStringsInputMap" variable="serializedMap" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'serializedMap' is not assigned and could be declared final
+</violation>
+<violation beginline="874" endline="874" begincolumn="32" endcolumn="50" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setPrettyPrint" variable="prettyPrint" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'prettyPrint' is not assigned and could be declared final
+</violation>
+<violation beginline="878" endline="878" begincolumn="30" endcolumn="46" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setLineBreak" variable="lineBreak" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'lineBreak' is not assigned and could be declared final
+</violation>
+<violation beginline="882" endline="882" begincolumn="47" endcolumn="68" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setPreferLineBreakAtEndOfFile" variable="lineBreakAtEnd" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'lineBreakAtEnd' is not assigned and could be declared final
+</violation>
+<violation beginline="886" endline="886" begincolumn="40" endcolumn="66" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setPrintInputDelimiter" variable="printInputDelimiter" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'printInputDelimiter' is not assigned and could be declared final
+</violation>
+<violation beginline="890" endline="890" begincolumn="35" endcolumn="55" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setInputDelimiter" variable="inputDelimiter" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'inputDelimiter' is not assigned and could be declared final
+</violation>
+<violation beginline="894" endline="894" begincolumn="32" endcolumn="54" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setErrorFormat" variable="errorFormat" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'errorFormat' is not assigned and could be declared final
+</violation>
+<violation beginline="898" endline="898" begincolumn="34" endcolumn="67" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setWarningsGuard" variable="warningsGuard" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'warningsGuard' is not assigned and could be declared final
+</violation>
+<violation beginline="902" endline="902" begincolumn="40" endcolumn="62" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setLineLengthThreshold" variable="lineLengthThreshold" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'lineLengthThreshold' is not assigned and could be declared final
+</violation>
+<violation beginline="906" endline="906" begincolumn="38" endcolumn="61" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setExternExportsPath" variable="externExportsPath" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'externExportsPath' is not assigned and could be declared final
+</violation>
+<violation beginline="910" endline="910" begincolumn="40" endcolumn="65" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setSourceMapOutputPath" variable="sourceMapOutputPath" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'sourceMapOutputPath' is not assigned and could be declared final
+</violation>
+<violation beginline="914" endline="914" begincolumn="41" endcolumn="72" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setSourceMapDetailLevel" variable="sourceMapDetailLevel" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'sourceMapDetailLevel' is not assigned and could be declared final
+</violation>
+<violation beginline="918" endline="918" begincolumn="36" endcolumn="57" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setSourceMapFormat" variable="sourceMapFormat" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'sourceMapFormat' is not assigned and could be declared final
+</violation>
+<violation beginline="922" endline="922" begincolumn="46" endcolumn="92" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setSourceMapLocationMappings" variable="sourceMapLocationMappings" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'sourceMapLocationMappings' is not assigned and could be declared final
+</violation>
+<violation beginline="926" endline="926" begincolumn="45" endcolumn="76" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setTransformAMDToCJSModules" variable="transformAMDToCJSModules" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'transformAMDToCJSModules' is not assigned and could be declared final
+</violation>
+<violation beginline="930" endline="930" begincolumn="43" endcolumn="72" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setProcessCommonJSModules" variable="processCommonJSModules" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'processCommonJSModules' is not assigned and could be declared final
+</violation>
+<violation beginline="934" endline="934" begincolumn="45" endcolumn="75" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setCommonJSModulePathPrefix" variable="commonJSModulePathPrefix" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'commonJSModulePathPrefix' is not assigned and could be declared final
+</violation>
+<violation beginline="942" endline="942" begincolumn="48" endcolumn="82" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setInstrumentMemoryAllocations" variable="instrumentMemoryAllocations" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'instrumentMemoryAllocations' is not assigned and could be declared final
+</violation>
+<violation beginline="946" endline="946" begincolumn="42" endcolumn="70" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setInstrumentForCoverage" variable="instrumentForCoverage" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'instrumentForCoverage' is not assigned and could be declared final
+</violation>
+<violation beginline="950" endline="950" begincolumn="31" endcolumn="48" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" method="setJqueryPass" variable="jqueryPass" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'jqueryPass' is not assigned and could be declared final
 </violation>
 </file>
 </pmd>

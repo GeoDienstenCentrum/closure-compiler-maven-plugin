@@ -2,6 +2,7 @@ package nl.geodienstencentrum.maven.plugin.closure.compiler;
 
 import java.io.File;
 import java.util.List;
+import org.apache.maven.plugins.annotations.Parameter;
 
 /**
  * Describe a compilation cycle.
@@ -12,34 +13,34 @@ import java.util.List;
 public class Compilation {
 
     /**
-     * Optional options for this compilation
-     *
-     * @parameter property="compilerOptions"
+     * Optional options for this compilation.
      */
+    @Parameter(property = "compilerOptions")
     private CompilerOptionsMojo compilerOptions = new CompilerOptionsMojo();
 
     /**
      * Eg: SIMPLE_OPTIMIZATIONS, ADVANCED_OPTIMIZATIONS, or WHITESPACE_ONLY
      *
-     * @parameter expression="WHITESPACE_ONLY"
-     * @required
      */
+    @Parameter(required = true, defaultValue = "WHITESPACE_ONLY")
     private String compilationLevel;
 
     /**
-     * @parameter @required
+     *
      */
+    @Parameter(required = true)
     private List<String> externFiles;
 
     /**
-     * @parameter @required
+     *
      */
+    @Parameter(required = true)
     private List<String> sourceFiles;
 
     /**
-     * @parameter expression="${project.build.directory}/${project.artifactId}-${project.version}/js/${project.artifactId}.js"
-     * @required
+     *
      */
+    @Parameter(required = true, defaultValue = "${project.build.directory}/${project.build.finalName}/js/${project.artifactId}.js")
     private File outputFile;
 
     /**
@@ -76,40 +77,4 @@ public class Compilation {
     public List<String> getSourceFiles() {
         return this.sourceFiles;
     }
-
-    /**
-     * @param compilationLevel the compilationLevel to set
-     */
-    public void setCompilationLevel(final String compilationLevel) {
-        this.compilationLevel = compilationLevel;
-    }
-
-    /**
-     * @param compilerOptions the compilerOptions to set
-     */
-    public void setCompilerOptions(final CompilerOptionsMojo compilerOptions) {
-        this.compilerOptions = compilerOptions;
-    }
-
-    /**
-     * @param externFiles the externFiles to set
-     */
-    public void setExternFiles(final List<String> externFiles) {
-        this.externFiles = externFiles;
-    }
-
-    /**
-     * @param outputFile the outputFile to set
-     */
-    public void setOutputFile(final File outputFile) {
-        this.outputFile = outputFile;
-    }
-
-    /**
-     * @param sourceFiles the sourceFiles to set
-     */
-    public void setSourceFiles(final List<String> sourceFiles) {
-        this.sourceFiles = sourceFiles;
-    }
-
 }

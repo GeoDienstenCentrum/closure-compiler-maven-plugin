@@ -296,8 +296,19 @@ public class CompilerOptionsMojo {
         compilerOptions.setSummaryDetailLevel(summaryDetailLevel);
     }
 
+    /**
+     *
+     * @param enabled
+     * @deprecated use {@link #setExternExports(boolean) }
+     */
+    @Deprecated
     public void enableExternExports(boolean enabled) {
-        compilerOptions.enableExternExports(enabled);
+        //compilerOptions.enableExternExports(enabled);
+        compilerOptions.setExternExports(true);
+    }
+
+    public void setExternExports(boolean enabled) {
+        compilerOptions.setExternExports(true);
     }
 
     public void setExtraAnnotationNames(Iterable<String> extraAnnotationNames) {
@@ -380,8 +391,11 @@ public class CompilerOptionsMojo {
         compilerOptions.setCheckSuspiciousCode(checkSuspiciousCode);
     }
 
+    /**
+     * @deprecated does nothing
+     */
+    @Deprecated
     public void setCheckControlStructures(boolean checkControlStructures) {
-        compilerOptions.setCheckControlStructures(checkControlStructures);
     }
 
     public void setCheckTypes(boolean checkTypes) {
@@ -756,10 +770,6 @@ public class CompilerOptionsMojo {
         compilerOptions.setLineLengthThreshold(lineLengthThreshold);
     }
 
-    public void setExternExports(boolean externExports) {
-        compilerOptions.setExternExports(externExports);
-    }
-
     public void setExternExportsPath(String externExportsPath) {
         compilerOptions.setExternExportsPath(externExportsPath);
     }
@@ -798,6 +808,10 @@ public class CompilerOptionsMojo {
 
     public void setInstrumentForCoverage(boolean instrumentForCoverage) {
         compilerOptions.setInstrumentForCoverage(instrumentForCoverage);
+    }
+
+    public void setJqueryPass(boolean jqueryPass) {
+        this.compilerOptions.jqueryPass = jqueryPass;
     }
 
     /**

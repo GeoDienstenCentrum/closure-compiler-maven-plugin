@@ -75,7 +75,7 @@ public class ClosureCompilerMojoIntegrationTest {
     @After
     public void tearDown() throws VerificationException {
         this.verifier.setMavenDebug(false);
-        //this.verifier.executeGoal("clean");
+        this.verifier.executeGoal("clean");
         this.verifier.resetStreams();
     }
 

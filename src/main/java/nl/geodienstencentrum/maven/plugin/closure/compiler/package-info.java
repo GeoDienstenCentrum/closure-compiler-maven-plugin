@@ -8,7 +8,7 @@
  You may obtain a copy of the License at: http://opensource.org/licenses/BSD-3-Clause
  */
 /**
- * Compilers for the Sass maven plugin.
+ * Compilers for the Closure compiler maven plugin.
  *
  * @author mprins
  * @since 1.0

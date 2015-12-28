@@ -22,8 +22,15 @@ git checkout ${project.scm.url} ${project.artifactId}
 
 +----+
 cd ${project.artifactId}
-mvn install
+mvn install -Dmaven.test.skip=true -B -V -fae -q -T2
+mvn -e verify -B
 +----+
+
+  The above will first install a copy of the plugin in your local maven
+  repository so that it is available to the integration tests of the second
+  command.
+
+  Checkout the .travis.yml or the appveyor.yml for the latest on this.
 
   []
 
@@ -40,7 +47,7 @@ mvn -U org.codehaus.mojo:versions-maven-plugin:2.2:display-dependency-updates
   to check for plugin updates and run:
 
 +----+
-mvn -U org.codehaus.mojo:versions-maven-plugin:2.2:display-plugin-updates -Prelease
+mvn -U org.codehaus.mojo:versions-maven-plugin:2.2:display-plugin-updates -Prelease,travis-ci
 +----+
 
   to check for plugin updates.

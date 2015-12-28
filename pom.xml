@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-	Copyright 2015 Mark Prins, GeoDienstenCentrum.
-	Copyright 2012-2014 Mason Bryant
+    Copyright 2015 Mark Prins, GeoDienstenCentrum.
+    Copyright 2012-2014 Mason Bryant
 
     See the README.md file distributed with this work for additional information
-	regarding copyright ownership.
+    regarding copyright ownership.
 
     Licensed under the BSD 3-Clause License (the "License");
     You may obtain a copy of the License at: http://opensource.org/licenses/BSD-3-Clause
@@ -638,6 +638,75 @@
                             <serverId>ossrh</serverId>
                             <nexusUrl>https://oss.sonatype.org/</nexusUrl>
                             <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>travis-ci</id>
+            <properties>
+                <!-- should be environment provided -->
+                <repoToken />
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.jacoco</groupId>
+                        <artifactId>jacoco-maven-plugin</artifactId>
+                        <version>0.7.5.201505241946</version>
+                        <executions>
+                            <execution>
+                                <id>pre-unit-test</id>
+                                <goals>
+                                    <goal>prepare-agent</goal>
+                                </goals>
+                                <configuration>
+                                    <propertyName>surefireArgLine</propertyName>
+                                    <!-- excludes><exclude>**/HelpMojo*</exclude></excludes -->
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>pre-integration-test</id>
+                                <phase>pre-integration-test</phase>
+                                <goals>
+                                    <goal>prepare-agent-integration</goal>
+                                </goals>
+                                <configuration>
+                                    <append>true</append>
+                                    <propertyName>failsafeArgLine</propertyName>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>post-unit-test</id>
+                                <phase>post-integration-test</phase>
+                                <goals>
+                                    <goal>report</goal>
+                                </goals>
+                                <configuration>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>post-integration-test</id>
+                                <phase>post-integration-test</phase>
+                                <goals>
+                                    <goal>report-integration</goal>
+                                </goals>
+                                <configuration>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.eluder.coveralls</groupId>
+                        <artifactId>coveralls-maven-plugin</artifactId>
+                        <version>4.1.0</version>
+                        <configuration>
+                            <jacocoReports>
+                                <file>${project.build.directory}/site/jacoco/jacoco.xml</file>
+                                <file>${project.build.directory}/site/jacoco-it/jacoco.xml</file>
+                            </jacocoReports>
+                            <repoToken>${repoToken}</repoToken>
                         </configuration>
                     </plugin>
                 </plugins>

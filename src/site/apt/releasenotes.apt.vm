@@ -26,7 +26,7 @@ ${project.name} ${project.version} Release Notes
 
 ** New
 
-   * Initial release under the nl.geodienstencentrum.maven groupId
+   * Some integration tests were added
 
   []
 
@@ -34,5 +34,27 @@ ${project.name} ${project.version} Release Notes
 ** Enhancements and Fixes
 
   * Update Closure compiler to ${project.properties.get("closure-compiler.version")}
+
+  * update to Java 7
+
+  * update Maven dependencies and requirements
+
+ []
+
+* 1.0.1 Release Notes
+
+  A complete list of issues can be seen in the tracker
+  {{{${project.issueManagement.url}?q=milestone%3A1.0.1+is%3Aclosed}milestone 1.0.1}}.
+
+** New
+
+   * Initial release under the nl.geodienstencentrum.maven groupId
+
+  []
+
+
+** Enhancements and Fixes
+
+  * Update Closure compiler to r2180
 
  []

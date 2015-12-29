@@ -1,6 +1,5 @@
 package nl.geodienstencentrum.maven.plugin.closure.compiler;
 
-import com.google.common.base.Preconditions;
 import static com.google.javascript.jscomp.CompilerOptions.*;
 import static com.google.javascript.jscomp.SourceMap.*;
 
@@ -101,7 +100,8 @@ public class CompilerOptionsMojo {
     }
 
     /**
-     * @deprecated use {@link #setWarningLevel(com.google.javascript.jscomp.DiagnosticGroup, com.google.javascript.jscomp.CheckLevel)
+     * @deprecated use
+     * {@link #setWarningLevel(com.google.javascript.jscomp.DiagnosticGroup, com.google.javascript.jscomp.CheckLevel)}
      */
     @Deprecated
     public void setCheckRequires(CheckLevel level) {
@@ -109,7 +109,8 @@ public class CompilerOptionsMojo {
     }
 
     /**
-     * @deprecated use {@link #setWarningLevel(com.google.javascript.jscomp.DiagnosticGroup, com.google.javascript.jscomp.CheckLevel)
+     * @deprecated use
+     * {@link #setWarningLevel(com.google.javascript.jscomp.DiagnosticGroup, com.google.javascript.jscomp.CheckLevel)}
      */
     @Deprecated
     public void setCheckProvides(CheckLevel level) {
@@ -121,7 +122,8 @@ public class CompilerOptionsMojo {
     }
 
     /**
-     * @deprecated use {@link #setWarningLevel(com.google.javascript.jscomp.DiagnosticGroup, com.google.javascript.jscomp.CheckLevel)
+     * @deprecated use
+     * {@link #setWarningLevel(com.google.javascript.jscomp.DiagnosticGroup, com.google.javascript.jscomp.CheckLevel)}
      */
     @Deprecated
     public void setBrokenClosureRequiresLevel(CheckLevel level) {

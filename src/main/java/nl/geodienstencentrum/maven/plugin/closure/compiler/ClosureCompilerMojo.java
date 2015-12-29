@@ -30,7 +30,7 @@ import org.apache.maven.plugins.annotations.Parameter;
 public class ClosureCompilerMojo extends AbstractMojo {
 
     /**
-     * the list of compilations.
+     * The list of compilations.
      */
     @Parameter(required = true)
     private List<Compilation> compilations;
@@ -110,7 +110,7 @@ public class ClosureCompilerMojo extends AbstractMojo {
      * file names. Directories are traversed recursively.
      *
      * @param filePaths
-     * @return
+     * @return a list of SourceFile
      */
     private List<SourceFile> getSourceFiles(final List<String> filePaths) {
         Preconditions.checkNotNull(filePaths, "Filepaths are required.");
@@ -128,7 +128,7 @@ public class ClosureCompilerMojo extends AbstractMojo {
      * is traversed recursively. If not, a single SourceFile is returned.
      *
      * @param file
-     * @return
+     * @return a list of SourceFile
      */
     private List<SourceFile> sourcefileFromFile(final File file) {
         Preconditions.checkNotNull(file, "The file may not be null.");
@@ -143,5 +143,4 @@ public class ClosureCompilerMojo extends AbstractMojo {
         }
         return sourceFiles;
     }
-
 }

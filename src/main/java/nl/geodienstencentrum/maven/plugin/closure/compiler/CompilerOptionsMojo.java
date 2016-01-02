@@ -1,11 +1,35 @@
+/*
+ * Copyright 2015-2016 Mark Prins, GeoDienstenCentrum.
+ * Copyright 2012-2014 Mason Bryant
+ *
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without modification,
+ * are permitted provided that the following conditions are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright notice,
+ * this list of conditions and the following disclaimer.
+ *
+ * 2. Redistributions in binary form must reproduce the above copyright notice,
+ * this list of conditions and the following disclaimer in the documentation
+ * and/or other materials provided with the distribution.
+ *
+ * 3. Neither the name of the copyright holder nor the names of its contributors
+ * may be used to endorse or promote products derived from this software without
+ * specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+ * IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+ * INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+ * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+ * OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+ * OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
 package nl.geodienstencentrum.maven.plugin.closure.compiler;
-
-import static com.google.javascript.jscomp.CompilerOptions.*;
-import static com.google.javascript.jscomp.SourceMap.*;
-
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 import com.google.common.collect.Multimap;
 import com.google.javascript.jscomp.AnonymousFunctionNamingPolicy;
@@ -13,11 +37,16 @@ import com.google.javascript.jscomp.CheckEventfulObjectDisposal;
 import com.google.javascript.jscomp.CheckLevel;
 import com.google.javascript.jscomp.CodingConvention;
 import com.google.javascript.jscomp.CompilerOptions;
+import com.google.javascript.jscomp.CompilerOptions.AliasTransformationHandler;
+import com.google.javascript.jscomp.CompilerOptions.Environment;
+import com.google.javascript.jscomp.CompilerOptions.LanguageMode;
+import com.google.javascript.jscomp.CompilerOptions.Reach;
+import com.google.javascript.jscomp.CompilerOptions.TracerMode;
+import com.google.javascript.jscomp.CompilerOptions.TweakProcessing;
 import com.google.javascript.jscomp.CompilerPass;
 import com.google.javascript.jscomp.ComposeWarningsGuard;
 import com.google.javascript.jscomp.CssRenamingMap;
 import com.google.javascript.jscomp.CustomPassExecutionTime;
-
 import com.google.javascript.jscomp.DependencyOptions;
 import com.google.javascript.jscomp.DiagnosticGroup;
 import com.google.javascript.jscomp.DiagnosticGroups;
@@ -27,9 +56,15 @@ import com.google.javascript.jscomp.Instrumentation;
 import com.google.javascript.jscomp.MessageBundle;
 import com.google.javascript.jscomp.PropertyRenamingPolicy;
 import com.google.javascript.jscomp.RenamingMap;
+import com.google.javascript.jscomp.SourceMap.DetailLevel;
+import com.google.javascript.jscomp.SourceMap.Format;
+import com.google.javascript.jscomp.SourceMap.LocationMapping;
 import com.google.javascript.jscomp.VariableMap;
 import com.google.javascript.jscomp.VariableRenamingPolicy;
 import com.google.javascript.jscomp.WarningsGuard;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * options for a compilation. This is a wrapper around a
@@ -959,7 +994,9 @@ public class CompilerOptionsMojo {
      *
      * @see java.lang.Object#toString()
      * @see com.google.javascript.jscomp.CompilerOptions#toString()
-     */
+	 *
+	 * @TODO make useful output
+	 */
     @Override
     public String toString() {
         return this.compilerOptions.toString();

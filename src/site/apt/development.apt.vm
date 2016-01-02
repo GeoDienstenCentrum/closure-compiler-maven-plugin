@@ -30,7 +30,7 @@ mvn -e verify -B
   repository so that it is available to the integration tests of the second
   command.
 
-  Checkout the .travis.yml or the appveyor.yml for the latest on this.
+  Checkout the .travis.yml or the appveyor.yml for the latest instructions on this.
 
   []
 

@@ -1,5 +1,5 @@
 /*
- Copyright 2015 Mark Prins, GeoDienstenCentrum.
+ Copyright 2015-2016 Mark Prins, GeoDienstenCentrum.
 
  See the README.md file distributed with this work for additional information
  regarding copyright ownership.

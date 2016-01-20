@@ -78,7 +78,8 @@ public class ClosureCompilerMojo extends AbstractMojo {
 			}
 			for (String sourceFile : compilation.getSourceFiles()) {
 				log.debug("Compiling from source: " + sourceFile);
-			}// this message is echecked for in the integration tests
+			}
+			// this message is checked for in the integration tests
 			log.info("Compiling " + compilation.getOutputFile() + " with level: " + compilation.getCompilationLevel());
 
 			CompilationLevel compilationLevel = null;

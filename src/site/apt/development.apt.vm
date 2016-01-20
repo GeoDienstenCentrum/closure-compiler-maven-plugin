@@ -22,13 +22,13 @@ git checkout ${project.scm.url} ${project.artifactId}
 
 +----+
 cd ${project.artifactId}
-mvn install -Dmaven.test.skip=true -B -V -fae -q -T2
+mvn clean install -Dmaven.test.skip=true -B -V -fae -q -T2
 mvn -e verify -B
 +----+
 
   The above will first install a copy of the plugin in your local maven
-  repository so that it is available to the integration tests of the second
-  command.
+  repository so that it is available for running the integration tests of
+  the second command.
 
   Checkout the .travis.yml or the appveyor.yml for the latest instructions on this.
 

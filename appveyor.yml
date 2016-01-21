@@ -15,8 +15,8 @@ branches:
     - gh-pages
 
 install:
-  - set PATH=%PATH%;C:\bin\apache-maven-%MVN_VERSION%\bin
-  - IF NOT exist "C:\bin\apache-maven-%MVN_VERSION%\bin\*.*" (echo Maven %MVN_VERSION% not installed, so install it & cinst maven -Version %MVN_VERSION%) ELSE (echo Maven %MVN_VERSION% already installed)
+  - set PATH=%PATH%;C:\tools\apache-maven-%MVN_VERSION%\bin
+  - IF NOT exist "C:\tools\apache-maven-%MVN_VERSION%\bin\*.*" (echo Maven %MVN_VERSION% not installed, so install it & cinst maven -Version %MVN_VERSION%) ELSE (echo Maven %MVN_VERSION% already installed)
   - cd C:\projects\closure-compiler-maven-plugin
   - mvn install -U -Dmaven.test.skip=true -B -V -fae -e -T2
 
@@ -39,5 +39,5 @@ matrix:
   fast_finish: true
 
 cache:
-  - C:\bin\apache-maven-%MVN_VERSION% -> appveyor.yml
+  - C:\tools\apache-maven-%MVN_VERSION% -> appveyor.yml
   - C:\Users\appveyor\.m2\repository -> pom.xml

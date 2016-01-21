@@ -27,13 +27,13 @@ test_script:
   - mvn -e -fae -B -Dfailsafe.useFile=false -T2 clean test verify
 
 environment:
-  MVN_VERSION: 3.3.1
+  MVN_VERSION: 3.3.3
 
   matrix:
-    - myEnv: JDK7
-      JAVA_HOME: C:\Program Files\Java\jdk1.7.0
-    - myEnv: JDK8
-      JAVA_HOME: C:\Program Files\Java\jdk1.8.0
+    - JAVA_HOME: C:\Program Files\Java\jdk1.7.0
+    - JAVA_HOME: C:\Program Files\Java\jdk1.8.0
+    - JAVA_HOME: C:\Program Files (x86)\Java\jdk1.7.0
+    - JAVA_HOME: C:\Program Files (x86)\Java\jdk1.8.0
 
 matrix:
   fast_finish: true

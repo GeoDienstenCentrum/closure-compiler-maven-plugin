@@ -24,16 +24,35 @@ ${project.name} ${project.version} Release Notes
   Please check the {{{/${project.artifactId}/dependencies.html#provided}full dependencies}}
   to find out about the (transitive) dependencies included for this release.
 
+~~** New
+
+~~   * Some integration tests were added
+
+~~  []
+
+** Enhancements and Fixes
+
+  * Update Closure compiler to ${project.properties.get("closure-compiler.version")}, see:
+    {{{https://github.com/google/closure-compiler/wiki/Releases}Closure Compiler Releases}}
+
+~~  * update Maven dependencies and requirements
+
+ []
+
+* 2.0 Release Notes
+
+  A complete list of issues can be seen in the tracker
+  {{{${project.issueManagement.url}?q=milestone%3A2.0+is%3Aclosed}milestone 2.0}}.
+
 ** New
 
    * Some integration tests were added
 
   []
 
-
 ** Enhancements and Fixes
 
-  * Update Closure compiler to ${project.properties.get("closure-compiler.version")}
+  * Update Closure compiler to v20151216
 
   * update to Java 7
 

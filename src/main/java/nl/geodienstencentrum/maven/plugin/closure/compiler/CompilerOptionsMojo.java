@@ -62,6 +62,7 @@ import com.google.javascript.jscomp.SourceMap.LocationMapping;
 import com.google.javascript.jscomp.VariableMap;
 import com.google.javascript.jscomp.VariableRenamingPolicy;
 import com.google.javascript.jscomp.WarningsGuard;
+import java.nio.charset.Charset;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -448,6 +449,10 @@ public class CompilerOptionsMojo {
     }
 
     public void setOutputCharset(String charsetName) {
+        this.setOutputCharset(Charset.forName(charsetName));
+    }
+
+    public void setOutputCharset(Charset charsetName) {
         compilerOptions.setOutputCharset(charsetName);
     }
 
@@ -995,7 +1000,7 @@ public class CompilerOptionsMojo {
      * @see java.lang.Object#toString()
      * @see com.google.javascript.jscomp.CompilerOptions#toString()
 	 *
-	 * @TODO make useful output
+	 * @todo make useful output
 	 */
     @Override
     public String toString() {

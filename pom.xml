@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-    Copyright 2015 Mark Prins, GeoDienstenCentrum.
+    Copyright 2015-2016 Mark Prins, GeoDienstenCentrum.
     Copyright 2012-2014 Mason Bryant
 
     See the README.md file distributed with this work for additional information
@@ -81,7 +81,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<maven-libs.version>3.3.9</maven-libs.version>
-		<closure-compiler.version>v20151216</closure-compiler.version>
+		<closure-compiler.version>v20160208</closure-compiler.version>
 		<debug>true</debug>
 		<github.username />
 		<github.password />
@@ -171,7 +171,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-site-plugin</artifactId>
-					<version>3.4</version>
+					<version>3.5</version>
 				</plugin>
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
@@ -393,7 +393,7 @@
 					<dependency>
 						<groupId>org.apache.maven.doxia</groupId>
 						<artifactId>doxia-module-markdown</artifactId>
-						<version>1.6</version>
+						<version>1.7</version>
 					</dependency>
 				</dependencies>
 				<configuration>

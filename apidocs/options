@@ -1,5 +1,5 @@
 -classpath
-'/var/tmp/maven-repo/javax/annotation/jsr250-api/1.0/jsr250-api-1.0.jar:/var/tmp/maven-repo/org/eclipse/sisu/org.eclipse.sisu.inject/0.3.2/org.eclipse.sisu.inject-0.3.2.jar:/var/tmp/maven-repo/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar:/var/tmp/maven-repo/org/codehaus/plexus/plexus-classworlds/2.5.2/plexus-classworlds-2.5.2.jar:/var/tmp/maven-repo/org/eclipse/sisu/org.eclipse.sisu.plexus/0.3.2/org.eclipse.sisu.plexus-0.3.2.jar:/var/tmp/maven-repo/javax/enterprise/cdi-api/1.0/cdi-api-1.0.jar:/var/tmp/maven-repo/javax/inject/javax.inject/1/javax.inject-1.jar:/var/tmp/maven-repo/com/google/javascript/closure-compiler/v20151216/closure-compiler-v20151216.jar:/var/tmp/maven-repo/org/apache/maven/maven-plugin-api/3.3.9/maven-plugin-api-3.3.9.jar:/var/tmp/maven-repo/org/apache/maven/maven-artifact/3.3.9/maven-artifact-3.3.9.jar:/var/tmp/maven-repo/org/codehaus/plexus/plexus-component-annotations/1.6/plexus-component-annotations-1.6.jar:/var/tmp/maven-repo/org/codehaus/plexus/plexus-utils/3.0.22/plexus-utils-3.0.22.jar:/var/tmp/maven-repo/org/apache/maven/plugin-tools/maven-plugin-annotations/3.4/maven-plugin-annotations-3.4.jar:/var/tmp/maven-repo/org/apache/maven/maven-model/3.3.9/maven-model-3.3.9.jar'
+'/var/tmp/maven-repo/javax/annotation/jsr250-api/1.0/jsr250-api-1.0.jar:/var/tmp/maven-repo/org/eclipse/sisu/org.eclipse.sisu.inject/0.3.2/org.eclipse.sisu.inject-0.3.2.jar:/var/tmp/maven-repo/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar:/var/tmp/maven-repo/org/codehaus/plexus/plexus-classworlds/2.5.2/plexus-classworlds-2.5.2.jar:/var/tmp/maven-repo/org/eclipse/sisu/org.eclipse.sisu.plexus/0.3.2/org.eclipse.sisu.plexus-0.3.2.jar:/var/tmp/maven-repo/javax/enterprise/cdi-api/1.0/cdi-api-1.0.jar:/var/tmp/maven-repo/javax/inject/javax.inject/1/javax.inject-1.jar:/var/tmp/maven-repo/com/google/javascript/closure-compiler/v20160208/closure-compiler-v20160208.jar:/var/tmp/maven-repo/org/apache/maven/maven-plugin-api/3.3.9/maven-plugin-api-3.3.9.jar:/var/tmp/maven-repo/org/apache/maven/maven-artifact/3.3.9/maven-artifact-3.3.9.jar:/var/tmp/maven-repo/org/codehaus/plexus/plexus-component-annotations/1.6/plexus-component-annotations-1.6.jar:/var/tmp/maven-repo/org/codehaus/plexus/plexus-utils/3.0.22/plexus-utils-3.0.22.jar:/var/tmp/maven-repo/org/apache/maven/plugin-tools/maven-plugin-annotations/3.4/maven-plugin-annotations-3.4.jar:/var/tmp/maven-repo/org/apache/maven/maven-model/3.3.9/maven-model-3.3.9.jar'
 -encoding
 'UTF-8'
 -protected
@@ -15,11 +15,9 @@
 -docencoding
 'UTF-8'
 -doctitle
-'Closure Compiler Plugin 2.0 API'
+'Closure Compiler Plugin 2.1 API'
 -link
 'http://maven.apache.org/ref/3.3.9/maven-plugin-api/apidocs'
--link
-'http://junit.org/apidocs'
 -link
 'http://maven.apache.org/shared/maven-verifier/apidocs'
 -link
@@ -37,4 +35,4 @@
 -use
 -version
 -windowtitle
-'Closure Compiler Plugin 2.0 API'
+'Closure Compiler Plugin 2.1 API'

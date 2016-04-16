@@ -38,12 +38,12 @@ ${project.name} ${project.version} Release Notes
 ~~  * update Maven dependencies and requirements
 
  []
- 
-* 2.1 Release Notes 
+
+* 2.1 Release Notes
 
   A complete list of issues can be seen in the tracker
   {{{${project.issueManagement.url}?q=milestone%3A2.1+is%3Aclosed}milestone 2.1}}.
-  
+
 ** Enhancements and Fixes
 
   * Update Closure compiler to v20160208, see:
@@ -75,15 +75,20 @@ ${project.name} ${project.version} Release Notes
   A complete list of issues can be seen in the tracker
   {{{${project.issueManagement.url}?q=milestone%3A1.0.1+is%3Aclosed}milestone 1.0.1}}.
 
-** New
-
-   * Initial release under the nl.geodienstencentrum.maven groupId
-
-  []
-
 
 ** Enhancements and Fixes
 
   * Update Closure compiler to r2180
 
  []
+
+* 1.0 Release Notes
+
+  A complete list of issues can be seen in the tracker
+  {{{${project.issueManagement.url}?q=milestone%3A1.0+is%3Aclosed}milestone 1.0}}.
+
+** New
+
+   * Initial release under the nl.geodienstencentrum.maven groupId
+
+  []

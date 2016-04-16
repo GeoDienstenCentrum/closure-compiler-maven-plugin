@@ -4,7 +4,7 @@
 <plugin>
     <groupId>nl.geodienstencentrum.maven</groupId>
     <artifactId>closure-compiler-maven-plugin</artifactId>
-    <version>2.1</version>
+    <version>2.2</version>
     <executions>
         <execution>
             <goals>

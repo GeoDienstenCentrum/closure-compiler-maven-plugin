@@ -124,6 +124,7 @@ public class CompilerOptionsMojo {
     }
 
     /**
+     * @param level ignored
      * @deprecated no longer a compiler option
      */
     @Deprecated
@@ -136,6 +137,7 @@ public class CompilerOptionsMojo {
     }
 
     /**
+     * @param level the checklevel
      * @deprecated use
      * {@link #setWarningLevel(com.google.javascript.jscomp.DiagnosticGroup, com.google.javascript.jscomp.CheckLevel)}
      */
@@ -145,6 +147,7 @@ public class CompilerOptionsMojo {
     }
 
     /**
+     * @param level the diagnostic level
      * @deprecated use
      * {@link #setWarningLevel(com.google.javascript.jscomp.DiagnosticGroup, com.google.javascript.jscomp.CheckLevel)}
      */
@@ -158,6 +161,7 @@ public class CompilerOptionsMojo {
     }
 
     /**
+     * @param level the checklevel
      * @deprecated use
      * {@link #setWarningLevel(com.google.javascript.jscomp.DiagnosticGroup, com.google.javascript.jscomp.CheckLevel)}
      */
@@ -179,6 +183,7 @@ public class CompilerOptionsMojo {
     }
 
     /**
+     * @param level ignored
      * @deprecated no longer a compiler option
      */
     @Deprecated
@@ -187,6 +192,7 @@ public class CompilerOptionsMojo {
     }
 
     /**
+     * @param names ignored
      * @deprecated no longer a compiler option
      */
     @Deprecated
@@ -195,6 +201,7 @@ public class CompilerOptionsMojo {
     }
 
     /**
+     * @param names ignored
      * @deprecated no longer a compiler option
      */
     @Deprecated
@@ -207,7 +214,7 @@ public class CompilerOptionsMojo {
     }
 
     /**
-     *
+     * @param enabled ignored
      * @deprecated no longer a compiler option
      *
      */
@@ -301,6 +308,7 @@ public class CompilerOptionsMojo {
     }
 
     /**
+     * @param useAffinity ignored
      * @deprecated no longer a compiler option
      */
     @Deprecated
@@ -314,7 +322,7 @@ public class CompilerOptionsMojo {
 
     /**
      * @deprecated no longer a compiler option
-     * @param collapse
+     * @param collapse ignored
      */
     @Deprecated
     public void setCollapsePropertiesOnExternTypes(boolean collapse) {
@@ -370,6 +378,7 @@ public class CompilerOptionsMojo {
     }
 
     /**
+     * @param value ignored
      * @deprecated no longer a compiler option
      */
     @Deprecated
@@ -386,6 +395,7 @@ public class CompilerOptionsMojo {
     }
 
     /**
+     * @param value ignored
      * @deprecated no longer a compiler option
      */
     @Deprecated
@@ -431,7 +441,7 @@ public class CompilerOptionsMojo {
 
     /**
      *
-     * @param enabled
+     * @param enabled to export externs
      * @deprecated use {@link #setExternExports(boolean) }
      */
     @Deprecated
@@ -466,7 +476,7 @@ public class CompilerOptionsMojo {
 
     /**
      *
-     * @param looseTypes
+     * @param looseTypes ignored
      * @deprecated no longer a compiler option
      */
     @Deprecated
@@ -511,6 +521,7 @@ public class CompilerOptionsMojo {
     }
 
     /**
+     * @param save ignored
      * @deprecated no longer a compiler option
      */
     @Deprecated
@@ -519,6 +530,7 @@ public class CompilerOptionsMojo {
     }
 
     /**
+     * @param skipAllPasses ignored
      * @deprecated no longer a compiler option
      */
     @Deprecated
@@ -543,10 +555,11 @@ public class CompilerOptionsMojo {
     }
 
     /**
+     * @param value ignored
      * @deprecated does nothing
      */
     @Deprecated
-    public void setCheckControlStructures(boolean checkControlStructures) {
+    public void setCheckControlStructures(boolean value) {
     }
 
     public void setCheckTypes(boolean checkTypes) {
@@ -558,10 +571,11 @@ public class CompilerOptionsMojo {
     }
 
     /**
+     * @param value ignored
      * @deprecated no longer a compiler option
      */
     @Deprecated
-    public void setAggressiveRenaming(boolean aggressive) {
+    public void setAggressiveRenaming(boolean value) {
         // compilerOptions.setAggressiveRenaming(aggressive);
     }
 
@@ -650,10 +664,11 @@ public class CompilerOptionsMojo {
     }
 
     /**
+     * @param value ignored
      * @deprecated no longer a compiler option
      */
     @Deprecated
-    public void setAliasExternals(boolean aliasExternals) {
+    public void setAliasExternals(boolean value) {
         //compilerOptions.setAliasExternals(aliasExternals);
     }
 
@@ -662,10 +677,11 @@ public class CompilerOptionsMojo {
     }
 
     /**
+     * @param value ignored
      * @deprecated no longer a compiler option
      */
     @Deprecated
-    public void setGroupVariableDeclarations(boolean enabled) {
+    public void setGroupVariableDeclarations(boolean value) {
         //compilerOptions.setGroupVariableDeclarations(enabled);
     }
 
@@ -746,10 +762,11 @@ public class CompilerOptionsMojo {
     }
 
     /**
+     * @param value ignored
      * @deprecated no longer a compiler option
      */
     @Deprecated
-    public void setAliasKeywords(boolean aliasKeywords) {
+    public void setAliasKeywords(boolean value) {
         //  compilerOptions.setAliasKeywords(aliasKeywords);
     }
 
@@ -854,10 +871,11 @@ public class CompilerOptionsMojo {
     }
 
     /**
+     * @param value ignored
      * @deprecated no longer a compiler option
      */
     @Deprecated
-    public void setCustomPasses(Multimap<CustomPassExecutionTime, CompilerPass> customPasses) {
+    public void setCustomPasses(Multimap<CustomPassExecutionTime, CompilerPass> value) {
         // compilerOptions.setCustomPasses(customPasses);
     }
 
@@ -978,6 +996,7 @@ public class CompilerOptionsMojo {
     }
 
     /**
+     * @param instrumentMemoryAllocations ignored
      * @deprecated no longer a compiler option
      */
     @Deprecated
@@ -999,11 +1018,10 @@ public class CompilerOptionsMojo {
      *
      * @see java.lang.Object#toString()
      * @see com.google.javascript.jscomp.CompilerOptions#toString()
-	 *
-	 * @todo make useful output
-	 */
+     */
     @Override
     public String toString() {
+        // TODO make useful output
         return this.compilerOptions.toString();
     }
 

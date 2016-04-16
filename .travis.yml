@@ -12,6 +12,10 @@ install:
 script:
   # execute unit and integration tests
   - mvn -e -fae -B -Dfailsafe.useFile=false -T2 clean test verify
+  - if [ "$TRAVIS_JDK_VERSION" == oraclejdk8 ]; then
+         mvn javadoc:javadoc;
+         mvn javadoc:test-javadoc;
+    fi
 
 after_success:
   # generate code coverage report

@@ -41,7 +41,7 @@ import org.junit.Test;
 
 /**
  *
- * @author Mark Prins <mark@b3partners.nl>
+ * @author mprins
  */
 public class ClosureCompilerMojoIntegrationTest {
 

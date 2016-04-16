@@ -1,1 +1,1 @@
-/usr/lib/jvm/java-7-openjdk-i386/jre/../bin/javadoc @options @packages
+/usr/lib/jvm/java-8-oracle/jre/../bin/javadoc @options @packages

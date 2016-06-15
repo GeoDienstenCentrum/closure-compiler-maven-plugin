@@ -33,7 +33,7 @@
               img="https://travis-ci.org/GeoDienstenCentrum/${project.artifactId}.svg?branch=master"
               name="Travis-CI Build status (master branch)" />
         <logo href="https://ci.appveyor.com/project/mprins/${project.artifactId}"
-              img="https://ci.appveyor.com/api/projects/status/qxc604b7o0rwxsel?svg=true"
+              img="https://ci.appveyor.com/api/projects/status/8ajnx8bw6s0m3wf0?svg=true"
               name="AppVeyor-CI Build status (master branch)" />
         <logo href="https://coveralls.io/github/GeoDienstenCentrum/${project.artifactId}?branch=master"
               img="https://coveralls.io/repos/github/GeoDienstenCentrum/${project.artifactId}/badge.svg?branch=master"

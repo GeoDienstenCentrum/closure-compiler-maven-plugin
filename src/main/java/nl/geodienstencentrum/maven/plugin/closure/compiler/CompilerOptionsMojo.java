@@ -123,15 +123,6 @@ public class CompilerOptionsMojo {
         this.compilerOptions.setEnvironment(environment);
     }
 
-    /**
-     * @param level ignored
-     * @deprecated no longer a compiler option
-     */
-    @Deprecated
-    public void setAggressiveVarCheck(CheckLevel level) {
-        // compilerOptions.setAggressiveVarCheck(level);
-    }
-
     public void setReportMissingOverride(CheckLevel level) {
         compilerOptions.setReportMissingOverride(level);
     }
@@ -178,49 +169,8 @@ public class CompilerOptionsMojo {
         compilerOptions.setCheckMissingGetCssNameLevel(level);
     }
 
-    public void setCheckEventfulObjectDisposalPolicy(CheckEventfulObjectDisposal.DisposalCheckingPolicy policy) {
-        compilerOptions.setCheckEventfulObjectDisposalPolicy(policy);
-    }
-
-    /**
-     * @param level ignored
-     * @deprecated no longer a compiler option
-     */
-    @Deprecated
-    public void setCheckMissingReturn(CheckLevel level) {
-        //compilerOptions.setCheckMissingReturn(level);
-    }
-
-    /**
-     * @param names ignored
-     * @deprecated no longer a compiler option
-     */
-    @Deprecated
-    public void setAliasableGlobals(String names) {
-        //compilerOptions.setAliasableGlobals(names);
-    }
-
-    /**
-     * @param names ignored
-     * @deprecated no longer a compiler option
-     */
-    @Deprecated
-    public void setUnaliasableGlobals(String names) {
-        //compilerOptions.setUnaliasableGlobals(names);
-    }
-
     public void setCollapseObjectLiterals(boolean enabled) {
         compilerOptions.setCollapseObjectLiterals(enabled);
-    }
-
-    /**
-     * @param enabled ignored
-     * @deprecated no longer a compiler option
-     *
-     */
-    @Deprecated
-    public void setSpecializeInitialModule(boolean enabled) {
-        //compilerOptions.setSpecializeInitialModule(enabled);
     }
 
     public void setReplaceMessagesWithChromeI18n(boolean replaceMessagesWithChromeI18n, String tcProjectId) {
@@ -307,26 +257,8 @@ public class CompilerOptionsMojo {
         compilerOptions.setRenamingPolicy(newVariablePolicy, newPropertyPolicy);
     }
 
-    /**
-     * @param useAffinity ignored
-     * @deprecated no longer a compiler option
-     */
-    @Deprecated
-    public void setPropertyAffinity(boolean useAffinity) {
-        // compilerOptions.setPropertyAffinity(useAffinity);
-    }
-
     public void setShadowVariables(boolean shadow) {
         compilerOptions.setShadowVariables(shadow);
-    }
-
-    /**
-     * @deprecated no longer a compiler option
-     * @param collapse ignored
-     */
-    @Deprecated
-    public void setCollapsePropertiesOnExternTypes(boolean collapse) {
-        // compilerOptions.setCollapsePropertiesOnExternTypes(collapse);
     }
 
     public void setProcessObjectPropertyString(boolean process) {
@@ -377,30 +309,12 @@ public class CompilerOptionsMojo {
         compilerOptions.setRemoveClosureAsserts(remove);
     }
 
-    /**
-     * @param value ignored
-     * @deprecated no longer a compiler option
-     */
-    @Deprecated
-    public void setNameAnonymousFunctionsOnly(boolean value) {
-        //compilerOptions.setNameAnonymousFunctionsOnly(value);
-    }
-
     public void setColorizeErrorOutput(boolean colorizeErrorOutput) {
         compilerOptions.setColorizeErrorOutput(colorizeErrorOutput);
     }
 
     public void setChainCalls(boolean value) {
         compilerOptions.setChainCalls(value);
-    }
-
-    /**
-     * @param value ignored
-     * @deprecated no longer a compiler option
-     */
-    @Deprecated
-    public void setAcceptConstKeyword(boolean value) {
-        // compilerOptions.setAcceptConstKeyword(value);
     }
 
     public void enableRuntimeTypeCheck(String logFunction) {
@@ -446,7 +360,6 @@ public class CompilerOptionsMojo {
      */
     @Deprecated
     public void enableExternExports(boolean enabled) {
-        //compilerOptions.enableExternExports(enabled);
         compilerOptions.setExternExports(true);
     }
 
@@ -472,16 +385,6 @@ public class CompilerOptionsMojo {
 
     public void setLanguageIn(LanguageMode languageIn) {
         compilerOptions.setLanguageIn(languageIn);
-    }
-
-    /**
-     *
-     * @param looseTypes ignored
-     * @deprecated no longer a compiler option
-     */
-    @Deprecated
-    public void setLooseTypes(boolean looseTypes) {
-        //compilerOptions.setLooseTypes(looseTypes);
     }
 
     public void setAliasTransformationHandler(AliasTransformationHandler changes) {
@@ -520,24 +423,6 @@ public class CompilerOptionsMojo {
         compilerOptions.setIdeMode(ideMode);
     }
 
-    /**
-     * @param save ignored
-     * @deprecated no longer a compiler option
-     */
-    @Deprecated
-    public void setSaveDataStructures(boolean save) {
-//        compilerOptions.setSaveDataStructures(save);
-    }
-
-    /**
-     * @param skipAllPasses ignored
-     * @deprecated no longer a compiler option
-     */
-    @Deprecated
-    public void setSkipAllPasses(boolean skipAllPasses) {
-        //   compilerOptions.setSkipAllPasses(skipAllPasses);
-    }
-
     public void setCheckDeterminism(boolean checkDeterminism) {
         compilerOptions.setCheckDeterminism(checkDeterminism);
     }
@@ -554,29 +439,12 @@ public class CompilerOptionsMojo {
         compilerOptions.setCheckSuspiciousCode(checkSuspiciousCode);
     }
 
-    /**
-     * @param value ignored
-     * @deprecated does nothing
-     */
-    @Deprecated
-    public void setCheckControlStructures(boolean value) {
-    }
-
     public void setCheckTypes(boolean checkTypes) {
         compilerOptions.setCheckTypes(checkTypes);
     }
 
     public void setCheckMissingGetCssNameBlacklist(String blackList) {
         compilerOptions.setCheckMissingGetCssNameBlacklist(blackList);
-    }
-
-    /**
-     * @param value ignored
-     * @deprecated no longer a compiler option
-     */
-    @Deprecated
-    public void setAggressiveRenaming(boolean value) {
-        // compilerOptions.setAggressiveRenaming(aggressive);
     }
 
     public void setFoldConstants(boolean foldConstants) {
@@ -613,10 +481,6 @@ public class CompilerOptionsMojo {
 
     public void setCrossModuleMethodMotion(boolean crossModuleMethodMotion) {
         compilerOptions.setCrossModuleMethodMotion(crossModuleMethodMotion);
-    }
-
-    public void setInlineGetters(boolean inlineGetters) {
-        compilerOptions.setInlineGetters(inlineGetters);
     }
 
     public void setInlineVariables(boolean inlineVariables) {
@@ -663,26 +527,8 @@ public class CompilerOptionsMojo {
         compilerOptions.setRemoveUnusedLocalVars(removeUnusedLocalVars);
     }
 
-    /**
-     * @param value ignored
-     * @deprecated no longer a compiler option
-     */
-    @Deprecated
-    public void setAliasExternals(boolean value) {
-        //compilerOptions.setAliasExternals(aliasExternals);
-    }
-
     public void setCollapseVariableDeclarations(boolean enabled) {
         compilerOptions.setCollapseVariableDeclarations(enabled);
-    }
-
-    /**
-     * @param value ignored
-     * @deprecated no longer a compiler option
-     */
-    @Deprecated
-    public void setGroupVariableDeclarations(boolean value) {
-        //compilerOptions.setGroupVariableDeclarations(enabled);
     }
 
     public void setCollapseAnonymousFunctions(boolean enabled) {
@@ -759,15 +605,6 @@ public class CompilerOptionsMojo {
 
     public void setRenamePrefixNamespace(String renamePrefixNamespace) {
         compilerOptions.setRenamePrefixNamespace(renamePrefixNamespace);
-    }
-
-    /**
-     * @param value ignored
-     * @deprecated no longer a compiler option
-     */
-    @Deprecated
-    public void setAliasKeywords(boolean value) {
-        //  compilerOptions.setAliasKeywords(aliasKeywords);
     }
 
     public void setCollapseProperties(boolean collapseProperties) {
@@ -868,15 +705,6 @@ public class CompilerOptionsMojo {
 
     public void setStripTypePrefixes(Set<String> stripTypePrefixes) {
         compilerOptions.setStripTypePrefixes(stripTypePrefixes);
-    }
-
-    /**
-     * @param value ignored
-     * @deprecated no longer a compiler option
-     */
-    @Deprecated
-    public void setCustomPasses(Multimap<CustomPassExecutionTime, CompilerPass> value) {
-        // compilerOptions.setCustomPasses(customPasses);
     }
 
     public void addCustomPass(CustomPassExecutionTime time, CompilerPass customPass) {
@@ -993,15 +821,6 @@ public class CompilerOptionsMojo {
 
     public void setCommonJSModulePathPrefix(String commonJSModulePathPrefix) {
         compilerOptions.setCommonJSModulePathPrefix(commonJSModulePathPrefix);
-    }
-
-    /**
-     * @param instrumentMemoryAllocations ignored
-     * @deprecated no longer a compiler option
-     */
-    @Deprecated
-    public void setInstrumentMemoryAllocations(boolean instrumentMemoryAllocations) {
-        // compilerOptions.setInstrumentMemoryAllocations(instrumentMemoryAllocations);
     }
 
     public void setInstrumentForCoverage(boolean instrumentForCoverage) {

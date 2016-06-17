@@ -60,7 +60,7 @@
                     setTimeout('$("#modal-content,#modal-background").toggleClass("active");',100);
                 });
                 $('#modal-add-header').click(function () {
-                    xml = '<?xml version="1.0" encoding="UTF-8"?>\n<suppressions xmlns="https://www.owasp.org/index.php/OWASP_Dependency_Check_Suppression">\n   ';
+                    xml = '<?xml version="1.0" encoding="UTF-8"?>\n<suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.1.xsd">\n   ';
                     xml += $("#modal-text").text().replace(/\n/g,'\n   ');
                     xml += '\n</suppressions>';
                     $('#modal-text').text(xml).focus().select();
@@ -502,32 +502,32 @@ arising out of or in connection with the use of this tool, the analysis performe
                 
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 Scan Information (<a href="#" title="Click to toggle display" onclick="return toggleDisplay(this, '.scaninfo', 'show all', 'show less');  return false;">show all</a>):<br/>
                     <ul class="indent">
-                        <li><i>dependency-check version</i>: 1.3.6</li>
-                        <li><i>Report Generated On</i>: Apr 16, 2016 at 12:49:59 CEST</li>
+                        <li><i>dependency-check version</i>: 1.4.0</li>
+                        <li><i>Report Generated On</i>: Jun 17, 2016 at 19:37:26 CEST</li>
                         <li><i>Dependencies Scanned</i>:&nbsp;20</li>
                         <li><i>Vulnerable Dependencies</i>:&nbsp;0</li>
                         <li><i>Vulnerabilities Found</i>:&nbsp;0</li>
                         <li><i>Vulnerabilities Suppressed</i>:&nbsp;0</li>
                         <li class="scaninfo">...</li>
                                                 <li class="scaninfo hidden"><i>CurrentEngineRelease</i>: </li>
-                                                <li class="scaninfo hidden"><i>NVD CVE 2002</i>: 11/02/2016 03:54:27</li>
-                                                <li class="scaninfo hidden"><i>NVD CVE 2003</i>: 11/02/2016 03:38:58</li>
-                                                <li class="scaninfo hidden"><i>NVD CVE 2004</i>: 11/02/2016 03:35:20</li>
-                                                <li class="scaninfo hidden"><i>NVD CVE 2005</i>: 07/04/2016 10:37:45</li>
-                                                <li class="scaninfo hidden"><i>NVD CVE 2006</i>: 11/02/2016 03:17:58</li>
+                                                <li class="scaninfo hidden"><i>NVD CVE 2002</i>: 26/05/2016 11:53:58</li>
+                                                <li class="scaninfo hidden"><i>NVD CVE 2003</i>: 10/05/2016 11:28:38</li>
+                                                <li class="scaninfo hidden"><i>NVD CVE 2004</i>: 26/05/2016 11:37:59</li>
+                                                <li class="scaninfo hidden"><i>NVD CVE 2005</i>: 28/05/2016 10:39:35</li>
+                                                <li class="scaninfo hidden"><i>NVD CVE 2006</i>: 26/05/2016 11:20:04</li>
                                                 <li class="scaninfo hidden"><i>NVD CVE 2007</i>: 05/04/2016 11:49:57</li>
-                                                <li class="scaninfo hidden"><i>NVD CVE 2008</i>: 05/04/2016 11:33:21</li>
+                                                <li class="scaninfo hidden"><i>NVD CVE 2008</i>: 28/05/2016 10:28:34</li>
                                                 <li class="scaninfo hidden"><i>NVD CVE 2009</i>: 06/04/2016 10:39:58</li>
                                                 <li class="scaninfo hidden"><i>NVD CVE 2010</i>: 11/02/2016 02:11:34</li>
                                                 <li class="scaninfo hidden"><i>NVD CVE 2011</i>: 24/02/2016 09:56:19</li>
                                                 <li class="scaninfo hidden"><i>NVD CVE 2012</i>: 23/03/2016 08:42:20</li>
                                                 <li class="scaninfo hidden"><i>NVD CVE 2013</i>: 29/03/2016 09:44:58</li>
-                                                <li class="scaninfo hidden"><i>NVD CVE 2014</i>: 30/03/2016 09:45:24</li>
-                                                <li class="scaninfo hidden"><i>NVD CVE 2015</i>: 30/03/2016 09:24:02</li>
-                                                <li class="scaninfo hidden"><i>NVD CVE 2016</i>: 30/03/2016 09:03:20</li>
-                                                <li class="scaninfo hidden"><i>NVD CVE Checked</i>: 16/04/2016 11:00:59</li>
-                                                <li class="scaninfo hidden"><i>NVD CVE Modified</i>: 30/03/2016 12:01:31</li>
-                                                <li class="scaninfo hidden"><i>VersionCheckOn</i>: 1459340115246</li>
+                                                <li class="scaninfo hidden"><i>NVD CVE 2014</i>: 28/05/2016 09:52:23</li>
+                                                <li class="scaninfo hidden"><i>NVD CVE 2015</i>: 28/05/2016 09:30:14</li>
+                                                <li class="scaninfo hidden"><i>NVD CVE 2016</i>: 28/05/2016 09:07:11</li>
+                                                <li class="scaninfo hidden"><i>NVD CVE Checked</i>: 17/06/2016 19:32:30</li>
+                                                <li class="scaninfo hidden"><i>NVD CVE Modified</i>: 28/05/2016 14:02:22</li>
+                                                <li class="scaninfo hidden"><i>VersionCheckOn</i>: 1464438903468</li>
                                             </ul><br/>
                 Display:&nbsp;<a href="#" title="Click to toggle display" onclick="return toggleDisplay(this, '.notvulnerable', 'Showing Vulnerable Dependencies (click to show all)', 'Showing All Dependencies (click to show less)'); return false;">Showing Vulnerable Dependencies (click to show all)</a><br/><br/>
                                 <table id="summaryTable" class="lined">
@@ -564,7 +564,7 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                 </td>
                         <td>0</td>
                         <td data-sort-value="0"></td>
-                        <td>13</td>
+                        <td>14</td>
                     </tr>
                                         <tr class="notvulnerable">
                         <td data-sort-value="gson-2.2.4.jar"><a href="#l3_a60a5e993c98c864010053cb901b7eab25306568">gson-2.2.4.jar</a></td>
@@ -577,7 +577,7 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                 </td>
                         <td>0</td>
                         <td data-sort-value="0"></td>
-                        <td>18</td>
+                        <td>19</td>
                     </tr>
                                         <tr class="notvulnerable">
                         <td data-sort-value="guava-19.0.jar"><a href="#l4_6ce200f6b23222af3d8abb6b6459e6c44f4bb0e9">guava-19.0.jar</a></td>
@@ -593,10 +593,10 @@ arising out of or in connection with the use of this tool, the analysis performe
                         <td>18</td>
                     </tr>
                                         <tr class="notvulnerable">
-                        <td data-sort-value="closure-compiler-externs-v20160315.jar"><a href="#l5_a0c252a8fced5f0a542302e3f03066c8144d7371">closure-compiler-externs-v20160315.jar</a></td>
+                        <td data-sort-value="closure-compiler-externs-v20160517.jar"><a href="#l5_cce70b83a790ad55a62dba1bf59f4b6c3af736b0">closure-compiler-externs-v20160517.jar</a></td>
                                                                                                                             <td data-sort-value="">
                                                                                                                                                                                                                         </td>
-                                                <td data-sort-value="com.google.javascript:closure-compiler-externs:v20160315">                                                        <a href="http://search.maven.org/#search|ga|1|1%3A%22a0c252a8fced5f0a542302e3f03066c8144d7371%22" target="_blank">com.google.javascript:closure-compiler-externs:v20160315</a>
+                                                <td data-sort-value="com.google.javascript:closure-compiler-externs:v20160517">                                                        <a href="http://search.maven.org/#search|ga|1|1%3A%22cce70b83a790ad55a62dba1bf59f4b6c3af736b0%22" target="_blank">com.google.javascript:closure-compiler-externs:v20160517</a>
                                                 </td>
                                                                         <td data-sort-value="-10">
                                                     &nbsp;
@@ -606,10 +606,10 @@ arising out of or in connection with the use of this tool, the analysis performe
                         <td>12</td>
                     </tr>
                                         <tr class="notvulnerable">
-                        <td data-sort-value="closure-compiler-v20160315.jar"><a href="#l6_f5b1a03f83a014e545db60a795fcf94db14a5ba2">closure-compiler-v20160315.jar</a></td>
+                        <td data-sort-value="closure-compiler-v20160517.jar"><a href="#l6_d1e007085d9b17197a105590a7ef3365c572bdec">closure-compiler-v20160517.jar</a></td>
                                                                                                                             <td data-sort-value="">
                                                                                                                                                                                                                         </td>
-                                                <td data-sort-value="com.google.javascript:closure-compiler:v20160315">                                                        <a href="http://search.maven.org/remotecontent?filepath=com/google/javascript/closure-compiler/v20160315/closure-compiler-v20160315.jar" target="_blank">com.google.javascript:closure-compiler:v20160315</a>
+                                                <td data-sort-value="com.google.javascript:closure-compiler:v20160517">                                                        <a href="http://search.maven.org/remotecontent?filepath=com/google/javascript/closure-compiler/v20160517/closure-compiler-v20160517.jar" target="_blank">com.google.javascript:closure-compiler:v20160517</a>
                                                 </td>
                                                                         <td data-sort-value="-10">
                                                     &nbsp;
@@ -629,7 +629,7 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                 </td>
                         <td>0</td>
                         <td data-sort-value="0"></td>
-                        <td>19</td>
+                        <td>20</td>
                     </tr>
                                         <tr class="notvulnerable">
                         <td data-sort-value="jsr250-api-1.0.jar"><a href="#l8_5025422767732a1ab45d93abfea846513d742dcf">jsr250-api-1.0.jar</a></td>
@@ -642,7 +642,7 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                 </td>
                         <td>0</td>
                         <td data-sort-value="0"></td>
-                        <td>12</td>
+                        <td>13</td>
                     </tr>
                                         <tr class="notvulnerable">
                         <td data-sort-value="cdi-api-1.0.jar"><a href="#l9_44c453f60909dfc223552ace63e05c694215156b">cdi-api-1.0.jar</a></td>
@@ -668,7 +668,7 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                 </td>
                         <td>0</td>
                         <td data-sort-value="0"></td>
-                        <td>12</td>
+                        <td>13</td>
                     </tr>
                                         <tr class="notvulnerable">
                         <td data-sort-value="commons-lang3-3.4.jar"><a href="#l11_5fe28b9518e58819180a43a850fbc0dd24b7c050">commons-lang3-3.4.jar</a></td>
@@ -681,7 +681,7 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                 </td>
                         <td>0</td>
                         <td data-sort-value="0"></td>
-                        <td>27</td>
+                        <td>28</td>
                     </tr>
                                         <tr class="notvulnerable">
                         <td data-sort-value="maven-artifact-3.3.9.jar"><a href="#l12_0f43afa184555fbc6e36b3334b17246c39b30f6e">maven-artifact-3.3.9.jar</a></td>
@@ -772,7 +772,7 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                 </td>
                         <td>0</td>
                         <td data-sort-value="0"></td>
-                        <td>17</td>
+                        <td>18</td>
                     </tr>
                                         <tr class="notvulnerable">
                         <td data-sort-value="org.eclipse.sisu.inject-0.3.2.jar"><a href="#l19_59044b92ec27cc6fda7a2d24b2cd6cec23f31d5b">org.eclipse.sisu.inject-0.3.2.jar</a></td>
@@ -820,8 +820,8 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                                     <tr><td>central</td><td>artifactid</td><td>args4j</td></tr>
                                                                     <tr><td>central</td><td>groupid</td><td>args4j</td></tr>
                                                                     <tr><td>central</td><td>version</td><td>2.0.26</td></tr>
-                                                                    <tr><td>file</td><td>name</td><td>2.0.26</td></tr>
                                                                     <tr><td>file</td><td>name</td><td>args4j-2.0.26</td></tr>
+                                                                    <tr><td>file</td><td>version</td><td>2.0.26</td></tr>
                                                                     <tr><td>manifest</td><td>Bundle-Description</td><td>args4j : Java command line arguments parser</td></tr>
                                                                     <tr><td>Manifest</td><td>bundle-docurl</td><td>http://www.kohsuke.org/</td></tr>
                                                                     <tr><td>Manifest</td><td>Bundle-Name</td><td>args4j</td></tr>
@@ -861,8 +861,8 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                                     <tr><td>central</td><td>artifactid</td><td>jsr305</td></tr>
                                                                     <tr><td>central</td><td>groupid</td><td>com.google.code.findbugs</td></tr>
                                                                     <tr><td>central</td><td>version</td><td>1.3.9</td></tr>
-                                                                    <tr><td>file</td><td>name</td><td>1.3.9</td></tr>
                                                                     <tr><td>file</td><td>name</td><td>jsr305-1.3.9</td></tr>
+                                                                    <tr><td>file</td><td>version</td><td>1.3.9</td></tr>
                                                                     <tr><td>jar</td><td>package name</td><td>annotation</td></tr>
                                                                     <tr><td>jar</td><td>package name</td><td>javax</td></tr>
                                                                     <tr><td>pom</td><td>artifactid</td><td>jsr305</td></tr>
@@ -870,6 +870,7 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                                     <tr><td>pom</td><td>groupid</td><td>com.google.code.findbugs</td></tr>
                                                                     <tr><td>pom</td><td>groupid</td><td>google.code.findbugs</td></tr>
                                                                     <tr><td>pom</td><td>name</td><td>FindBugs-jsr305</td></tr>
+                                                                    <tr><td>pom</td><td>url</td><td>http://findbugs.sourceforge.net/</td></tr>
                                                                     <tr><td>pom</td><td>version</td><td>1.3.9</td></tr>
                                                             </table>
                         </div>
@@ -900,8 +901,8 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                                     <tr><td>central</td><td>artifactid</td><td>gson</td></tr>
                                                                     <tr><td>central</td><td>groupid</td><td>com.google.code.gson</td></tr>
                                                                     <tr><td>central</td><td>version</td><td>2.2.4</td></tr>
-                                                                    <tr><td>file</td><td>name</td><td>2.2.4</td></tr>
                                                                     <tr><td>file</td><td>name</td><td>gson-2.2.4</td></tr>
+                                                                    <tr><td>file</td><td>version</td><td>2.2.4</td></tr>
                                                                     <tr><td>Manifest</td><td>bundle-contactaddress</td><td>http://code.google.com/p/google-gson/</td></tr>
                                                                     <tr><td>manifest</td><td>Bundle-Description</td><td>Google Gson library</td></tr>
                                                                     <tr><td>Manifest</td><td>Bundle-Name</td><td>Gson</td></tr>
@@ -915,6 +916,7 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                                     <tr><td>pom</td><td>name</td><td>Gson</td></tr>
                                                                     <tr><td>pom</td><td>organization name</td><td>http://www.google.com
   </td></tr>
+                                                                    <tr><td>pom</td><td>url</td><td>http://code.google.com/p/google-gson/</td></tr>
                                                                     <tr><td>pom</td><td>version</td><td>2.2.4</td></tr>
                                                             </table>
                         </div>
@@ -952,8 +954,8 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                                     <tr><td>central</td><td>artifactid</td><td>guava</td></tr>
                                                                     <tr><td>central</td><td>groupid</td><td>com.google.guava</td></tr>
                                                                     <tr><td>central</td><td>version</td><td>19.0</td></tr>
-                                                                    <tr><td>file</td><td>name</td><td>19.0</td></tr>
                                                                     <tr><td>file</td><td>name</td><td>guava-19.0</td></tr>
+                                                                    <tr><td>file</td><td>version</td><td>19.0</td></tr>
                                                                     <tr><td>manifest</td><td>Bundle-Description</td><td>Guava is a suite of core and expanded libraries that include utility classes, google's collections, io classes, and much much more. Guava has only one code dependency - javax.annotation, per the JSR-305 spec.</td></tr>
                                                                     <tr><td>Manifest</td><td>bundle-docurl</td><td>https://guava-libraries.googlecode.com/</td></tr>
                                                                     <tr><td>Manifest</td><td>Bundle-Name</td><td>Guava: Google Core Libraries for Java</td></tr>
@@ -978,12 +980,12 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                         </ul>
                                                 </div>
                                     </div>
-                                    <h3 class="subsectionheader standardsubsection notvulnerable"><a name="l5_a0c252a8fced5f0a542302e3f03066c8144d7371"></a>closure-compiler-externs-v20160315.jar</h3>
+                                    <h3 class="subsectionheader standardsubsection notvulnerable"><a name="l5_cce70b83a790ad55a62dba1bf59f4b6c3af736b0"></a>closure-compiler-externs-v20160517.jar</h3>
                     <div class="subsectioncontent notvulnerable">
                                                 <p>
-                                                    <b>File&nbsp;Path:</b>&nbsp;/var/tmp/maven-repo/com/google/javascript/closure-compiler-externs/v20160315/closure-compiler-externs-v20160315.jar<br/>
-                            <b>MD5:</b>&nbsp;5ec9c9c98c89fb18fb3fd0436c0382a1<br/>
-                            <b>SHA1:</b>&nbsp;a0c252a8fced5f0a542302e3f03066c8144d7371
+                                                    <b>File&nbsp;Path:</b>&nbsp;/var/tmp/maven-repo/com/google/javascript/closure-compiler-externs/v20160517/closure-compiler-externs-v20160517.jar<br/>
+                            <b>MD5:</b>&nbsp;22791aa3834b23dff4487e5c14d8071c<br/>
+                            <b>SHA1:</b>&nbsp;cce70b83a790ad55a62dba1bf59f4b6c3af736b0
                                                             <br/><b>Referenced In Project:</b>
                                                                     Closure Compiler Plugin
                                                                                                                 </p>
@@ -993,33 +995,33 @@ arising out of or in connection with the use of this tool, the analysis performe
                                 <tr><th class="left" style="width:10%;">Source</th><th class="left" style="width:20%;">Name</th><th class="left" style="width:70%;">Value</th></tr>
                                                                     <tr><td>central</td><td>artifactid</td><td>closure-compiler-externs</td></tr>
                                                                     <tr><td>central</td><td>groupid</td><td>com.google.javascript</td></tr>
-                                                                    <tr><td>central</td><td>version</td><td>v20160315</td></tr>
-                                                                    <tr><td>file</td><td>name</td><td>20160315</td></tr>
-                                                                    <tr><td>file</td><td>name</td><td>closure-compiler-externs-v20160315</td></tr>
+                                                                    <tr><td>central</td><td>version</td><td>v20160517</td></tr>
+                                                                    <tr><td>file</td><td>name</td><td>20160517</td></tr>
+                                                                    <tr><td>file</td><td>name</td><td>closure-compiler-externs-v20160517</td></tr>
                                                                     <tr><td>pom</td><td>artifactid</td><td>closure-compiler-externs</td></tr>
                                                                     <tr><td>pom</td><td>groupid</td><td>com.google.javascript</td></tr>
                                                                     <tr><td>pom</td><td>groupid</td><td>google.javascript</td></tr>
                                                                     <tr><td>pom</td><td>name</td><td>Closure Compiler Externs</td></tr>
                                                                     <tr><td>pom</td><td>parent-artifactid</td><td>closure-compiler-parent</td></tr>
                                                                     <tr><td>pom</td><td>parent-groupid</td><td>com.google.javascript</td></tr>
-                                                                    <tr><td>pom</td><td>version</td><td>v20160315</td></tr>
+                                                                    <tr><td>pom</td><td>version</td><td>v20160517</td></tr>
                                                             </table>
                         </div>
                                                                                                                             <h4 id="header10" class="subsectionheader white">Identifiers</h4>
                                                 <div id="content10" class="subsectioncontent standardsubsection">
                                                      <ul>
-                                                                                                                                    <li><b>maven:</b>&nbsp;<a href="http://search.maven.org/#search|ga|1|1%3A%22a0c252a8fced5f0a542302e3f03066c8144d7371%22" target="_blank">com.google.javascript:closure-compiler-externs:v20160315</a>
+                                                                                                                                    <li><b>maven:</b>&nbsp;<a href="http://search.maven.org/#search|ga|1|1%3A%22cce70b83a790ad55a62dba1bf59f4b6c3af736b0%22" target="_blank">com.google.javascript:closure-compiler-externs:v20160517</a>
                                                                                                     &nbsp;&nbsp;<i>Confidence</i>:HIGHEST
                                                                                                                                 </li>
                                                         </ul>
                                                 </div>
                                     </div>
-                                    <h3 class="subsectionheader standardsubsection notvulnerable"><a name="l6_f5b1a03f83a014e545db60a795fcf94db14a5ba2"></a>closure-compiler-v20160315.jar</h3>
+                                    <h3 class="subsectionheader standardsubsection notvulnerable"><a name="l6_d1e007085d9b17197a105590a7ef3365c572bdec"></a>closure-compiler-v20160517.jar</h3>
                     <div class="subsectioncontent notvulnerable">
                                                 <p>
-                                                    <b>File&nbsp;Path:</b>&nbsp;/var/tmp/maven-repo/com/google/javascript/closure-compiler/v20160315/closure-compiler-v20160315.jar<br/>
-                            <b>MD5:</b>&nbsp;18085d2bbf2b0c5b37699d0dc3f95121<br/>
-                            <b>SHA1:</b>&nbsp;f5b1a03f83a014e545db60a795fcf94db14a5ba2
+                                                    <b>File&nbsp;Path:</b>&nbsp;/var/tmp/maven-repo/com/google/javascript/closure-compiler/v20160517/closure-compiler-v20160517.jar<br/>
+                            <b>MD5:</b>&nbsp;32144677214c853ca518752f0f5f2f4a<br/>
+                            <b>SHA1:</b>&nbsp;d1e007085d9b17197a105590a7ef3365c572bdec
                                                             <br/><b>Referenced In Project:</b>
                                                                     Closure Compiler Plugin
                                                                                                                 </p>
@@ -1029,19 +1031,19 @@ arising out of or in connection with the use of this tool, the analysis performe
                                 <tr><th class="left" style="width:10%;">Source</th><th class="left" style="width:20%;">Name</th><th class="left" style="width:70%;">Value</th></tr>
                                                                     <tr><td>central</td><td>artifactid</td><td>closure-compiler</td></tr>
                                                                     <tr><td>central</td><td>groupid</td><td>com.google.javascript</td></tr>
-                                                                    <tr><td>central</td><td>version</td><td>v20160315</td></tr>
-                                                                    <tr><td>file</td><td>name</td><td>20160315</td></tr>
-                                                                    <tr><td>file</td><td>name</td><td>closure-compiler-v20160315</td></tr>
+                                                                    <tr><td>central</td><td>version</td><td>v20160517</td></tr>
+                                                                    <tr><td>file</td><td>name</td><td>20160517</td></tr>
+                                                                    <tr><td>file</td><td>name</td><td>closure-compiler-v20160517</td></tr>
                                                                     <tr><td>jar</td><td>package name</td><td>google</td></tr>
                                                                     <tr><td>pom</td><td>artifactid</td><td>closure-compiler</td></tr>
                                                                     <tr><td>pom</td><td>groupid</td><td>com.google.javascript</td></tr>
-                                                                    <tr><td>pom</td><td>version</td><td>v20160315</td></tr>
+                                                                    <tr><td>pom</td><td>version</td><td>v20160517</td></tr>
                                                             </table>
                         </div>
                                                                                                                             <h4 id="header12" class="subsectionheader white">Identifiers</h4>
                                                 <div id="content12" class="subsectioncontent standardsubsection">
                                                      <ul>
-                                                                                                                                    <li><b>maven:</b>&nbsp;<a href="http://search.maven.org/remotecontent?filepath=com/google/javascript/closure-compiler/v20160315/closure-compiler-v20160315.jar" target="_blank">com.google.javascript:closure-compiler:v20160315</a>
+                                                                                                                                    <li><b>maven:</b>&nbsp;<a href="http://search.maven.org/remotecontent?filepath=com/google/javascript/closure-compiler/v20160517/closure-compiler-v20160517.jar" target="_blank">com.google.javascript:closure-compiler:v20160517</a>
                                                                                                     &nbsp;&nbsp;<i>Confidence</i>:HIGHEST
                                                                                                                                 </li>
                                                         </ul>
@@ -1068,8 +1070,8 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                                     <tr><td>central</td><td>artifactid</td><td>protobuf-java</td></tr>
                                                                     <tr><td>central</td><td>groupid</td><td>com.google.protobuf</td></tr>
                                                                     <tr><td>central</td><td>version</td><td>2.5.0</td></tr>
-                                                                    <tr><td>file</td><td>name</td><td>2.5.0</td></tr>
                                                                     <tr><td>file</td><td>name</td><td>protobuf-java-2.5.0</td></tr>
+                                                                    <tr><td>file</td><td>version</td><td>2.5.0</td></tr>
                                                                     <tr><td>manifest</td><td>Bundle-Description</td><td>Protocol Buffers are a way of encoding structured data in an efficient yet    extensible format.</td></tr>
                                                                     <tr><td>Manifest</td><td>bundle-docurl</td><td>http://code.google.com/p/protobuf</td></tr>
                                                                     <tr><td>Manifest</td><td>Bundle-Name</td><td>Protocol Buffer Java API</td></tr>
@@ -1083,6 +1085,7 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                                     <tr><td>pom</td><td>parent-artifactid</td><td>google</td></tr>
                                                                     <tr><td>pom</td><td>parent-groupid</td><td>com.google</td></tr>
                                                                     <tr><td>pom</td><td>parent-version</td><td>2.5.0</td></tr>
+                                                                    <tr><td>pom</td><td>url</td><td>http://code.google.com/p/protobuf</td></tr>
                                                                     <tr><td>pom</td><td>version</td><td>2.5.0</td></tr>
                                                             </table>
                         </div>
@@ -1113,14 +1116,15 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                                     <tr><td>central</td><td>artifactid</td><td>jsr250-api</td></tr>
                                                                     <tr><td>central</td><td>groupid</td><td>javax.annotation</td></tr>
                                                                     <tr><td>central</td><td>version</td><td>1.0</td></tr>
-                                                                    <tr><td>file</td><td>name</td><td>1.0</td></tr>
                                                                     <tr><td>file</td><td>name</td><td>jsr250-api-1.0</td></tr>
+                                                                    <tr><td>file</td><td>version</td><td>1.0</td></tr>
                                                                     <tr><td>jar</td><td>package name</td><td>annotation</td></tr>
                                                                     <tr><td>jar</td><td>package name</td><td>javax</td></tr>
                                                                     <tr><td>pom</td><td>artifactid</td><td>jsr250-api</td></tr>
                                                                     <tr><td>pom</td><td>description</td><td>JSR-250 Reference Implementation by Glassfish</td></tr>
                                                                     <tr><td>pom</td><td>groupid</td><td>javax.annotation</td></tr>
                                                                     <tr><td>pom</td><td>name</td><td>JSR-250 Common Annotations for the JavaTM Platform</td></tr>
+                                                                    <tr><td>pom</td><td>url</td><td>http://jcp.org/aboutJava/communityprocess/final/jsr250/index.html</td></tr>
                                                                     <tr><td>pom</td><td>version</td><td>1.0</td></tr>
                                                             </table>
                         </div>
@@ -1150,8 +1154,8 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                                     <tr><td>central</td><td>artifactid</td><td>cdi-api</td></tr>
                                                                     <tr><td>central</td><td>groupid</td><td>javax.enterprise</td></tr>
                                                                     <tr><td>central</td><td>version</td><td>1.0</td></tr>
-                                                                    <tr><td>file</td><td>name</td><td>1.0</td></tr>
                                                                     <tr><td>file</td><td>name</td><td>cdi-api-1.0</td></tr>
+                                                                    <tr><td>file</td><td>version</td><td>1.0</td></tr>
                                                                     <tr><td>Manifest</td><td>Implementation-Title</td><td>CDI APIs</td></tr>
                                                                     <tr><td>Manifest</td><td>implementation-url</td><td>http://www.seamframework.org/Weld/cdi-api</td></tr>
                                                                     <tr><td>Manifest</td><td>Implementation-Vendor</td><td>Seam Framework</td></tr>
@@ -1202,6 +1206,7 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                                     <tr><td>pom</td><td>description</td><td>The javax.inject API</td></tr>
                                                                     <tr><td>pom</td><td>groupid</td><td>javax.inject</td></tr>
                                                                     <tr><td>pom</td><td>name</td><td>javax.inject</td></tr>
+                                                                    <tr><td>pom</td><td>url</td><td>http://code.google.com/p/atinject/</td></tr>
                                                                     <tr><td>pom</td><td>version</td><td>1</td></tr>
                                                             </table>
                         </div>
@@ -1236,8 +1241,8 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                                     <tr><td>central</td><td>artifactid</td><td>commons-lang3</td></tr>
                                                                     <tr><td>central</td><td>groupid</td><td>org.apache.commons</td></tr>
                                                                     <tr><td>central</td><td>version</td><td>3.4</td></tr>
-                                                                    <tr><td>file</td><td>name</td><td>3.4</td></tr>
                                                                     <tr><td>file</td><td>name</td><td>commons-lang3-3.4</td></tr>
+                                                                    <tr><td>file</td><td>version</td><td>3.4</td></tr>
                                                                     <tr><td>manifest</td><td>Bundle-Description</td><td>Apache Commons Lang, a package of Java utility classes for the classes that are in java.lang's hierarchy, or are considered to be so standard as to justify existence in java.lang.</td></tr>
                                                                     <tr><td>Manifest</td><td>bundle-docurl</td><td>http://commons.apache.org/proper/commons-lang/</td></tr>
                                                                     <tr><td>Manifest</td><td>Bundle-Name</td><td>Apache Commons Lang</td></tr>
@@ -1259,6 +1264,7 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                                     <tr><td>pom</td><td>parent-artifactid</td><td>commons-parent</td></tr>
                                                                     <tr><td>pom</td><td>parent-groupid</td><td>org.apache.commons</td></tr>
                                                                     <tr><td>pom</td><td>parent-version</td><td>3.4</td></tr>
+                                                                    <tr><td>pom</td><td>url</td><td>http://commons.apache.org/proper/commons-lang/</td></tr>
                                                                     <tr><td>pom</td><td>version</td><td>3.4</td></tr>
                                                             </table>
                         </div>
@@ -1287,8 +1293,8 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                                     <tr><td>central</td><td>artifactid</td><td>maven-artifact</td></tr>
                                                                     <tr><td>central</td><td>groupid</td><td>org.apache.maven</td></tr>
                                                                     <tr><td>central</td><td>version</td><td>3.3.9</td></tr>
-                                                                    <tr><td>file</td><td>name</td><td>3.3.9</td></tr>
                                                                     <tr><td>file</td><td>name</td><td>maven-artifact-3.3.9</td></tr>
+                                                                    <tr><td>file</td><td>version</td><td>3.3.9</td></tr>
                                                                     <tr><td>Manifest</td><td>Implementation-Title</td><td>Maven Artifact</td></tr>
                                                                     <tr><td>Manifest</td><td>Implementation-Vendor</td><td>The Apache Software Foundation</td></tr>
                                                                     <tr><td>Manifest</td><td>Implementation-Vendor-Id</td><td>org.apache.maven</td></tr>
@@ -1330,8 +1336,8 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                                     <tr><td>central</td><td>artifactid</td><td>maven-model</td></tr>
                                                                     <tr><td>central</td><td>groupid</td><td>org.apache.maven</td></tr>
                                                                     <tr><td>central</td><td>version</td><td>3.3.9</td></tr>
-                                                                    <tr><td>file</td><td>name</td><td>3.3.9</td></tr>
                                                                     <tr><td>file</td><td>name</td><td>maven-model-3.3.9</td></tr>
+                                                                    <tr><td>file</td><td>version</td><td>3.3.9</td></tr>
                                                                     <tr><td>Manifest</td><td>Implementation-Title</td><td>Maven Model</td></tr>
                                                                     <tr><td>Manifest</td><td>Implementation-Vendor</td><td>The Apache Software Foundation</td></tr>
                                                                     <tr><td>Manifest</td><td>Implementation-Vendor-Id</td><td>org.apache.maven</td></tr>
@@ -1374,8 +1380,8 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                                     <tr><td>central</td><td>artifactid</td><td>maven-plugin-api</td></tr>
                                                                     <tr><td>central</td><td>groupid</td><td>org.apache.maven</td></tr>
                                                                     <tr><td>central</td><td>version</td><td>3.3.9</td></tr>
-                                                                    <tr><td>file</td><td>name</td><td>3.3.9</td></tr>
                                                                     <tr><td>file</td><td>name</td><td>maven-plugin-api-3.3.9</td></tr>
+                                                                    <tr><td>file</td><td>version</td><td>3.3.9</td></tr>
                                                                     <tr><td>Manifest</td><td>Implementation-Title</td><td>Maven Plugin API</td></tr>
                                                                     <tr><td>Manifest</td><td>Implementation-Vendor</td><td>The Apache Software Foundation</td></tr>
                                                                     <tr><td>Manifest</td><td>Implementation-Vendor-Id</td><td>org.apache.maven</td></tr>
@@ -1418,8 +1424,8 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                                     <tr><td>central</td><td>artifactid</td><td>maven-plugin-annotations</td></tr>
                                                                     <tr><td>central</td><td>groupid</td><td>org.apache.maven.plugin-tools</td></tr>
                                                                     <tr><td>central</td><td>version</td><td>3.4</td></tr>
-                                                                    <tr><td>file</td><td>name</td><td>3.4</td></tr>
                                                                     <tr><td>file</td><td>name</td><td>maven-plugin-annotations-3.4</td></tr>
+                                                                    <tr><td>file</td><td>version</td><td>3.4</td></tr>
                                                                     <tr><td>Manifest</td><td>Implementation-Title</td><td>Maven Plugin Tools Java 5 Annotations</td></tr>
                                                                     <tr><td>Manifest</td><td>Implementation-Vendor</td><td>The Apache Software Foundation</td></tr>
                                                                     <tr><td>Manifest</td><td>Implementation-Vendor-Id</td><td>org.apache.maven.plugin-tools</td></tr>
@@ -1463,8 +1469,8 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                                     <tr><td>central</td><td>artifactid</td><td>plexus-classworlds</td></tr>
                                                                     <tr><td>central</td><td>groupid</td><td>org.codehaus.plexus</td></tr>
                                                                     <tr><td>central</td><td>version</td><td>2.5.2</td></tr>
-                                                                    <tr><td>file</td><td>name</td><td>2.5.2</td></tr>
                                                                     <tr><td>file</td><td>name</td><td>plexus-classworlds-2.5.2</td></tr>
+                                                                    <tr><td>file</td><td>version</td><td>2.5.2</td></tr>
                                                                     <tr><td>manifest</td><td>Bundle-Description</td><td>A class loader framework</td></tr>
                                                                     <tr><td>Manifest</td><td>bundle-docurl</td><td>http://www.codehaus.org/</td></tr>
                                                                     <tr><td>Manifest</td><td>Bundle-Name</td><td>Plexus Classworlds</td></tr>
@@ -1510,8 +1516,8 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                                     <tr><td>central</td><td>artifactid</td><td>plexus-component-annotations</td></tr>
                                                                     <tr><td>central</td><td>groupid</td><td>org.codehaus.plexus</td></tr>
                                                                     <tr><td>central</td><td>version</td><td>1.6</td></tr>
-                                                                    <tr><td>file</td><td>name</td><td>1.6</td></tr>
                                                                     <tr><td>file</td><td>name</td><td>plexus-component-annotations-1.6</td></tr>
+                                                                    <tr><td>file</td><td>version</td><td>1.6</td></tr>
                                                                     <tr><td>jar</td><td>package name</td><td>annotations</td></tr>
                                                                     <tr><td>jar</td><td>package name</td><td>codehaus</td></tr>
                                                                     <tr><td>jar</td><td>package name</td><td>component</td></tr>
@@ -1554,8 +1560,8 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                                     <tr><td>central</td><td>artifactid</td><td>plexus-utils</td></tr>
                                                                     <tr><td>central</td><td>groupid</td><td>org.codehaus.plexus</td></tr>
                                                                     <tr><td>central</td><td>version</td><td>3.0.22</td></tr>
-                                                                    <tr><td>file</td><td>name</td><td>3.0.22</td></tr>
                                                                     <tr><td>file</td><td>name</td><td>plexus-utils-3.0.22</td></tr>
+                                                                    <tr><td>file</td><td>version</td><td>3.0.22</td></tr>
                                                                     <tr><td>jar</td><td>package name</td><td>codehaus</td></tr>
                                                                     <tr><td>jar</td><td>package name</td><td>plexus</td></tr>
                                                                     <tr><td>jar</td><td>package name</td><td>util</td></tr>
@@ -1567,6 +1573,7 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                                     <tr><td>pom</td><td>parent-artifactid</td><td>plexus</td></tr>
                                                                     <tr><td>pom</td><td>parent-groupid</td><td>org.codehaus.plexus</td></tr>
                                                                     <tr><td>pom</td><td>parent-version</td><td>3.0.22</td></tr>
+                                                                    <tr><td>pom</td><td>url</td><td>http://plexus.codehaus.org/plexus-utils</td></tr>
                                                                     <tr><td>pom</td><td>version</td><td>3.0.22</td></tr>
                                                             </table>
                         </div>
@@ -1596,8 +1603,8 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                                     <tr><td>central</td><td>artifactid</td><td>org.eclipse.sisu.inject</td></tr>
                                                                     <tr><td>central</td><td>groupid</td><td>org.eclipse.sisu</td></tr>
                                                                     <tr><td>central</td><td>version</td><td>0.3.2</td></tr>
-                                                                    <tr><td>file</td><td>name</td><td>0.3.2</td></tr>
                                                                     <tr><td>file</td><td>name</td><td>org.eclipse.sisu.inject-0.3.2</td></tr>
+                                                                    <tr><td>file</td><td>version</td><td>0.3.2</td></tr>
                                                                     <tr><td>Manifest</td><td>bundle-copyright</td><td>2015</td></tr>
                                                                     <tr><td>Manifest</td><td>bundle-copyright</td><td>Copyright (c) 2010, 2015 Sonatype, Inc. and others</td></tr>
                                                                     <tr><td>Manifest</td><td>bundle-docurl</td><td>http://www.eclipse.org/sisu/</td></tr>
@@ -1640,8 +1647,8 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                                     <tr><td>central</td><td>artifactid</td><td>org.eclipse.sisu.plexus</td></tr>
                                                                     <tr><td>central</td><td>groupid</td><td>org.eclipse.sisu</td></tr>
                                                                     <tr><td>central</td><td>version</td><td>0.3.2</td></tr>
-                                                                    <tr><td>file</td><td>name</td><td>0.3.2</td></tr>
                                                                     <tr><td>file</td><td>name</td><td>org.eclipse.sisu.plexus-0.3.2</td></tr>
+                                                                    <tr><td>file</td><td>version</td><td>0.3.2</td></tr>
                                                                     <tr><td>Manifest</td><td>bundle-copyright</td><td>2015</td></tr>
                                                                     <tr><td>Manifest</td><td>bundle-copyright</td><td>Copyright (c) 2010, 2015 Sonatype, Inc. and others</td></tr>
                                                                     <tr><td>Manifest</td><td>bundle-docurl</td><td>http://www.eclipse.org/sisu/</td></tr>

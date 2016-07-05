@@ -2,13 +2,6 @@ language: java
 
 sudo: false
 
-matrix:
-  fast_finish: true
-
-  allow_failures:
-    - jdk: openjdk7
-    - jdk: oraclejdk7
-
 install:
   # install without any testing to get dependencies in place
   - mvn install -U -Dmaven.test.skip=true -B -V -fae -T2
@@ -29,7 +22,20 @@ jdk:
   - openjdk7
   - oraclejdk7
   - oraclejdk8
-  - openjdk8
+  #- openjdk8
+
+matrix:
+  fast_finish: true
+  include:  
+    - os: linux
+      jdk: openjdk8
+      sudo: required
+      dist: trusty
+      group: edge
+      
+  allow_failures:
+    - jdk: openjdk7
+    - jdk: oraclejdk7
 
 cache:
   directories:

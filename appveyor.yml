@@ -15,8 +15,18 @@ branches:
     - gh-pages
 
 install:
-  - set PATH=%PATH%;C:\tools\apache-maven-%MVN_VERSION%\bin
-  - IF NOT exist "C:\tools\apache-maven-%MVN_VERSION%\bin\*.*" (echo Maven %MVN_VERSION% not installed, so install it & cinst maven -Version %MVN_VERSION%) ELSE (echo Maven %MVN_VERSION% already installed)
+  - ps: >-
+      Add-Type -AssemblyName System.IO.Compression.FileSystem
+          if (!(Test-Path -Path "C:\maven" )) {
+            (new-object System.Net.WebClient).DownloadFile(
+              'https://www-eu.apache.org/dist/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.zip',
+              'C:\maven-bin.zip'
+            )
+            [System.IO.Compression.ZipFile]::ExtractToDirectory("C:\maven-bin.zip", "C:\maven")
+          }
+  - cmd: SET PATH=C:\maven\apache-maven-3.3.9\bin;%JAVA_HOME%\bin;%PATH%
+  - cmd: echo %PATH%
+  - cmd: java -version
   - cd C:\projects\closure-compiler-maven-plugin
   - mvn install -U -Dmaven.test.skip=true -B -V -fae -e -T2
 
@@ -27,17 +37,14 @@ test_script:
   - mvn -e -fae -B -Dfailsafe.useFile=false -T2 clean test verify
 
 environment:
-  MVN_VERSION: 3.3.3
 
   matrix:
-    - JAVA_HOME: C:\Program Files\Java\jdk1.7.0
     - JAVA_HOME: C:\Program Files\Java\jdk1.8.0
-    - JAVA_HOME: C:\Program Files (x86)\Java\jdk1.7.0
     - JAVA_HOME: C:\Program Files (x86)\Java\jdk1.8.0
 
 matrix:
   fast_finish: true
 
 cache:
-  - C:\tools\apache-maven-%MVN_VERSION% -> appveyor.yml
+  - C:\tools -> appveyor.yml
   - C:\Users\appveyor\.m2\repository -> pom.xml

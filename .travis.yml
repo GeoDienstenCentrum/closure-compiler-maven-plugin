@@ -19,10 +19,9 @@ after_success:
   - mvn -B -e -fae -Ptravis-ci clean verify jacoco:report coveralls:report
 
 jdk:
-  - openjdk7
   - oraclejdk7
+  - openjdk7
   - oraclejdk8
-  #- openjdk8
 
 matrix:
   fast_finish: true
@@ -35,6 +34,7 @@ matrix:
       
   allow_failures:
     - jdk: openjdk7
+    - jdk: openjdk8
     - jdk: oraclejdk7
 
 cache:

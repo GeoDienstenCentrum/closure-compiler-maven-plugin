@@ -12,6 +12,8 @@ This was forked from https://code.google.com/p/closure-compiler-maven-plugin/
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/nl.geodienstencentrum.maven/closure-compiler-maven-plugin/badge.svg)](https://maven-badges.herokuapp.com/maven-central/nl.geodienstencentrum.maven/closure-compiler-maven-plugin/)
 
+[![Dependency Status](https://dependencyci.com/github/GeoDienstenCentrum/closure-compiler-maven-plugin/badge)](https://dependencyci.com/github/GeoDienstenCentrum/closure-compiler-maven-plugin)
+
 [![Coverage Status](https://coveralls.io/repos/GeoDienstenCentrum/closure-compiler-maven-plugin/badge.svg?branch=master&service=github)](https://coveralls.io/github/GeoDienstenCentrum/closure-compiler-maven-plugin?branch=master)
 
 [![Percentage of issues still open](http://isitmaintained.com/badge/open/GeoDienstenCentrum/closure-compiler-maven-plugin.svg)](http://isitmaintained.com/project/GeoDienstenCentrum/closure-compiler-maven-plugin "Percentage of issues still open")

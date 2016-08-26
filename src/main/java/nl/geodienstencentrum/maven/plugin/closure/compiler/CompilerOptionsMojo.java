@@ -196,7 +196,7 @@ public class CompilerOptionsMojo {
     public void setTracerMode(TracerMode mode) {
         compilerOptions.setTracerMode(mode);
     }
-
+/*
     public void setNameReferenceReportPath(String filePath) {
         compilerOptions.setNameReferenceReportPath(filePath);
     }
@@ -204,7 +204,7 @@ public class CompilerOptionsMojo {
     public void setNameReferenceGraphPath(String filePath) {
         compilerOptions.setNameReferenceGraphPath(filePath);
     }
-
+*/
     public void setProtectHiddenSideEffects(boolean enable) {
         compilerOptions.setProtectHiddenSideEffects(enable);
     }
@@ -518,7 +518,7 @@ public class CompilerOptionsMojo {
     public void setRemoveUnusedPrototypePropertiesInExterns(boolean enabled) {
         compilerOptions.setRemoveUnusedPrototypePropertiesInExterns(enabled);
     }
-
+/*
     public void setRemoveUnusedVars(boolean removeUnusedVars) {
         compilerOptions.setRemoveUnusedVars(removeUnusedVars);
     }
@@ -526,7 +526,7 @@ public class CompilerOptionsMojo {
     public void setRemoveUnusedLocalVars(boolean removeUnusedLocalVars) {
         compilerOptions.setRemoveUnusedLocalVars(removeUnusedLocalVars);
     }
-
+*/
     public void setCollapseVariableDeclarations(boolean enabled) {
         compilerOptions.setCollapseVariableDeclarations(enabled);
     }
@@ -682,11 +682,11 @@ public class CompilerOptionsMojo {
     public void setClosurePass(boolean closurePass) {
         compilerOptions.setClosurePass(closurePass);
     }
-
+/*
     public void setPreserveGoogRequires(boolean preserveGoogRequires) {
         compilerOptions.setPreserveGoogRequires(preserveGoogRequires);
     }
-
+*/
     public void setGatherCssNames(boolean gatherCssNames) {
         compilerOptions.setGatherCssNames(gatherCssNames);
     }

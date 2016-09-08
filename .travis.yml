@@ -2,6 +2,30 @@ language: java
 
 sudo: false
 
+env:
+  global:
+    - BASEURL=https://www-eu.apache.org/dist/maven/maven-3/VERSION/binaries/apache-maven-VERSION-bin.zip
+    - FILE=apache-maven-VERSION-bin.zip
+    - DIR=apache-maven-VERSION
+  matrix:
+    - VERSION=3.3.9
+    - VERSION=3.2.5
+
+before_install:
+    - wget --no-check-certificate $(echo -n $BASEURL | sed -e 's#VERSION#'$VERSION'#g');
+    - unzip -qq $(echo -n $FILE | sed -e 's#VERSION#'$VERSION'#');
+    - export M2_HOME=$PWD/$(echo -n $DIR | sed -e 's#VERSION#'$VERSION'#');
+    - export PATH=$M2_HOME/bin:$PATH;
+    
+    - if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$JVM" == "latest" ]; then
+         sudo apt-get update -qq;
+         sudo /bin/echo -e oracle-java9-installer shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections;
+         sudo apt-get install -y oracle-java9-installer;
+         sudo apt-get install -y oracle-java9-unlimited-jce-policy;
+         sudo update-java-alternatives -s java-9-oracle;
+         sudo rm /etc/mavenrc;
+     fi
+
 install:
   # install without any testing to get dependencies in place
   - mvn install -U -Dmaven.test.skip=true -B -V -fae -T2
@@ -9,14 +33,16 @@ install:
 script:
   # execute unit and integration tests
   - mvn -e -fae -B -Dfailsafe.useFile=false -T2 clean test verify
-  - if [ "$TRAVIS_JDK_VERSION" == oraclejdk8 ]; then
+  - if [ "$TRAVIS_JDK_VERSION" == oraclejdk8 ] && [ "$VERSION" == "3.3.9" ]; then
          mvn javadoc:javadoc;
          mvn javadoc:test-javadoc;
     fi
 
 after_success:
-  # generate code coverage report
-  - mvn -B -e -fae -Ptravis-ci clean verify jacoco:report coveralls:report
+  # generate code coverage report, just for oraclejdk8 and latest maven
+  - if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$VERSION" == "3.3.9" ] &&  [ "$TRAVIS_JDK_VERSION" == "oraclejdk8" ]; then
+      mvn -B -e -fae -Ptravis-ci clean verify jacoco:report coveralls:report;
+    fi
 
 jdk:
   - oraclejdk7
@@ -25,17 +51,24 @@ jdk:
 
 matrix:
   fast_finish: true
-  include:  
+  include:
     - os: linux
       jdk: openjdk8
       sudo: required
       dist: trusty
       group: edge
-      
+      env: VERSION=3.3.9
+    - os: linux
+      jdk: oraclejdk9
+      sudo: required
+      dist: trusty
+      group: edge
+      env: 
+        - VERSION=3.3.9
+        - JVM=latest
+
   allow_failures:
-    - jdk: openjdk7
-    - jdk: openjdk8
-    - jdk: oraclejdk7
+    - jdk: oraclejdk9
 
 cache:
   directories:

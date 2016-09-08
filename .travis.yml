@@ -23,6 +23,7 @@ before_install:
          sudo apt-get install -y oracle-java9-installer;
          sudo apt-get install -y oracle-java9-unlimited-jce-policy;
          sudo update-java-alternatives -s java-9-oracle;
+         sudo rm /etc/mavenrc;
      fi
 
 install:
@@ -47,17 +48,16 @@ jdk:
   - oraclejdk7
   - openjdk7
   - oraclejdk8
-  - openjdk8
 
 matrix:
   fast_finish: true
   include:
-#    - os: linux
-#      jdk: openjdk8
-#      sudo: required
-#      dist: trusty
-#      group: edge
-#      env: VERSION=3.3.9
+    - os: linux
+      jdk: openjdk8
+      sudo: required
+      dist: trusty
+      group: edge
+      env: VERSION=3.3.9
     - os: linux
       jdk: oraclejdk9
       sudo: required

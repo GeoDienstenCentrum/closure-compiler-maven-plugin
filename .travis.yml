@@ -39,7 +39,7 @@ script:
 
 after_success:
   # generate code coverage report, just for oraclejdk8 and latest maven
-  - if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$VERSION" == "3.3.9" ] &&  [ "$TRAVIS_JDK_VERSION" == oraclejdk8 ]; then
+  - if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$VERSION" == "3.3.9" ] &&  [ "$TRAVIS_JDK_VERSION" == "oraclejdk8" ]; then
       mvn -B -e -fae -Ptravis-ci clean verify jacoco:report coveralls:report;
     fi
 
@@ -47,26 +47,28 @@ jdk:
   - oraclejdk7
   - openjdk7
   - oraclejdk8
-  - oraclejdk9
+  - openjdk8
 
 matrix:
   fast_finish: true
   include:
-    - os: linux
-      jdk: openjdk8
-      sudo: required
-      dist: trusty
-      group: edge
-      env: VERSION=3.3.9
+#    - os: linux
+#      jdk: openjdk8
+#      sudo: required
+#      dist: trusty
+#      group: edge
+#      env: VERSION=3.3.9
     - os: linux
       jdk: oraclejdk9
       sudo: required
       dist: trusty
       group: edge
-      env: VERSION=3.3.9
+      env: 
+        - VERSION=3.3.9
+        - JVM=latest
 
   allow_failures:
-    #- jdk: oraclejdk9
+    - jdk: oraclejdk9
 
 cache:
   directories:

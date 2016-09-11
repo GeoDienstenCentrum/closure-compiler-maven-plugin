@@ -7,16 +7,20 @@ env:
     - BASEURL=https://www-eu.apache.org/dist/maven/maven-3/VERSION/binaries/apache-maven-VERSION-bin.zip
     - FILE=apache-maven-VERSION-bin.zip
     - DIR=apache-maven-VERSION
+    - secure: "h6f32PIRZA/wjsDM/0/R/fFhOesZ/fQYPTynMinsU6V4Af6hKZx15dinXhIpMCnqUeYfAEvNXmVEz+3DAgZHwa4Kg/MbDzGOG/40QukBhdX4SEgywx+murt7HxA3BupAmvS7C/g/E/2lDIoK4K8718a1JNqNB+Hckgljg1J+plBz7Hc+DPpiY/CiYa2RPKfUqlGJIPGJIyV/alPwrHEFRFg7GVqlRbgMlNiLPsi0EsBEzeUWoizosn5UrAebKIGNdB/adDg7FvsjmHERuMEDABOTC2o0Y7VF2V3MTkSgxUSZRuGtHrrlwDM1s4Iba7r+Op6+QOiwDQjCHqACBiG4H/djOBMnvPuro76rmv1S1JG84IiDHToU+yB5MjHtMIatnHogKkZGSd28ptyzE+9vC8lafW+mpg8syLx8DxjH2yxDQXeFpKaVd22KBM8Wu5BU9hpwEYUhOx5dqQ3vLOsHmWTHgRB2w1gAfk15iIRismjSSeGnTrTXax1ZAYeQF5oLeFhslFi5EgKvexnJDLwnqbhOIp+KFoZGBWJUBcItUW7s4tHr9gFpiGZjaLqBL6M3DuCFJFZEPJp1+ARCkxiUBj9u9JRj44iYIgVe5jLUfkNE49Lb2TMRO5dxcglj753kNke6g4qYZ0+Yw1/mYSygifSMHg3vhjbFV3U2ATy+Ej8="
+    - secure: "lkz0McNMJ+AtNnp+3uKzR+/lhJ8ggvHZ8SYbY+rYx8CcNCRmSqOhQPtI4gibBfJ2FWl6vqGWoMZFo5hk1nYAwccYQNM86wI7Hvwa7oiuNZC1ifGUHnchtrCOndSIPHGBG2UYLLYsuNjv2sYti5sRSS4ber8tFD6/SN33cVdOQCUDq5LagAfIpCukm++Kw6FSy4/BgUpsZvtQpgVbDIvexCvz/GQnBtLXR4k3j6iw3xv/VCibz7RaLrfygnx47hwHMv1VI/UjsOD5yHDaBBS0glDgxJh1BrEXNeu/LDHExJF26xwgOwVP4NzOnkDHim9yPT1koW0qoEuROlBdsHYW+Lir815VgOSJUuLAaKcrqkCFwoItdrX6HG7oCvmjNMjJBi8WOHh0uMJ3iZP5itwRng+J4gtivyHpnxv1ifNf1jPQWC2nLKuqqsi4nYEGbb3XO5AU3z1bWB4OQPdD7gQOPso+W5Z3MLCxhAI2vMj31ARi8Y+p/3v6Nm8P+M0agM35cCI1bPfbA/iSTmGpZiKIsg/DFSt5u2JCsMx5yY4u0tnNy03JG3qqJ9jNlEyvxWH1HUm1rmWx3cinixbeD1Z5lviXo4y12x2xF0As3qWZKeQhkCl2r70H4UIEH4k7qoIpWfoGAzmJ0yjS851ZlHCJlTqpmP4nKoVT/0IlcS0HcRE="
+
   matrix:
     - VERSION=3.3.9
     - VERSION=3.2.5
+
 
 before_install:
     - wget --no-check-certificate $(echo -n $BASEURL | sed -e 's#VERSION#'$VERSION'#g');
     - unzip -qq $(echo -n $FILE | sed -e 's#VERSION#'$VERSION'#');
     - export M2_HOME=$PWD/$(echo -n $DIR | sed -e 's#VERSION#'$VERSION'#');
     - export PATH=$M2_HOME/bin:$PATH;
-    
+
     - if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$JVM" == "latest" ]; then
          sudo apt-get update -qq;
          sudo /bin/echo -e oracle-java9-installer shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections;
@@ -40,8 +44,16 @@ script:
 
 after_success:
   # generate code coverage report, just for oraclejdk8 and latest maven
-  - if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$VERSION" == "3.3.9" ] &&  [ "$TRAVIS_JDK_VERSION" == "oraclejdk8" ]; then
-      mvn -B -e -fae -Ptravis-ci clean verify jacoco:report coveralls:report;
+  - if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$VERSION" == "3.3.9" ] &&
+       [ "$TRAVIS_JDK_VERSION" == "oraclejdk8" ]; then
+         mvn -B -e -fae -Ptravis-ci clean verify jacoco:report coveralls:report;
+    fi
+  - if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$VERSION" == "3.3.9" ] &&
+       [ "$TRAVIS_JDK_VERSION" == "oraclejdk8" ] &&
+       [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
+         mvn deploy --settings .travis/settings.xml -DskipTests=true -B;
+    else
+        echo "Not deploying snapshot artifact";
     fi
 
 jdk:
@@ -63,7 +75,7 @@ matrix:
       sudo: required
       dist: trusty
       group: edge
-      env: 
+      env:
         - VERSION=3.3.9
         - JVM=latest
 

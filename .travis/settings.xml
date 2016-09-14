@@ -6,5 +6,9 @@
       <username>${env.CI_DEPLOY_USERNAME}</username>
       <password>${env.CI_DEPLOY_PASSWORD}</password>
     </server>
+    <server>
+      <id>github</id>
+      <password>${env.GH_OAUTH2TOKEN}</password>
+    </server>
   </servers>
 </settings>

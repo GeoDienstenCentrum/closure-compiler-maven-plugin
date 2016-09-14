@@ -569,9 +569,7 @@
 				<artifactId>site-maven-plugin</artifactId>
 				<configuration>
 					<message>Site update for version ${project.version} (rev. ${git.revision})</message>
-					<password>${github.password}</password>
-					<userName>${github.username}</userName>
-					<host>api.github.com</host>
+					<server>github</server>
 					<force>false</force>
 					<noJekyll>true</noJekyll>
 				</configuration>

@@ -81,7 +81,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<maven-libs.version>3.3.9</maven-libs.version>
-		<closure-compiler.version>v20160822</closure-compiler.version>
+		<closure-compiler.version>v20160911</closure-compiler.version>
 		<debug>true</debug>
 		<github.username />
 		<github.password />
@@ -216,7 +216,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-pmd-plugin</artifactId>
-					<version>3.6</version>
+					<version>3.7</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -271,7 +271,7 @@
 				<plugin>
 					<groupId>org.eluder.coveralls</groupId>
 					<artifactId>coveralls-maven-plugin</artifactId>
-					<version>4.2.0</version>
+					<version>4.3.0</version>
 				</plugin>
 				<plugin>
 					<groupId>org.jacoco</groupId>

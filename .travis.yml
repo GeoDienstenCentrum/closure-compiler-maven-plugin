@@ -15,18 +15,15 @@ env:
     - VERSION=3.3.9
     - VERSION=3.2.5
 
-
 before_install:
     - wget --no-check-certificate $(echo -n $BASEURL | sed -e 's#VERSION#'$VERSION'#g');
     - unzip -qq $(echo -n $FILE | sed -e 's#VERSION#'$VERSION'#');
     - export M2_HOME=$PWD/$(echo -n $DIR | sed -e 's#VERSION#'$VERSION'#');
     - export PATH=$M2_HOME/bin:$PATH;
-
     - if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$JVM" == "latest" ]; then
          sudo apt-get update -qq;
          sudo /bin/echo -e oracle-java9-installer shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections;
-         sudo apt-get install -y oracle-java9-installer;
-         sudo apt-get install -y oracle-java9-unlimited-jce-policy;
+         sudo apt-get install -y oracle-java9-installer oracle-java9-set-default oracle-java9-unlimited-jce-policy;
          sudo update-java-alternatives -s java-9-oracle;
          sudo rm /etc/mavenrc;
      fi

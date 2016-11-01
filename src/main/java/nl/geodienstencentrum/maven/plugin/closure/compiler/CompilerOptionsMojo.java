@@ -123,10 +123,6 @@ public class CompilerOptionsMojo {
         this.compilerOptions.setEnvironment(environment);
     }
 
-    public void setReportMissingOverride(CheckLevel level) {
-        compilerOptions.setReportMissingOverride(level);
-    }
-
     /**
      * @param level the checklevel
      * @deprecated use

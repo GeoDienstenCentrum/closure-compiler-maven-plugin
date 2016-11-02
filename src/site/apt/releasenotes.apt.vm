@@ -32,18 +32,30 @@ ${project.name} ${project.version} Release Notes
 
 ** Enhancements and Fixes
 
-  * Update Closure compiler to ${project.properties.get("closure-compiler.version")}, see:
-    {{{https://github.com/google/closure-compiler/wiki/Releases}Closure Compiler Releases}}
+~~  * Update Closure compiler to ${project.properties.get("closure-compiler.version")}, see:
+~~    {{{https://github.com/google/closure-compiler/wiki/Releases}Closure Compiler Releases}}
 
 ~~  * update Maven dependencies and requirements
 
   []
- 
+
+* 2.5 Release Notes
+
+  A complete list of issues can be seen in the tracker
+  {{{${project.issueManagement.url}?q=milestone%3A2.5+is%3Aclosed}milestone 2.5}}.
+
+** Enhancements and Fixes
+
+  * Update Closure compiler to v20161024, see:
+    {{{https://github.com/google/closure-compiler/wiki/Releases}Closure Compiler Releases}}
+
+  []
+
 * 2.4 Release Notes
 
   A complete list of issues can be seen in the tracker
   {{{${project.issueManagement.url}?q=milestone%3A2.4+is%3Aclosed}milestone 2.4}}.
-  
+
 ** Enhancements and Fixes
 
   * Update Closure compiler to v20160713, see:

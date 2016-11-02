@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pmd version="5.5.1" timestamp="2016-11-01T22:58:55.514">
+<pmd version="5.5.1" timestamp="2016-11-02T08:16:40.173">
 <file name="/home/travis/build/GeoDienstenCentrum/closure-compiler-maven-plugin/src/main/java/nl/geodienstencentrum/maven/plugin/closure/compiler/ClosureCompilerMojo.java">
 <violation beginline="59" endline="162" begincolumn="8" endcolumn="1" rule="CyclomaticComplexity" ruleset="Code Size" package="nl.geodienstencentrum.maven.plugin.closure.compiler" externalInfoUrl="https://pmd.github.io/pmd-5.5.1/pmd-java/rules/java/codesize.html#CyclomaticComplexity" priority="3">
 The class 'ClosureCompilerMojo' has a Cyclomatic Complexity of 6 (Highest = 11).

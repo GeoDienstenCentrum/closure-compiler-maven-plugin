@@ -64,16 +64,68 @@
                     xml += $("#modal-text").text().replace(/\n/g,'\n   ');
                     xml += '\n</suppressions>';
                     $('#modal-text').text(xml).focus().select();
+                    $('#modal-add-header').toggleClass('active');
                 });
             });
-            function copyText(name, sha1, type, val) {
+            function suppressSwitchTo(switchTo) {
+                $('#modal-suppress-change-to-sha1').toggleClass('active');
+                $('#modal-suppress-change-to-gav').toggleClass('active');
+                setCopyText($('#suppress-name').val(),
+                            switchTo,
+                            $('#suppress-'+switchTo).val(), 
+                            $('#suppress-type').val(), 
+                            $('#suppress-val').val());
+            }
+            function copyText(name, sha1, gav, type, val) {
+                $('#suppress-name').val(name);
+                $('#suppress-type').val(type);
+                $('#suppress-val').val(val);
+                $('#suppress-sha1').val(sha1);
+                $('#suppress-gav').val(gav);
+                if (gav=='') {
+                    if ($('#modal-suppress-change-to-gav').hasClass('active')) {
+                        $('#modal-suppress-change-to-gav').toggleClass('active');
+                    }
+                    if ($('#modal-suppress-change-to-sha1').hasClass('active')) {
+                        $('#modal-suppress-change-to-sha1').toggleClass('active');
+                    }
+                    setCopyText(name, 'sha1', sha1, type, val);
+                } else {
+                    if ($('#modal-suppress-change-to-gav').hasClass('active')) {
+                        $('#modal-suppress-change-to-gav').toggleClass('active');
+                    }
+                    if (!$('#modal-suppress-change-to-sha1').hasClass('active')) {
+                        $('#modal-suppress-change-to-sha1').toggleClass('active');
+                    }
+                    setCopyText(name, 'gav', gav, type, val);
+                }
+            }
+            function setCopyText(name, matchType, matchValue, suppressType, suppressVal) {
                 xml =  '<suppress>\n';
                 xml += '   <notes><!'+'[CDATA[\n   file name: ' + name + '\n   ]]'+'></notes>\n';
-                xml += '   <sha1>' + sha1 + '</sha1>\n';
-                xml += '   <'+type+'>' + val + '</'+type+'>\n';
+                if (matchType=='gav') {
+                    v = matchValue.match(/^[^:]+:[^:]+:/);
+                    if (v && v[0]) {
+                        xml += '   <'+matchType+' regex="true">^' + v[0].replace(/\./g,'\\.') + '.*$</'+matchType+'>\n';
+                    } else {
+                        xml += '   <'+matchType+'>' + matchValue + '</'+matchType+'>\n';
+                    }
+                } else {
+                    xml += '   <'+matchType+'>' + matchValue + '</'+matchType+'>\n';
+                }
+                if (suppressType=='cpe') {
+                    v = suppressVal.match(/^cpe:\/a:[^:]+:[^:]+/);
+                    if (v && v[0]) {
+                        xml += '   <'+suppressType+'>' + v[0] + '</'+suppressType+'>\n';
+                    } else {
+                        xml += '   <'+suppressType+'>' + suppressVal + '</'+suppressType+'>\n';
+                    }
+                } else {
+                    xml += '   <'+suppressType+'>' + suppressVal + '</'+suppressType+'>\n';
+                }
                 xml += '</suppress>';
                 $('#modal-text').text(xml);
-                $('#modal-content,#modal-background').toggleClass('active');
+                $('#modal-content,#modal-background').addClass('active');
                 $('#modal-text').focus();
                 $('#modal-text').select();
             }
@@ -131,6 +183,12 @@
             #modal-text:focus {
                 outline: none;
             }
+            .suppresstype {
+                display: none;
+            }
+            .suppresstype.active {
+                display: block;
+            }  
             .suppressedLabel {
                 cursor: default;
                 padding:1px;
@@ -485,6 +543,11 @@
         <div id="modal-background"></div>
         <div id="modal-content">
             <div>Press CTR-C to copy XML&nbsp;<a href="http://jeremylong.github.io/DependencyCheck/general/suppression.html" class="infolink" target="_blank" title="Help with suppressing false positives">[help]</a></div>
+                <button onclick="suppressSwitchTo('gav')" id="modal-suppress-change-to-gav" class="modal-button suppresstype" title="Supress by Maven Group Artifact Version">Suppress By GAV</button>
+                <button onclick="suppressSwitchTo('sha1')" id="modal-suppress-change-to-sha1" class="modal-button suppresstype" title="Supress by SHA1 hash">Suppress By SHA1</button><br/>
+                <input type="hidden" id="suppress-name"/>
+                <input type="hidden" id="suppress-type"/><input type="hidden" id="suppress-val"/>
+                <input type="hidden" id="suppress-sha1"/><input type="hidden" id="suppress-gav"/>
                 <textarea id="modal-text" cols="50" rows="10" readonly></textarea><br/>
                 <button id="modal-add-header" title="Add the parent XML nodes to create the complete XML file that can be used to suppress this finding" class="modal-button">Complete XML Doc</button><button id="modal-close" class="modal-button-right">Close</button>
         </div>
@@ -496,37 +559,41 @@ the reporting provided constitutes acceptance for use in an AS IS condition, and
 implied or otherwise, with regard to the analysis or its use. Any use of the tool and the reporting provided
 is at the user’s risk. In no event shall the copyright holder or OWASP be held liable for any damages whatsoever
 arising out of or in connection with the use of this tool, the analysis performed, or the resulting report.</p>
+<h3><a href="http://jeremylong.github.io/DependencyCheck/general/thereport.html" target="_bank">How&nbsp;to&nbsp;read&nbsp;the&nbsp;report</a> | 
+<a href="http://jeremylong.github.io/DependencyCheck/general/suppression.html" target="_bank">Suppressing false positives</a> |
+Getting Help: <a href="https://groups.google.com/forum/#!forum/dependency-check" target="_blank">google group</a> | 
+<a href="https://github.com/jeremylong/DependencyCheck/issues" target="_blank">github issues</a></h3>
 
             <h2 class="">Project:&nbsp;Closure Compiler Plugin</h2>
             <div class="">
                 
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             Scan Information (<a href="#" title="Click to toggle display" onclick="return toggleDisplay(this, '.scaninfo', 'show all', 'show less');  return false;">show all</a>):<br/>
                     <ul class="indent">
-                        <li><i>dependency-check version</i>: 1.4.3</li>
-                        <li><i>Report Generated On</i>: Nov 2, 2016 at 09:37:41 UTC</li>
+                        <li><i>dependency-check version</i>: 1.4.4</li>
+                        <li><i>Report Generated On</i>: Nov 10, 2016 at 12:47:38 UTC</li>
                         <li><i>Dependencies Scanned</i>:&nbsp;21 (21 unique)</li>
                         <li><i>Vulnerable Dependencies</i>:&nbsp;0</li>
                         <li><i>Vulnerabilities Found</i>:&nbsp;0</li>
                         <li><i>Vulnerabilities Suppressed</i>:&nbsp;0</li>
                         <li class="scaninfo">...</li>
-                                                <li class="scaninfo hidden"><i>NVD CVE 2002</i>: 25/10/2016 09:01:47</li>
+                                                <li class="scaninfo hidden"><i>NVD CVE 2002</i>: 08/11/2016 08:12:10</li>
                                                 <li class="scaninfo hidden"><i>NVD CVE 2003</i>: 18/10/2016 08:55:03</li>
-                                                <li class="scaninfo hidden"><i>NVD CVE 2004</i>: 26/10/2016 08:48:55</li>
-                                                <li class="scaninfo hidden"><i>NVD CVE 2005</i>: 25/10/2016 08:50:33</li>
+                                                <li class="scaninfo hidden"><i>NVD CVE 2004</i>: 08/11/2016 08:10:30</li>
+                                                <li class="scaninfo hidden"><i>NVD CVE 2005</i>: 09/11/2016 08:27:23</li>
                                                 <li class="scaninfo hidden"><i>NVD CVE 2006</i>: 18/10/2016 08:39:45</li>
-                                                <li class="scaninfo hidden"><i>NVD CVE 2007</i>: 25/10/2016 08:42:28</li>
-                                                <li class="scaninfo hidden"><i>NVD CVE 2008</i>: 15/10/2016 08:42:22</li>
-                                                <li class="scaninfo hidden"><i>NVD CVE 2009</i>: 28/10/2016 07:42:48</li>
-                                                <li class="scaninfo hidden"><i>NVD CVE 2010</i>: 26/10/2016 08:44:07</li>
-                                                <li class="scaninfo hidden"><i>NVD CVE 2011</i>: 26/10/2016 08:30:30</li>
-                                                <li class="scaninfo hidden"><i>NVD CVE 2012</i>: 01/11/2016 07:29:22</li>
-                                                <li class="scaninfo hidden"><i>NVD CVE 2013</i>: 02/11/2016 08:03:52</li>
-                                                <li class="scaninfo hidden"><i>NVD CVE 2014</i>: 02/11/2016 07:48:13</li>
-                                                <li class="scaninfo hidden"><i>NVD CVE 2015</i>: 02/11/2016 07:31:31</li>
-                                                <li class="scaninfo hidden"><i>NVD CVE 2016</i>: 02/11/2016 07:14:11</li>
-                                                <li class="scaninfo hidden"><i>NVD CVE Checked</i>: 02/11/2016 09:37:30</li>
-                                                <li class="scaninfo hidden"><i>NVD CVE Modified</i>: 02/11/2016 05:01:44</li>
-                                                <li class="scaninfo hidden"><i>VersionCheckOn</i>: 1478079450937</li>
+                                                <li class="scaninfo hidden"><i>NVD CVE 2007</i>: 09/11/2016 08:25:36</li>
+                                                <li class="scaninfo hidden"><i>NVD CVE 2008</i>: 09/11/2016 08:23:07</li>
+                                                <li class="scaninfo hidden"><i>NVD CVE 2009</i>: 09/11/2016 08:20:36</li>
+                                                <li class="scaninfo hidden"><i>NVD CVE 2010</i>: 09/11/2016 08:18:20</li>
+                                                <li class="scaninfo hidden"><i>NVD CVE 2011</i>: 09/11/2016 08:15:27</li>
+                                                <li class="scaninfo hidden"><i>NVD CVE 2012</i>: 10/11/2016 08:08:01</li>
+                                                <li class="scaninfo hidden"><i>NVD CVE 2013</i>: 10/11/2016 08:05:49</li>
+                                                <li class="scaninfo hidden"><i>NVD CVE 2014</i>: 09/11/2016 08:07:14</li>
+                                                <li class="scaninfo hidden"><i>NVD CVE 2015</i>: 10/11/2016 08:03:35</li>
+                                                <li class="scaninfo hidden"><i>NVD CVE 2016</i>: 10/11/2016 08:01:36</li>
+                                                <li class="scaninfo hidden"><i>NVD CVE Checked</i>: 10/11/2016 12:47:31</li>
+                                                <li class="scaninfo hidden"><i>NVD CVE Modified</i>: 10/11/2016 11:00:21</li>
+                                                <li class="scaninfo hidden"><i>VersionCheckOn</i>: 1478782052279</li>
                                             </ul><br/>
                 Display:&nbsp;<a href="#" title="Click to toggle display" onclick="return toggleDisplay(this, '.notvulnerable', 'Showing Vulnerable Dependencies (click to show all)', 'Showing All Dependencies (click to show less)'); return false;">Showing Vulnerable Dependencies (click to show all)</a><br/><br/>
                                 <table id="summaryTable" class="lined">
@@ -850,7 +917,7 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                                                                                             <h4 id="header2" class="subsectionheader white">Identifiers</h4>
                                                 <div id="content2" class="subsectioncontent standardsubsection">
                                                      <ul>
-                                                                                                                                    <li><b>maven:</b>&nbsp;<a href="http://search.maven.org/#search|ga|1|1%3A%22bd87a75374a6d6523de82fef51fc3cfe9baf9fc9%22" target="_blank">args4j:args4j:2.33</a>
+                                                                                                                                                                                                                                                                                        <li><b>maven:</b>&nbsp;<a href="http://search.maven.org/#search|ga|1|1%3A%22bd87a75374a6d6523de82fef51fc3cfe9baf9fc9%22" target="_blank">args4j:args4j:2.33</a>
                                                                                                     &nbsp;&nbsp;<i>Confidence</i>:HIGHEST
                                                                                                                                 </li>
                                                         </ul>
@@ -892,7 +959,7 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                                                                                             <h4 id="header4" class="subsectionheader white">Identifiers</h4>
                                                 <div id="content4" class="subsectioncontent standardsubsection">
                                                      <ul>
-                                                                                                                                    <li><b>maven:</b>&nbsp;<a href="http://search.maven.org/#search|ga|1|1%3A%22f7be08ec23c21485b9b5a1cf1654c2ec8c58168d%22" target="_blank">com.google.code.findbugs:jsr305:3.0.1</a>
+                                                                                                                                                                                                                                                                                        <li><b>maven:</b>&nbsp;<a href="http://search.maven.org/#search|ga|1|1%3A%22f7be08ec23c21485b9b5a1cf1654c2ec8c58168d%22" target="_blank">com.google.code.findbugs:jsr305:3.0.1</a>
                                                                                                     &nbsp;&nbsp;<i>Confidence</i>:HIGHEST
                                                                                                                                 </li>
                                                         </ul>
@@ -936,7 +1003,7 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                                                                                             <h4 id="header6" class="subsectionheader white">Identifiers</h4>
                                                 <div id="content6" class="subsectioncontent standardsubsection">
                                                      <ul>
-                                                                                                                                    <li><b>maven:</b>&nbsp;<a href="http://search.maven.org/#search|ga|1|1%3A%22751f548c85fa49f330cecbb1875893f971b33c4e%22" target="_blank">com.google.code.gson:gson:2.7</a>
+                                                                                                                                                                                                                                                                                        <li><b>maven:</b>&nbsp;<a href="http://search.maven.org/#search|ga|1|1%3A%22751f548c85fa49f330cecbb1875893f971b33c4e%22" target="_blank">com.google.code.gson:gson:2.7</a>
                                                                                                     &nbsp;&nbsp;<i>Confidence</i>:HIGHEST
                                                                                                                                 </li>
                                                         </ul>
@@ -987,7 +1054,7 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                                                                                             <h4 id="header8" class="subsectionheader white">Identifiers</h4>
                                                 <div id="content8" class="subsectioncontent standardsubsection">
                                                      <ul>
-                                                                                                                                    <li><b>maven:</b>&nbsp;<a href="http://search.maven.org/#search|ga|1|1%3A%226ce200f6b23222af3d8abb6b6459e6c44f4bb0e9%22" target="_blank">com.google.guava:guava:19.0</a>
+                                                                                                                                                                                                                                                                                        <li><b>maven:</b>&nbsp;<a href="http://search.maven.org/#search|ga|1|1%3A%226ce200f6b23222af3d8abb6b6459e6c44f4bb0e9%22" target="_blank">com.google.guava:guava:19.0</a>
                                                                                                     &nbsp;&nbsp;<i>Confidence</i>:HIGHEST
                                                                                                                                 </li>
                                                         </ul>
@@ -1023,7 +1090,7 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                                                                                             <h4 id="header10" class="subsectionheader white">Identifiers</h4>
                                                 <div id="content10" class="subsectioncontent standardsubsection">
                                                      <ul>
-                                                                                                                                    <li><b>maven:</b>&nbsp;<a href="http://search.maven.org/#search|ga|1|1%3A%22909a30e2217ba49c5d0897fb79a185430e80f4a5%22" target="_blank">com.google.javascript:closure-compiler-externs:v20161024</a>
+                                                                                                                                                                                                                                                                                        <li><b>maven:</b>&nbsp;<a href="http://search.maven.org/#search|ga|1|1%3A%22909a30e2217ba49c5d0897fb79a185430e80f4a5%22" target="_blank">com.google.javascript:closure-compiler-externs:v20161024</a>
                                                                                                     &nbsp;&nbsp;<i>Confidence</i>:HIGHEST
                                                                                                                                 </li>
                                                         </ul>
@@ -1057,7 +1124,7 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                                                                                             <h4 id="header12" class="subsectionheader white">Identifiers</h4>
                                                 <div id="content12" class="subsectioncontent standardsubsection">
                                                      <ul>
-                                                                                                                                    <li><b>maven:</b>&nbsp;<a href="http://search.maven.org/remotecontent?filepath=com/google/javascript/closure-compiler/v20161024/closure-compiler-v20161024.jar" target="_blank">com.google.javascript:closure-compiler:v20161024</a>
+                                                                                                                                                                                                                                                                                        <li><b>maven:</b>&nbsp;<a href="http://search.maven.org/remotecontent?filepath=com/google/javascript/closure-compiler/v20161024/closure-compiler-v20161024.jar" target="_blank">com.google.javascript:closure-compiler:v20161024</a>
                                                                                                     &nbsp;&nbsp;<i>Confidence</i>:HIGHEST
                                                                                                                                 </li>
                                                         </ul>
@@ -1094,7 +1161,7 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                                                                                             <h4 id="header14" class="subsectionheader white">Identifiers</h4>
                                                 <div id="content14" class="subsectioncontent standardsubsection">
                                                      <ul>
-                                                                                                                                    <li><b>maven:</b>&nbsp;<a href="http://search.maven.org/#search|ga|1|1%3A%2223c3a3c060ffe4817e67673cc8294e154b0a4a95%22" target="_blank">com.google.jsinterop:jsinterop-annotations:1.0.0</a>
+                                                                                                                                                                                                                                                                                        <li><b>maven:</b>&nbsp;<a href="http://search.maven.org/#search|ga|1|1%3A%2223c3a3c060ffe4817e67673cc8294e154b0a4a95%22" target="_blank">com.google.jsinterop:jsinterop-annotations:1.0.0</a>
                                                                                                     &nbsp;&nbsp;<i>Confidence</i>:HIGHEST
                                                                                                                                 </li>
                                                         </ul>
@@ -1142,7 +1209,7 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                                                                                             <h4 id="header16" class="subsectionheader white">Identifiers</h4>
                                                 <div id="content16" class="subsectioncontent standardsubsection">
                                                      <ul>
-                                                                                                                                    <li><b>maven:</b>&nbsp;<a href="http://search.maven.org/#search|ga|1|1%3A%22ee55e8e697d10b6643d77bb1f686bac3b9ba8579%22" target="_blank">com.google.protobuf:protobuf-java:3.0.2</a>
+                                                                                                                                                                                                                                                                                        <li><b>maven:</b>&nbsp;<a href="http://search.maven.org/#search|ga|1|1%3A%22ee55e8e697d10b6643d77bb1f686bac3b9ba8579%22" target="_blank">com.google.protobuf:protobuf-java:3.0.2</a>
                                                                                                     &nbsp;&nbsp;<i>Confidence</i>:HIGHEST
                                                                                                                                 </li>
                                                         </ul>
@@ -1181,7 +1248,7 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                                                                                             <h4 id="header18" class="subsectionheader white">Identifiers</h4>
                                                 <div id="content18" class="subsectioncontent standardsubsection">
                                                      <ul>
-                                                                                                                                    <li><b>maven:</b>&nbsp;<a href="http://search.maven.org/#search|ga|1|1%3A%225025422767732a1ab45d93abfea846513d742dcf%22" target="_blank">javax.annotation:jsr250-api:1.0</a>
+                                                                                                                                                                                                                                                                                        <li><b>maven:</b>&nbsp;<a href="http://search.maven.org/#search|ga|1|1%3A%225025422767732a1ab45d93abfea846513d742dcf%22" target="_blank">javax.annotation:jsr250-api:1.0</a>
                                                                                                     &nbsp;&nbsp;<i>Confidence</i>:HIGHEST
                                                                                                                                 </li>
                                                         </ul>
@@ -1224,7 +1291,7 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                                                                                             <h4 id="header20" class="subsectionheader white">Identifiers</h4>
                                                 <div id="content20" class="subsectioncontent standardsubsection">
                                                      <ul>
-                                                                                                                                    <li><b>maven:</b>&nbsp;<a href="http://search.maven.org/#search|ga|1|1%3A%2244c453f60909dfc223552ace63e05c694215156b%22" target="_blank">javax.enterprise:cdi-api:1.0</a>
+                                                                                                                                                                                                                                                                                        <li><b>maven:</b>&nbsp;<a href="http://search.maven.org/#search|ga|1|1%3A%2244c453f60909dfc223552ace63e05c694215156b%22" target="_blank">javax.enterprise:cdi-api:1.0</a>
                                                                                                     &nbsp;&nbsp;<i>Confidence</i>:HIGHEST
                                                                                                                                 </li>
                                                         </ul>
@@ -1263,7 +1330,7 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                                                                                             <h4 id="header22" class="subsectionheader white">Identifiers</h4>
                                                 <div id="content22" class="subsectioncontent standardsubsection">
                                                      <ul>
-                                                                                                                                    <li><b>maven:</b>&nbsp;<a href="http://search.maven.org/#search|ga|1|1%3A%226975da39a7040257bd51d21a231b76c915872d38%22" target="_blank">javax.inject:javax.inject:1</a>
+                                                                                                                                                                                                                                                                                        <li><b>maven:</b>&nbsp;<a href="http://search.maven.org/#search|ga|1|1%3A%226975da39a7040257bd51d21a231b76c915872d38%22" target="_blank">javax.inject:javax.inject:1</a>
                                                                                                     &nbsp;&nbsp;<i>Confidence</i>:HIGHEST
                                                                                                                                 </li>
                                                         </ul>
@@ -1321,7 +1388,7 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                                                                                             <h4 id="header24" class="subsectionheader white">Identifiers</h4>
                                                 <div id="content24" class="subsectioncontent standardsubsection">
                                                      <ul>
-                                                                                                                                    <li><b>maven:</b>&nbsp;<a href="http://search.maven.org/#search|ga|1|1%3A%225fe28b9518e58819180a43a850fbc0dd24b7c050%22" target="_blank">org.apache.commons:commons-lang3:3.4</a>
+                                                                                                                                                                                                                                                                                        <li><b>maven:</b>&nbsp;<a href="http://search.maven.org/#search|ga|1|1%3A%225fe28b9518e58819180a43a850fbc0dd24b7c050%22" target="_blank">org.apache.commons:commons-lang3:3.4</a>
                                                                                                     &nbsp;&nbsp;<i>Confidence</i>:HIGHEST
                                                                                                                                 </li>
                                                         </ul>
@@ -1363,7 +1430,7 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                                                                                             <h4 id="header26" class="subsectionheader white">Identifiers</h4>
                                                 <div id="content26" class="subsectioncontent standardsubsection">
                                                      <ul>
-                                                                                                                                    <li><b>maven:</b>&nbsp;<a href="http://search.maven.org/#search|ga|1|1%3A%220f43afa184555fbc6e36b3334b17246c39b30f6e%22" target="_blank">org.apache.maven:maven-artifact:3.3.9</a>
+                                                                                                                                                                                                                                                                                        <li><b>maven:</b>&nbsp;<a href="http://search.maven.org/#search|ga|1|1%3A%220f43afa184555fbc6e36b3334b17246c39b30f6e%22" target="_blank">org.apache.maven:maven-artifact:3.3.9</a>
                                                                                                     &nbsp;&nbsp;<i>Confidence</i>:HIGHEST
                                                                                                                                 </li>
                                                         </ul>
@@ -1407,7 +1474,7 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                                                                                             <h4 id="header28" class="subsectionheader white">Identifiers</h4>
                                                 <div id="content28" class="subsectioncontent standardsubsection">
                                                      <ul>
-                                                                                                                                    <li><b>maven:</b>&nbsp;<a href="http://search.maven.org/#search|ga|1|1%3A%226efde8cbcb4de4c47f7e9c2a3ab2806022b5c70f%22" target="_blank">org.apache.maven:maven-model:3.3.9</a>
+                                                                                                                                                                                                                                                                                        <li><b>maven:</b>&nbsp;<a href="http://search.maven.org/#search|ga|1|1%3A%226efde8cbcb4de4c47f7e9c2a3ab2806022b5c70f%22" target="_blank">org.apache.maven:maven-model:3.3.9</a>
                                                                                                     &nbsp;&nbsp;<i>Confidence</i>:HIGHEST
                                                                                                                                 </li>
                                                         </ul>
@@ -1451,7 +1518,7 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                                                                                             <h4 id="header30" class="subsectionheader white">Identifiers</h4>
                                                 <div id="content30" class="subsectioncontent standardsubsection">
                                                      <ul>
-                                                                                                                                    <li><b>maven:</b>&nbsp;<a href="http://search.maven.org/#search|ga|1|1%3A%22aa706ea7ca23776861b4eb2cea97cf345e791496%22" target="_blank">org.apache.maven:maven-plugin-api:3.3.9</a>
+                                                                                                                                                                                                                                                                                        <li><b>maven:</b>&nbsp;<a href="http://search.maven.org/#search|ga|1|1%3A%22aa706ea7ca23776861b4eb2cea97cf345e791496%22" target="_blank">org.apache.maven:maven-plugin-api:3.3.9</a>
                                                                                                     &nbsp;&nbsp;<i>Confidence</i>:HIGHEST
                                                                                                                                 </li>
                                                         </ul>
@@ -1496,7 +1563,7 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                                                                                             <h4 id="header32" class="subsectionheader white">Identifiers</h4>
                                                 <div id="content32" class="subsectioncontent standardsubsection">
                                                      <ul>
-                                                                                                                                    <li><b>maven:</b>&nbsp;<a href="http://search.maven.org/#search|ga|1|1%3A%22403ab542cc88975c9fb41c0fba893d5b0d028c97%22" target="_blank">org.apache.maven.plugin-tools:maven-plugin-annotations:3.5</a>
+                                                                                                                                                                                                                                                                                        <li><b>maven:</b>&nbsp;<a href="http://search.maven.org/#search|ga|1|1%3A%22403ab542cc88975c9fb41c0fba893d5b0d028c97%22" target="_blank">org.apache.maven.plugin-tools:maven-plugin-annotations:3.5</a>
                                                                                                     &nbsp;&nbsp;<i>Confidence</i>:HIGHEST
                                                                                                                                 </li>
                                                         </ul>
@@ -1541,7 +1608,7 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                                                                                             <h4 id="header34" class="subsectionheader white">Identifiers</h4>
                                                 <div id="content34" class="subsectioncontent standardsubsection">
                                                      <ul>
-                                                                                                                                    <li><b>maven:</b>&nbsp;<a href="http://search.maven.org/#search|ga|1|1%3A%224abb111bfdace5b8167db4c0ef74644f3f88f142%22" target="_blank">org.codehaus.plexus:plexus-classworlds:2.5.2</a>
+                                                                                                                                                                                                                                                                                        <li><b>maven:</b>&nbsp;<a href="http://search.maven.org/#search|ga|1|1%3A%224abb111bfdace5b8167db4c0ef74644f3f88f142%22" target="_blank">org.codehaus.plexus:plexus-classworlds:2.5.2</a>
                                                                                                     &nbsp;&nbsp;<i>Confidence</i>:HIGHEST
                                                                                                                                 </li>
                                                         </ul>
@@ -1586,7 +1653,7 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                                                                                             <h4 id="header36" class="subsectionheader white">Identifiers</h4>
                                                 <div id="content36" class="subsectioncontent standardsubsection">
                                                      <ul>
-                                                                                                                                    <li><b>maven:</b>&nbsp;<a href="http://search.maven.org/#search|ga|1|1%3A%221a34a4e12b5fded8c548a568f463dfee21500927%22" target="_blank">org.codehaus.plexus:plexus-component-annotations:1.6</a>
+                                                                                                                                                                                                                                                                                        <li><b>maven:</b>&nbsp;<a href="http://search.maven.org/#search|ga|1|1%3A%221a34a4e12b5fded8c548a568f463dfee21500927%22" target="_blank">org.codehaus.plexus:plexus-component-annotations:1.6</a>
                                                                                                     &nbsp;&nbsp;<i>Confidence</i>:HIGHEST
                                                                                                                                 </li>
                                                         </ul>
@@ -1631,7 +1698,7 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                                                                                             <h4 id="header38" class="subsectionheader white">Identifiers</h4>
                                                 <div id="content38" class="subsectioncontent standardsubsection">
                                                      <ul>
-                                                                                                                                    <li><b>maven:</b>&nbsp;<a href="http://search.maven.org/#search|ga|1|1%3A%22764f26e0ab13a87c48fe55f525dfb6a133b7a92f%22" target="_blank">org.codehaus.plexus:plexus-utils:3.0.22</a>
+                                                                                                                                                                                                                                                                                        <li><b>maven:</b>&nbsp;<a href="http://search.maven.org/#search|ga|1|1%3A%22764f26e0ab13a87c48fe55f525dfb6a133b7a92f%22" target="_blank">org.codehaus.plexus:plexus-utils:3.0.22</a>
                                                                                                     &nbsp;&nbsp;<i>Confidence</i>:HIGHEST
                                                                                                                                 </li>
                                                         </ul>
@@ -1675,7 +1742,7 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                                                                                             <h4 id="header40" class="subsectionheader white">Identifiers</h4>
                                                 <div id="content40" class="subsectioncontent standardsubsection">
                                                      <ul>
-                                                                                                                                    <li><b>maven:</b>&nbsp;<a href="http://search.maven.org/#search|ga|1|1%3A%2259044b92ec27cc6fda7a2d24b2cd6cec23f31d5b%22" target="_blank">org.eclipse.sisu:org.eclipse.sisu.inject:0.3.2</a>
+                                                                                                                                                                                                                                                                                        <li><b>maven:</b>&nbsp;<a href="http://search.maven.org/#search|ga|1|1%3A%2259044b92ec27cc6fda7a2d24b2cd6cec23f31d5b%22" target="_blank">org.eclipse.sisu:org.eclipse.sisu.inject:0.3.2</a>
                                                                                                     &nbsp;&nbsp;<i>Confidence</i>:HIGHEST
                                                                                                                                 </li>
                                                         </ul>
@@ -1719,7 +1786,7 @@ arising out of or in connection with the use of this tool, the analysis performe
                                                                                                                             <h4 id="header42" class="subsectionheader white">Identifiers</h4>
                                                 <div id="content42" class="subsectioncontent standardsubsection">
                                                      <ul>
-                                                                                                                                    <li><b>maven:</b>&nbsp;<a href="http://search.maven.org/#search|ga|1|1%3A%22cd84cb43788de23847eec2999070f64381bdb495%22" target="_blank">org.eclipse.sisu:org.eclipse.sisu.plexus:0.3.2</a>
+                                                                                                                                                                                                                                                                                        <li><b>maven:</b>&nbsp;<a href="http://search.maven.org/#search|ga|1|1%3A%22cd84cb43788de23847eec2999070f64381bdb495%22" target="_blank">org.eclipse.sisu:org.eclipse.sisu.plexus:0.3.2</a>
                                                                                                     &nbsp;&nbsp;<i>Confidence</i>:HIGHEST
                                                                                                                                 </li>
                                                         </ul>

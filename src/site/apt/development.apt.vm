@@ -47,7 +47,7 @@ mvn -U org.codehaus.mojo:versions-maven-plugin:2.3:display-dependency-updates
   to check for plugin updates and run:
 
 +----+
-mvn -U org.codehaus.mojo:versions-maven-plugin:2.3:display-plugin-updates -Prelease,travis-ci
+mvn -U org.codehaus.mojo:versions-maven-plugin:2.3:display-plugin-updates
 +----+
 
   to check for plugin updates.
@@ -64,7 +64,7 @@ mvn -Prelease release:perform
 
   Note that the nexus-staging-maven-plugin will throw an exception
   <<<Unhandled: Missing staging repository: nlgeodienstencentrum-...>>>
-  because we're deploying straight away.
+  because we're deploying straight away during release.
 
   Then (optionally) deploy the site to github:
 

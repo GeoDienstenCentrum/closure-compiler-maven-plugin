@@ -1,21 +1,21 @@
 -classpath
-'/home/travis/.m2/repository/org/apache/maven/maven-model/3.3.9/maven-model-3.3.9.jar:/home/travis/.m2/repository/org/apache/maven/plugin-tools/maven-plugin-annotations/3.5/maven-plugin-annotations-3.5.jar:/home/travis/.m2/repository/org/eclipse/sisu/org.eclipse.sisu.inject/0.3.2/org.eclipse.sisu.inject-0.3.2.jar:/home/travis/.m2/repository/args4j/args4j/2.33/args4j-2.33.jar:/home/travis/.m2/repository/org/codehaus/plexus/plexus-component-annotations/1.6/plexus-component-annotations-1.6.jar:/home/travis/.m2/repository/com/google/javascript/closure-compiler/v20170124/closure-compiler-v20170124.jar:/home/travis/.m2/repository/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar:/home/travis/.m2/repository/javax/inject/javax.inject/1/javax.inject-1.jar:/home/travis/.m2/repository/org/codehaus/plexus/plexus-classworlds/2.5.2/plexus-classworlds-2.5.2.jar:/home/travis/.m2/repository/com/google/code/gson/gson/2.7/gson-2.7.jar:/home/travis/.m2/repository/com/google/javascript/closure-compiler-externs/v20170124/closure-compiler-externs-v20170124.jar:/home/travis/.m2/repository/com/google/protobuf/protobuf-java/3.0.2/protobuf-java-3.0.2.jar:/home/travis/.m2/repository/org/codehaus/plexus/plexus-utils/3.0.22/plexus-utils-3.0.22.jar:/home/travis/.m2/repository/org/apache/maven/maven-plugin-api/3.3.9/maven-plugin-api-3.3.9.jar:/home/travis/.m2/repository/javax/enterprise/cdi-api/1.0/cdi-api-1.0.jar:/home/travis/.m2/repository/javax/annotation/jsr250-api/1.0/jsr250-api-1.0.jar:/home/travis/.m2/repository/org/apache/maven/maven-artifact/3.3.9/maven-artifact-3.3.9.jar:/home/travis/.m2/repository/org/eclipse/sisu/org.eclipse.sisu.plexus/0.3.2/org.eclipse.sisu.plexus-0.3.2.jar:/home/travis/.m2/repository/com/google/code/findbugs/jsr305/3.0.1/jsr305-3.0.1.jar:/home/travis/.m2/repository/com/google/jsinterop/jsinterop-annotations/1.0.0/jsinterop-annotations-1.0.0.jar:/home/travis/.m2/repository/com/google/guava/guava/20.0/guava-20.0.jar'
+'/var/tmp/maven-repo/org/apache/maven/maven-model/3.3.9/maven-model-3.3.9.jar:/var/tmp/maven-repo/org/apache/maven/plugin-tools/maven-plugin-annotations/3.5/maven-plugin-annotations-3.5.jar:/var/tmp/maven-repo/org/eclipse/sisu/org.eclipse.sisu.inject/0.3.2/org.eclipse.sisu.inject-0.3.2.jar:/var/tmp/maven-repo/args4j/args4j/2.33/args4j-2.33.jar:/var/tmp/maven-repo/org/codehaus/plexus/plexus-component-annotations/1.6/plexus-component-annotations-1.6.jar:/var/tmp/maven-repo/com/google/javascript/closure-compiler/v20170124/closure-compiler-v20170124.jar:/var/tmp/maven-repo/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar:/var/tmp/maven-repo/javax/inject/javax.inject/1/javax.inject-1.jar:/var/tmp/maven-repo/org/codehaus/plexus/plexus-classworlds/2.5.2/plexus-classworlds-2.5.2.jar:/var/tmp/maven-repo/com/google/code/gson/gson/2.7/gson-2.7.jar:/var/tmp/maven-repo/com/google/javascript/closure-compiler-externs/v20170124/closure-compiler-externs-v20170124.jar:/var/tmp/maven-repo/com/google/protobuf/protobuf-java/3.0.2/protobuf-java-3.0.2.jar:/var/tmp/maven-repo/org/codehaus/plexus/plexus-utils/3.0.22/plexus-utils-3.0.22.jar:/var/tmp/maven-repo/org/apache/maven/maven-plugin-api/3.3.9/maven-plugin-api-3.3.9.jar:/var/tmp/maven-repo/javax/enterprise/cdi-api/1.0/cdi-api-1.0.jar:/var/tmp/maven-repo/javax/annotation/jsr250-api/1.0/jsr250-api-1.0.jar:/var/tmp/maven-repo/org/apache/maven/maven-artifact/3.3.9/maven-artifact-3.3.9.jar:/var/tmp/maven-repo/org/eclipse/sisu/org.eclipse.sisu.plexus/0.3.2/org.eclipse.sisu.plexus-0.3.2.jar:/var/tmp/maven-repo/com/google/code/findbugs/jsr305/3.0.1/jsr305-3.0.1.jar:/var/tmp/maven-repo/com/google/jsinterop/jsinterop-annotations/1.0.0/jsinterop-annotations-1.0.0.jar:/var/tmp/maven-repo/com/google/guava/guava/20.0/guava-20.0.jar'
 -encoding
 'UTF-8'
 -protected
 -sourcepath
-'/home/travis/build/GeoDienstenCentrum/closure-compiler-maven-plugin/src/main/java:/home/travis/build/GeoDienstenCentrum/closure-compiler-maven-plugin/target/generated-sources/plugin'
+'/home/mprins/workspace/closure-compiler-maven-plugin/target/checkout/src/main/java:/home/mprins/workspace/closure-compiler-maven-plugin/target/checkout/target/generated-sources/plugin'
 -author
 -bottom
 'Copyright &#169; 2012&#x2013;2017 <a href="https://github.com/GeoDienstenCentrum">GeoDienstenCentrum</a>. All rights reserved.'
 -charset
 'UTF-8'
 -d
-'/home/travis/build/GeoDienstenCentrum/closure-compiler-maven-plugin/target/site/apidocs'
+'/home/mprins/workspace/closure-compiler-maven-plugin/target/checkout/target/site/apidocs'
 -docencoding
 'UTF-8'
 -doctitle
-'Closure Compiler Plugin 2.7-SNAPSHOT API'
+'Closure Compiler Plugin 2.6 API'
 -link
 'http://maven.apache.org/ref/3.3.9/maven-plugin-api/apidocs'
 -link
@@ -27,7 +27,7 @@
 -link
 'http://maven.apache.org/plugin-tools/maven-plugin-annotations/apidocs'
 -linkoffline
-'http://docs.oracle.com/javase/7/docs/api' '/home/travis/build/GeoDienstenCentrum/closure-compiler-maven-plugin/target/javadoc-bundle-options'
+'http://docs.oracle.com/javase/7/docs/api' '/home/mprins/workspace/closure-compiler-maven-plugin/target/checkout/target/javadoc-bundle-options'
 -packagesheader
 'closure-compiler-maven-plugin'
 -tag
@@ -35,4 +35,4 @@
 -use
 -version
 -windowtitle
-'Closure Compiler Plugin 2.7-SNAPSHOT API'
+'Closure Compiler Plugin 2.6 API'

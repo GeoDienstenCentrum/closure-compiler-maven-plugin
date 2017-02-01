@@ -32,10 +32,10 @@ ${project.name} ${project.version} Release Notes
 
 ** Enhancements and Fixes
 
-~~  * Update Closure compiler to ${project.properties.get("closure-compiler.version")}, see:
-~~    {{{https://github.com/google/closure-compiler/wiki/Releases}Closure Compiler Releases}}
+  * Update Closure compiler to ${project.properties.get("closure-compiler.version")}, see:
+    {{{https://github.com/google/closure-compiler/wiki/Releases}Closure Compiler Releases}}
 
-~~  * update Maven dependencies and requirements
+  * update Maven dependencies and requirements
 
   []
 

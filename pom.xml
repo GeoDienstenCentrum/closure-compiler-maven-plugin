@@ -81,7 +81,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<maven-libs.version>3.3.9</maven-libs.version>
-		<closure-compiler.version>v20161201</closure-compiler.version>
+		<closure-compiler.version>v20170124</closure-compiler.version>
 		<debug>true</debug>
 		<github.username />
 		<github.password />

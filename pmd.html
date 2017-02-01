@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="Date-Revision-yyyymmdd" content="20170201" />
     <meta http-equiv="Content-Language" content="en" />
-    <title>Closure Compiler Plugin 2.6 &#x2013; PMD Results</title>
+    <title>Closure Compiler Plugin 2.7-SNAPSHOT &#x2013; PMD Results</title>
     <link rel="stylesheet" href="./css/apache-maven-fluido-1.6.min.css" />
     <link rel="stylesheet" href="./css/site.css" />
     <link rel="stylesheet" href="./css/print.css" media="print" />
@@ -32,7 +32,7 @@
         <ul class="breadcrumb">
         <li id="publishDate">Last Published: 01-February-2017<span class="divider">|</span>
 </li>
-          <li id="projectVersion">Version: 2.6</li>
+          <li id="projectVersion">Version: 2.7-SNAPSHOT</li>
       <li class="pull-right"><a href="https://github.com/GeoDienstenCentrum/closure-compiler-maven-plugin/issues/" class="externalLink" title="Issues dashboard">Issues dashboard</a></li>
         </ul>
       </div>
@@ -111,16 +111,16 @@
 <td>Found 'UR'-anomaly for variable 'sourceFile' (lines '68'-'77').</td>
 <td>68&#x2013;77</td></tr>
 <tr class="b">
+<td>The method 'execute' has a Standard Cyclomatic Complexity of 11.</td>
+<td>68&#x2013;122</td></tr>
+<tr class="a">
 <td>Found 'UR'-anomaly for variable 'compilation' (lines '68'-'73').</td>
 <td>68&#x2013;73</td></tr>
-<tr class="a">
-<td>The method 'execute' has a Modified Cyclomatic Complexity of 11.</td>
-<td>68&#x2013;122</td></tr>
 <tr class="b">
 <td>The method 'execute' has a Cyclomatic Complexity of 11.</td>
 <td>68&#x2013;122</td></tr>
 <tr class="a">
-<td>The method 'execute' has a Standard Cyclomatic Complexity of 11.</td>
+<td>The method 'execute' has a Modified Cyclomatic Complexity of 11.</td>
 <td>68&#x2013;122</td></tr>
 <tr class="b">
 <td>Local variable 'log' could be declared final</td>
@@ -135,37 +135,37 @@
 <td>Local variable 'externs' could be declared final</td>
 <td>73</td></tr>
 <tr class="b">
-<td>Avoid declaring a variable if it is unreferenced before a possible exit point.</td>
-<td>73</td></tr>
-<tr class="a">
 <td>Found 'DU'-anomaly for variable 'externs' (lines '73'-'122').</td>
 <td>73&#x2013;122</td></tr>
-<tr class="b">
-<td>Avoid declaring a variable if it is unreferenced before a possible exit point.</td>
-<td>74</td></tr>
 <tr class="a">
+<td>Avoid declaring a variable if it is unreferenced before a possible exit point.</td>
+<td>73</td></tr>
+<tr class="b">
 <td>Found 'DU'-anomaly for variable 'source' (lines '74'-'122').</td>
 <td>74&#x2013;122</td></tr>
-<tr class="b">
+<tr class="a">
 <td>Local variable 'source' could be declared final</td>
+<td>74</td></tr>
+<tr class="b">
+<td>Avoid declaring a variable if it is unreferenced before a possible exit point.</td>
 <td>74</td></tr>
 <tr class="a">
 <td>Local variable 'sourceFile' could be declared final</td>
 <td>76</td></tr>
 <tr class="b">
-<td>debug logging that involves string concatenation should be guarded with isDebugEnabled() checks</td>
+<td>There is log block not surrounded by if</td>
 <td>77</td></tr>
 <tr class="a">
-<td>There is log block not surrounded by if</td>
+<td>debug logging that involves string concatenation should be guarded with isDebugEnabled() checks</td>
 <td>77</td></tr>
 <tr class="b">
 <td>Local variable 'sourceFile' could be declared final</td>
 <td>79</td></tr>
 <tr class="a">
-<td>debug logging that involves string concatenation should be guarded with isDebugEnabled() checks</td>
+<td>There is log block not surrounded by if</td>
 <td>80</td></tr>
 <tr class="b">
-<td>There is log block not surrounded by if</td>
+<td>debug logging that involves string concatenation should be guarded with isDebugEnabled() checks</td>
 <td>80</td></tr>
 <tr class="a">
 <td>There is log block not surrounded by if</td>
@@ -189,10 +189,10 @@
 <td>debug logging that involves string concatenation should be guarded with isDebugEnabled() checks</td>
 <td>97</td></tr>
 <tr class="b">
-<td>Avoid instantiating new objects inside loops</td>
+<td>Local variable 'compiler' could be declared final</td>
 <td>100</td></tr>
 <tr class="a">
-<td>Local variable 'compiler' could be declared final</td>
+<td>Avoid instantiating new objects inside loops</td>
 <td>100</td></tr>
 <tr class="b">
 <td>Local variable 'result' could be declared final</td>
@@ -216,10 +216,10 @@
 <td>Local variable 'filepath' could be declared final</td>
 <td>135</td></tr>
 <tr class="a">
-<td>Avoid instantiating new objects inside loops</td>
+<td>Local variable 'file' could be declared final</td>
 <td>136</td></tr>
 <tr class="b">
-<td>Local variable 'file' could be declared final</td>
+<td>Avoid instantiating new objects inside loops</td>
 <td>136</td></tr>
 <tr class="a">
 <td>Found 'UR'-anomaly for variable 'child' (lines '149'-'155').</td>
@@ -354,10 +354,10 @@
 <td>Parameter 'defineName' is not assigned and could be declared final</td>
 <td>212</td></tr>
 <tr class="a">
-<td>Parameter 'defineName' is not assigned and could be declared final</td>
+<td>Parameter 'value' is not assigned and could be declared final</td>
 <td>216</td></tr>
 <tr class="b">
-<td>Parameter 'value' is not assigned and could be declared final</td>
+<td>Parameter 'defineName' is not assigned and could be declared final</td>
 <td>216</td></tr>
 <tr class="a">
 <td>Parameter 'value' is not assigned and could be declared final</td>
@@ -372,10 +372,10 @@
 <td>Parameter 'value' is not assigned and could be declared final</td>
 <td>224</td></tr>
 <tr class="a">
-<td>Parameter 'tweakId' is not assigned and could be declared final</td>
+<td>Parameter 'value' is not assigned and could be declared final</td>
 <td>228</td></tr>
 <tr class="b">
-<td>Parameter 'value' is not assigned and could be declared final</td>
+<td>Parameter 'tweakId' is not assigned and could be declared final</td>
 <td>228</td></tr>
 <tr class="a">
 <td>Parameter 'tweakId' is not assigned and could be declared final</td>
@@ -441,10 +441,10 @@
 <td>Parameter 'reach' is not assigned and could be declared final</td>
 <td>292</td></tr>
 <tr class="b">
-<td>Parameter 'placeholderToken' is not assigned and could be declared final</td>
+<td>Parameter 'functionDescriptors' is not assigned and could be declared final</td>
 <td>296</td></tr>
 <tr class="a">
-<td>Parameter 'functionDescriptors' is not assigned and could be declared final</td>
+<td>Parameter 'placeholderToken' is not assigned and could be declared final</td>
 <td>296</td></tr>
 <tr class="b">
 <td>Parameter 'remove' is not assigned and could be declared final</td>
@@ -738,10 +738,10 @@
 <td>Parameter 'stripTypePrefixes' is not assigned and could be declared final</td>
 <td>702</td></tr>
 <tr class="a">
-<td>Parameter 'customPass' is not assigned and could be declared final</td>
+<td>Parameter 'time' is not assigned and could be declared final</td>
 <td>706</td></tr>
 <tr class="b">
-<td>Parameter 'time' is not assigned and could be declared final</td>
+<td>Parameter 'customPass' is not assigned and could be declared final</td>
 <td>706</td></tr>
 <tr class="a">
 <td>Parameter 'markNoSideEffectCalls' is not assigned and could be declared final</td>

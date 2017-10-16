@@ -41,13 +41,13 @@ mvn -e verify -B
   run:
 
 +----+
-mvn -U org.codehaus.mojo:versions-maven-plugin:2.3:display-dependency-updates
+mvn -U org.codehaus.mojo:versions-maven-plugin:2.5:display-dependency-updates
 +----+
 
   to check for plugin updates and run:
 
 +----+
-mvn -U org.codehaus.mojo:versions-maven-plugin:2.3:display-plugin-updates
+mvn -U org.codehaus.mojo:versions-maven-plugin:2.5:display-plugin-updates
 +----+
 
   to check for plugin updates.

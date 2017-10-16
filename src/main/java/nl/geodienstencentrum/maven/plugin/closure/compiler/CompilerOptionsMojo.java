@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2016 Mark Prins, GeoDienstenCentrum.
+ * Copyright 2015-2017 Mark Prins, GeoDienstenCentrum.
  * Copyright 2012-2014 Mason Bryant
  *
  * All rights reserved.
@@ -31,14 +31,13 @@
  */
 package nl.geodienstencentrum.maven.plugin.closure.compiler;
 
-import com.google.common.collect.Multimap;
 import com.google.javascript.jscomp.AnonymousFunctionNamingPolicy;
-import com.google.javascript.jscomp.CheckEventfulObjectDisposal;
 import com.google.javascript.jscomp.CheckLevel;
 import com.google.javascript.jscomp.CodingConvention;
 import com.google.javascript.jscomp.CompilerOptions;
 import com.google.javascript.jscomp.CompilerOptions.AliasTransformationHandler;
 import com.google.javascript.jscomp.CompilerOptions.Environment;
+import com.google.javascript.jscomp.CompilerOptions.J2clPassMode;
 import com.google.javascript.jscomp.CompilerOptions.LanguageMode;
 import com.google.javascript.jscomp.CompilerOptions.Reach;
 import com.google.javascript.jscomp.CompilerOptions.TracerMode;
@@ -91,8 +90,8 @@ public class CompilerOptionsMojo {
         compilerOptions.setRemoveUnusedConstructorProperties(removeUnusedConstructorProperties);
     }
 
-    public void setPolymerPass(boolean polymerPass) {
-        this.compilerOptions.setPolymerPass(polymerPass);
+    public void setPolymerVersion(Integer polymerVersion) {
+        this.compilerOptions.setPolymerVersion(polymerVersion); 
     }
 
     public void setDartPass(boolean dartPass) {
@@ -100,7 +99,7 @@ public class CompilerOptionsMojo {
     }
 
     public void setJ2clPass(boolean j2clPass) {
-        this.compilerOptions.setJ2clPass(j2clPass);
+        this.compilerOptions.setJ2clPass(J2clPassMode.ON);
     }
 
     public void setChecksOnly(boolean checksOnly) {
@@ -192,15 +191,7 @@ public class CompilerOptionsMojo {
     public void setTracerMode(TracerMode mode) {
         compilerOptions.setTracerMode(mode);
     }
-/*
-    public void setNameReferenceReportPath(String filePath) {
-        compilerOptions.setNameReferenceReportPath(filePath);
-    }
 
-    public void setNameReferenceGraphPath(String filePath) {
-        compilerOptions.setNameReferenceGraphPath(filePath);
-    }
-*/
     public void setProtectHiddenSideEffects(boolean enable) {
         compilerOptions.setProtectHiddenSideEffects(enable);
     }
@@ -415,6 +406,24 @@ public class CompilerOptionsMojo {
         compilerOptions.setLanguageOut(languageOut);
     }
 
+    /**
+     * Configures the compiler for use as an IDE backend.  In this mode:
+     * <ul>
+     *  <li>No optimization passes will run.</li>
+     *  <li>The last time custom passes are invoked is
+     *      {@link CustomPassExecutionTime#BEFORE_OPTIMIZATIONS}</li>
+     *  <li>The compiler will always try to process all inputs fully, even
+     *      if it encounters errors.</li>
+     *  <li>The compiler may record more information than is strictly
+     *      needed for codegen.</li>
+     * </ul>
+     *
+     * @deprecated Some "IDE" clients will need some of these options but not
+     * others. Consider calling setChecksOnly, setAllowRecompilation, etc,
+     * explicitly, instead of calling this method which does a variety of
+     * different things.
+     */
+    @Deprecated
     public void setIdeMode(boolean ideMode) {
         compilerOptions.setIdeMode(ideMode);
     }
@@ -514,15 +523,7 @@ public class CompilerOptionsMojo {
     public void setRemoveUnusedPrototypePropertiesInExterns(boolean enabled) {
         compilerOptions.setRemoveUnusedPrototypePropertiesInExterns(enabled);
     }
-/*
-    public void setRemoveUnusedVars(boolean removeUnusedVars) {
-        compilerOptions.setRemoveUnusedVars(removeUnusedVars);
-    }
 
-    public void setRemoveUnusedLocalVars(boolean removeUnusedLocalVars) {
-        compilerOptions.setRemoveUnusedLocalVars(removeUnusedLocalVars);
-    }
-*/
     public void setCollapseVariableDeclarations(boolean enabled) {
         compilerOptions.setCollapseVariableDeclarations(enabled);
     }
@@ -678,11 +679,7 @@ public class CompilerOptionsMojo {
     public void setClosurePass(boolean closurePass) {
         compilerOptions.setClosurePass(closurePass);
     }
-/*
-    public void setPreserveGoogRequires(boolean preserveGoogRequires) {
-        compilerOptions.setPreserveGoogRequires(preserveGoogRequires);
-    }
-*/
+
     public void setGatherCssNames(boolean gatherCssNames) {
         compilerOptions.setGatherCssNames(gatherCssNames);
     }
@@ -821,10 +818,6 @@ public class CompilerOptionsMojo {
 
     public void setInstrumentForCoverage(boolean instrumentForCoverage) {
         compilerOptions.setInstrumentForCoverage(instrumentForCoverage);
-    }
-
-    public void setJqueryPass(boolean jqueryPass) {
-        this.compilerOptions.jqueryPass = jqueryPass;
     }
 
     /**

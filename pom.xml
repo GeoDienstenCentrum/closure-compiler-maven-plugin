@@ -80,8 +80,8 @@
 		<project.build.targetVersion>1.7</project.build.targetVersion>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<maven-libs.version>3.3.9</maven-libs.version>
-		<closure-compiler.version>v20170124</closure-compiler.version>
+		<maven-libs.version>3.5.0</maven-libs.version>
+		<closure-compiler.version>v20170910</closure-compiler.version>
 		<debug>true</debug>
 		<github.username />
 		<github.password />

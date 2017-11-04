@@ -30,6 +30,17 @@ ${project.name} ${project.version} Release Notes
 
 ~~  []
 
+** Enhancements and Fixes
+
+  *
+
+  []
+
+
+* 2.7 Release Notes
+
+  A complete list of issues can be seen in the tracker
+  {{{${project.issueManagement.url}?q=milestone%3A2.7+is%3Aclosed}milestone 2.8}}.
 
 ** Enhancements and Fixes
 
@@ -38,7 +49,7 @@ ${project.name} ${project.version} Release Notes
 
   * update Maven dependencies and requirements
 
-  * switch over to java 8
+  * switch over to Java 8
 
   []
 

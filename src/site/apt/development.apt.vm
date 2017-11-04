@@ -79,3 +79,5 @@ mvn site-deploy
 cd ../..
 mvn release:clean clean
 +----+
+
+  And then update the release notes for the next release.

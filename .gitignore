@@ -1,2 +1,4 @@
 /target
 /_notes
+.idea/
+closure-compiler-maven-plugin.iml

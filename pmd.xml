@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pmd version="5.6.1" timestamp="2017-11-04T11:14:36.485">
-<file name="/home/travis/build/GeoDienstenCentrum/closure-compiler-maven-plugin/src/main/java/nl/geodienstencentrum/maven/plugin/closure/compiler/ClosureCompilerMojo.java">
+<pmd version="5.6.1" timestamp="2017-11-04T12:26:49.730">
+<file name="/home/mprins/workspace/closure-compiler-maven-plugin/src/main/java/nl/geodienstencentrum/maven/plugin/closure/compiler/ClosureCompilerMojo.java">
 <violation beginline="59" endline="162" begincolumn="8" endcolumn="1" rule="CyclomaticComplexity" ruleset="Code Size" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="ClosureCompilerMojo" externalInfoUrl="https://pmd.github.io/pmd-5.6.1/pmd-java/rules/java/codesize.html#CyclomaticComplexity" priority="3">
 The class 'ClosureCompilerMojo' has a Cyclomatic Complexity of 6 (Highest = 11).
 </violation>
@@ -140,7 +140,7 @@ Local variable 'sourceFiles' could be declared final
 Local variable 'child' could be declared final
 </violation>
 </file>
-<file name="/home/travis/build/GeoDienstenCentrum/closure-compiler-maven-plugin/src/main/java/nl/geodienstencentrum/maven/plugin/closure/compiler/Compilation.java">
+<file name="/home/mprins/workspace/closure-compiler-maven-plugin/src/main/java/nl/geodienstencentrum/maven/plugin/closure/compiler/Compilation.java">
 <violation beginline="50" endline="50" begincolumn="43" endcolumn="57" rule="BeanMembersShouldSerialize" ruleset="JavaBeans" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="Compilation" variable="compilerOptions" externalInfoUrl="https://pmd.github.io/pmd-5.6.1/pmd-java/rules/java/javabeans.html#BeanMembersShouldSerialize" priority="3">
 Found non-transient, non-static member. Please mark as transient or provide accessors.
 </violation>
@@ -157,7 +157,7 @@ Found non-transient, non-static member. Please mark as transient or provide acce
 Found non-transient, non-static member. Please mark as transient or provide accessors.
 </violation>
 </file>
-<file name="/home/travis/build/GeoDienstenCentrum/closure-compiler-maven-plugin/src/main/java/nl/geodienstencentrum/maven/plugin/closure/compiler/CompilerOptionsMojo.java">
+<file name="/home/mprins/workspace/closure-compiler-maven-plugin/src/main/java/nl/geodienstencentrum/maven/plugin/closure/compiler/CompilerOptionsMojo.java">
 <violation beginline="32" endline="839" begincolumn="1" endcolumn="2" rule="GodClass" ruleset="Design" package="nl.geodienstencentrum.maven.plugin.closure.compiler" class="CompilerOptionsMojo" externalInfoUrl="https://pmd.github.io/pmd-5.6.1/pmd-java/rules/java/design.html#GodClass" priority="3">
 Possible God class (WMC=176, ATFD=163, TCC=0.0)
 </violation>

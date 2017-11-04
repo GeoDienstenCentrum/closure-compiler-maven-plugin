@@ -652,6 +652,12 @@
 					</plugin>
 					<plugin>
 						<artifactId>maven-gpg-plugin</artifactId>
+						<configuration>
+							<executable>gpg2</executable>
+							<gpgArguments>
+								<arg>--verbose</arg>
+							</gpgArguments>
+						</configuration>
 						<executions>
 							<execution>
 								<id>sign-artifacts</id>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ClosureCompilerMojo.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Closure Compiler Plugin</a> &gt; <a href="index.source.html" class="el_package">nl.geodienstencentrum.maven.plugin.closure.compiler</a> &gt; <span class="el_source">ClosureCompilerMojo.java</span></div><h1>ClosureCompilerMojo.java</h1><pre class="source lang-java linenums">/*
+ * Copyright 2015-2016 Mark Prins, GeoDienstenCentrum.
+ * Copyright 2012-2014 Mason Bryant
+ *
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without modification,
+ * are permitted provided that the following conditions are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright notice,
+ * this list of conditions and the following disclaimer.
+ *
+ * 2. Redistributions in binary form must reproduce the above copyright notice,
+ * this list of conditions and the following disclaimer in the documentation
+ * and/or other materials provided with the distribution.
+ *
+ * 3. Neither the name of the copyright holder nor the names of its contributors
+ * may be used to endorse or promote products derived from this software without
+ * specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot; AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+ * IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+ * INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+ * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+ * OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+ * OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+package nl.geodienstencentrum.maven.plugin.closure.compiler;
+
+import  com.google.common.base.Charsets;
+import com.google.common.base.Preconditions;
+import com.google.common.io.Files;
+import com.google.javascript.jscomp.CompilationLevel;
+import com.google.javascript.jscomp.Compiler;
+import com.google.javascript.jscomp.CompilerOptions;
+import com.google.javascript.jscomp.JSError;
+import com.google.javascript.jscomp.Result;
+import com.google.javascript.jscomp.SourceFile;
+import java.io.File;
+import java.io.IOException;
+import java.util.LinkedList;
+import java.util.List;
+import org.apache.maven.plugin.AbstractMojo;
+import org.apache.maven.plugin.MojoExecutionException;
+import org.apache.maven.plugin.MojoFailureException;
+import org.apache.maven.plugin.logging.Log;
+import org.apache.maven.plugins.annotations.LifecyclePhase;
+import org.apache.maven.plugins.annotations.Mojo;
+import org.apache.maven.plugins.annotations.Parameter;
+
+/**
+ * The closure compiler compiles a set of configured compilations.
+ */
+@Mojo(name = &quot;compile&quot;, defaultPhase = LifecyclePhase.COMPILE, threadSafe = true)
+<span class="nc" id="L59">public class ClosureCompilerMojo extends AbstractMojo {</span>
+
+	/**
+	 * The list of compilations.
+	 */
+	@Parameter(required = true)
+	private List&lt;Compilation&gt; compilations;
+
+	@Override
+	public void execute() throws MojoExecutionException, MojoFailureException {
+<span class="nc" id="L69">		Log log = getLog();</span>
+<span class="nc" id="L70">		Preconditions.checkNotNull(this.compilations);</span>
+
+<span class="nc bnc" id="L72" title="All 2 branches missed.">		for (Compilation compilation : this.compilations) {</span>
+<span class="nc" id="L73">			List&lt;SourceFile&gt; externs = getSourceFiles(compilation.getExternFiles());</span>
+<span class="nc" id="L74">			List&lt;SourceFile&gt; source = getSourceFiles(compilation.getSourceFiles());</span>
+
+<span class="nc bnc" id="L76" title="All 2 branches missed.">			for (String sourceFile : compilation.getExternFiles()) {</span>
+<span class="nc" id="L77">				log.debug(&quot;Compiling from extern: &quot; + sourceFile);</span>
+<span class="nc" id="L78">			}</span>
+<span class="nc bnc" id="L79" title="All 2 branches missed.">			for (String sourceFile : compilation.getSourceFiles()) {</span>
+<span class="nc" id="L80">				log.debug(&quot;Compiling from source: &quot; + sourceFile);</span>
+<span class="nc" id="L81">			}</span>
+			// this message is checked for in the integration tests
+<span class="nc" id="L83">			log.info(&quot;Compiling &quot; + compilation.getOutputFile() + &quot; with level: &quot; + compilation.getCompilationLevel());</span>
+
+<span class="nc" id="L85">			CompilationLevel compilationLevel = null;</span>
+			try {
+<span class="nc" id="L87">				compilationLevel = CompilationLevel.valueOf(compilation.getCompilationLevel());</span>
+<span class="nc" id="L88">			} catch (IllegalArgumentException e) {</span>
+<span class="nc" id="L89">				throw new MojoFailureException(&quot;Compilation level invalid&quot;, e);</span>
+<span class="nc" id="L90">			}</span>
+
+<span class="nc" id="L92">			CompilerOptions compilerOptions = compilation.getCompilerOptionsMojo().getCompilerOptions();</span>
+<span class="nc bnc" id="L93" title="All 2 branches missed.">			if (null == compilerOptions) {</span>
+<span class="nc" id="L94">				log.debug(&quot;Compiling with default compiler options&quot;);</span>
+<span class="nc" id="L95">				compilerOptions = new CompilerOptions();</span>
+			}
+<span class="nc" id="L97">			log.debug(&quot;Compiler Options:&quot; + compilerOptions);</span>
+<span class="nc" id="L98">			compilationLevel.setOptionsForCompilationLevel(compilerOptions);</span>
+
+<span class="nc" id="L100">			Compiler compiler = new Compiler();</span>
+<span class="nc" id="L101">			Result result = compiler.compile(externs, source, compilerOptions);</span>
+
+<span class="nc bnc" id="L103" title="All 2 branches missed.">			for (JSError warning : result.warnings) {</span>
+<span class="nc" id="L104">				getLog().warn(warning.toString());</span>
+			}
+<span class="nc bnc" id="L106" title="All 2 branches missed.">			for (JSError error : result.errors) {</span>
+<span class="nc" id="L107">				getLog().error(error.toString());</span>
+			}
+<span class="nc bnc" id="L109" title="All 2 branches missed.">			if (!result.success) {</span>
+<span class="nc" id="L110">				throw new MojoFailureException(&quot;Compilation failure, check messages above.&quot;);</span>
+			}
+
+			try {
+<span class="nc" id="L114">				Files.createParentDirs(compilation.getOutputFile());</span>
+<span class="nc" id="L115">				Files.touch(compilation.getOutputFile());</span>
+<span class="nc" id="L116">				Files.write(compiler.toSource(), compilation.getOutputFile(), Charsets.UTF_8);</span>
+<span class="nc" id="L117">			} catch (IOException e) {</span>
+<span class="nc bnc" id="L118" title="All 2 branches missed.">				throw new MojoFailureException(compilation.getOutputFile() != null</span>
+<span class="nc" id="L119">						? compilation.getOutputFile().toString() : e.getMessage(), e);</span>
+<span class="nc" id="L120">			}</span>
+<span class="nc" id="L121">		}</span>
+<span class="nc" id="L122">	}</span>
+
+	/**
+	 * Returns a list of SourceFiles if given a list of relative or absolute
+	 * file names. Directories are traversed recursively.
+	 *
+	 * @param filePaths a list of paths
+	 * @return a list of SourceFile
+	 */
+	private List&lt;SourceFile&gt; getSourceFiles(final List&lt;String&gt; filePaths) {
+<span class="nc" id="L132">		Preconditions.checkNotNull(filePaths, &quot;Filepaths are required.&quot;);</span>
+
+<span class="nc" id="L134">		List&lt;SourceFile&gt; externs = new LinkedList&lt;&gt;();</span>
+<span class="nc bnc" id="L135" title="All 2 branches missed.">		for (String filepath : filePaths) {</span>
+<span class="nc" id="L136">			File file = new File(filepath);</span>
+<span class="nc" id="L137">			externs.addAll(sourcefileFromFile(file));</span>
+<span class="nc" id="L138">		}</span>
+<span class="nc" id="L139">		return externs;</span>
+	}
+
+	/**
+	 * Fetch a list of SourceFiles from a file. If the file is a directory, it
+	 * is traversed recursively. If not, a single SourceFile is returned.
+	 *
+	 * @param file a file or a directory
+	 * @return a list of SourceFile
+	 */
+	private List&lt;SourceFile&gt; sourcefileFromFile(final File file) {
+<span class="nc" id="L150">		Preconditions.checkNotNull(file, &quot;The file may not be null.&quot;);</span>
+<span class="nc" id="L151">		Preconditions.checkArgument(file.exists(), &quot;The file must exist.&quot;);</span>
+<span class="nc" id="L152">		List&lt;SourceFile&gt; sourceFiles = new LinkedList&lt;&gt;();</span>
+<span class="nc bnc" id="L153" title="All 2 branches missed.">		if (file.isDirectory()) {</span>
+<span class="nc bnc" id="L154" title="All 2 branches missed.">			for (File child : file.listFiles()) {</span>
+<span class="nc" id="L155">				sourceFiles.addAll(sourcefileFromFile(child));</span>
+			}
+		} else {
+<span class="nc" id="L158">			sourceFiles.add(SourceFile.fromFile(file));</span>
+		}
+<span class="nc" id="L160">		return sourceFiles;</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

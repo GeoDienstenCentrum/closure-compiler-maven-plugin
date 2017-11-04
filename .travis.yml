@@ -14,6 +14,7 @@ env:
   matrix:
     - VERSION=3.3.9
     - VERSION=3.2.5
+    - VERSION=3.5.0
     - VERSION=3.5.2
 
 before_install:
@@ -65,30 +66,22 @@ after_success:
     fi
 
 jdk:
-  - oraclejdk7
-  - openjdk7
   - oraclejdk8
+  - openjdk8
 
 matrix:
   fast_finish: true
   include:
-    - os: linux
-      jdk: openjdk8
-      sudo: required
-      dist: trusty
-      group: edge
-      env: VERSION=3.3.9
     - os: linux
       jdk: oraclejdk9
       sudo: required
       dist: trusty
       group: edge
       env:
-        - VERSION=3.3.9
+        - VERSION=3.5.2
         - JVM=latest
 
   allow_failures:
-    - jdk: oraclejdk9
 
 cache:
   directories:

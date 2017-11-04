@@ -38,6 +38,8 @@ ${project.name} ${project.version} Release Notes
 
   * update Maven dependencies and requirements
 
+  * switch over to java 8
+
   []
 
 * 2.6 Release Notes

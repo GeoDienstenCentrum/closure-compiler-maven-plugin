@@ -76,8 +76,8 @@
 		</repository>
 	</distributionManagement>
 	<properties>
-		<project.build.sourceVersion>1.7</project.build.sourceVersion>
-		<project.build.targetVersion>1.7</project.build.targetVersion>
+		<project.build.sourceVersion>1.8</project.build.sourceVersion>
+		<project.build.targetVersion>1.8</project.build.targetVersion>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<maven-libs.version>3.5.2</maven-libs.version>

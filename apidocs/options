@@ -15,7 +15,7 @@
 -docencoding
 'UTF-8'
 -doctitle
-'Closure Compiler Plugin 2.7-SNAPSHOT API'
+'Closure Compiler Plugin 2.8-SNAPSHOT API'
 -link
 'https://maven.apache.org/ref/3.5.2/maven-plugin-api/apidocs'
 -link
@@ -35,4 +35,4 @@
 -use
 -version
 -windowtitle
-'Closure Compiler Plugin 2.7-SNAPSHOT API'
+'Closure Compiler Plugin 2.8-SNAPSHOT API'

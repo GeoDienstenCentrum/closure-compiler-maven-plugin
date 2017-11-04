@@ -14,7 +14,6 @@ env:
   matrix:
     - VERSION=3.3.9
     - VERSION=3.2.5
-    - VERSION=3.5.0
     - VERSION=3.5.2
 
 before_install:

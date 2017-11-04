@@ -14,6 +14,7 @@ env:
   matrix:
     - VERSION=3.3.9
     - VERSION=3.2.5
+    - VERSION=3.5.2
 
 before_install:
     - wget --no-check-certificate $(echo -n $BASEURL | sed -e 's#VERSION#'$VERSION'#g');
@@ -44,18 +45,18 @@ script:
 
 after_success:
   # generate code coverage report, just for oraclejdk8 and latest maven
-  - if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$VERSION" == "3.3.9" ] &&
+  - if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$VERSION" == "3.5.2" ] &&
        [ "$TRAVIS_JDK_VERSION" == "oraclejdk8" ]; then
          mvn -B -e -fae -Ptravis-ci clean verify jacoco:report coveralls:report;
     fi
-  - if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$VERSION" == "3.3.9" ] &&
+  - if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$VERSION" == "3.5.2" ] &&
        [ "$TRAVIS_JDK_VERSION" == "oraclejdk8" ] &&
        [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
          mvn deploy --settings .travis/settings.xml -DskipTests=true -B;
     else
         echo "Not deploying snapshot artifact";
     fi
-  - if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$VERSION" == "3.3.9" ] &&
+  - if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$VERSION" == "3.5.2" ] &&
        [ "$TRAVIS_JDK_VERSION" == "oraclejdk8" ] &&
        [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then
           mvn -e -fae -B site-deploy --settings .travis/settings.xml;

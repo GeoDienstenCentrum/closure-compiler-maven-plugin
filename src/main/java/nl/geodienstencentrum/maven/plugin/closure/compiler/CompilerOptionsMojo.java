@@ -98,10 +98,6 @@ public class CompilerOptionsMojo {
         this.compilerOptions.setDartPass(dartPass);
     }
 
-    public void setJ2clPass(boolean j2clPass) {
-        this.compilerOptions.setJ2clPass(J2clPassMode.ON);
-    }
-
     public void setChecksOnly(boolean checksOnly) {
         this.compilerOptions.setChecksOnly(checksOnly);
     }
@@ -554,14 +550,6 @@ public class CompilerOptionsMojo {
 
     public void setRewriteFunctionExpressions(boolean rewriteFunctionExpressions) {
         compilerOptions.setRewriteFunctionExpressions(rewriteFunctionExpressions);
-    }
-
-    public void setOptimizeParameters(boolean optimizeParameters) {
-        compilerOptions.setOptimizeParameters(optimizeParameters);
-    }
-
-    public void setOptimizeReturns(boolean optimizeReturns) {
-        compilerOptions.setOptimizeReturns(optimizeReturns);
     }
 
     public void setOptimizeCalls(boolean optimizeCalls) {

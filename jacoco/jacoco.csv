@@ -1,0 +1,5 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+Closure Compiler Plugin,nl.geodienstencentrum.maven.plugin.closure.compiler,HelpMojo,350,559,61,51,53,106,42,30,2,14
+Closure Compiler Plugin,nl.geodienstencentrum.maven.plugin.closure.compiler,CompilerOptionsMojo,883,0,0,0,346,0,174,0,174,0
+Closure Compiler Plugin,nl.geodienstencentrum.maven.plugin.closure.compiler,Compilation,23,0,0,0,7,0,6,0,6,0
+Closure Compiler Plugin,nl.geodienstencentrum.maven.plugin.closure.compiler,ClosureCompilerMojo,302,0,22,0,56,0,15,0,4,0

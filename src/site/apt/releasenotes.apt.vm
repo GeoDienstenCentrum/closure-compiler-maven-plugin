@@ -37,11 +37,22 @@ ${project.name} ${project.version} Release Notes
 
   []
 
+* 2.8 Release Notes
+
+  A complete list of issues can be seen in the tracker
+  {{{${project.issueManagement.url}?q=milestone%3A2.8+is%3Aclosed}milestone 2.8}}.
+  
+** Enhancements and Fixes
+
+  * Update Closure compiler to v20171203, see:
+    {{{https://github.com/google/closure-compiler/wiki/Releases}Closure Compiler Releases}}
+    
+  []
 
 * 2.7 Release Notes
 
   A complete list of issues can be seen in the tracker
-  {{{${project.issueManagement.url}?q=milestone%3A2.7+is%3Aclosed}milestone 2.8}}.
+  {{{${project.issueManagement.url}?q=milestone%3A2.7+is%3Aclosed}milestone 2.7}}.
 
 ** Enhancements and Fixes
 

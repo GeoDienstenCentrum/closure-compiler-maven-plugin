@@ -1,1 +1,1 @@
-/usr/local/jdk-1.8.0/jre/../bin/javadoc @options @packages
+/usr/lib/jvm/java-8-oracle/jre/../bin/javadoc @options @packages

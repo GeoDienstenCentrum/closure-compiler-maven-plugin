@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="Date-Revision-yyyymmdd" content="20171226" />
     <meta http-equiv="Content-Language" content="en" />
-    <title>Closure Compiler Plugin 2.8 &#x2013; PMD Results</title>
+    <title>Closure Compiler Plugin 2.9-SNAPSHOT &#x2013; PMD Results</title>
     <link rel="stylesheet" href="./css/apache-maven-fluido-1.6.min.css" />
     <link rel="stylesheet" href="./css/site.css" />
     <link rel="stylesheet" href="./css/print.css" media="print" />
@@ -32,7 +32,7 @@
         <ul class="breadcrumb">
         <li id="publishDate">Last Published: 26-December-2017<span class="divider">|</span>
 </li>
-          <li id="projectVersion">Version: 2.8</li>
+          <li id="projectVersion">Version: 2.9-SNAPSHOT</li>
       <li class="pull-right"><a href="https://github.com/GeoDienstenCentrum/closure-compiler-maven-plugin/issues/" class="externalLink" title="Issues dashboard">Issues dashboard</a></li>
         </ul>
       </div>
@@ -93,26 +93,26 @@
 <th>Violation</th>
 <th>Line</th></tr>
 <tr class="b">
-<td>The class 'ClosureCompilerMojo' has a Cyclomatic Complexity of 6 (Highest = 11).</td>
-<td>59&#x2013;162</td></tr>
-<tr class="a">
 <td>The class 'ClosureCompilerMojo' has a Standard Cyclomatic Complexity of 6 (Highest = 11).</td>
 <td>59&#x2013;162</td></tr>
-<tr class="b">
+<tr class="a">
 <td>The class 'ClosureCompilerMojo' has a Modified Cyclomatic Complexity of 6 (Highest = 11).</td>
+<td>59&#x2013;162</td></tr>
+<tr class="b">
+<td>The class 'ClosureCompilerMojo' has a Cyclomatic Complexity of 6 (Highest = 11).</td>
 <td>59&#x2013;162</td></tr>
 <tr class="a">
 <td>Found non-transient, non-static member. Please mark as transient or provide accessors.</td>
 <td>65</td></tr>
 <tr class="b">
-<td>The method 'execute' has a Cyclomatic Complexity of 11.</td>
+<td>The method 'execute' has a Standard Cyclomatic Complexity of 11.</td>
 <td>68&#x2013;122</td></tr>
 <tr class="a">
-<td>Found 'UR'-anomaly for variable 'compilation' (lines '68'-'73').</td>
-<td>68&#x2013;73</td></tr>
-<tr class="b">
 <td>Found 'UR'-anomaly for variable 'sourceFile' (lines '68'-'77').</td>
 <td>68&#x2013;77</td></tr>
+<tr class="b">
+<td>Found 'UR'-anomaly for variable 'compilation' (lines '68'-'73').</td>
+<td>68&#x2013;73</td></tr>
 <tr class="a">
 <td>The method execute() has an NPath complexity of 769</td>
 <td>68&#x2013;122</td></tr>
@@ -120,14 +120,14 @@
 <td>The method 'execute' has a Modified Cyclomatic Complexity of 11.</td>
 <td>68&#x2013;122</td></tr>
 <tr class="a">
-<td>The method 'execute' has a Standard Cyclomatic Complexity of 11.</td>
+<td>The method 'execute' has a Cyclomatic Complexity of 11.</td>
 <td>68&#x2013;122</td></tr>
 <tr class="b">
-<td>Found 'DU'-anomaly for variable 'log' (lines '69'-'122').</td>
-<td>69&#x2013;122</td></tr>
-<tr class="a">
 <td>Local variable 'log' could be declared final</td>
 <td>69</td></tr>
+<tr class="a">
+<td>Found 'DU'-anomaly for variable 'log' (lines '69'-'122').</td>
+<td>69&#x2013;122</td></tr>
 <tr class="b">
 <td>Local variable 'compilation' could be declared final</td>
 <td>72</td></tr>
@@ -144,28 +144,28 @@
 <td>Found 'DU'-anomaly for variable 'source' (lines '74'-'122').</td>
 <td>74&#x2013;122</td></tr>
 <tr class="a">
-<td>Avoid declaring a variable if it is unreferenced before a possible exit point.</td>
+<td>Local variable 'source' could be declared final</td>
 <td>74</td></tr>
 <tr class="b">
-<td>Local variable 'source' could be declared final</td>
+<td>Avoid declaring a variable if it is unreferenced before a possible exit point.</td>
 <td>74</td></tr>
 <tr class="a">
 <td>Local variable 'sourceFile' could be declared final</td>
 <td>76</td></tr>
 <tr class="b">
-<td>debug logging that involves string concatenation should be guarded with isDebugEnabled() checks</td>
+<td>There is log block not surrounded by if</td>
 <td>77</td></tr>
 <tr class="a">
-<td>There is log block not surrounded by if</td>
+<td>debug logging that involves string concatenation should be guarded with isDebugEnabled() checks</td>
 <td>77</td></tr>
 <tr class="b">
 <td>Local variable 'sourceFile' could be declared final</td>
 <td>79</td></tr>
 <tr class="a">
-<td>debug logging that involves string concatenation should be guarded with isDebugEnabled() checks</td>
+<td>There is log block not surrounded by if</td>
 <td>80</td></tr>
 <tr class="b">
-<td>There is log block not surrounded by if</td>
+<td>debug logging that involves string concatenation should be guarded with isDebugEnabled() checks</td>
 <td>80</td></tr>
 <tr class="a">
 <td>There is log block not surrounded by if</td>
@@ -216,10 +216,10 @@
 <td>Local variable 'filepath' could be declared final</td>
 <td>135</td></tr>
 <tr class="a">
-<td>Avoid instantiating new objects inside loops</td>
+<td>Local variable 'file' could be declared final</td>
 <td>136</td></tr>
 <tr class="b">
-<td>Local variable 'file' could be declared final</td>
+<td>Avoid instantiating new objects inside loops</td>
 <td>136</td></tr>
 <tr class="a">
 <td>Found 'UR'-anomaly for variable 'child' (lines '149'-'155').</td>
@@ -258,10 +258,10 @@
 <th>Violation</th>
 <th>Line</th></tr>
 <tr class="a">
-<td>This class has a bunch of public methods and attributes</td>
+<td>Possible God class (WMC=173, ATFD=160, TCC=0.0)</td>
 <td>32&#x2013;827</td></tr>
 <tr class="b">
-<td>Possible God class (WMC=173, ATFD=160, TCC=0.0)</td>
+<td>This class has a bunch of public methods and attributes</td>
 <td>32&#x2013;827</td></tr>
 <tr class="a">
 <td>Avoid unused imports such as 'com.google.javascript.jscomp.CompilerOptions.J2clPassMode'</td>
@@ -342,10 +342,10 @@
 <td>Parameter 'removeUnusedClassProperties' is not assigned and could be declared final</td>
 <td>195</td></tr>
 <tr class="a">
-<td>Parameter 'defineName' is not assigned and could be declared final</td>
+<td>Parameter 'value' is not assigned and could be declared final</td>
 <td>199</td></tr>
 <tr class="b">
-<td>Parameter 'value' is not assigned and could be declared final</td>
+<td>Parameter 'defineName' is not assigned and could be declared final</td>
 <td>199</td></tr>
 <tr class="a">
 <td>Parameter 'value' is not assigned and could be declared final</td>
@@ -354,16 +354,16 @@
 <td>Parameter 'defineName' is not assigned and could be declared final</td>
 <td>203</td></tr>
 <tr class="a">
-<td>Parameter 'defineName' is not assigned and could be declared final</td>
+<td>Parameter 'value' is not assigned and could be declared final</td>
 <td>207</td></tr>
 <tr class="b">
-<td>Parameter 'value' is not assigned and could be declared final</td>
+<td>Parameter 'defineName' is not assigned and could be declared final</td>
 <td>207</td></tr>
 <tr class="a">
-<td>Parameter 'value' is not assigned and could be declared final</td>
+<td>Parameter 'defineName' is not assigned and could be declared final</td>
 <td>211</td></tr>
 <tr class="b">
-<td>Parameter 'defineName' is not assigned and could be declared final</td>
+<td>Parameter 'value' is not assigned and could be declared final</td>
 <td>211</td></tr>
 <tr class="a">
 <td>Parameter 'value' is not assigned and could be declared final</td>
@@ -378,16 +378,16 @@
 <td>Parameter 'tweakId' is not assigned and could be declared final</td>
 <td>219</td></tr>
 <tr class="a">
-<td>Parameter 'value' is not assigned and could be declared final</td>
-<td>223</td></tr>
-<tr class="b">
 <td>Parameter 'tweakId' is not assigned and could be declared final</td>
 <td>223</td></tr>
-<tr class="a">
+<tr class="b">
 <td>Parameter 'value' is not assigned and could be declared final</td>
+<td>223</td></tr>
+<tr class="a">
+<td>Parameter 'tweakId' is not assigned and could be declared final</td>
 <td>227</td></tr>
 <tr class="b">
-<td>Parameter 'tweakId' is not assigned and could be declared final</td>
+<td>Parameter 'value' is not assigned and could be declared final</td>
 <td>227</td></tr>
 <tr class="a">
 <td>Parameter 'type' is not assigned and could be declared final</td>
@@ -726,10 +726,10 @@
 <td>Parameter 'stripTypePrefixes' is not assigned and could be declared final</td>
 <td>687</td></tr>
 <tr class="a">
-<td>Parameter 'customPass' is not assigned and could be declared final</td>
+<td>Parameter 'time' is not assigned and could be declared final</td>
 <td>691</td></tr>
 <tr class="b">
-<td>Parameter 'time' is not assigned and could be declared final</td>
+<td>Parameter 'customPass' is not assigned and could be declared final</td>
 <td>691</td></tr>
 <tr class="a">
 <td>Parameter 'markNoSideEffectCalls' is not assigned and could be declared final</td>

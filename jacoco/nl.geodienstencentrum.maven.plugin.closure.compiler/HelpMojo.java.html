@@ -88,16 +88,16 @@ public class HelpMojo
             throw new MojoExecutionException( e.getMessage(), e );
         }
         finally
-<span class="pc bpc" id="L91" title="3 of 4 branches missed.">        {</span>
+<span class="pc bpc" id="L91" title="1 of 2 branches missed.">        {</span>
             if ( is != null )
             {
                 try
-<span class="pc" id="L95">                {</span>
+<span class="fc" id="L95">                {</span>
                     is.close();
 <span class="nc" id="L97">                }</span>
                 catch ( IOException e )
 <span class="nc" id="L99">                {</span>
-<span class="pc" id="L100">                    throw new MojoExecutionException( e.getMessage(), e );</span>
+<span class="fc" id="L100">                    throw new MojoExecutionException( e.getMessage(), e );</span>
                 }
             }
         }
@@ -351,7 +351,7 @@ public class HelpMojo
      * @param indentSize The size of each indentation, must not be negative.
      * @param lineLength The length of the line, must not be negative.
      * @return The sequence of display lines, never &lt;code&gt;null&lt;/code&gt;.
-     * @throws NegativeArraySizeException if &lt;code&gt;indent &lt; 0&lt;/code&gt;
+     * @throws NegativeArraySizeException if &lt;code&gt;indent &amp;lt; 0&lt;/code&gt;
      */
     private static List&lt;String&gt; toLines( String text, int indent, int indentSize, int lineLength )
 <span class="fc" id="L357">    {</span>
@@ -456,4 +456,4 @@ public class HelpMojo
         return null;
     }
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.0.201801022044</span></div></body></html>

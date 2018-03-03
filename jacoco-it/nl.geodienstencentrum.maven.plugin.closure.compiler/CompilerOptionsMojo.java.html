@@ -296,45 +296,42 @@ import java.util.Set;
 <span class="nc" id="L296">        compilerOptions.setColorizeErrorOutput(colorizeErrorOutput);</span>
 <span class="nc" id="L297">    }</span>
 
-    public void setChainCalls(boolean value) {
-<span class="nc" id="L300">        compilerOptions.setChainCalls(value);</span>
-<span class="nc" id="L301">    }</span>
 
     public void enableRuntimeTypeCheck(String logFunction) {
-<span class="nc" id="L304">        compilerOptions.enableRuntimeTypeCheck(logFunction);</span>
-<span class="nc" id="L305">    }</span>
+<span class="nc" id="L301">        compilerOptions.enableRuntimeTypeCheck(logFunction);</span>
+<span class="nc" id="L302">    }</span>
 
     public void setGenerateExports(boolean generateExports) {
-<span class="nc" id="L308">        compilerOptions.setGenerateExports(generateExports);</span>
-<span class="nc" id="L309">    }</span>
+<span class="nc" id="L305">        compilerOptions.setGenerateExports(generateExports);</span>
+<span class="nc" id="L306">    }</span>
 
     public void setExportLocalPropertyDefinitions(boolean export) {
-<span class="nc" id="L312">        compilerOptions.setExportLocalPropertyDefinitions(export);</span>
-<span class="nc" id="L313">    }</span>
+<span class="nc" id="L309">        compilerOptions.setExportLocalPropertyDefinitions(export);</span>
+<span class="nc" id="L310">    }</span>
 
     public void setAngularPass(boolean angularPass) {
-<span class="nc" id="L316">        compilerOptions.setAngularPass(angularPass);</span>
-<span class="nc" id="L317">    }</span>
+<span class="nc" id="L313">        compilerOptions.setAngularPass(angularPass);</span>
+<span class="nc" id="L314">    }</span>
 
     public void setCodingConvention(CodingConvention codingConvention) {
-<span class="nc" id="L320">        compilerOptions.setCodingConvention(codingConvention);</span>
-<span class="nc" id="L321">    }</span>
+<span class="nc" id="L317">        compilerOptions.setCodingConvention(codingConvention);</span>
+<span class="nc" id="L318">    }</span>
 
     public void setDependencyOptions(DependencyOptions options) {
-<span class="nc" id="L324">        compilerOptions.setDependencyOptions(options);</span>
-<span class="nc" id="L325">    }</span>
+<span class="nc" id="L321">        compilerOptions.setDependencyOptions(options);</span>
+<span class="nc" id="L322">    }</span>
 
     public void setManageClosureDependencies(boolean newVal) {
-<span class="nc" id="L328">        compilerOptions.setManageClosureDependencies(newVal);</span>
-<span class="nc" id="L329">    }</span>
+<span class="nc" id="L325">        compilerOptions.setManageClosureDependencies(newVal);</span>
+<span class="nc" id="L326">    }</span>
 
     public void setManageClosureDependencies(List&lt;String&gt; entryPoints) {
-<span class="nc" id="L332">        compilerOptions.setManageClosureDependencies(entryPoints);</span>
-<span class="nc" id="L333">    }</span>
+<span class="nc" id="L329">        compilerOptions.setManageClosureDependencies(entryPoints);</span>
+<span class="nc" id="L330">    }</span>
 
     public void setSummaryDetailLevel(int summaryDetailLevel) {
-<span class="nc" id="L336">        compilerOptions.setSummaryDetailLevel(summaryDetailLevel);</span>
-<span class="nc" id="L337">    }</span>
+<span class="nc" id="L333">        compilerOptions.setSummaryDetailLevel(summaryDetailLevel);</span>
+<span class="nc" id="L334">    }</span>
 
     /**
      *
@@ -343,64 +340,64 @@ import java.util.Set;
      */
     @Deprecated
     public void enableExternExports(boolean enabled) {
-<span class="nc" id="L346">        compilerOptions.setExternExports(true);</span>
-<span class="nc" id="L347">    }</span>
+<span class="nc" id="L343">        compilerOptions.setExternExports(true);</span>
+<span class="nc" id="L344">    }</span>
 
     public void setExternExports(boolean enabled) {
-<span class="nc" id="L350">        compilerOptions.setExternExports(true);</span>
-<span class="nc" id="L351">    }</span>
+<span class="nc" id="L347">        compilerOptions.setExternExports(true);</span>
+<span class="nc" id="L348">    }</span>
 
     public void setExtraAnnotationNames(Iterable&lt;String&gt; extraAnnotationNames) {
-<span class="nc" id="L354">        compilerOptions.setExtraAnnotationNames(extraAnnotationNames);</span>
-<span class="nc" id="L355">    }</span>
+<span class="nc" id="L351">        compilerOptions.setExtraAnnotationNames(extraAnnotationNames);</span>
+<span class="nc" id="L352">    }</span>
 
     public void setOutputCharset(String charsetName) {
-<span class="nc" id="L358">        this.setOutputCharset(Charset.forName(charsetName));</span>
-<span class="nc" id="L359">    }</span>
+<span class="nc" id="L355">        this.setOutputCharset(Charset.forName(charsetName));</span>
+<span class="nc" id="L356">    }</span>
 
     public void setOutputCharset(Charset charsetName) {
-<span class="nc" id="L362">        compilerOptions.setOutputCharset(charsetName);</span>
-<span class="nc" id="L363">    }</span>
+<span class="nc" id="L359">        compilerOptions.setOutputCharset(charsetName);</span>
+<span class="nc" id="L360">    }</span>
 
     public void setTweakProcessing(TweakProcessing tweakProcessing) {
-<span class="nc" id="L366">        compilerOptions.setTweakProcessing(tweakProcessing);</span>
-<span class="nc" id="L367">    }</span>
+<span class="nc" id="L363">        compilerOptions.setTweakProcessing(tweakProcessing);</span>
+<span class="nc" id="L364">    }</span>
 
     public void setLanguageIn(LanguageMode languageIn) {
-<span class="nc" id="L370">        compilerOptions.setLanguageIn(languageIn);</span>
-<span class="nc" id="L371">    }</span>
+<span class="nc" id="L367">        compilerOptions.setLanguageIn(languageIn);</span>
+<span class="nc" id="L368">    }</span>
 
     public void setAliasTransformationHandler(AliasTransformationHandler changes) {
-<span class="nc" id="L374">        compilerOptions.setAliasTransformationHandler(changes);</span>
-<span class="nc" id="L375">    }</span>
+<span class="nc" id="L371">        compilerOptions.setAliasTransformationHandler(changes);</span>
+<span class="nc" id="L372">    }</span>
 
     public void setErrorHandler(ErrorHandler handler) {
-<span class="nc" id="L378">        compilerOptions.setErrorHandler(handler);</span>
-<span class="nc" id="L379">    }</span>
+<span class="nc" id="L375">        compilerOptions.setErrorHandler(handler);</span>
+<span class="nc" id="L376">    }</span>
 
     public void setInferTypes(boolean enable) {
-<span class="nc" id="L382">        compilerOptions.setInferTypes(enable);</span>
-<span class="nc" id="L383">    }</span>
+<span class="nc" id="L379">        compilerOptions.setInferTypes(enable);</span>
+<span class="nc" id="L380">    }</span>
 
     public void setNewTypeInference(boolean enable) {
-<span class="nc" id="L386">        compilerOptions.setNewTypeInference(enable);</span>
-<span class="nc" id="L387">    }</span>
+<span class="nc" id="L383">        compilerOptions.setNewTypeInference(enable);</span>
+<span class="nc" id="L384">    }</span>
 
     public void setAssumeStrictThis(boolean enable) {
-<span class="nc" id="L390">        compilerOptions.setAssumeStrictThis(enable);</span>
-<span class="nc" id="L391">    }</span>
+<span class="nc" id="L387">        compilerOptions.setAssumeStrictThis(enable);</span>
+<span class="nc" id="L388">    }</span>
 
     public void setAssumeClosuresOnlyCaptureReferences(boolean enable) {
-<span class="nc" id="L394">        compilerOptions.setAssumeClosuresOnlyCaptureReferences(enable);</span>
-<span class="nc" id="L395">    }</span>
+<span class="nc" id="L391">        compilerOptions.setAssumeClosuresOnlyCaptureReferences(enable);</span>
+<span class="nc" id="L392">    }</span>
 
     public void setPropertyInvalidationErrors(Map&lt;String, CheckLevel&gt; propertyInvalidationErrors) {
-<span class="nc" id="L398">        compilerOptions.setPropertyInvalidationErrors(propertyInvalidationErrors);</span>
-<span class="nc" id="L399">    }</span>
+<span class="nc" id="L395">        compilerOptions.setPropertyInvalidationErrors(propertyInvalidationErrors);</span>
+<span class="nc" id="L396">    }</span>
 
     public void setLanguageOut(LanguageMode languageOut) {
-<span class="nc" id="L402">        compilerOptions.setLanguageOut(languageOut);</span>
-<span class="nc" id="L403">    }</span>
+<span class="nc" id="L399">        compilerOptions.setLanguageOut(languageOut);</span>
+<span class="nc" id="L400">    }</span>
 
     /**
      * Configures the compiler for use as an IDE backend.  In this mode:
@@ -421,392 +418,384 @@ import java.util.Set;
      */
     @Deprecated
     public void setIdeMode(boolean ideMode) {
-<span class="nc" id="L424">        compilerOptions.setIdeMode(ideMode);</span>
-<span class="nc" id="L425">    }</span>
+<span class="nc" id="L421">        compilerOptions.setIdeMode(ideMode);</span>
+<span class="nc" id="L422">    }</span>
 
     public void setCheckDeterminism(boolean checkDeterminism) {
-<span class="nc" id="L428">        compilerOptions.setCheckDeterminism(checkDeterminism);</span>
-<span class="nc" id="L429">    }</span>
+<span class="nc" id="L425">        compilerOptions.setCheckDeterminism(checkDeterminism);</span>
+<span class="nc" id="L426">    }</span>
 
     public void setMessageBundle(MessageBundle messageBundle) {
-<span class="nc" id="L432">        compilerOptions.setMessageBundle(messageBundle);</span>
-<span class="nc" id="L433">    }</span>
+<span class="nc" id="L429">        compilerOptions.setMessageBundle(messageBundle);</span>
+<span class="nc" id="L430">    }</span>
 
     public void setCheckSymbols(boolean checkSymbols) {
-<span class="nc" id="L436">        compilerOptions.setCheckSymbols(checkSymbols);</span>
-<span class="nc" id="L437">    }</span>
+<span class="nc" id="L433">        compilerOptions.setCheckSymbols(checkSymbols);</span>
+<span class="nc" id="L434">    }</span>
 
     public void setCheckSuspiciousCode(boolean checkSuspiciousCode) {
-<span class="nc" id="L440">        compilerOptions.setCheckSuspiciousCode(checkSuspiciousCode);</span>
-<span class="nc" id="L441">    }</span>
+<span class="nc" id="L437">        compilerOptions.setCheckSuspiciousCode(checkSuspiciousCode);</span>
+<span class="nc" id="L438">    }</span>
 
     public void setCheckTypes(boolean checkTypes) {
-<span class="nc" id="L444">        compilerOptions.setCheckTypes(checkTypes);</span>
-<span class="nc" id="L445">    }</span>
+<span class="nc" id="L441">        compilerOptions.setCheckTypes(checkTypes);</span>
+<span class="nc" id="L442">    }</span>
 
     public void setCheckMissingGetCssNameBlacklist(String blackList) {
-<span class="nc" id="L448">        compilerOptions.setCheckMissingGetCssNameBlacklist(blackList);</span>
-<span class="nc" id="L449">    }</span>
+<span class="nc" id="L445">        compilerOptions.setCheckMissingGetCssNameBlacklist(blackList);</span>
+<span class="nc" id="L446">    }</span>
 
     public void setFoldConstants(boolean foldConstants) {
-<span class="nc" id="L452">        compilerOptions.setFoldConstants(foldConstants);</span>
-<span class="nc" id="L453">    }</span>
+<span class="nc" id="L449">        compilerOptions.setFoldConstants(foldConstants);</span>
+<span class="nc" id="L450">    }</span>
 
     public void setDeadAssignmentElimination(boolean deadAssignmentElimination) {
-<span class="nc" id="L456">        compilerOptions.setDeadAssignmentElimination(deadAssignmentElimination);</span>
-<span class="nc" id="L457">    }</span>
+<span class="nc" id="L453">        compilerOptions.setDeadAssignmentElimination(deadAssignmentElimination);</span>
+<span class="nc" id="L454">    }</span>
 
     public void setInlineConstantVars(boolean inlineConstantVars) {
-<span class="nc" id="L460">        compilerOptions.setInlineConstantVars(inlineConstantVars);</span>
-<span class="nc" id="L461">    }</span>
-
-    public void setInlineFunctions(boolean inlineFunctions) {
-<span class="nc" id="L464">        compilerOptions.setInlineFunctions(inlineFunctions);</span>
-<span class="nc" id="L465">    }</span>
-
-    public void setInlineLocalFunctions(boolean inlineLocalFunctions) {
-<span class="nc" id="L468">        compilerOptions.setInlineLocalFunctions(inlineLocalFunctions);</span>
-<span class="nc" id="L469">    }</span>
+<span class="nc" id="L457">        compilerOptions.setInlineConstantVars(inlineConstantVars);</span>
+<span class="nc" id="L458">    }</span>
 
     public void setCrossModuleCodeMotion(boolean crossModuleCodeMotion) {
-<span class="nc" id="L472">        compilerOptions.setCrossModuleCodeMotion(crossModuleCodeMotion);</span>
-<span class="nc" id="L473">    }</span>
+<span class="nc" id="L461">        compilerOptions.setCrossModuleCodeMotion(crossModuleCodeMotion);</span>
+<span class="nc" id="L462">    }</span>
 
     public void setParentModuleCanSeeSymbolsDeclaredInChildren(boolean parentModuleCanSeeSymbolsDeclaredInChildren) {
-<span class="nc" id="L476">        compilerOptions.setParentModuleCanSeeSymbolsDeclaredInChildren(parentModuleCanSeeSymbolsDeclaredInChildren);</span>
-<span class="nc" id="L477">    }</span>
+<span class="nc" id="L465">        compilerOptions.setParentModuleCanSeeSymbolsDeclaredInChildren(parentModuleCanSeeSymbolsDeclaredInChildren);</span>
+<span class="nc" id="L466">    }</span>
 
     public void setCoalesceVariableNames(boolean coalesceVariableNames) {
-<span class="nc" id="L480">        compilerOptions.setCoalesceVariableNames(coalesceVariableNames);</span>
-<span class="nc" id="L481">    }</span>
+<span class="nc" id="L469">        compilerOptions.setCoalesceVariableNames(coalesceVariableNames);</span>
+<span class="nc" id="L470">    }</span>
 
     public void setCrossModuleMethodMotion(boolean crossModuleMethodMotion) {
-<span class="nc" id="L484">        compilerOptions.setCrossModuleMethodMotion(crossModuleMethodMotion);</span>
-<span class="nc" id="L485">    }</span>
+<span class="nc" id="L473">        compilerOptions.setCrossModuleMethodMotion(crossModuleMethodMotion);</span>
+<span class="nc" id="L474">    }</span>
 
     public void setInlineVariables(boolean inlineVariables) {
-<span class="nc" id="L488">        compilerOptions.setInlineVariables(inlineVariables);</span>
-<span class="nc" id="L489">    }</span>
+<span class="nc" id="L477">        compilerOptions.setInlineVariables(inlineVariables);</span>
+<span class="nc" id="L478">    }</span>
 
     public void setInlineLocalVariables(boolean inlineLocalVariables) {
-<span class="nc" id="L492">        compilerOptions.setInlineLocalVariables(inlineLocalVariables);</span>
-<span class="nc" id="L493">    }</span>
+<span class="nc" id="L481">        compilerOptions.setInlineLocalVariables(inlineLocalVariables);</span>
+<span class="nc" id="L482">    }</span>
 
     public void setFlowSensitiveInlineVariables(boolean enabled) {
-<span class="nc" id="L496">        compilerOptions.setFlowSensitiveInlineVariables(enabled);</span>
-<span class="nc" id="L497">    }</span>
+<span class="nc" id="L485">        compilerOptions.setFlowSensitiveInlineVariables(enabled);</span>
+<span class="nc" id="L486">    }</span>
 
     public void setSmartNameRemoval(boolean smartNameRemoval) {
-<span class="nc" id="L500">        compilerOptions.setSmartNameRemoval(smartNameRemoval);</span>
-<span class="nc" id="L501">    }</span>
+<span class="nc" id="L489">        compilerOptions.setSmartNameRemoval(smartNameRemoval);</span>
+<span class="nc" id="L490">    }</span>
 
     public void setExtraSmartNameRemoval(boolean smartNameRemoval) {
-<span class="nc" id="L504">        compilerOptions.setExtraSmartNameRemoval(smartNameRemoval);</span>
-<span class="nc" id="L505">    }</span>
+<span class="nc" id="L493">        compilerOptions.setExtraSmartNameRemoval(smartNameRemoval);</span>
+<span class="nc" id="L494">    }</span>
 
     public void setRemoveDeadCode(boolean removeDeadCode) {
-<span class="nc" id="L508">        compilerOptions.setRemoveDeadCode(removeDeadCode);</span>
-<span class="nc" id="L509">    }</span>
+<span class="nc" id="L497">        compilerOptions.setRemoveDeadCode(removeDeadCode);</span>
+<span class="nc" id="L498">    }</span>
 
     public void setExtractPrototypeMemberDeclarations(boolean enabled) {
-<span class="nc" id="L512">        compilerOptions.setExtractPrototypeMemberDeclarations(enabled);</span>
-<span class="nc" id="L513">    }</span>
+<span class="nc" id="L501">        compilerOptions.setExtractPrototypeMemberDeclarations(enabled);</span>
+<span class="nc" id="L502">    }</span>
 
     public void setRemoveUnusedPrototypeProperties(boolean enabled) {
-<span class="nc" id="L516">        compilerOptions.setRemoveUnusedPrototypeProperties(enabled);</span>
-<span class="nc" id="L517">    }</span>
+<span class="nc" id="L505">        compilerOptions.setRemoveUnusedPrototypeProperties(enabled);</span>
+<span class="nc" id="L506">    }</span>
 
     public void setRemoveUnusedPrototypePropertiesInExterns(boolean enabled) {
-<span class="nc" id="L520">        compilerOptions.setRemoveUnusedPrototypePropertiesInExterns(enabled);</span>
-<span class="nc" id="L521">    }</span>
+<span class="nc" id="L509">        compilerOptions.setRemoveUnusedPrototypePropertiesInExterns(enabled);</span>
+<span class="nc" id="L510">    }</span>
 
     public void setCollapseVariableDeclarations(boolean enabled) {
-<span class="nc" id="L524">        compilerOptions.setCollapseVariableDeclarations(enabled);</span>
-<span class="nc" id="L525">    }</span>
+<span class="nc" id="L513">        compilerOptions.setCollapseVariableDeclarations(enabled);</span>
+<span class="nc" id="L514">    }</span>
 
     public void setCollapseAnonymousFunctions(boolean enabled) {
-<span class="nc" id="L528">        compilerOptions.setCollapseAnonymousFunctions(enabled);</span>
-<span class="nc" id="L529">    }</span>
+<span class="nc" id="L517">        compilerOptions.setCollapseAnonymousFunctions(enabled);</span>
+<span class="nc" id="L518">    }</span>
 
     public void setAliasableStrings(Set&lt;String&gt; aliasableStrings) {
-<span class="nc" id="L532">        compilerOptions.setAliasableStrings(aliasableStrings);</span>
-<span class="nc" id="L533">    }</span>
+<span class="nc" id="L521">        compilerOptions.setAliasableStrings(aliasableStrings);</span>
+<span class="nc" id="L522">    }</span>
 
     public void setAliasStringsBlacklist(String aliasStringsBlacklist) {
-<span class="nc" id="L536">        compilerOptions.setAliasStringsBlacklist(aliasStringsBlacklist);</span>
-<span class="nc" id="L537">    }</span>
+<span class="nc" id="L525">        compilerOptions.setAliasStringsBlacklist(aliasStringsBlacklist);</span>
+<span class="nc" id="L526">    }</span>
 
     public void setAliasAllStrings(boolean aliasAllStrings) {
-<span class="nc" id="L540">        compilerOptions.setAliasAllStrings(aliasAllStrings);</span>
-<span class="nc" id="L541">    }</span>
+<span class="nc" id="L529">        compilerOptions.setAliasAllStrings(aliasAllStrings);</span>
+<span class="nc" id="L530">    }</span>
 
     public void setOutputJsStringUsage(boolean outputJsStringUsage) {
-<span class="nc" id="L544">        compilerOptions.setOutputJsStringUsage(outputJsStringUsage);</span>
-<span class="nc" id="L545">    }</span>
+<span class="nc" id="L533">        compilerOptions.setOutputJsStringUsage(outputJsStringUsage);</span>
+<span class="nc" id="L534">    }</span>
 
     public void setConvertToDottedProperties(boolean convertToDottedProperties) {
-<span class="nc" id="L548">        compilerOptions.setConvertToDottedProperties(convertToDottedProperties);</span>
-<span class="nc" id="L549">    }</span>
+<span class="nc" id="L537">        compilerOptions.setConvertToDottedProperties(convertToDottedProperties);</span>
+<span class="nc" id="L538">    }</span>
 
     public void setRewriteFunctionExpressions(boolean rewriteFunctionExpressions) {
-<span class="nc" id="L552">        compilerOptions.setRewriteFunctionExpressions(rewriteFunctionExpressions);</span>
-<span class="nc" id="L553">    }</span>
+<span class="nc" id="L541">        compilerOptions.setRewriteFunctionExpressions(rewriteFunctionExpressions);</span>
+<span class="nc" id="L542">    }</span>
 
     public void setOptimizeCalls(boolean optimizeCalls) {
-<span class="nc" id="L556">        compilerOptions.setOptimizeCalls(optimizeCalls);</span>
-<span class="nc" id="L557">    }</span>
+<span class="nc" id="L545">        compilerOptions.setOptimizeCalls(optimizeCalls);</span>
+<span class="nc" id="L546">    }</span>
 
     public void setOptimizeArgumentsArray(boolean optimizeArgumentsArray) {
-<span class="nc" id="L560">        compilerOptions.setOptimizeArgumentsArray(optimizeArgumentsArray);</span>
-<span class="nc" id="L561">    }</span>
+<span class="nc" id="L549">        compilerOptions.setOptimizeArgumentsArray(optimizeArgumentsArray);</span>
+<span class="nc" id="L550">    }</span>
 
     public void setVariableRenaming(VariableRenamingPolicy variableRenaming) {
-<span class="nc" id="L564">        compilerOptions.setVariableRenaming(variableRenaming);</span>
-<span class="nc" id="L565">    }</span>
+<span class="nc" id="L553">        compilerOptions.setVariableRenaming(variableRenaming);</span>
+<span class="nc" id="L554">    }</span>
 
     public void setPropertyRenaming(PropertyRenamingPolicy propertyRenaming) {
-<span class="nc" id="L568">        compilerOptions.setPropertyRenaming(propertyRenaming);</span>
-<span class="nc" id="L569">    }</span>
+<span class="nc" id="L557">        compilerOptions.setPropertyRenaming(propertyRenaming);</span>
+<span class="nc" id="L558">    }</span>
 
     public void setLabelRenaming(boolean labelRenaming) {
-<span class="nc" id="L572">        compilerOptions.setLabelRenaming(labelRenaming);</span>
-<span class="nc" id="L573">    }</span>
+<span class="nc" id="L561">        compilerOptions.setLabelRenaming(labelRenaming);</span>
+<span class="nc" id="L562">    }</span>
 
     public void setReserveRawExports(boolean reserveRawExports) {
-<span class="nc" id="L576">        compilerOptions.setReserveRawExports(reserveRawExports);</span>
-<span class="nc" id="L577">    }</span>
+<span class="nc" id="L565">        compilerOptions.setReserveRawExports(reserveRawExports);</span>
+<span class="nc" id="L566">    }</span>
 
     public void setPreferStableNames(boolean preferStableNames) {
-<span class="nc" id="L580">        compilerOptions.setPreferStableNames(preferStableNames);</span>
-<span class="nc" id="L581">    }</span>
+<span class="nc" id="L569">        compilerOptions.setPreferStableNames(preferStableNames);</span>
+<span class="nc" id="L570">    }</span>
 
     public void setGeneratePseudoNames(boolean generatePseudoNames) {
-<span class="nc" id="L584">        compilerOptions.setGeneratePseudoNames(generatePseudoNames);</span>
-<span class="nc" id="L585">    }</span>
+<span class="nc" id="L573">        compilerOptions.setGeneratePseudoNames(generatePseudoNames);</span>
+<span class="nc" id="L574">    }</span>
 
     public void setRenamePrefix(String renamePrefix) {
-<span class="nc" id="L588">        compilerOptions.setRenamePrefix(renamePrefix);</span>
-<span class="nc" id="L589">    }</span>
+<span class="nc" id="L577">        compilerOptions.setRenamePrefix(renamePrefix);</span>
+<span class="nc" id="L578">    }</span>
 
     public void setRenamePrefixNamespace(String renamePrefixNamespace) {
-<span class="nc" id="L592">        compilerOptions.setRenamePrefixNamespace(renamePrefixNamespace);</span>
-<span class="nc" id="L593">    }</span>
+<span class="nc" id="L581">        compilerOptions.setRenamePrefixNamespace(renamePrefixNamespace);</span>
+<span class="nc" id="L582">    }</span>
 
     public void setCollapseProperties(boolean collapseProperties) {
-<span class="nc" id="L596">        compilerOptions.setCollapseProperties(collapseProperties);</span>
-<span class="nc" id="L597">    }</span>
+<span class="nc" id="L585">        compilerOptions.setCollapseProperties(collapseProperties);</span>
+<span class="nc" id="L586">    }</span>
 
     public void setDevirtualizePrototypeMethods(boolean devirtualizePrototypeMethods) {
-<span class="nc" id="L600">        compilerOptions.setDevirtualizePrototypeMethods(devirtualizePrototypeMethods);</span>
-<span class="nc" id="L601">    }</span>
+<span class="nc" id="L589">        compilerOptions.setDevirtualizePrototypeMethods(devirtualizePrototypeMethods);</span>
+<span class="nc" id="L590">    }</span>
 
     public void setComputeFunctionSideEffects(boolean computeFunctionSideEffects) {
-<span class="nc" id="L604">        compilerOptions.setComputeFunctionSideEffects(computeFunctionSideEffects);</span>
-<span class="nc" id="L605">    }</span>
+<span class="nc" id="L593">        compilerOptions.setComputeFunctionSideEffects(computeFunctionSideEffects);</span>
+<span class="nc" id="L594">    }</span>
 
     public void setDebugFunctionSideEffectsPath(String debugFunctionSideEffectsPath) {
-<span class="nc" id="L608">        compilerOptions.setDebugFunctionSideEffectsPath(debugFunctionSideEffectsPath);</span>
-<span class="nc" id="L609">    }</span>
+<span class="nc" id="L597">        compilerOptions.setDebugFunctionSideEffectsPath(debugFunctionSideEffectsPath);</span>
+<span class="nc" id="L598">    }</span>
 
     public void setDisambiguatePrivateProperties(boolean value) {
-<span class="nc" id="L612">        compilerOptions.setDisambiguatePrivateProperties(value);</span>
-<span class="nc" id="L613">    }</span>
+<span class="nc" id="L601">        compilerOptions.setDisambiguatePrivateProperties(value);</span>
+<span class="nc" id="L602">    }</span>
 
     public void setDisambiguateProperties(boolean disambiguateProperties) {
-<span class="nc" id="L616">        compilerOptions.setDisambiguateProperties(disambiguateProperties);</span>
-<span class="nc" id="L617">    }</span>
+<span class="nc" id="L605">        compilerOptions.setDisambiguateProperties(disambiguateProperties);</span>
+<span class="nc" id="L606">    }</span>
 
     public void setAmbiguateProperties(boolean ambiguateProperties) {
-<span class="nc" id="L620">        compilerOptions.setAmbiguateProperties(ambiguateProperties);</span>
-<span class="nc" id="L621">    }</span>
+<span class="nc" id="L609">        compilerOptions.setAmbiguateProperties(ambiguateProperties);</span>
+<span class="nc" id="L610">    }</span>
 
     public void setAnonymousFunctionNaming(AnonymousFunctionNamingPolicy anonymousFunctionNaming) {
-<span class="nc" id="L624">        compilerOptions.setAnonymousFunctionNaming(anonymousFunctionNaming);</span>
-<span class="nc" id="L625">    }</span>
+<span class="nc" id="L613">        compilerOptions.setAnonymousFunctionNaming(anonymousFunctionNaming);</span>
+<span class="nc" id="L614">    }</span>
 
     public void setInputAnonymousFunctionNamingMap(VariableMap inputMap) {
-<span class="nc" id="L628">        compilerOptions.setInputAnonymousFunctionNamingMap(inputMap);</span>
-<span class="nc" id="L629">    }</span>
+<span class="nc" id="L617">        compilerOptions.setInputAnonymousFunctionNamingMap(inputMap);</span>
+<span class="nc" id="L618">    }</span>
 
     public void setInputVariableMap(VariableMap inputVariableMap) {
-<span class="nc" id="L632">        compilerOptions.setInputVariableMap(inputVariableMap);</span>
-<span class="nc" id="L633">    }</span>
+<span class="nc" id="L621">        compilerOptions.setInputVariableMap(inputVariableMap);</span>
+<span class="nc" id="L622">    }</span>
 
     public void setInputPropertyMap(VariableMap inputPropertyMap) {
-<span class="nc" id="L636">        compilerOptions.setInputPropertyMap(inputPropertyMap);</span>
-<span class="nc" id="L637">    }</span>
+<span class="nc" id="L625">        compilerOptions.setInputPropertyMap(inputPropertyMap);</span>
+<span class="nc" id="L626">    }</span>
 
     public void setExportTestFunctions(boolean exportTestFunctions) {
-<span class="nc" id="L640">        compilerOptions.setExportTestFunctions(exportTestFunctions);</span>
-<span class="nc" id="L641">    }</span>
+<span class="nc" id="L629">        compilerOptions.setExportTestFunctions(exportTestFunctions);</span>
+<span class="nc" id="L630">    }</span>
 
     public void setRuntimeTypeCheck(boolean runtimeTypeCheck) {
-<span class="nc" id="L644">        compilerOptions.setRuntimeTypeCheck(runtimeTypeCheck);</span>
-<span class="nc" id="L645">    }</span>
+<span class="nc" id="L633">        compilerOptions.setRuntimeTypeCheck(runtimeTypeCheck);</span>
+<span class="nc" id="L634">    }</span>
 
     public void setRuntimeTypeCheckLogFunction(String runtimeTypeCheckLogFunction) {
-<span class="nc" id="L648">        compilerOptions.setRuntimeTypeCheckLogFunction(runtimeTypeCheckLogFunction);</span>
-<span class="nc" id="L649">    }</span>
+<span class="nc" id="L637">        compilerOptions.setRuntimeTypeCheckLogFunction(runtimeTypeCheckLogFunction);</span>
+<span class="nc" id="L638">    }</span>
 
     public void setSyntheticBlockStartMarker(String syntheticBlockStartMarker) {
-<span class="nc" id="L652">        compilerOptions.setSyntheticBlockStartMarker(syntheticBlockStartMarker);</span>
-<span class="nc" id="L653">    }</span>
+<span class="nc" id="L641">        compilerOptions.setSyntheticBlockStartMarker(syntheticBlockStartMarker);</span>
+<span class="nc" id="L642">    }</span>
 
     public void setSyntheticBlockEndMarker(String syntheticBlockEndMarker) {
-<span class="nc" id="L656">        compilerOptions.setSyntheticBlockEndMarker(syntheticBlockEndMarker);</span>
-<span class="nc" id="L657">    }</span>
+<span class="nc" id="L645">        compilerOptions.setSyntheticBlockEndMarker(syntheticBlockEndMarker);</span>
+<span class="nc" id="L646">    }</span>
 
     public void setLocale(String locale) {
-<span class="nc" id="L660">        compilerOptions.setLocale(locale);</span>
-<span class="nc" id="L661">    }</span>
+<span class="nc" id="L649">        compilerOptions.setLocale(locale);</span>
+<span class="nc" id="L650">    }</span>
 
     public void setMarkAsCompiled(boolean markAsCompiled) {
-<span class="nc" id="L664">        compilerOptions.setMarkAsCompiled(markAsCompiled);</span>
-<span class="nc" id="L665">    }</span>
+<span class="nc" id="L653">        compilerOptions.setMarkAsCompiled(markAsCompiled);</span>
+<span class="nc" id="L654">    }</span>
 
     public void setClosurePass(boolean closurePass) {
-<span class="nc" id="L668">        compilerOptions.setClosurePass(closurePass);</span>
-<span class="nc" id="L669">    }</span>
+<span class="nc" id="L657">        compilerOptions.setClosurePass(closurePass);</span>
+<span class="nc" id="L658">    }</span>
 
     public void setGatherCssNames(boolean gatherCssNames) {
-<span class="nc" id="L672">        compilerOptions.setGatherCssNames(gatherCssNames);</span>
-<span class="nc" id="L673">    }</span>
+<span class="nc" id="L661">        compilerOptions.setGatherCssNames(gatherCssNames);</span>
+<span class="nc" id="L662">    }</span>
 
     public void setStripTypes(Set&lt;String&gt; stripTypes) {
-<span class="nc" id="L676">        compilerOptions.setStripTypes(stripTypes);</span>
-<span class="nc" id="L677">    }</span>
+<span class="nc" id="L665">        compilerOptions.setStripTypes(stripTypes);</span>
+<span class="nc" id="L666">    }</span>
 
     public void setStripNameSuffixes(Set&lt;String&gt; stripNameSuffixes) {
-<span class="nc" id="L680">        compilerOptions.setStripNameSuffixes(stripNameSuffixes);</span>
-<span class="nc" id="L681">    }</span>
+<span class="nc" id="L669">        compilerOptions.setStripNameSuffixes(stripNameSuffixes);</span>
+<span class="nc" id="L670">    }</span>
 
     public void setStripNamePrefixes(Set&lt;String&gt; stripNamePrefixes) {
-<span class="nc" id="L684">        compilerOptions.setStripNamePrefixes(stripNamePrefixes);</span>
-<span class="nc" id="L685">    }</span>
+<span class="nc" id="L673">        compilerOptions.setStripNamePrefixes(stripNamePrefixes);</span>
+<span class="nc" id="L674">    }</span>
 
     public void setStripTypePrefixes(Set&lt;String&gt; stripTypePrefixes) {
-<span class="nc" id="L688">        compilerOptions.setStripTypePrefixes(stripTypePrefixes);</span>
-<span class="nc" id="L689">    }</span>
+<span class="nc" id="L677">        compilerOptions.setStripTypePrefixes(stripTypePrefixes);</span>
+<span class="nc" id="L678">    }</span>
 
     public void addCustomPass(CustomPassExecutionTime time, CompilerPass customPass) {
-<span class="nc" id="L692">        compilerOptions.addCustomPass(time, customPass);</span>
-<span class="nc" id="L693">    }</span>
+<span class="nc" id="L681">        compilerOptions.addCustomPass(time, customPass);</span>
+<span class="nc" id="L682">    }</span>
 
     public void setMarkNoSideEffectCalls(boolean markNoSideEffectCalls) {
-<span class="nc" id="L696">        compilerOptions.setMarkNoSideEffectCalls(markNoSideEffectCalls);</span>
-<span class="nc" id="L697">    }</span>
+<span class="nc" id="L685">        compilerOptions.setMarkNoSideEffectCalls(markNoSideEffectCalls);</span>
+<span class="nc" id="L686">    }</span>
 
     public void setDefineReplacements(Map&lt;String, Object&gt; defineReplacements) {
-<span class="nc" id="L700">        compilerOptions.setDefineReplacements(defineReplacements);</span>
-<span class="nc" id="L701">    }</span>
+<span class="nc" id="L689">        compilerOptions.setDefineReplacements(defineReplacements);</span>
+<span class="nc" id="L690">    }</span>
 
     public void setTweakReplacements(Map&lt;String, Object&gt; tweakReplacements) {
-<span class="nc" id="L704">        compilerOptions.setTweakReplacements(tweakReplacements);</span>
-<span class="nc" id="L705">    }</span>
+<span class="nc" id="L693">        compilerOptions.setTweakReplacements(tweakReplacements);</span>
+<span class="nc" id="L694">    }</span>
 
     public void setMoveFunctionDeclarations(boolean moveFunctionDeclarations) {
-<span class="nc" id="L708">        compilerOptions.setMoveFunctionDeclarations(moveFunctionDeclarations);</span>
-<span class="nc" id="L709">    }</span>
+<span class="nc" id="L697">        compilerOptions.setMoveFunctionDeclarations(moveFunctionDeclarations);</span>
+<span class="nc" id="L698">    }</span>
 
     public void setInstrumentationTemplate(Instrumentation instrumentationTemplate) {
-<span class="nc" id="L712">        compilerOptions.setInstrumentationTemplate(instrumentationTemplate);</span>
-<span class="nc" id="L713">    }</span>
+<span class="nc" id="L701">        compilerOptions.setInstrumentationTemplate(instrumentationTemplate);</span>
+<span class="nc" id="L702">    }</span>
 
     public void setRecordFunctionInformation(boolean recordFunctionInformation) {
-<span class="nc" id="L716">        compilerOptions.setRecordFunctionInformation(recordFunctionInformation);</span>
-<span class="nc" id="L717">    }</span>
+<span class="nc" id="L705">        compilerOptions.setRecordFunctionInformation(recordFunctionInformation);</span>
+<span class="nc" id="L706">    }</span>
 
     public void setCssRenamingMap(CssRenamingMap cssRenamingMap) {
-<span class="nc" id="L720">        compilerOptions.setCssRenamingMap(cssRenamingMap);</span>
-<span class="nc" id="L721">    }</span>
+<span class="nc" id="L709">        compilerOptions.setCssRenamingMap(cssRenamingMap);</span>
+<span class="nc" id="L710">    }</span>
 
     public void setCssRenamingWhitelist(Set&lt;String&gt; whitelist) {
-<span class="nc" id="L724">        compilerOptions.setCssRenamingWhitelist(whitelist);</span>
-<span class="nc" id="L725">    }</span>
+<span class="nc" id="L713">        compilerOptions.setCssRenamingWhitelist(whitelist);</span>
+<span class="nc" id="L714">    }</span>
 
     public void setReplaceStringsFunctionDescriptions(List&lt;String&gt; replaceStringsFunctionDescriptions) {
-<span class="nc" id="L728">        compilerOptions.setReplaceStringsFunctionDescriptions(replaceStringsFunctionDescriptions);</span>
-<span class="nc" id="L729">    }</span>
+<span class="nc" id="L717">        compilerOptions.setReplaceStringsFunctionDescriptions(replaceStringsFunctionDescriptions);</span>
+<span class="nc" id="L718">    }</span>
 
     public void setReplaceStringsPlaceholderToken(String replaceStringsPlaceholderToken) {
-<span class="nc" id="L732">        compilerOptions.setReplaceStringsPlaceholderToken(replaceStringsPlaceholderToken);</span>
-<span class="nc" id="L733">    }</span>
+<span class="nc" id="L721">        compilerOptions.setReplaceStringsPlaceholderToken(replaceStringsPlaceholderToken);</span>
+<span class="nc" id="L722">    }</span>
 
     public void setReplaceStringsReservedStrings(Set&lt;String&gt; replaceStringsReservedStrings) {
-<span class="nc" id="L736">        compilerOptions.setReplaceStringsReservedStrings(replaceStringsReservedStrings);</span>
-<span class="nc" id="L737">    }</span>
+<span class="nc" id="L725">        compilerOptions.setReplaceStringsReservedStrings(replaceStringsReservedStrings);</span>
+<span class="nc" id="L726">    }</span>
 
     public void setReplaceStringsInputMap(VariableMap serializedMap) {
-<span class="nc" id="L740">        compilerOptions.setReplaceStringsInputMap(serializedMap);</span>
-<span class="nc" id="L741">    }</span>
+<span class="nc" id="L729">        compilerOptions.setReplaceStringsInputMap(serializedMap);</span>
+<span class="nc" id="L730">    }</span>
 
     public void setPrettyPrint(boolean prettyPrint) {
-<span class="nc" id="L744">        compilerOptions.setPrettyPrint(prettyPrint);</span>
-<span class="nc" id="L745">    }</span>
+<span class="nc" id="L733">        compilerOptions.setPrettyPrint(prettyPrint);</span>
+<span class="nc" id="L734">    }</span>
 
     public void setLineBreak(boolean lineBreak) {
-<span class="nc" id="L748">        compilerOptions.setLineBreak(lineBreak);</span>
-<span class="nc" id="L749">    }</span>
+<span class="nc" id="L737">        compilerOptions.setLineBreak(lineBreak);</span>
+<span class="nc" id="L738">    }</span>
 
     public void setPreferLineBreakAtEndOfFile(boolean lineBreakAtEnd) {
-<span class="nc" id="L752">        compilerOptions.setPreferLineBreakAtEndOfFile(lineBreakAtEnd);</span>
-<span class="nc" id="L753">    }</span>
+<span class="nc" id="L741">        compilerOptions.setPreferLineBreakAtEndOfFile(lineBreakAtEnd);</span>
+<span class="nc" id="L742">    }</span>
 
     public void setPrintInputDelimiter(boolean printInputDelimiter) {
-<span class="nc" id="L756">        compilerOptions.setPrintInputDelimiter(printInputDelimiter);</span>
-<span class="nc" id="L757">    }</span>
+<span class="nc" id="L745">        compilerOptions.setPrintInputDelimiter(printInputDelimiter);</span>
+<span class="nc" id="L746">    }</span>
 
     public void setInputDelimiter(String inputDelimiter) {
-<span class="nc" id="L760">        compilerOptions.setInputDelimiter(inputDelimiter);</span>
-<span class="nc" id="L761">    }</span>
+<span class="nc" id="L749">        compilerOptions.setInputDelimiter(inputDelimiter);</span>
+<span class="nc" id="L750">    }</span>
 
     public void setErrorFormat(ErrorFormat errorFormat) {
-<span class="nc" id="L764">        compilerOptions.setErrorFormat(errorFormat);</span>
-<span class="nc" id="L765">    }</span>
+<span class="nc" id="L753">        compilerOptions.setErrorFormat(errorFormat);</span>
+<span class="nc" id="L754">    }</span>
 
     public void setWarningsGuard(ComposeWarningsGuard warningsGuard) {
-<span class="nc" id="L768">        compilerOptions.setWarningsGuard(warningsGuard);</span>
-<span class="nc" id="L769">    }</span>
+<span class="nc" id="L757">        compilerOptions.setWarningsGuard(warningsGuard);</span>
+<span class="nc" id="L758">    }</span>
 
     public void setLineLengthThreshold(int lineLengthThreshold) {
-<span class="nc" id="L772">        compilerOptions.setLineLengthThreshold(lineLengthThreshold);</span>
-<span class="nc" id="L773">    }</span>
+<span class="nc" id="L761">        compilerOptions.setLineLengthThreshold(lineLengthThreshold);</span>
+<span class="nc" id="L762">    }</span>
 
     public void setExternExportsPath(String externExportsPath) {
-<span class="nc" id="L776">        compilerOptions.setExternExportsPath(externExportsPath);</span>
-<span class="nc" id="L777">    }</span>
+<span class="nc" id="L765">        compilerOptions.setExternExportsPath(externExportsPath);</span>
+<span class="nc" id="L766">    }</span>
 
     public void setSourceMapOutputPath(String sourceMapOutputPath) {
-<span class="nc" id="L780">        compilerOptions.setSourceMapOutputPath(sourceMapOutputPath);</span>
-<span class="nc" id="L781">    }</span>
+<span class="nc" id="L769">        compilerOptions.setSourceMapOutputPath(sourceMapOutputPath);</span>
+<span class="nc" id="L770">    }</span>
 
     public void setSourceMapDetailLevel(DetailLevel sourceMapDetailLevel) {
-<span class="nc" id="L784">        compilerOptions.setSourceMapDetailLevel(sourceMapDetailLevel);</span>
-<span class="nc" id="L785">    }</span>
+<span class="nc" id="L773">        compilerOptions.setSourceMapDetailLevel(sourceMapDetailLevel);</span>
+<span class="nc" id="L774">    }</span>
 
     public void setSourceMapFormat(Format sourceMapFormat) {
-<span class="nc" id="L788">        compilerOptions.setSourceMapFormat(sourceMapFormat);</span>
-<span class="nc" id="L789">    }</span>
+<span class="nc" id="L777">        compilerOptions.setSourceMapFormat(sourceMapFormat);</span>
+<span class="nc" id="L778">    }</span>
 
     public void setSourceMapLocationMappings(List&lt;LocationMapping&gt; sourceMapLocationMappings) {
-<span class="nc" id="L792">        compilerOptions.setSourceMapLocationMappings(sourceMapLocationMappings);</span>
-<span class="nc" id="L793">    }</span>
+<span class="nc" id="L781">        compilerOptions.setSourceMapLocationMappings(sourceMapLocationMappings);</span>
+<span class="nc" id="L782">    }</span>
 
     public void setTransformAMDToCJSModules(boolean transformAMDToCJSModules) {
-<span class="nc" id="L796">        compilerOptions.setTransformAMDToCJSModules(transformAMDToCJSModules);</span>
-<span class="nc" id="L797">    }</span>
+<span class="nc" id="L785">        compilerOptions.setTransformAMDToCJSModules(transformAMDToCJSModules);</span>
+<span class="nc" id="L786">    }</span>
 
     public void setProcessCommonJSModules(boolean processCommonJSModules) {
-<span class="nc" id="L800">        compilerOptions.setProcessCommonJSModules(processCommonJSModules);</span>
-<span class="nc" id="L801">    }</span>
+<span class="nc" id="L789">        compilerOptions.setProcessCommonJSModules(processCommonJSModules);</span>
+<span class="nc" id="L790">    }</span>
 
     public void setCommonJSModulePathPrefix(String commonJSModulePathPrefix) {
-<span class="nc" id="L804">        compilerOptions.setCommonJSModulePathPrefix(commonJSModulePathPrefix);</span>
-<span class="nc" id="L805">    }</span>
+<span class="nc" id="L793">        compilerOptions.setCommonJSModulePathPrefix(commonJSModulePathPrefix);</span>
+<span class="nc" id="L794">    }</span>
 
     public void setInstrumentForCoverage(boolean instrumentForCoverage) {
-<span class="nc" id="L808">        compilerOptions.setInstrumentForCoverage(instrumentForCoverage);</span>
-<span class="nc" id="L809">    }</span>
+<span class="nc" id="L797">        compilerOptions.setInstrumentForCoverage(instrumentForCoverage);</span>
+<span class="nc" id="L798">    }</span>
 
     /**
      * @return string representation of the wrapped
@@ -818,11 +807,11 @@ import java.util.Set;
     @Override
     public String toString() {
         // TODO make useful output
-<span class="nc" id="L821">        return this.compilerOptions.toString();</span>
+<span class="nc" id="L810">        return this.compilerOptions.toString();</span>
     }
 
     public CompilerOptions getCompilerOptions() {
-<span class="nc" id="L825">        return this.compilerOptions;</span>
+<span class="nc" id="L814">        return this.compilerOptions;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.0.201801022044</span></div></body></html>

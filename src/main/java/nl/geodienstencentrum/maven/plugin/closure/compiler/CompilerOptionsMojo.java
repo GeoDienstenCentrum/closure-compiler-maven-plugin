@@ -296,9 +296,6 @@ public class CompilerOptionsMojo {
         compilerOptions.setColorizeErrorOutput(colorizeErrorOutput);
     }
 
-    public void setChainCalls(boolean value) {
-        compilerOptions.setChainCalls(value);
-    }
 
     public void enableRuntimeTypeCheck(String logFunction) {
         compilerOptions.enableRuntimeTypeCheck(logFunction);
@@ -458,14 +455,6 @@ public class CompilerOptionsMojo {
 
     public void setInlineConstantVars(boolean inlineConstantVars) {
         compilerOptions.setInlineConstantVars(inlineConstantVars);
-    }
-
-    public void setInlineFunctions(boolean inlineFunctions) {
-        compilerOptions.setInlineFunctions(inlineFunctions);
-    }
-
-    public void setInlineLocalFunctions(boolean inlineLocalFunctions) {
-        compilerOptions.setInlineLocalFunctions(inlineLocalFunctions);
     }
 
     public void setCrossModuleCodeMotion(boolean crossModuleCodeMotion) {

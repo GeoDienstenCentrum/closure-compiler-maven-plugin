@@ -15,6 +15,7 @@ env:
     - VERSION=3.3.9
     - VERSION=3.2.5
     - VERSION=3.5.2
+    - VERSION=3.5.3
 
 before_install:
     - wget --no-check-certificate $(echo -n $BASEURL | sed -e 's#VERSION#'$VERSION'#g');
@@ -38,25 +39,25 @@ script:
   # execute unit and integration tests
   - mvn -e -fae -B -Dfailsafe.useFile=false -T2 clean test verify
   # check if all our javadoc is valid
-  - if [ "$TRAVIS_JDK_VERSION" == oraclejdk8 ] && [ "$VERSION" == "3.3.9" ]; then
+  - if [ "$TRAVIS_JDK_VERSION" == oraclejdk8 ] && [ "$VERSION" == "3.5.3" ]; then
          mvn javadoc:javadoc;
          mvn javadoc:test-javadoc;
     fi
 
 after_success:
   # generate code coverage report, just for oraclejdk8 and latest maven
-  - if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$VERSION" == "3.5.2" ] &&
+  - if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$VERSION" == "3.5.3" ] &&
        [ "$TRAVIS_JDK_VERSION" == "oraclejdk8" ]; then
          mvn -B -e -fae -Ptravis-ci clean verify jacoco:report coveralls:report;
     fi
-  - if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$VERSION" == "3.5.2" ] &&
+  - if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$VERSION" == "3.5.3" ] &&
        [ "$TRAVIS_JDK_VERSION" == "oraclejdk8" ] &&
        [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
          mvn deploy --settings .travis/settings.xml -DskipTests=true -B;
     else
         echo "Not deploying snapshot artifact";
     fi
-  - if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$VERSION" == "3.5.2" ] &&
+  - if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$VERSION" == "3.5.3" ] &&
        [ "$TRAVIS_JDK_VERSION" == "oraclejdk8" ] &&
        [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then
           mvn -e -fae -B site-deploy --settings .travis/settings.xml;
@@ -77,7 +78,7 @@ matrix:
       dist: trusty
       group: edge
       env:
-        - VERSION=3.5.2
+        - VERSION=3.5.3
         - JVM=latest
 
   allow_failures:

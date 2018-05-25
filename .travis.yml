@@ -4,7 +4,7 @@ sudo: false
 
 env:
   global:
-    - BASEURL=https://www-eu.apache.org/dist/maven/maven-3/VERSION/binaries/apache-maven-VERSION-bin.zip
+    - BASEURL=https://archive.apache.org/dist/maven/maven-3/VERSION/binaries/apache-maven-VERSION-bin.zip
     - FILE=apache-maven-VERSION-bin.zip
     - DIR=apache-maven-VERSION
     - secure: "h6f32PIRZA/wjsDM/0/R/fFhOesZ/fQYPTynMinsU6V4Af6hKZx15dinXhIpMCnqUeYfAEvNXmVEz+3DAgZHwa4Kg/MbDzGOG/40QukBhdX4SEgywx+murt7HxA3BupAmvS7C/g/E/2lDIoK4K8718a1JNqNB+Hckgljg1J+plBz7Hc+DPpiY/CiYa2RPKfUqlGJIPGJIyV/alPwrHEFRFg7GVqlRbgMlNiLPsi0EsBEzeUWoizosn5UrAebKIGNdB/adDg7FvsjmHERuMEDABOTC2o0Y7VF2V3MTkSgxUSZRuGtHrrlwDM1s4Iba7r+Op6+QOiwDQjCHqACBiG4H/djOBMnvPuro76rmv1S1JG84IiDHToU+yB5MjHtMIatnHogKkZGSd28ptyzE+9vC8lafW+mpg8syLx8DxjH2yxDQXeFpKaVd22KBM8Wu5BU9hpwEYUhOx5dqQ3vLOsHmWTHgRB2w1gAfk15iIRismjSSeGnTrTXax1ZAYeQF5oLeFhslFi5EgKvexnJDLwnqbhOIp+KFoZGBWJUBcItUW7s4tHr9gFpiGZjaLqBL6M3DuCFJFZEPJp1+ARCkxiUBj9u9JRj44iYIgVe5jLUfkNE49Lb2TMRO5dxcglj753kNke6g4qYZ0+Yw1/mYSygifSMHg3vhjbFV3U2ATy+Ej8="

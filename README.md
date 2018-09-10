@@ -12,7 +12,7 @@ This was forked from https://code.google.com/p/closure-compiler-maven-plugin/
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/nl.geodienstencentrum.maven/closure-compiler-maven-plugin/badge.svg)](https://maven-badges.herokuapp.com/maven-central/nl.geodienstencentrum.maven/closure-compiler-maven-plugin/)
 
-[![Dependency Status](https://dependencyci.com/github/GeoDienstenCentrum/closure-compiler-maven-plugin/badge)](https://dependencyci.com/github/GeoDienstenCentrum/closure-compiler-maven-plugin)
+[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=GeoDienstenCentrum/closure-compiler-maven-plugin)](https://dependabot.com)
 
 [![Coverage Status](https://coveralls.io/repos/GeoDienstenCentrum/closure-compiler-maven-plugin/badge.svg?branch=master&service=github)](https://coveralls.io/github/GeoDienstenCentrum/closure-compiler-maven-plugin?branch=master)
 

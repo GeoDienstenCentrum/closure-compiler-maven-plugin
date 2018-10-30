@@ -14,6 +14,8 @@ This was forked from https://code.google.com/p/closure-compiler-maven-plugin/
 
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=GeoDienstenCentrum/closure-compiler-maven-plugin)](https://dependabot.com)
 
+[![DepShield Badge](https://depshield.sonatype.org/badges/GeoDienstenCentrum/closure-compiler-maven-plugin/depshield.svg)](https://depshield.github.io)
+
 [![Coverage Status](https://coveralls.io/repos/GeoDienstenCentrum/closure-compiler-maven-plugin/badge.svg?branch=master&service=github)](https://coveralls.io/github/GeoDienstenCentrum/closure-compiler-maven-plugin?branch=master)
 
 [![Percentage of issues still open](http://isitmaintained.com/badge/open/GeoDienstenCentrum/closure-compiler-maven-plugin.svg)](http://isitmaintained.com/project/GeoDienstenCentrum/closure-compiler-maven-plugin "Percentage of issues still open")

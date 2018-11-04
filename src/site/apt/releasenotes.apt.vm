@@ -35,6 +35,10 @@ ${project.name} ${project.version} Release Notes
   * Update Closure compiler to ${project.properties.get("closure-compiler.version")}, see:
     {{{https://github.com/google/closure-compiler/wiki/Releases}Closure Compiler Releases}}
 
+  * Require Maven 3.3.9
+
+  * Support Maven 3.6.0
+
   []
 
 * 2.8 Release Notes

@@ -155,7 +155,7 @@ public class ClosureCompilerMojo extends AbstractMojo {
 				sourceFiles.addAll(sourcefileFromFile(child));
 			}
 		} else {
-			sourceFiles.add(SourceFile.fromFile(file));
+			sourceFiles.add(SourceFile.fromFile(file.getAbsolutePath()));
 		}
 		return sourceFiles;
 	}

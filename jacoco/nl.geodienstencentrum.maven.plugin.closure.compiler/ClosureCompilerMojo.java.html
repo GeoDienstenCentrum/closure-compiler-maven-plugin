@@ -155,7 +155,7 @@ import org.apache.maven.plugins.annotations.Parameter;
 <span class="nc" id="L155">				sourceFiles.addAll(sourcefileFromFile(child));</span>
 			}
 		} else {
-<span class="nc" id="L158">			sourceFiles.add(SourceFile.fromFile(file));</span>
+<span class="nc" id="L158">			sourceFiles.add(SourceFile.fromFile(file.getAbsolutePath()));</span>
 		}
 <span class="nc" id="L160">		return sourceFiles;</span>
 	}

@@ -102,10 +102,6 @@ public class CompilerOptionsMojo {
         this.compilerOptions.setChecksOnly(checksOnly);
     }
 
-    public void setInstrumentationTemplateFile(String filename) {
-        this.compilerOptions.setInstrumentationTemplateFile(filename);
-    }
-
     public void setPreserveTypeAnnotations(boolean preserveTypeAnnotations) {
         this.compilerOptions.setPreserveTypeAnnotations(preserveTypeAnnotations);
     }
@@ -168,20 +164,12 @@ public class CompilerOptionsMojo {
         compilerOptions.setReplaceMessagesWithChromeI18n(replaceMessagesWithChromeI18n, tcProjectId);
     }
 
-    public void setAppNameStr(String appNameStr) {
-        compilerOptions.setAppNameStr(appNameStr);
-    }
-
     public void setPreferSingleQuotes(boolean enabled) {
         compilerOptions.setPreferSingleQuotes(enabled);
     }
 
     public void setTrustedStrings(boolean yes) {
         compilerOptions.setTrustedStrings(yes);
-    }
-
-    public void setReportPath(String reportPath) {
-        compilerOptions.setReportPath(reportPath);
     }
 
     public void setTracerMode(TracerMode mode) {
@@ -242,10 +230,6 @@ public class CompilerOptionsMojo {
 
     public void setShadowVariables(boolean shadow) {
         compilerOptions.setShadowVariables(shadow);
-    }
-
-    public void setProcessObjectPropertyString(boolean process) {
-        compilerOptions.setProcessObjectPropertyString(process);
     }
 
     public void setReplaceIdGenerators(boolean replaceIdGenerators) {
@@ -319,14 +303,6 @@ public class CompilerOptionsMojo {
 
     public void setDependencyOptions(DependencyOptions options) {
         compilerOptions.setDependencyOptions(options);
-    }
-
-    public void setManageClosureDependencies(boolean newVal) {
-        compilerOptions.setManageClosureDependencies(newVal);
-    }
-
-    public void setManageClosureDependencies(List<String> entryPoints) {
-        compilerOptions.setManageClosureDependencies(entryPoints);
     }
 
     public void setSummaryDetailLevel(int summaryDetailLevel) {
@@ -457,20 +433,12 @@ public class CompilerOptionsMojo {
         compilerOptions.setInlineConstantVars(inlineConstantVars);
     }
 
-    public void setCrossModuleCodeMotion(boolean crossModuleCodeMotion) {
-        compilerOptions.setCrossModuleCodeMotion(crossModuleCodeMotion);
-    }
-
     public void setParentModuleCanSeeSymbolsDeclaredInChildren(boolean parentModuleCanSeeSymbolsDeclaredInChildren) {
         compilerOptions.setParentModuleCanSeeSymbolsDeclaredInChildren(parentModuleCanSeeSymbolsDeclaredInChildren);
     }
 
     public void setCoalesceVariableNames(boolean coalesceVariableNames) {
         compilerOptions.setCoalesceVariableNames(coalesceVariableNames);
-    }
-
-    public void setCrossModuleMethodMotion(boolean crossModuleMethodMotion) {
-        compilerOptions.setCrossModuleMethodMotion(crossModuleMethodMotion);
     }
 
     public void setInlineVariables(boolean inlineVariables) {
@@ -695,14 +663,6 @@ public class CompilerOptionsMojo {
 
     public void setMoveFunctionDeclarations(boolean moveFunctionDeclarations) {
         compilerOptions.setMoveFunctionDeclarations(moveFunctionDeclarations);
-    }
-
-    public void setInstrumentationTemplate(Instrumentation instrumentationTemplate) {
-        compilerOptions.setInstrumentationTemplate(instrumentationTemplate);
-    }
-
-    public void setRecordFunctionInformation(boolean recordFunctionInformation) {
-        compilerOptions.setRecordFunctionInformation(recordFunctionInformation);
     }
 
     public void setCssRenamingMap(CssRenamingMap cssRenamingMap) {

@@ -30,6 +30,11 @@ ${project.name} ${project.version} Release Notes
 
 ~~  []
 
+* 2.9 Release Notes
+
+  A complete list of issues can be seen in the tracker
+  {{{${project.issueManagement.url}?q=milestone%3A2.9+is%3Aclosed}milestone 2.9}}.
+
 ** Enhancements and Fixes
 
   * Update Closure compiler to ${project.properties.get("closure-compiler.version")}, see:
